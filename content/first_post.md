@@ -9,6 +9,6 @@ I don't know what will happen with my previous domain ([emotionull](http://jon.i
 
 My hobby project right now, is a new opensource trading platform (for the first time not focused on HFT) and some experiments around a super fast, vertical scaling, full adhoc queries database (exactly the opposite of [LDB](http://www.bugsense.com/about/bigdata) I've built at [BugSense](http://www.bugsense.com)). I'll keep you posted.
 
-Good times people!
+Good times!
 
 JR
