@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Jon.IO</title><link href="http://jon.io/" rel="alternate"></link><link href="http://jon.io/feeds/databases.atom.xml" rel="self"></link><id>http://jon.io/</id><updated>2013-07-31T18:46:49+02:00</updated><entry><title>HybrisDB</title><link href="http://jon.io/hybrisdb.html" rel="alternate"></link><updated>2013-07-31T18:46:49+02:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2013-07-31:hybrisdb.html</id><summary type="html">&lt;p&gt;I love Forex because:&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Jon.IO</title><link href="http://jon.io/" rel="alternate"></link><link href="http://jon.io/feeds/databases.atom.xml" rel="self"></link><id>http://jon.io/</id><updated>2013-07-31T18:49:05+02:00</updated><entry><title>HybrisDB</title><link href="http://jon.io/hybrisdb.html" rel="alternate"></link><updated>2013-07-31T18:49:05+02:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2013-07-31:hybrisdb.html</id><summary type="html">&lt;p&gt;I love Forex because:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;It has enormous amount of data (volume)&lt;/li&gt;
 &lt;li&gt;These data are coming extremely fast (velocity)&lt;/li&gt;
 &lt;li&gt;You need to consider multiple resources when you are building your strategy (variety)&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;My definition of BigData is that you have volume-velocity-variety information &lt;em&gt;and&lt;/em&gt; you need to react on it right now (realtime). It is one of the main reasons why I don't like Hadoop (ok, the other is because I don't like Java:). &lt;/p&gt;
+&lt;p&gt;My definition of BigData is that you have volume-velocity-variety information &lt;strong&gt;and&lt;/strong&gt; you need to react on it right now (realtime). It is one of the main reasons why I don't like Hadoop (ok, the other is because I don't like Java:). &lt;/p&gt;
 &lt;p&gt;Forex is the best place if you want to start playing with BigData. You have (at least) one data channel, hitting you with data, you need to keep running algorithms on this stream (sometimes doing correlations up to a week) and you need be able to respond very fast. If a garbage collector kicks in or if you need to grab data from a database (even if this DB is in memory - long live Redis) then you will have issues.&lt;/p&gt;
 &lt;p&gt;That's the reason why most of the "trading" databases have all their data in the same memory space and have custom languages doing the analysis (like &lt;a href="http://kx.com"&gt;Kdb&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;That was the inspiration for LDB.&lt;/p&gt;
