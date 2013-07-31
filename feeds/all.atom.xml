@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Jon.IO</title><link href="http://jon.io/" rel="alternate"></link><link href="http://jon.io/feeds/all.atom.xml" rel="self"></link><id>http://jon.io/</id><updated>2013-07-31T00:49:33+02:00</updated><entry><title>New blog!</title><link href="http://jon.io/new-blog.html" rel="alternate"></link><updated>2013-07-31T00:49:33+02:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2013-07-31:new-blog.html</id><summary type="html">&lt;p&gt;I haven't blogged for a while and I think that I needed I new (virtual) home for my rants.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Jon.IO</title><link href="http://jon.io/" rel="alternate"></link><link href="http://jon.io/feeds/all.atom.xml" rel="self"></link><id>http://jon.io/</id><updated>2013-07-31T18:46:49+02:00</updated><entry><title>HybrisDB</title><link href="http://jon.io/hybrisdb.html" rel="alternate"></link><updated>2013-07-31T18:46:49+02:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2013-07-31:hybrisdb.html</id><summary type="html">&lt;p&gt;I love Forex because:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;It has enormous amount of data (volume)&lt;/li&gt;
+&lt;li&gt;These data are coming extremely fast (velocity)&lt;/li&gt;
+&lt;li&gt;You need to consider multiple resources when you are building your strategy (variety)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;My definition of BigData is that you have volume-velocity-variety information &lt;em&gt;and&lt;/em&gt; you need to react on it right now (realtime). It is one of the main reasons why I don't like Hadoop (ok, the other is because I don't like Java:). &lt;/p&gt;
+&lt;p&gt;Forex is the best place if you want to start playing with BigData. You have (at least) one data channel, hitting you with data, you need to keep running algorithms on this stream (sometimes doing correlations up to a week) and you need be able to respond very fast. If a garbage collector kicks in or if you need to grab data from a database (even if this DB is in memory - long live Redis) then you will have issues.&lt;/p&gt;
+&lt;p&gt;That's the reason why most of the "trading" databases have all their data in the same memory space and have custom languages doing the analysis (like &lt;a href="http://kx.com"&gt;Kdb&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;That was the inspiration for LDB.&lt;/p&gt;
+&lt;p&gt;Millions of data sources (mobile phones), hitting your database and calculating/updating for each one of the requests thousands of counters and running all sorts of algorithms. Per request. In realtime.&lt;/p&gt;
+&lt;p&gt;But let's face it. The vast majority of users/companies will never have millions (or even thousands) of requests hitting their servers. That's why I started a new opensource database with codename: HybrisDB.&lt;/p&gt;
+&lt;p&gt;HDB has the following characteristics:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Simple to install (no moving parts)&lt;/li&gt;
+&lt;li&gt;Simple to use (pre-defined dashboards)&lt;/li&gt;
+&lt;li&gt;It will be perfect for the 99% of users/companies but not for the 1% like Facebook or Google (sacrificing Enterprise features)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The concept is to have a dashboard, to watch indicators going on/off and then (maybe) connect to a system to place an order.&lt;/p&gt;
+&lt;p&gt;Sounds like an interesting cool hobby project and I still try to decide between using Erlang or Clojure for this.&lt;/p&gt;
+&lt;p&gt;Ping me on &lt;a href="http://www.twitter.com/jonromero"&gt;twitter&lt;/a&gt; if you have any ideas!&lt;/p&gt;
+&lt;p&gt;Cheers!&lt;/p&gt;
+&lt;p&gt;JR&lt;/p&gt;</summary><category term="databases"></category><category term="hybrisdb"></category></entry><entry><title>New blog!</title><link href="http://jon.io/new-blog.html" rel="alternate"></link><updated>2013-07-31T00:49:33+02:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2013-07-31:new-blog.html</id><summary type="html">&lt;p&gt;I haven't blogged for a while and I think that I needed I new (virtual) home for my rants.
 This place is brand new (and white!) and it is going to be awesome!&lt;/p&gt;
 &lt;p&gt;I don't know what will happen with my previous domain (&lt;a href="http://jon.is.emotionull.com"&gt;emotionull&lt;/a&gt;) but I think it might be the new home for a new (underground) social network for traders. We'll see.&lt;/p&gt;
 &lt;p&gt;My hobby project right now, is a new opensource trading platform (for the first time not focused on HFT) and some experiments around a super fast, vertical scaling, full adhoc queries database (exactly the opposite of &lt;a href="http://www.bugsense.com/about/bigdata"&gt;LDB&lt;/a&gt; I've built at &lt;a href="http://www.bugsense.com"&gt;BugSense&lt;/a&gt;). I'll keep you posted.&lt;/p&gt;
