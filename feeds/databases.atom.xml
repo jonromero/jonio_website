@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Jon.IO</title><link href="http://jon.io/" rel="alternate"></link><link href="http://jon.io/feeds/databases.atom.xml" rel="self"></link><id>http://jon.io/</id><updated>2013-07-31T18:42:49+02:00</updated><entry><title>HybrisDB</title><link href="http://jon.io/hybrisdb.html" rel="alternate"></link><updated>2013-07-31T18:42:49+02:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2013-07-31:hybrisdb.html</id><summary type="html">&lt;p&gt;I love Forex because:&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Jon.IO</title><link href="http://jon.io/" rel="alternate"></link><link href="http://jon.io/feeds/databases.atom.xml" rel="self"></link><id>http://jon.io/</id><updated>2013-07-31T18:46:49+02:00</updated><entry><title>HybrisDB</title><link href="http://jon.io/hybrisdb.html" rel="alternate"></link><updated>2013-07-31T18:46:49+02:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2013-07-31:hybrisdb.html</id><summary type="html">&lt;p&gt;I love Forex because:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;It has enormous amount of data (volume)&lt;/li&gt;
 &lt;li&gt;These data are coming extremely fast (velocity)&lt;/li&gt;
@@ -11,10 +11,12 @@
 &lt;p&gt;That was the inspiration for LDB.&lt;/p&gt;
 &lt;p&gt;Millions of data sources (mobile phones), hitting your database and calculating/updating for each one of the requests thousands of counters and running all sorts of algorithms. Per request. In realtime.&lt;/p&gt;
 &lt;p&gt;But let's face it. The vast majority of users/companies will never have millions (or even thousands) of requests hitting their servers. That's why I started a new opensource database with codename: HybrisDB.&lt;/p&gt;
-&lt;p&gt;HDB has the following characteristics:
-1. Simple to install (no moving parts)
-2. Simple to use (pre-defined dashboards)
-3. It will be perfect for the 99% of users/companies but not for the 1% like Facebook or Google (sacrificing Enterprise features)&lt;/p&gt;
+&lt;p&gt;HDB has the following characteristics:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Simple to install (no moving parts)&lt;/li&gt;
+&lt;li&gt;Simple to use (pre-defined dashboards)&lt;/li&gt;
+&lt;li&gt;It will be perfect for the 99% of users/companies but not for the 1% like Facebook or Google (sacrificing Enterprise features)&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;The concept is to have a dashboard, to watch indicators going on/off and then (maybe) connect to a system to place an order.&lt;/p&gt;
 &lt;p&gt;Sounds like an interesting cool hobby project and I still try to decide between using Erlang or Clojure for this.&lt;/p&gt;
 &lt;p&gt;Ping me on &lt;a href="http://www.twitter.com/jonromero"&gt;twitter&lt;/a&gt; if you have any ideas!&lt;/p&gt;
