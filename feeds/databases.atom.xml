@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Jon.IO</title><link href="http://jon.io/" rel="alternate"></link><link href="http://jon.io/feeds/databases.atom.xml" rel="self"></link><id>http://jon.io/</id><updated>2013-07-31T18:49:05+02:00</updated><entry><title>HybrisDB</title><link href="http://jon.io/hybrisdb.html" rel="alternate"></link><updated>2013-07-31T18:49:05+02:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2013-07-31:hybrisdb.html</id><summary type="html">&lt;p&gt;I love Forex because:&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Jon.IO</title><link href="http://jon.io/" rel="alternate"></link><link href="http://jon.io/feeds/databases.atom.xml" rel="self"></link><id>http://jon.io/</id><updated>2013-08-16T19:52:27+02:00</updated><entry><title>Mapping and processing data in Clojure - different ORM?</title><link href="http://jon.io/mapping-and-processing-data-in-clojure-different-orm.html" rel="alternate"></link><updated>2013-08-16T19:52:27+02:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2013-08-16:mapping-and-processing-data-in-clojure-different-orm.html</id><summary type="html">&lt;p&gt;I have to admit that I have a thing for DSLs. You can see it at &lt;a href="https://github.com/jonromero/music-as-data"&gt;music-as-data&lt;/a&gt; were notes and rhythm/beat is "mapped" to data and you can apply data transformations. &lt;/p&gt;
+&lt;p&gt;The same thing I want to do with data at-rest.&lt;/p&gt;
+&lt;p&gt;Here is a scenario:
+I have lots data sitting as CSV on my hard-drive and I want to process them. Not query. Process them.&lt;/p&gt;
+&lt;p&gt;What would be really interesting is to be able to define (dynamically) a schema like that:&lt;/p&gt;
+&lt;p&gt;(defschema "EURUSD" 
+  (tokenizer #(.split % ":"))&lt;br /&gt;
+  ;; the mapping is done here
+  (columns |time| |open| |high| |low| |close| |volume|))&lt;/p&gt;
+&lt;p&gt;Let me explain.
+First of all, a "tokenize" function. Each dataline is tokenized based on a function. Do you want regex? Something more complex? You are free to write anything you like. I really hate frameworks that you must write a complex regular expression or use a compicated system just to tokenize a line.&lt;/p&gt;
+&lt;p&gt;As you can imagine, tokenize returns a list of data that are mapped to "columns".&lt;/p&gt;
+&lt;p&gt;Now, the interesting stuff. &lt;/p&gt;
+&lt;p&gt;You can write scripts like the following:
+(if (&amp;gt; |close| 1.45)
+    (place-order :buy)
+    (place-order :sell)&lt;/p&gt;
+&lt;p&gt;Thoughts? 
+&lt;a href="http://www.twitter.com/jonromero"&gt;jonromero&lt;/a&gt;&lt;/p&gt;</summary><category term="databases"></category><category term="clojure"></category></entry><entry><title>HybrisDB</title><link href="http://jon.io/hybrisdb.html" rel="alternate"></link><updated>2013-08-04T20:31:21+02:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2013-08-04:hybrisdb.html</id><summary type="html">&lt;p&gt;I love Forex because:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;It has enormous amount of data (volume)&lt;/li&gt;
 &lt;li&gt;These data are coming extremely fast (velocity)&lt;/li&gt;
