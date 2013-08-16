@@ -7,7 +7,7 @@ I love Forex because:
 2. These data are coming extremely fast (velocity)
 3. You need to consider multiple resources when you are building your strategy (variety)
 
-My definition of BigData is that you have volume-velocity-variety information *and* you need to react on it right now (realtime). It is one of the main reasons why I don't like Hadoop (ok, the other is because I don't like Java:). 
+My definition of BigData is that you have volume-velocity-variety information **and** you need to react on it right now (realtime). It is one of the main reasons why I don't like Hadoop (ok, the other is because I don't like Java:). 
 
 Forex is the best place if you want to start playing with BigData. You have (at least) one data channel, hitting you with data, you need to keep running algorithms on this stream (sometimes doing correlations up to a week) and you need be able to respond very fast. If a garbage collector kicks in or if you need to grab data from a database (even if this DB is in memory - long live Redis) then you will have issues.
 
