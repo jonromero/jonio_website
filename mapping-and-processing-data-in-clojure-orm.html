@@ -62,8 +62,7 @@
 <p>Here is a scenario:
 I have lots data sitting as CSV on my hard-drive and I want to process them. Not query. Process them.</p>
 <p>What would be really interesting is to be able to define (dynamically) a schema like that:</p>
-<div class="highlight"><pre><span class="err">:::</span> <span class="nv">clojure</span>
-<span class="p">(</span><span class="nf">defschema</span> <span class="s">&quot;EURUSD&quot;</span> 
+<div class="highlight"><pre><span class="p">(</span><span class="nf">defschema</span> <span class="s">&quot;EURUSD&quot;</span> 
 <span class="p">(</span><span class="nf">tokenizer</span> <span class="o">#</span><span class="p">(</span><span class="nf">.split</span> <span class="nv">%</span> <span class="s">&quot;:&quot;</span><span class="p">))</span>  
 <span class="c1">;; the mapping is done here</span>
 <span class="p">(</span><span class="nf">columns</span> <span class="err">|</span><span class="nv">time</span><span class="err">|</span> <span class="err">|</span><span class="nv">open</span><span class="err">|</span> <span class="err">|</span><span class="nv">high</span><span class="err">|</span> <span class="err">|</span><span class="nv">low</span><span class="err">|</span> <span class="err">|</span><span class="nv">close</span><span class="err">|</span> <span class="err">|</span><span class="nv">volume</span><span class="err">|</span><span class="p">))</span>
@@ -75,8 +74,7 @@ First of all, a "tokenize" function. Each dataline is tokenized based on a funct
 <p>As you can imagine, tokenize returns a list of data that are mapped to "columns".</p>
 <p>Now, the interesting stuff. </p>
 <p>You can write scripts like the following:</p>
-<div class="highlight"><pre><span class="err">:::</span> <span class="nv">clojure</span>
-<span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt; </span><span class="err">|</span><span class="nv">close</span><span class="err">|</span> <span class="mf">1.45</span><span class="p">)</span>
+<div class="highlight"><pre><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt; </span><span class="err">|</span><span class="nv">close</span><span class="err">|</span> <span class="mf">1.45</span><span class="p">)</span>
     <span class="p">(</span><span class="nf">place-order</span> <span class="ss">:buy</span><span class="p">)</span>
     <span class="p">(</span><span class="nf">place-order</span> <span class="ss">:sell</span><span class="p">)</span>
 </pre></div>
@@ -88,7 +86,7 @@ First of all, a "tokenize" function. Each dataline is tokenized based on a funct
 
     <div class='post-footer'>
         <div class='share-footer'>
-            <div id='dated' class="abbr published" title='2013-08-16T19:56:20'>
+            <div id='dated' class="abbr published" title='2013-08-16T19:56:55'>
                 Posted Fri 16 August 2013
             </div>
 
