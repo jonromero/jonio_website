@@ -1,4 +1,4 @@
-Title: Mapping and processing data in Clojure [ORM]?
+Title: Mapping and processing data in Clojure
 Tags: databases, clojure
 
 I have to admit that I have a thing for DSLs. You can see it at [music-as-data](https://github.com/jonromero/music-as-data) were notes and rhythm/beat is "mapped" to data and you can apply data transformations. 
@@ -32,5 +32,5 @@ You can write scripts like the following:
 
 Thoughts? 
 
-[jonromero](http://www.twitter.com/jonromero)
+ping me here -> [JR](http://www.twitter.com/jonromero)
 
