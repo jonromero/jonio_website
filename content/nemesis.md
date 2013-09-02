@@ -7,10 +7,10 @@ While you are playing video games, I am out running and doing sports. While you'
 
 Do you hate me? **You should**.
 
-Because I'm the guy she wishes your text was from. I'm the guy that makes you feel 2 inches tall. I'm the reason that women have their emotions guarded, and I'm the guy you'd punch out if you weren't such a little bitch.
+Because I'm the guy she wishes your text was from. I'm the guy that makes you feel 2 inches tall. I'm the reason that women have their emotions guarded and I'm the guy you'd punch out if you weren't such a little bitch.
 
 If you can't find enough motivation to change your life just by thinking about all the beautiful ladies you don't know yet, you can find that motivation by thinking about me, messing around with the feelings of the love of your life and then not calling her. You've got to be better, work harder, and do more to be her hero.
 
 Or you can just skip your workout today, stay home tonight & jerk off. Please do, because that makes it so much easier for me and all the other assholes like me.
 
-I am your Nemesis.
+[I am your Nemesis](http://www.reddit.com/).
