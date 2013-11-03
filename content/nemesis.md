@@ -1,5 +1,6 @@
 Title: I am your Nemesis
 Tags: motivation
+Status: draft
 
 This is something I've read on reddit and with some changes, it is a hell of a motivation fix.
 
