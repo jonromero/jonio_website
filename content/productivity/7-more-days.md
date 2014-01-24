@@ -8,7 +8,7 @@ Like opening your refrigirator every two minutes even though you know it is empt
 
 So, spending 2 hours every day (sometimes more) on Facebook, means 60 hours per month or *7 working days*. 7 freaking working days each month. 7 days, each day with 8 full hours, to sleep, go out, exercise, write a book, learn something new.
 
-What I did was installing [StayFocused](stayfocusd.com), a free plugin for your browser that doesn't let you spent more than 10 minutes on specific sites everyday. And guess what. The "I am just using facebook to communicate" is such a lame excuse as I had no problem communicating with my friends, even by using facebook for 10 minutes.
+What I did was installing [StayFocused](https://chrome.google.com/webstore/detail/stayfocusd/laankejkbhbdhmipfmgcngdelahlfoji), a free plugin for your browser that doesn't let you spent more than 10 minutes on specific sites everyday. And guess what. The "I am just using facebook to communicate" is such a lame excuse as I had no problem communicating with my friends, even by using facebook for 10 minutes.
 
 Now, give it a shot and tell me what you built in your spare time!
 
