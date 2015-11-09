@@ -11,7 +11,7 @@ I've been thinking a new way for product management where the emphasis is placed
 
 Continious stream of tasks (many times outside of the Sprint).
 
-Points (velocity?) is calculated based on what task you complete and when. Data collection about efficiency, team coordination and what tasks you like the most / you are good to deliver.
+Points (velocity?) are calculated based on what task you complete and when. Data collection about efficiency, team coordination and what tasks you like the most / you are good to deliver.
 
 That system gives feedback about how every individual performs, how the whole team performs, while consuming tasks that are placed in a pool.
 
