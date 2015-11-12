@@ -1,5 +1,5 @@
 Title: What is Forex
-Tags: trading
+Tags: algotrading
 
 This is the second part of the series: [How to build your own algotrading platform](how-to-build-your-own-algorithmic-trading-platform-part-one.html).
 

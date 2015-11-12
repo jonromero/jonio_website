@@ -1,5 +1,5 @@
 Title: How to build your own algorithmic trading platform - Part One
-Tags: trading
+Tags: algotrading
 
 That's it. Every week, I get at least 10 DMs on twitter asking on how to experiment with algotrading, Forex and portfolio analysis and I've decided that it's time to do something about it.
 
