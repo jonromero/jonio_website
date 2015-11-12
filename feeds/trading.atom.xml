@@ -1,20 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Jon.IO</title><link href="http://jon.io/" rel="alternate"></link><link href="http://jon.io/feeds/trading.atom.xml" rel="self"></link><id>http://jon.io/</id><updated>2015-11-11T22:46:38+01:00</updated><entry><title>How to build your own algorithmic trading platform - Part One</title><link href="http://jon.io/how-to-build-your-own-algorithmic-trading-platform-part-one.html" rel="alternate"></link><updated>2015-11-11T22:46:38+01:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2015-11-11:how-to-build-your-own-algorithmic-trading-platform-part-one.html</id><summary type="html">&lt;p&gt;That's it. Every week, I get at least 10 DMs on twitter asking on how to experiment with algotrading, Forex and portfolio analysis and I've decided that it's time to do something about it.&lt;/p&gt;
-&lt;p&gt;So, I am planning to cover the basics of how to build your own trading platform, write your own strategies and go on vacations while electrons are making you money. Or zeroing your account. Either way, it is going to be fun!&lt;/p&gt;
-&lt;p&gt;The majority of the examples are going to be in Python even though there might be parts in Erlang and I'll try to keep it as easy as it can be. &lt;/p&gt;
-&lt;p&gt;Let's talk now about what the final product will look like.&lt;/p&gt;
-&lt;p&gt;We are building a system where you will be able to:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Simulate your strategy (this is called backtesting)&lt;/li&gt;
-&lt;li&gt;Execute your strategy without supervision&lt;/li&gt;
-&lt;li&gt;Alert you via sms/email for trades and errors&lt;/li&gt;
-&lt;li&gt;Be scalable and trivial to deploy new updates&lt;/li&gt;
-&lt;li&gt;Being able to run even from your home (from a raspberrypi for example)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;I assume this is going to be a total of 20 chapters, give or take.&lt;/p&gt;
-&lt;p&gt;That is a system similar to the one that I am running the last year and includes a UI, sms alerts, backtesting pipeline, continuous delivery and all the cool stuff that us geeks love.&lt;/p&gt;
-&lt;p&gt;All code will be on github and if everything goes well, I'll wrap it up in a book for everyone to enjoy.&lt;/p&gt;
-&lt;p&gt;I have like three chapters almost done, so if you want early access just ping me at - &lt;a href="http://www.twitter.com/jonromero"&gt;jonromero&lt;/a&gt;.&lt;/p&gt;</summary><category term="algotrading"></category></entry><entry><title>What is Forex</title><link href="http://jon.io/what-is-forex.html" rel="alternate"></link><updated>2015-11-11T22:46:25+01:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2015-11-11:what-is-forex.html</id><summary type="html">&lt;p&gt;This is the second part of the series: &lt;a href="how-to-build-your-own-algorithmic-trading-platform-part-one.html"&gt;How to build your own algotrading platform&lt;/a&gt;.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Jon.IO</title><link href="http://jon.io/" rel="alternate"></link><link href="http://jon.io/feeds/trading.atom.xml" rel="self"></link><id>http://jon.io/</id><updated>2015-11-11T22:54:05+01:00</updated><entry><title>What is Forex</title><link href="http://jon.io/what-is-forex.html" rel="alternate"></link><updated>2015-11-11T22:54:05+01:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2015-11-11:what-is-forex.html</id><summary type="html">&lt;p&gt;This is the second part of the series: &lt;a href="how-to-build-your-own-algorithmic-trading-platform-part-one.html"&gt;How to build your own algotrading platform&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Before building any algotrading systems, you need to know how to trade manually. What that actually means is that you need to lose money on your own before blaming the machine. As simple as that.&lt;/p&gt;
 &lt;p&gt;So, let's talk about Foreign Exchange or Forex as the cool guys call it.&lt;/p&gt;
 &lt;p&gt;First of all, why do we choose Forex for algotrading? Why don't we become millionaires trading like everybody else? Why not just buy Tesla, Amazon, Google, Facebook, Twitter and hope for the best (PS: please read the legal outro at the end of this blog post before buying any stocks).&lt;/p&gt;
@@ -37,4 +22,19 @@ How many units can I buy with 1:50 leverage?&lt;/p&gt;
 &lt;p&gt;Coming up next, Forex brokers. How not to be scammed before even writing a line of code.&lt;/p&gt;
 &lt;p&gt;If you have more feedback, ping me at &lt;a href="http://www.twitter.com/jonromero"&gt;jonromero&lt;/a&gt; or signup to the newsletter. &lt;/p&gt;
 &lt;p&gt;Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
-If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. &lt;/p&gt;</summary><category term="algotrading"></category></entry></feed>
+If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. &lt;/p&gt;</summary><category term="algotrading"></category></entry><entry><title>How to build your own algorithmic trading platform - Part One</title><link href="http://jon.io/how-to-build-your-own-algorithmic-trading-platform-part-one.html" rel="alternate"></link><updated>2015-11-11T22:46:38+01:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2015-11-11:how-to-build-your-own-algorithmic-trading-platform-part-one.html</id><summary type="html">&lt;p&gt;That's it. Every week, I get at least 10 DMs on twitter asking on how to experiment with algotrading, Forex and portfolio analysis and I've decided that it's time to do something about it.&lt;/p&gt;
+&lt;p&gt;So, I am planning to cover the basics of how to build your own trading platform, write your own strategies and go on vacations while electrons are making you money. Or zeroing your account. Either way, it is going to be fun!&lt;/p&gt;
+&lt;p&gt;The majority of the examples are going to be in Python even though there might be parts in Erlang and I'll try to keep it as easy as it can be. &lt;/p&gt;
+&lt;p&gt;Let's talk now about what the final product will look like.&lt;/p&gt;
+&lt;p&gt;We are building a system where you will be able to:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Simulate your strategy (this is called backtesting)&lt;/li&gt;
+&lt;li&gt;Execute your strategy without supervision&lt;/li&gt;
+&lt;li&gt;Alert you via sms/email for trades and errors&lt;/li&gt;
+&lt;li&gt;Be scalable and trivial to deploy new updates&lt;/li&gt;
+&lt;li&gt;Being able to run even from your home (from a raspberrypi for example)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I assume this is going to be a total of 20 chapters, give or take.&lt;/p&gt;
+&lt;p&gt;That is a system similar to the one that I am running the last year and includes a UI, sms alerts, backtesting pipeline, continuous delivery and all the cool stuff that us geeks love.&lt;/p&gt;
+&lt;p&gt;All code will be on github and if everything goes well, I'll wrap it up in a book for everyone to enjoy.&lt;/p&gt;
+&lt;p&gt;I have like three chapters almost done, so if you want early access just ping me at - &lt;a href="http://www.twitter.com/jonromero"&gt;jonromero&lt;/a&gt;.&lt;/p&gt;</summary><category term="algotrading"></category></entry></feed>
