@@ -2,7 +2,7 @@ Title: What is Forex
 Tags: algotrading
 
 This is the second part of the series: [How to build your own algotrading platform](how-to-build-your-own-algorithmic-trading-platform-part-one.html).
-
+ 
 Before building any algotrading systems, you need to know how to trade manually. What that actually means is that you need to lose money on your own before blaming the machine. As simple as that.
 
 So, let's talk about Foreign Exchange or Forex as the cool guys call it.
