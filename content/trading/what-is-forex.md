@@ -37,10 +37,9 @@ All these reasons (leverage, all-day, volatility, fees) make Forex the most exci
 
 Coming up next, Forex brokers. How not to be scammed before even writing a line of code.
 
-If you have more feedback, ping me at [jonromero](http://www.twitter.com/jonromero) or signup to the newsletter. 
+If you have more feedback, ping me at [jonromero](http://www.twitter.com/jonromero) or signup to the [newsletter](http://eepurl.com/bGbOnb). 
 
 Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
 If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. 
-
 
 
