@@ -53,14 +53,16 @@
         	
             <article class='listed'>
             <h1 class="title">
-                <a href="./brokers-placing-your-first-forex-trade-with-python.html" rel='bookmark'>Brokers | Placing your first Forex trade with Python</a>
+                <a href="./placing-your-first-forex-trade-with-python.html" rel='bookmark'>Placing your first Forex trade with Python</a>
             </h1>
             <div class="article-content"> <p>Time to talk about brokers, how to place a trade programmatically and most importantly how not to get scammed.</p>
 <p>This is the third part of the series: <a href="how-to-build-your-own-algorithmic-trading-platform.html">How to build your own algotrading platform</a>.</p>
-<p>A broker is nothing more than a company that lets you trade (buy or sell) assets on a market through their platform. What is very important for algotrading is: 
-1. The broker offers an API in order for us to place orders
-2. You can have a demo account to run your staging environment and experiment
-3. The spread is as small as possible</p>
+<p>A broker is nothing more than a company that lets you trade (buy or sell) assets on a market through their platform. What is very important for algotrading is: </p>
+<ol>
+<li>The broker offers an API in order for us to place orders</li>
+<li>You can have a demo account to run your staging environment and experiment</li>
+<li>The spread is as small as possible</li>
+</ol>
 <p>In our case, we don't really care about spread as we won't be doing High Frequency Trading any time soon.</p>
 <p>Even though brokers are regulated, there have been incidents in the past couple of years, were brokers folded due to certain conditions. Be <em>very</em> wary if </p>
 <ol>
@@ -68,13 +70,13 @@
 <li>If the broker offers you some crazy leverage (like 1:200)</li>
 <li>If the broker seems to be in a very strange country</li>
 </ol>
-<p>What could happen is that when you start making some money and you wouldn't be able to pull them out. Seriously. Super stressful situation.</p>
-<p>But let's switch to a happier note which is opening an account and placing our first programmatic trade!</p>
+<p>What could happen is that you start making some money and you aren't be able to pull them out. Seriously. Super stressful situation.</p>
+<p>But let's switch to a happier note which is opening an account and placing our first programmatic trade. Whooha!</p>
 <p>I am using <a href="http://www.oanda.com/">Oanda</a> as a broker (I am not affiliated with them) and they offer a pretty decent API, libraries on github and a free demo account. </p>
 <p>Go and open a free <a href="https://fxtrade.oanda.com/your_account/fxtrade/register/gate">fxTrade Practice account</a>.</p>
 <p>After you get your free demo account, go to your profile 
 <img src="https://dl.dropboxusercontent.com/u/757245/jonio/oanda.png" /></p>
-<p>and you can change your leverage (switch it to 50:1) and then go back to your <Manage API Access>. There you can find your API key which we are going to use in our system to place trades. <strong>MAKE SURE YOU DON'T SHARE THIS KEY</strong>.</p>
+<p>and you can change your leverage (switch it to 50:1) and then go back to your <strong>Manage API Access</strong>. There you can find your API key which we are going to use in our system to place trades. <strong>MAKE SURE YOU DON'T SHARE THIS KEY</strong>.</p>
 <p>The code for this is and all other posts is on my <a href="https://github.com/jonromero/Forex-algotrading">github</a> and you can install it and run it pretty easily.</p>
 <p>The code is straight-forward. We connect to Oanda, to a practice account with our token </p>
 <div class="highlight"><pre><span class="n">oanda</span> <span class="o">=</span> <span class="n">oandapy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">environment</span><span class="o">=</span><span class="s">&quot;practice&quot;</span><span class="p">,</span>
@@ -85,7 +87,7 @@
 </pre></div>
 
 
-<p>and we are asking the prices (bid/ask) for the pair EUR_USD. </p>
+<p>and we are requesting the prices (bid/ask) for the pair EUR_USD. </p>
 <p>We print the buy price and then we place a <em>market</em> order. </p>
 <div class="highlight"><pre><span class="k">print</span> <span class="s">&quot;Buy at&quot;</span><span class="p">,</span> <span class="n">buy_price</span>
 <span class="n">trade_id</span> <span class="o">=</span> <span class="n">oanda</span><span class="o">.</span><span class="n">create_order</span><span class="p">(</span><span class="n">OANDA_ACCOUNT_ID</span><span class="p">,</span><span class="n">instrument</span><span class="o">=</span><span class="s">&quot;EUR_USD&quot;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
@@ -103,7 +105,7 @@
 <p>Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
 If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. </p> </div>
             <div class="abbr published">
-                Posted  <a href='./brokers-placing-your-first-forex-trade-with-python.html' title='2015-10-20T22:48:00'>Tue 20 October 2015</a> in <a href="./category/trading.html">trading</a>.              
+                Posted  <a href='./placing-your-first-forex-trade-with-python.html' title='2015-10-20T22:48:00'>Tue 20 October 2015</a> in <a href="./category/trading.html">trading</a>.              
             </div>
         </article>
             <article class='listed'>
@@ -167,7 +169,36 @@ If you lose any (or all) you money because you followed any trading advices or d
             <h1 class="title">
                 <a href="./how-to-build-your-own-algorithmic-trading-platform.html" rel='bookmark'>How to build your own algorithmic trading platform</a>
             </h1>
-            <div class="article-content"> <p>These are all the post that have been written up until now. You can sign up to the <a href="http://eepurl.com/bGbOnb">newsletter</a> to get early access of the upcoming chapters.</p>
+            <div class="article-content"> <p>These are all the post that have been written up until now.</p>
+<!-- Begin MailChimp Signup Form -->
+
+<p><link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+    #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+    /<em> Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+       We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. </em>/
+</style>
+<div id="mc_embed_signup">
+<form action="//jon.us2.list-manage.com/subscribe/post?u=d41a019257dd51ec51a105e74&amp;id=b1233e19f3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+    <h2>Get early access and free insights for Algotrading and Forex!</h2>
+<div class="indicates-required"><span class="asterisk"><em></span> indicates required</div>
+<div class="mc-field-group">
+    <label for="mce-EMAIL">Email Address  <span class="asterisk"></em></span>
+</label>
+    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+</div>
+    <div id="mce-responses" class="clear">
+        <div class="response" id="mce-error-response" style="display:none"></div>
+        <div class="response" id="mce-success-response" style="display:none"></div>
+    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d41a019257dd51ec51a105e74_b1233e19f3" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<!--End mc_embed_signup--></p>
 <p>Post One: <a href="how-to-build-your-own-algorithmic-trading-platform-part-one.html">Building your own algotrading platform</a></p>
 <p>Post Two: <a href="what-is-forex.html">What is Forex</a></p>
 <p>Post Three: <a href="forex-brokers.html">Placing you first trade</a> </p>
