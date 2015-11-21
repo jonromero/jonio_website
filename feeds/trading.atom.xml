@@ -40,7 +40,9 @@
 
 &lt;p&gt;Super easy. Don't worry about what EURUSD is or how many units we are buying or what a market order is. For now, we have placed our first trade from our laptop and we are going to build our own API to place trades. Exciting stuff!&lt;/p&gt;
 &lt;p&gt;You can read Oanda's documentation &lt;a href="http://developer.oanda.com/"&gt;here&lt;/a&gt; to see what else you can do with their API.&lt;/p&gt;
-&lt;p&gt;Coming up next, connecting to a real &lt;strong&gt;LIVE&lt;/strong&gt; algotrading system, running from my RaspberryPI at home. You'll be able to see the (almost) final program running and we'll talk more about Forex and strategies.&lt;/p&gt;
+&lt;p&gt;Coming up next, connecting to a real &lt;strong&gt;LIVE&lt;/strong&gt; algotrading system, running from my RaspberryPI at home. &lt;/p&gt;
+&lt;p&gt;&lt;img src="https://dl.dropboxusercontent.com/u/757245/jonio/trades-nov.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;You'll be able to see the (almost) final program running and we'll talk more about Forex and strategies. &lt;/p&gt;
 &lt;p&gt;If you have more feedback, ping me at &lt;a href="http://www.twitter.com/jonromero"&gt;jonromero&lt;/a&gt; or signup to the &lt;a href="http://eepurl.com/bGbOnb"&gt;newsletter&lt;/a&gt;. &lt;/p&gt;
 &lt;p&gt;Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
 If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. &lt;/p&gt;</summary><category term="algotrading"></category></entry><entry><title>What is Forex</title><link href="http://jon.io/what-is-forex.html" rel="alternate"></link><updated>2015-10-12T22:48:00+02:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2015-10-12:what-is-forex.html</id><summary type="html">&lt;p&gt;This is the second part of the series: &lt;a href="how-to-build-your-own-algorithmic-trading-platform.html"&gt;How to build your own algotrading platform&lt;/a&gt;.&lt;/p&gt;
