@@ -93,7 +93,7 @@
 <p>and we are asking the prices (bid/ask) for the pair EUR_USD. </p>
 <p>We print the buy price and then we place a <em>market</em> trade. </p>
 <div class="highlight"><pre><span class="k">print</span> <span class="s">&quot;Buy at&quot;</span><span class="p">,</span> <span class="n">buy_price</span>
-<span class="n">trade_id</span> <span class="o">=</span> <span class="n">oanda</span><span class="o">.</span><span class="n">create_order</span><span class="p">(</span><span class="n">OANDA_ACCOUNT_ID</span><span class="p">,</span>     <span class="n">instrument</span><span class="o">=</span><span class="s">&quot;EUR_USD&quot;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+<span class="n">trade_id</span> <span class="o">=</span> <span class="n">oanda</span><span class="o">.</span><span class="n">create_order</span><span class="p">(</span><span class="n">OANDA_ACCOUNT_ID</span><span class="p">,</span><span class="n">instrument</span><span class="o">=</span><span class="s">&quot;EUR_USD&quot;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
                   <span class="n">side</span><span class="o">=</span><span class="s">&#39;buy&#39;</span><span class="p">,</span>
                   <span class="nb">type</span><span class="o">=</span><span class="s">&#39;market&#39;</span><span class="p">)</span>
 </pre></div>
