@@ -13,7 +13,7 @@ a:focus{outline:thin dotted;}
 .article-content p,.article-content ul,.article-content ol{width:70%;}
 section#navbar{width:100%;display:none;}section#navbar div#user_meta{float:left;width:30%;}
 section#navbar h1{margin:30px 20px 10px 0px;padding:0 0 0 0.5em;display:block;font-family:'Proxima Nova','Open Sans',sans-serif;font-weight:900;font-size:2em;}section#navbar h1 a{border:none;}
-section#navbar h2{margin:0 1em 0 0;padding:0 0 0 1em;font-size:1em;font-weight:300;}
+section#navbar h2{margin:0 1em 0 0;padding:1em 0 0 1em;font-size:18px;font-weight:300;}
 section#navbar ul{padding:0 0 0 1em;}
 section#navbar li{margin-top:0.25em;padding:0 0.1em;float:left;display:inline;}section#navbar li a{display:block;color:#999999;font-size:1em;line-height:100%;border:0.15em solid #eeeeee;border-radius:3em;-moz-border-radius:3em;-webkit-border-radius:3em;padding:0.5em 1em;}section#navbar li a:hover{color:#0e94ec;border:0.15em solid #0e94ec;}
 section#sidebar{width:20%;top:0;left:0;bottom:0;right:auto;min-height:450px;z-index:0;float:left;position:fixed;margin-top:160px;}section#sidebar h1{margin:30px 20px 10px 0px;padding:0 0 0 40px;display:block;font-family:'Proxima Nova','Open Sans',sans-serif;font-weight:900;font-size:2em;line-height:38px;}section#sidebar h1 a{border:none;}

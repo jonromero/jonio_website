@@ -1,9 +1,20 @@
-Title: What is Forex
+Title: Trades
 Tags: algotrading
-Date: 2015-10-12 22:48
+Status: draft
 
-This is the second part of the series: [How to build your own algotrading platform](how-to-build-your-own-algorithmic-trading-platform.html).
- 
+Time to talk about brokers, how to place a trade programmatically and most importanly how not to get scammed.
+
+This is the third part of the series: [How to build your own algotrading platform](what-is-forex.html).
+
+A broker is nothing more than a company that lets you trade (buy or sell) assets on a market. For example, you can buy through a broker 10 stocks of Google with just a click and now you are actually owning a small part of Google (a reallyyyy small part so don't get excited). In order to buy these stocks, you place *buy* order in the broker's electronic platform (you can also do it through telephone or fax but we are not living in the 90's anymore) and if you have enough money in your account (around $7560) you can have 10 stocks of Google. Easy right?
+
+But how can you make money? Glad you asked.
+
+I told you that you need $7560 to own 10 stocks of Google. How did I come up with this number? If you search for Google's *ticker* https://www.google.com/search?q=GOOG you can see the current price that 1 share of Google is valued ($750.60 at the moment of writing). This price goes up and down many times per day. And that's where you come in.
+
+Let' say that the price five days from now is $770 per share. That means that your assets are valued now at $7700 while you only paid $7560! If you place a *sell* order to the broker, the broker will match you up with someone that wants to have 10 shares of GOOG and you'll get your money! You will have a profit of $140 in just a week. Same goes if you need 
+
+
 Before building any algotrading systems, you need to know how to trade manually. What that actually means is that you need to lose money on your own before blaming the machine. As simple as that.
 
 So, let's talk about Foreign Exchange or Forex as the cool guys call it.
