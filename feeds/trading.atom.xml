@@ -7,9 +7,15 @@
 3. The spread is as small as possible&lt;/p&gt;
 &lt;p&gt;In our case, we don't really care about spread as we won't be doing High Frequency Trading any time soon.&lt;/p&gt;
 &lt;p&gt;Even though brokers are regulated, there have been incidents in the past couple of years, were brokers folded due to certain conditions. Be &lt;em&gt;very&lt;/em&gt; wary if 
-1. There are no reviews of the broker on the internet (or most of them are bad)
-2. If the broker offers you some crazy leverage (like 1:200)
-3. If the broker seems to be in a very strange country&lt;/p&gt;
+1. There are no reviews of the broker on the internet (or most of them are bad)&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;If the broker offers you some crazy leverage (like 1:200)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If the broker seems to be in a very strange country&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;What could happen is that when you start making some money and you wouldn't be able to pull them out. Seriously. Super stressful situation.&lt;/p&gt;
 &lt;p&gt;But let's switch to a happier note which is opening an account and placing our first programmatic trade!&lt;/p&gt;
 &lt;p&gt;I am using &lt;a href="http://www.oanda.com/"&gt;Oanda&lt;/a&gt; as a broker (I am not affiliated with them) and they offer a pretty decent API, libraries on github and a free demo account. &lt;/p&gt;
@@ -29,15 +35,14 @@
   buy_price = prices[0].get("bid")&lt;/p&gt;
 &lt;p&gt;and we are asking the prices (bid/ask) for the pair EUR_USD. &lt;/p&gt;
 &lt;p&gt;We print the buy price and then we place a &lt;em&gt;market&lt;/em&gt; trade. &lt;/p&gt;
-&lt;p&gt;:::python
-        print "Buy at", buy_price&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;trade_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;oanda&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create_order&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;OANDA_ACCOUNT_ID&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;instrument&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;EUR_USD&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                              &lt;span class="n"&gt;units&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                              &lt;span class="n"&gt;side&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;buy&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                              &lt;span class="n"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;market&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;print "Buy at", buy_price
+trade_id = oanda.create_order(OANDA_ACCOUNT_ID, instrument="EUR_USD", units=1000,
+                      side='buy',
+                      type='market')&lt;/p&gt;
 &lt;p&gt;Super easy. Don't worry about what EURUSD is or how many units we are buying or what a market trade is. For now, we have placed our first trade from our laptop and we are going to build our own API to place trades. Exciting stuff!&lt;/p&gt;
 &lt;p&gt;You can read Oanda's documentation &lt;a href="http://developer.oanda.com/"&gt;here&lt;/a&gt; to see what else you can do with their API.&lt;/p&gt;
 &lt;p&gt;Coming up next, connecting to a real &lt;em&gt;LIVE&lt;/em&gt; algotrading system, running from my RaspberryPI at home. You'll be able to see the (almost) final program running and we'll talk more about Forex and strategies.&lt;/p&gt;
