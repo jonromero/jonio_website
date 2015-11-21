@@ -6,8 +6,6 @@ AUTHOR = u'Jon V <h2>BigData. Startups. Trading.</h2>'
 SITENAME = u'Jon.IO'
 SITEURL = ''
 
-TIMEZONE = 'Europe/Paris'
-
 DEFAULT_LANG = u'en'
 
 # Feed generation is usually not desired when developing
@@ -27,7 +25,7 @@ LINKS =  ()
 DEFAULT_PAGINATION = False
 THEME = "pelican-svbtle-master"
 DEFAULT_DATE = "fs"
-
+GOOGLE_ANALYTICS = "YES"
 TWITTER_USERNAME = "jonromero"
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True

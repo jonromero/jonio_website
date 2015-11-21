@@ -1,4 +1,4 @@
-Title: Brokers | Placing your first Forex trade with Python
+Title: Placing your first Forex trade with Python
 Tags: algotrading
 Date: 2015-10-20 22:48
 
@@ -7,6 +7,7 @@ Time to talk about brokers, how to place a trade programmatically and most impor
 This is the third part of the series: [How to build your own algotrading platform](how-to-build-your-own-algorithmic-trading-platform.html).
 
 A broker is nothing more than a company that lets you trade (buy or sell) assets on a market through their platform. What is very important for algotrading is: 
+
 1. The broker offers an API in order for us to place orders
 2. You can have a demo account to run your staging environment and experiment
 3. The spread is as small as possible
@@ -20,9 +21,9 @@ Even though brokers are regulated, there have been incidents in the past couple 
 3. If the broker seems to be in a very strange country
 
 
-What could happen is that when you start making some money and you wouldn't be able to pull them out. Seriously. Super stressful situation.
+What could happen is that you start making some money and you aren't be able to pull them out. Seriously. Super stressful situation.
 
-But let's switch to a happier note which is opening an account and placing our first programmatic trade!
+But let's switch to a happier note which is opening an account and placing our first programmatic trade. Whooha!
 
 I am using [Oanda](http://www.oanda.com/) as a broker (I am not affiliated with them) and they offer a pretty decent API, libraries on github and a free demo account. 
 
@@ -31,7 +32,7 @@ Go and open a free [fxTrade Practice account](https://fxtrade.oanda.com/your_acc
 After you get your free demo account, go to your profile 
 <img src="https://dl.dropboxusercontent.com/u/757245/jonio/oanda.png" />
 
-and you can change your leverage (switch it to 50:1) and then go back to your <Manage API Access>. There you can find your API key which we are going to use in our system to place trades. **MAKE SURE YOU DON'T SHARE THIS KEY**.
+and you can change your leverage (switch it to 50:1) and then go back to your **Manage API Access**. There you can find your API key which we are going to use in our system to place trades. **MAKE SURE YOU DON'T SHARE THIS KEY**.
 
 The code for this is and all other posts is on my [github](https://github.com/jonromero/Forex-algotrading) and you can install it and run it pretty easily.
 
@@ -45,7 +46,7 @@ The code is straight-forward. We connect to Oanda, to a practice account with ou
 	prices = response.get("prices")
 	buy_price = prices[0].get("bid")
 
-and we are asking the prices (bid/ask) for the pair EUR_USD. 
+and we are requesting the prices (bid/ask) for the pair EUR_USD. 
 
 We print the buy price and then we place a *market* order. 
 
