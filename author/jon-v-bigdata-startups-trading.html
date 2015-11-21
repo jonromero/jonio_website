@@ -91,14 +91,13 @@
   buy_price = prices[0].get("bid")</p>
 <p>and we are asking the prices (bid/ask) for the pair EUR_USD. </p>
 <p>We print the buy price and then we place a <em>market</em> trade. </p>
-<div class="highlight"><pre>
+<div class="highlight"><pre><span class="k">print</span> <span class="s">&quot;Buy at&quot;</span><span class="p">,</span> <span class="n">buy_price</span>
+<span class="n">trade_id</span> <span class="o">=</span> <span class="n">oanda</span><span class="o">.</span><span class="n">create_order</span><span class="p">(</span><span class="n">OANDA_ACCOUNT_ID</span><span class="p">,</span>     <span class="n">instrument</span><span class="o">=</span><span class="s">&quot;EUR_USD&quot;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+                  <span class="n">side</span><span class="o">=</span><span class="s">&#39;buy&#39;</span><span class="p">,</span>
+                  <span class="nb">type</span><span class="o">=</span><span class="s">&#39;market&#39;</span><span class="p">)</span>
 </pre></div>
 
 
-<p>print "Buy at", buy_price
-trade_id = oanda.create_order(OANDA_ACCOUNT_ID, instrument="EUR_USD", units=1000,
-                      side='buy',
-                      type='market')</p>
 <p>Super easy. Don't worry about what EURUSD is or how many units we are buying or what a market trade is. For now, we have placed our first trade from our laptop and we are going to build our own API to place trades. Exciting stuff!</p>
 <p>You can read Oanda's documentation <a href="http://developer.oanda.com/">here</a> to see what else you can do with their API.</p>
 <p>Coming up next, connecting to a real <em>LIVE</em> algotrading system, running from my RaspberryPI at home. You'll be able to see the (almost) final program running and we'll talk more about Forex and strategies.</p>
