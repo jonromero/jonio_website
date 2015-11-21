@@ -1,5 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Jon.IO</title><link href="http://jon.io/" rel="alternate"></link><link href="http://jon.io/feeds/all.atom.xml" rel="self"></link><id>http://jon.io/</id><updated>2015-10-12T22:48:00+02:00</updated><entry><title>What is Forex</title><link href="http://jon.io/what-is-forex.html" rel="alternate"></link><updated>2015-10-12T22:48:00+02:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2015-10-12:what-is-forex.html</id><summary type="html">&lt;p&gt;This is the second part of the series: &lt;a href="how-to-build-your-own-algorithmic-trading-platform.html"&gt;How to build your own algotrading platform&lt;/a&gt;.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Jon.IO</title><link href="http://jon.io/" rel="alternate"></link><link href="http://jon.io/feeds/all.atom.xml" rel="self"></link><id>http://jon.io/</id><updated>2015-11-20T23:27:32+01:00</updated><entry><title>Mapping and processing data in Clojure</title><link href="http://jon.io/mapping-and-processing-data-in-clojure.html" rel="alternate"></link><updated>2015-11-20T23:27:32+01:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2015-11-20:mapping-and-processing-data-in-clojure.html</id><summary type="html">&lt;p&gt;I have to admit that I have a thing for DSLs. You can see it at &lt;a href="https://github.com/jonromero/music-as-data"&gt;music-as-data&lt;/a&gt; were notes and rhythm/beat is "mapped" to data and you can apply data transformations. &lt;/p&gt;
+&lt;p&gt;The same thing I want to do with &lt;a href="http://en.wikipedia.org/wiki/Data_at_Rest"&gt;data at-rest&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here is a scenario:
+I have lots of data sitting as CSV on my hard-drive and I want to process them. Not query them. Process them.&lt;/p&gt;
+&lt;p&gt;What would be really interesting is to be able to define (dynamically) a schema like that:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defschema&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;EURUSD&amp;quot;&lt;/span&gt; 
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;tokenizer&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;.split&lt;/span&gt; &lt;span class="nv"&gt;%&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;:&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;  
+    &lt;span class="c1"&gt;;; the mapping is done here&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;columns&lt;/span&gt; &lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;time&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt; &lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;open&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt; &lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;high&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt; &lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;low&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt; &lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;close&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt; &lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;volume&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Let me explain.
+First of all, a "tokenize" function. Each dataline is tokenized based on a function. Do you want regex? Something more complex? You are free to write anything you like. I really hate frameworks that you must write a complex regular expression or use a compicated system just to tokenize a line.&lt;/p&gt;
+&lt;p&gt;As you can imagine, tokenize returns a list of data that are mapped to "columns".&lt;/p&gt;
+&lt;p&gt;Now, the interesting stuff. &lt;/p&gt;
+&lt;p&gt;You can write scripts like the following:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;&amp;gt; &lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;close&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt; &lt;span class="mf"&gt;1.45&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;place-order&lt;/span&gt; &lt;span class="ss"&gt;:buy&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;place-order&lt;/span&gt; &lt;span class="ss"&gt;:sell&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Thoughts? &lt;/p&gt;
+&lt;p&gt;ping me here -&amp;gt; &lt;a href="http://www.twitter.com/jonromero"&gt;JR&lt;/a&gt;&lt;/p&gt;</summary><category term="databases"></category><category term="clojure"></category></entry><entry><title>HybrisDB</title><link href="http://jon.io/hybrisdb.html" rel="alternate"></link><updated>2015-11-20T23:27:09+01:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2015-11-20:hybrisdb.html</id><summary type="html">&lt;p&gt;I love Forex because:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;It has enormous amount of data (volume)&lt;/li&gt;
+&lt;li&gt;These data are coming extremely fast (velocity)&lt;/li&gt;
+&lt;li&gt;You need to consider multiple resources when you are building your strategy (variety)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;My definition of BigData is that you have volume-velocity-variety information &lt;strong&gt;and&lt;/strong&gt; you need to react on it right now (realtime). It is one of the main reasons why I don't like Hadoop (ok, the other is because I don't like Java:). &lt;/p&gt;
+&lt;p&gt;Forex is the best place if you want to start playing with BigData. You have (at least) one data channel, hitting you with data, you need to keep running algorithms on this stream (sometimes doing correlations up to a week) and you need be able to respond very fast. If a garbage collector kicks in or if you need to grab data from a database (even if this DB is in memory - long live Redis) then you will have issues.&lt;/p&gt;
+&lt;p&gt;That's the reason why most of the "trading" databases have all their data in the same memory space and have custom languages doing the analysis (like &lt;a href="http://kx.com"&gt;Kdb&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;That was the inspiration for LDB.&lt;/p&gt;
+&lt;p&gt;Millions of data sources (mobile phones), hitting your database and calculating/updating for each one of the requests thousands of counters and running all sorts of algorithms. Per request. In realtime.&lt;/p&gt;
+&lt;p&gt;But let's face it. The vast majority of users/companies will never have millions (or even thousands) of requests hitting their servers. That's why I started a new opensource database with codename: HybrisDB.&lt;/p&gt;
+&lt;p&gt;HDB has the following characteristics:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Simple to install (no moving parts)&lt;/li&gt;
+&lt;li&gt;Simple to use (pre-defined dashboards)&lt;/li&gt;
+&lt;li&gt;It will be perfect for the 99% of users/companies but not for the 1% like Facebook or Google (sacrificing Enterprise features)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The concept is to have a dashboard, to watch indicators going on/off and then (maybe) connect to a system to place an order.&lt;/p&gt;
+&lt;p&gt;Sounds like an interesting cool hobby project and I still try to decide between using Erlang or Clojure for this.&lt;/p&gt;
+&lt;p&gt;Ping me on &lt;a href="http://www.twitter.com/jonromero"&gt;twitter&lt;/a&gt; if you have any ideas!&lt;/p&gt;
+&lt;p&gt;Cheers!&lt;/p&gt;
+&lt;p&gt;JR&lt;/p&gt;</summary><category term="databases"></category><category term="hybrisdb"></category></entry><entry><title>Brokers | Placing your first Forex trade with Python</title><link href="http://jon.io/brokers-placing-your-first-forex-trade-with-python.html" rel="alternate"></link><updated>2015-10-20T22:48:00+02:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2015-10-20:brokers-placing-your-first-forex-trade-with-python.html</id><summary type="html">&lt;p&gt;Time to talk about brokers, how to place a trade programmatically and most importantly how not to get scammed.&lt;/p&gt;
+&lt;p&gt;This is the third part of the series: &lt;a href="how-to-build-your-own-algorithmic-trading-platform.html"&gt;How to build your own algotrading platform&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;A broker is nothing more than a company that lets you trade (buy or sell) assets on a market through their platform. What is very important for algotrading is: 
+1. The broker offers an API in order for us to place orders
+2. You can have a demo account to run your staging environment and experiment
+3. The spread is as small as possible&lt;/p&gt;
+&lt;p&gt;In our case, we don't really care about spread as we won't be doing High Frequency Trading any time soon.&lt;/p&gt;
+&lt;p&gt;Even though brokers are regulated, there have been incidents in the past couple of years, were brokers folded due to certain conditions. Be &lt;em&gt;very&lt;/em&gt; wary if 
+1. There are no reviews of the broker on the internet (or most of them are bad)
+2. If the broker offers you some crazy leverage (like 1:200)
+3. If the broker seems to be in a very strange country&lt;/p&gt;
+&lt;p&gt;What could happen is that when you start making some money and you wouldn't be able to pull them out. Seriously. Super stressful situation.&lt;/p&gt;
+&lt;p&gt;But let's switch to a happier note which is opening an account and placing our first programmatic trade!&lt;/p&gt;
+&lt;p&gt;I am using &lt;a href="http://www.oanda.com/"&gt;Oanda&lt;/a&gt; as a broker (I am not affiliated with them) and they offer a pretty decent API, libraries on github and a free demo account. &lt;/p&gt;
+&lt;p&gt;Go and open a free &lt;a href="https://fxtrade.oanda.com/your_account/fxtrade/register/gate"&gt;fxTrade Practice account&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;After you get your free demo account, go to your profile 
+&lt;img src="https://dl.dropboxusercontent.com/u/757245/jonio/oanda.png" /&gt;
+and you can change your leverage (switch it to 50:1) and then go back to your &lt;Manage API Access&gt;. There you can find your API key which we are going to use in our system to place trades. &lt;em&gt;MAKE SURE YOU DON'T SHARE THIS KEY&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;The code for this is and all other posts is on my [github])https://github.com/jonromero/Forex-algotrading) and you can install it and run it pretty easily.&lt;/p&gt;
+&lt;p&gt;The code is straight-forward. We connect to Oanda, to a practise account with our token &lt;/p&gt;
+&lt;p&gt;:::python 
+    oanda = oandapy.API(environment="practice",
+                        access_token=OANDA_ACCESS_TOKEN)
+    response = oanda.get_prices(instruments="EUR_USD")
+    prices = response.get("prices")
+    buy_price = prices[0].get("bid")&lt;/p&gt;
+&lt;p&gt;and we are asking the prices (bid/ask) for the pair EUR_USD. &lt;/p&gt;
+&lt;p&gt;We print the buy price and then we place a &lt;em&gt;market&lt;/em&gt; trade. &lt;/p&gt;
+&lt;p&gt;:::python
+    print "Buy at", buy_price&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;trade_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;oanda&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create_order&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;OANDA_ACCOUNT_ID&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;instrument&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;EUR_USD&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="n"&gt;units&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="n"&gt;side&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;buy&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                              &lt;span class="n"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;market&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Super easy. Don't worry about what EURUSD is or how many units we are buying or what a market trade is. For now, we have placed our first trade from our laptop and we are going to build our own API to place trades. Exciting stuff!&lt;/p&gt;
+&lt;p&gt;You can read Oanda's documentation &lt;a href="http://developer.oanda.com/"&gt;here&lt;/a&gt; to see what else you can do with their API.&lt;/p&gt;
+&lt;p&gt;Coming up next, connecting to a real &lt;em&gt;LIVE&lt;/em&gt; algotrading system, running from my RaspberryPI at home. You'll be able to see the (almost) final program running and we'll talk more about Forex and strategies.&lt;/p&gt;
+&lt;p&gt;If you have more feedback, ping me at &lt;a href="http://www.twitter.com/jonromero"&gt;jonromero&lt;/a&gt; or signup to the &lt;a href="http://eepurl.com/bGbOnb"&gt;newsletter&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
+If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. &lt;/p&gt;</summary><category term="algotrading"></category></entry><entry><title>What is Forex</title><link href="http://jon.io/what-is-forex.html" rel="alternate"></link><updated>2015-10-12T22:48:00+02:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2015-10-12:what-is-forex.html</id><summary type="html">&lt;p&gt;This is the second part of the series: &lt;a href="how-to-build-your-own-algorithmic-trading-platform.html"&gt;How to build your own algotrading platform&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Before building any algotrading systems, you need to know how to trade manually. What that actually means is that you need to lose money on your own before blaming the machine. As simple as that.&lt;/p&gt;
 &lt;p&gt;So, let's talk about Foreign Exchange or Forex as the cool guys call it.&lt;/p&gt;
 &lt;p&gt;First of all, why do we choose Forex for algotrading? Why don't we become millionaires trading like everybody else? Why not just buy Tesla, Amazon, Google, Facebook, Twitter and hope for the best (PS: please read the legal outro at the end of this blog post before buying any stocks).&lt;/p&gt;
@@ -82,53 +170,7 @@ Like opening your refrigirator every two minutes even though you know it is empt
 &lt;p&gt;Have in mind that there are more sophisticated systems (I'll talk more about them in an upcoming post) but my rule is that first you need something simple that works right now and then you can improve and iterate.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.twitter.com/jonromero"&gt;JR&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="startups"></category></entry><entry><title>Mapping and processing data in Clojure</title><link href="http://jon.io/mapping-and-processing-data-in-clojure.html" rel="alternate"></link><updated>2013-09-04T02:35:46+02:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2013-09-04:mapping-and-processing-data-in-clojure.html</id><summary type="html">&lt;p&gt;I have to admit that I have a thing for DSLs. You can see it at &lt;a href="https://github.com/jonromero/music-as-data"&gt;music-as-data&lt;/a&gt; were notes and rhythm/beat is "mapped" to data and you can apply data transformations. &lt;/p&gt;
-&lt;p&gt;The same thing I want to do with &lt;a href="http://en.wikipedia.org/wiki/Data_at_Rest"&gt;data at-rest&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Here is a scenario:
-I have lots of data sitting as CSV on my hard-drive and I want to process them. Not query them. Process them.&lt;/p&gt;
-&lt;p&gt;What would be really interesting is to be able to define (dynamically) a schema like that:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defschema&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;EURUSD&amp;quot;&lt;/span&gt; 
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;tokenizer&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;.split&lt;/span&gt; &lt;span class="nv"&gt;%&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;:&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;  
-    &lt;span class="c1"&gt;;; the mapping is done here&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;columns&lt;/span&gt; &lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;time&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt; &lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;open&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt; &lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;high&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt; &lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;low&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt; &lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;close&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt; &lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;volume&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Let me explain.
-First of all, a "tokenize" function. Each dataline is tokenized based on a function. Do you want regex? Something more complex? You are free to write anything you like. I really hate frameworks that you must write a complex regular expression or use a compicated system just to tokenize a line.&lt;/p&gt;
-&lt;p&gt;As you can imagine, tokenize returns a list of data that are mapped to "columns".&lt;/p&gt;
-&lt;p&gt;Now, the interesting stuff. &lt;/p&gt;
-&lt;p&gt;You can write scripts like the following:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;&amp;gt; &lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;close&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt; &lt;span class="mf"&gt;1.45&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;place-order&lt;/span&gt; &lt;span class="ss"&gt;:buy&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;place-order&lt;/span&gt; &lt;span class="ss"&gt;:sell&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Thoughts? &lt;/p&gt;
-&lt;p&gt;ping me here -&amp;gt; &lt;a href="http://www.twitter.com/jonromero"&gt;JR&lt;/a&gt;&lt;/p&gt;</summary><category term="databases"></category><category term="clojure"></category></entry><entry><title>HybrisDB</title><link href="http://jon.io/hybrisdb.html" rel="alternate"></link><updated>2013-08-04T10:31:21+02:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2013-08-04:hybrisdb.html</id><summary type="html">&lt;p&gt;I love Forex because:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;It has enormous amount of data (volume)&lt;/li&gt;
-&lt;li&gt;These data are coming extremely fast (velocity)&lt;/li&gt;
-&lt;li&gt;You need to consider multiple resources when you are building your strategy (variety)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;My definition of BigData is that you have volume-velocity-variety information &lt;strong&gt;and&lt;/strong&gt; you need to react on it right now (realtime). It is one of the main reasons why I don't like Hadoop (ok, the other is because I don't like Java:). &lt;/p&gt;
-&lt;p&gt;Forex is the best place if you want to start playing with BigData. You have (at least) one data channel, hitting you with data, you need to keep running algorithms on this stream (sometimes doing correlations up to a week) and you need be able to respond very fast. If a garbage collector kicks in or if you need to grab data from a database (even if this DB is in memory - long live Redis) then you will have issues.&lt;/p&gt;
-&lt;p&gt;That's the reason why most of the "trading" databases have all their data in the same memory space and have custom languages doing the analysis (like &lt;a href="http://kx.com"&gt;Kdb&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;That was the inspiration for LDB.&lt;/p&gt;
-&lt;p&gt;Millions of data sources (mobile phones), hitting your database and calculating/updating for each one of the requests thousands of counters and running all sorts of algorithms. Per request. In realtime.&lt;/p&gt;
-&lt;p&gt;But let's face it. The vast majority of users/companies will never have millions (or even thousands) of requests hitting their servers. That's why I started a new opensource database with codename: HybrisDB.&lt;/p&gt;
-&lt;p&gt;HDB has the following characteristics:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Simple to install (no moving parts)&lt;/li&gt;
-&lt;li&gt;Simple to use (pre-defined dashboards)&lt;/li&gt;
-&lt;li&gt;It will be perfect for the 99% of users/companies but not for the 1% like Facebook or Google (sacrificing Enterprise features)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;The concept is to have a dashboard, to watch indicators going on/off and then (maybe) connect to a system to place an order.&lt;/p&gt;
-&lt;p&gt;Sounds like an interesting cool hobby project and I still try to decide between using Erlang or Clojure for this.&lt;/p&gt;
-&lt;p&gt;Ping me on &lt;a href="http://www.twitter.com/jonromero"&gt;twitter&lt;/a&gt; if you have any ideas!&lt;/p&gt;
-&lt;p&gt;Cheers!&lt;/p&gt;
-&lt;p&gt;JR&lt;/p&gt;</summary><category term="databases"></category><category term="hybrisdb"></category></entry><entry><title>New blog!</title><link href="http://jon.io/new-blog.html" rel="alternate"></link><updated>2013-07-30T14:49:33+02:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2013-07-30:new-blog.html</id><summary type="html">&lt;p&gt;I haven't blogged for a while and I think that I needed I new (virtual) home for my rants.
+&lt;/ul&gt;</summary><category term="startups"></category></entry><entry><title>New blog!</title><link href="http://jon.io/new-blog.html" rel="alternate"></link><updated>2013-07-30T14:49:33+02:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2013-07-30:new-blog.html</id><summary type="html">&lt;p&gt;I haven't blogged for a while and I think that I needed I new (virtual) home for my rants.
 This place is brand new (and white!) and it is going to be awesome!&lt;/p&gt;
 &lt;p&gt;I don't know what will happen with my previous domain (&lt;a href="http://jon.is.emotionull.com"&gt;emotionull&lt;/a&gt;) but I think it might be the new home for a new (underground) social network for traders. We'll see.&lt;/p&gt;
 &lt;p&gt;My hobby project right now, is a new opensource trading platform (for the first time not focused on HFT) and some experiments around a super fast, vertical scaling, full adhoc queries database (exactly the opposite of &lt;a href="http://www.bugsense.com/about/bigdata"&gt;LDB&lt;/a&gt; I've built at &lt;a href="http://www.bugsense.com"&gt;BugSense&lt;/a&gt;). I'll keep you posted.&lt;/p&gt;

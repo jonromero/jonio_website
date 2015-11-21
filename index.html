@@ -53,6 +53,121 @@
         	
             <article class='listed'>
             <h1 class="title">
+                <a href="./mapping-and-processing-data-in-clojure.html" rel='bookmark'>Mapping and processing data in Clojure</a>
+            </h1>
+            <div class="article-content"> <p>I have to admit that I have a thing for DSLs. You can see it at <a href="https://github.com/jonromero/music-as-data">music-as-data</a> were notes and rhythm/beat is "mapped" to data and you can apply data transformations. </p>
+<p>The same thing I want to do with <a href="http://en.wikipedia.org/wiki/Data_at_Rest">data at-rest</a>.</p>
+<p>Here is a scenario:
+I have lots of data sitting as CSV on my hard-drive and I want to process them. Not query them. Process them.</p>
+<p>What would be really interesting is to be able to define (dynamically) a schema like that:</p>
+<div class="highlight"><pre><span class="p">(</span><span class="nf">defschema</span> <span class="s">&quot;EURUSD&quot;</span> 
+    <span class="p">(</span><span class="nf">tokenizer</span> <span class="o">#</span><span class="p">(</span><span class="nf">.split</span> <span class="nv">%</span> <span class="s">&quot;:&quot;</span><span class="p">))</span>  
+    <span class="c1">;; the mapping is done here</span>
+    <span class="p">(</span><span class="nf">columns</span> <span class="err">|</span><span class="nv">time</span><span class="err">|</span> <span class="err">|</span><span class="nv">open</span><span class="err">|</span> <span class="err">|</span><span class="nv">high</span><span class="err">|</span> <span class="err">|</span><span class="nv">low</span><span class="err">|</span> <span class="err">|</span><span class="nv">close</span><span class="err">|</span> <span class="err">|</span><span class="nv">volume</span><span class="err">|</span><span class="p">))</span>
+</pre></div>
+
+
+<p>Let me explain.
+First of all, a "tokenize" function. Each dataline is tokenized based on a function. Do you want regex? Something more complex? You are free to write anything you like. I really hate frameworks that you must write a complex regular expression or use a compicated system just to tokenize a line.</p>
+<p>As you can imagine, tokenize returns a list of data that are mapped to "columns".</p>
+<p>Now, the interesting stuff. </p>
+<p>You can write scripts like the following:</p>
+<div class="highlight"><pre><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt; </span><span class="err">|</span><span class="nv">close</span><span class="err">|</span> <span class="mf">1.45</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">place-order</span> <span class="ss">:buy</span><span class="p">)</span>
+    <span class="p">(</span><span class="nf">place-order</span> <span class="ss">:sell</span><span class="p">))</span>
+</pre></div>
+
+
+<p>Thoughts? </p>
+<p>ping me here -&gt; <a href="http://www.twitter.com/jonromero">JR</a></p> </div>
+            <div class="abbr published">
+                Posted  <a href='./mapping-and-processing-data-in-clojure.html' title='2015-11-20T23:27:32'>Fri 20 November 2015</a> in <a href="./category/databases.html">databases</a>.              
+            </div>
+        </article>
+            <article class='listed'>
+            <h1 class="title">
+                <a href="./hybrisdb.html" rel='bookmark'>HybrisDB</a>
+            </h1>
+            <div class="article-content"> <p>I love Forex because:</p>
+<ol>
+<li>It has enormous amount of data (volume)</li>
+<li>These data are coming extremely fast (velocity)</li>
+<li>You need to consider multiple resources when you are building your strategy (variety)</li>
+</ol>
+<p>My definition of BigData is that you have volume-velocity-variety information <strong>and</strong> you need to react on it right now (realtime). It is one of the main reasons why I don't like Hadoop (ok, the other is because I don't like Java:). </p>
+<p>Forex is the best place if you want to start playing with BigData. You have (at least) one data channel, hitting you with data, you need to keep running algorithms on this stream (sometimes doing correlations up to a week) and you need be able to respond very fast. If a garbage collector kicks in or if you need to grab data from a database (even if this DB is in memory - long live Redis) then you will have issues.</p>
+<p>That's the reason why most of the "trading" databases have all their data in the same memory space and have custom languages doing the analysis (like <a href="http://kx.com">Kdb</a>).</p>
+<p>That was the inspiration for LDB.</p>
+<p>Millions of data sources (mobile phones), hitting your database and calculating/updating for each one of the requests thousands of counters and running all sorts of algorithms. Per request. In realtime.</p>
+<p>But let's face it. The vast majority of users/companies will never have millions (or even thousands) of requests hitting their servers. That's why I started a new opensource database with codename: HybrisDB.</p>
+<p>HDB has the following characteristics:</p>
+<ol>
+<li>Simple to install (no moving parts)</li>
+<li>Simple to use (pre-defined dashboards)</li>
+<li>It will be perfect for the 99% of users/companies but not for the 1% like Facebook or Google (sacrificing Enterprise features)</li>
+</ol>
+<p>The concept is to have a dashboard, to watch indicators going on/off and then (maybe) connect to a system to place an order.</p>
+<p>Sounds like an interesting cool hobby project and I still try to decide between using Erlang or Clojure for this.</p>
+<p>Ping me on <a href="http://www.twitter.com/jonromero">twitter</a> if you have any ideas!</p>
+<p>Cheers!</p>
+<p>JR</p> </div>
+            <div class="abbr published">
+                Posted  <a href='./hybrisdb.html' title='2015-11-20T23:27:09'>Fri 20 November 2015</a> in <a href="./category/databases.html">databases</a>.              
+            </div>
+        </article>
+            <article class='listed'>
+            <h1 class="title">
+                <a href="./brokers-placing-your-first-forex-trade-with-python.html" rel='bookmark'>Brokers | Placing your first Forex trade with Python</a>
+            </h1>
+            <div class="article-content"> <p>Time to talk about brokers, how to place a trade programmatically and most importantly how not to get scammed.</p>
+<p>This is the third part of the series: <a href="how-to-build-your-own-algorithmic-trading-platform.html">How to build your own algotrading platform</a>.</p>
+<p>A broker is nothing more than a company that lets you trade (buy or sell) assets on a market through their platform. What is very important for algotrading is: 
+1. The broker offers an API in order for us to place orders
+2. You can have a demo account to run your staging environment and experiment
+3. The spread is as small as possible</p>
+<p>In our case, we don't really care about spread as we won't be doing High Frequency Trading any time soon.</p>
+<p>Even though brokers are regulated, there have been incidents in the past couple of years, were brokers folded due to certain conditions. Be <em>very</em> wary if 
+1. There are no reviews of the broker on the internet (or most of them are bad)
+2. If the broker offers you some crazy leverage (like 1:200)
+3. If the broker seems to be in a very strange country</p>
+<p>What could happen is that when you start making some money and you wouldn't be able to pull them out. Seriously. Super stressful situation.</p>
+<p>But let's switch to a happier note which is opening an account and placing our first programmatic trade!</p>
+<p>I am using <a href="http://www.oanda.com/">Oanda</a> as a broker (I am not affiliated with them) and they offer a pretty decent API, libraries on github and a free demo account. </p>
+<p>Go and open a free <a href="https://fxtrade.oanda.com/your_account/fxtrade/register/gate">fxTrade Practice account</a>.</p>
+<p>After you get your free demo account, go to your profile 
+<img src="https://dl.dropboxusercontent.com/u/757245/jonio/oanda.png" />
+and you can change your leverage (switch it to 50:1) and then go back to your <Manage API Access>. There you can find your API key which we are going to use in our system to place trades. <em>MAKE SURE YOU DON'T SHARE THIS KEY</em>.</p>
+<p>The code for this is and all other posts is on my [github])https://github.com/jonromero/Forex-algotrading) and you can install it and run it pretty easily.</p>
+<p>The code is straight-forward. We connect to Oanda, to a practise account with our token </p>
+<p>:::python 
+    oanda = oandapy.API(environment="practice",
+                        access_token=OANDA_ACCESS_TOKEN)
+    response = oanda.get_prices(instruments="EUR_USD")
+    prices = response.get("prices")
+    buy_price = prices[0].get("bid")</p>
+<p>and we are asking the prices (bid/ask) for the pair EUR_USD. </p>
+<p>We print the buy price and then we place a <em>market</em> trade. </p>
+<p>:::python
+    print "Buy at", buy_price</p>
+<div class="highlight"><pre><span class="n">trade_id</span> <span class="o">=</span> <span class="n">oanda</span><span class="p">.</span><span class="n">create_order</span><span class="p">(</span><span class="n">OANDA_ACCOUNT_ID</span><span class="p">,</span> <span class="n">instrument</span><span class="o">=</span><span class="s">&quot;EUR_USD&quot;</span><span class="p">,</span>
+                              <span class="n">units</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+                              <span class="n">side</span><span class="o">=</span><span class="err">&#39;</span><span class="n">buy</span><span class="err">&#39;</span><span class="p">,</span>
+                              <span class="n">type</span><span class="o">=</span><span class="err">&#39;</span><span class="n">market</span><span class="err">&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Super easy. Don't worry about what EURUSD is or how many units we are buying or what a market trade is. For now, we have placed our first trade from our laptop and we are going to build our own API to place trades. Exciting stuff!</p>
+<p>You can read Oanda's documentation <a href="http://developer.oanda.com/">here</a> to see what else you can do with their API.</p>
+<p>Coming up next, connecting to a real <em>LIVE</em> algotrading system, running from my RaspberryPI at home. You'll be able to see the (almost) final program running and we'll talk more about Forex and strategies.</p>
+<p>If you have more feedback, ping me at <a href="http://www.twitter.com/jonromero">jonromero</a> or signup to the <a href="http://eepurl.com/bGbOnb">newsletter</a>. </p>
+<p>Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
+If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. </p> </div>
+            <div class="abbr published">
+                Posted  <a href='./brokers-placing-your-first-forex-trade-with-python.html' title='2015-10-20T22:48:00'>Tue 20 October 2015</a> in <a href="./category/trading.html">trading</a>.              
+            </div>
+        </article>
+            <article class='listed'>
+            <h1 class="title">
                 <a href="./what-is-forex.html" rel='bookmark'>What is Forex</a>
             </h1>
             <div class="article-content"> <p>This is the second part of the series: <a href="how-to-build-your-own-algorithmic-trading-platform.html">How to build your own algotrading platform</a>.</p>
@@ -177,70 +292,6 @@ Like opening your refrigirator every two minutes even though you know it is empt
 </ul> </div>
             <div class="abbr published">
                 Posted  <a href='./kicking-time-management-in-the-nuts.html' title='2013-12-30T08:41:43'>Mon 30 December 2013</a> in <a href="./category/startups.html">startups</a>.              
-            </div>
-        </article>
-            <article class='listed'>
-            <h1 class="title">
-                <a href="./mapping-and-processing-data-in-clojure.html" rel='bookmark'>Mapping and processing data in Clojure</a>
-            </h1>
-            <div class="article-content"> <p>I have to admit that I have a thing for DSLs. You can see it at <a href="https://github.com/jonromero/music-as-data">music-as-data</a> were notes and rhythm/beat is "mapped" to data and you can apply data transformations. </p>
-<p>The same thing I want to do with <a href="http://en.wikipedia.org/wiki/Data_at_Rest">data at-rest</a>.</p>
-<p>Here is a scenario:
-I have lots of data sitting as CSV on my hard-drive and I want to process them. Not query them. Process them.</p>
-<p>What would be really interesting is to be able to define (dynamically) a schema like that:</p>
-<div class="highlight"><pre><span class="p">(</span><span class="nf">defschema</span> <span class="s">&quot;EURUSD&quot;</span> 
-    <span class="p">(</span><span class="nf">tokenizer</span> <span class="o">#</span><span class="p">(</span><span class="nf">.split</span> <span class="nv">%</span> <span class="s">&quot;:&quot;</span><span class="p">))</span>  
-    <span class="c1">;; the mapping is done here</span>
-    <span class="p">(</span><span class="nf">columns</span> <span class="err">|</span><span class="nv">time</span><span class="err">|</span> <span class="err">|</span><span class="nv">open</span><span class="err">|</span> <span class="err">|</span><span class="nv">high</span><span class="err">|</span> <span class="err">|</span><span class="nv">low</span><span class="err">|</span> <span class="err">|</span><span class="nv">close</span><span class="err">|</span> <span class="err">|</span><span class="nv">volume</span><span class="err">|</span><span class="p">))</span>
-</pre></div>
-
-
-<p>Let me explain.
-First of all, a "tokenize" function. Each dataline is tokenized based on a function. Do you want regex? Something more complex? You are free to write anything you like. I really hate frameworks that you must write a complex regular expression or use a compicated system just to tokenize a line.</p>
-<p>As you can imagine, tokenize returns a list of data that are mapped to "columns".</p>
-<p>Now, the interesting stuff. </p>
-<p>You can write scripts like the following:</p>
-<div class="highlight"><pre><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt; </span><span class="err">|</span><span class="nv">close</span><span class="err">|</span> <span class="mf">1.45</span><span class="p">)</span>
-    <span class="p">(</span><span class="nf">place-order</span> <span class="ss">:buy</span><span class="p">)</span>
-    <span class="p">(</span><span class="nf">place-order</span> <span class="ss">:sell</span><span class="p">))</span>
-</pre></div>
-
-
-<p>Thoughts? </p>
-<p>ping me here -&gt; <a href="http://www.twitter.com/jonromero">JR</a></p> </div>
-            <div class="abbr published">
-                Posted  <a href='./mapping-and-processing-data-in-clojure.html' title='2013-09-04T02:35:46'>Wed 04 September 2013</a> in <a href="./category/databases.html">databases</a>.              
-            </div>
-        </article>
-            <article class='listed'>
-            <h1 class="title">
-                <a href="./hybrisdb.html" rel='bookmark'>HybrisDB</a>
-            </h1>
-            <div class="article-content"> <p>I love Forex because:</p>
-<ol>
-<li>It has enormous amount of data (volume)</li>
-<li>These data are coming extremely fast (velocity)</li>
-<li>You need to consider multiple resources when you are building your strategy (variety)</li>
-</ol>
-<p>My definition of BigData is that you have volume-velocity-variety information <strong>and</strong> you need to react on it right now (realtime). It is one of the main reasons why I don't like Hadoop (ok, the other is because I don't like Java:). </p>
-<p>Forex is the best place if you want to start playing with BigData. You have (at least) one data channel, hitting you with data, you need to keep running algorithms on this stream (sometimes doing correlations up to a week) and you need be able to respond very fast. If a garbage collector kicks in or if you need to grab data from a database (even if this DB is in memory - long live Redis) then you will have issues.</p>
-<p>That's the reason why most of the "trading" databases have all their data in the same memory space and have custom languages doing the analysis (like <a href="http://kx.com">Kdb</a>).</p>
-<p>That was the inspiration for LDB.</p>
-<p>Millions of data sources (mobile phones), hitting your database and calculating/updating for each one of the requests thousands of counters and running all sorts of algorithms. Per request. In realtime.</p>
-<p>But let's face it. The vast majority of users/companies will never have millions (or even thousands) of requests hitting their servers. That's why I started a new opensource database with codename: HybrisDB.</p>
-<p>HDB has the following characteristics:</p>
-<ol>
-<li>Simple to install (no moving parts)</li>
-<li>Simple to use (pre-defined dashboards)</li>
-<li>It will be perfect for the 99% of users/companies but not for the 1% like Facebook or Google (sacrificing Enterprise features)</li>
-</ol>
-<p>The concept is to have a dashboard, to watch indicators going on/off and then (maybe) connect to a system to place an order.</p>
-<p>Sounds like an interesting cool hobby project and I still try to decide between using Erlang or Clojure for this.</p>
-<p>Ping me on <a href="http://www.twitter.com/jonromero">twitter</a> if you have any ideas!</p>
-<p>Cheers!</p>
-<p>JR</p> </div>
-            <div class="abbr published">
-                Posted  <a href='./hybrisdb.html' title='2013-08-04T10:31:21'>Sun 04 August 2013</a> in <a href="./category/databases.html">databases</a>.              
             </div>
         </article>
             <article class='listed'>
