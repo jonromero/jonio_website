@@ -76,7 +76,7 @@ and you can change your leverage (switch it to 50:1) and then go back to your <M
 <p>The code for this is and all other posts is on my [github])https://github.com/jonromero/Forex-algotrading) and you can install it and run it pretty easily.</p>
 <p>The code is straight-forward. We connect to Oanda, to a practise account with our token </p>
 <p>:::python 
-    oanda = oandapy.API(environment="practice",
+        oanda = oandapy.API(environment="practice",
                         access_token=OANDA_ACCESS_TOKEN)
     response = oanda.get_prices(instruments="EUR_USD")
     prices = response.get("prices")
