@@ -80,7 +80,7 @@
 <p>After you get your free demo account, go to your profile 
 <img src="https://dl.dropboxusercontent.com/u/757245/jonio/oanda.png" /></p>
 <p>and you can change your leverage (switch it to 50:1) and then go back to your <Manage API Access>. There you can find your API key which we are going to use in our system to place trades. <em>MAKE SURE YOU DON'T SHARE THIS KEY</em>.</p>
-<p>The code for this is and all other posts is on my [github])https://github.com/jonromero/Forex-algotrading) and you can install it and run it pretty easily.</p>
+<p>The code for this is and all other posts is on my <a href="https://github.com/jonromero/Forex-algotrading">github</a> and you can install it and run it pretty easily.</p>
 <p>The code is straight-forward. We connect to Oanda, to a practice account with our token </p>
 <div class="highlight"><pre><span class="n">oanda</span> <span class="o">=</span> <span class="n">oandapy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">environment</span><span class="o">=</span><span class="s">&quot;practice&quot;</span><span class="p">,</span>
                    <span class="n">access_token</span><span class="o">=</span><span class="n">OANDA_ACCESS_TOKEN</span><span class="p">)</span>
@@ -91,7 +91,7 @@
 
 
 <p>and we are asking the prices (bid/ask) for the pair EUR_USD. </p>
-<p>We print the buy price and then we place a <em>market</em> trade. </p>
+<p>We print the buy price and then we place a <em>market</em> order. </p>
 <div class="highlight"><pre><span class="k">print</span> <span class="s">&quot;Buy at&quot;</span><span class="p">,</span> <span class="n">buy_price</span>
 <span class="n">trade_id</span> <span class="o">=</span> <span class="n">oanda</span><span class="o">.</span><span class="n">create_order</span><span class="p">(</span><span class="n">OANDA_ACCOUNT_ID</span><span class="p">,</span><span class="n">instrument</span><span class="o">=</span><span class="s">&quot;EUR_USD&quot;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
                   <span class="n">side</span><span class="o">=</span><span class="s">&#39;buy&#39;</span><span class="p">,</span>
@@ -99,7 +99,7 @@
 </pre></div>
 
 
-<p>Super easy. Don't worry about what EURUSD is or how many units we are buying or what a market trade is. For now, we have placed our first trade from our laptop and we are going to build our own API to place trades. Exciting stuff!</p>
+<p>Super easy. Don't worry about what EURUSD is or how many units we are buying or what a market order is. For now, we have placed our first trade from our laptop and we are going to build our own API to place trades. Exciting stuff!</p>
 <p>You can read Oanda's documentation <a href="http://developer.oanda.com/">here</a> to see what else you can do with their API.</p>
 <p>Coming up next, connecting to a real <em>LIVE</em> algotrading system, running from my RaspberryPI at home. You'll be able to see the (almost) final program running and we'll talk more about Forex and strategies.</p>
 <p>If you have more feedback, ping me at <a href="http://www.twitter.com/jonromero">jonromero</a> or signup to the <a href="http://eepurl.com/bGbOnb">newsletter</a>. </p>
