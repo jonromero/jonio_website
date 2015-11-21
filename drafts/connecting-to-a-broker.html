@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../theme/css/style.css"> 
+    <link rel="stylesheet" type="text/css" href="../theme/css/pygments.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:800,400,300|Inconsolata' rel='stylesheet' type='text/css'>
+	<link href="http://jon.io/" type="application/atom+xml" rel="alternate" title="Jon.IO ATOM Feed" />
+	
+	
+            <title>Connecting to a broker - Jon.IO</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Jon V <h2>BigData. Startups. Trading.</h2>">
+    <script src="//load.sumome.com/" data-sumo-site-id="fee114a4f556c3310f466abe1eb7a9bab628c1b53aa6dac75200d0af9af9c330" async="async"></script>
+</head>
+
+<body>
+    <section id="navbar">
+        <div class="user_meta">
+            <h1 id="user"><a href=".." class="">Jon V <h2>BigData. Startups. Trading.</h2></a></h1>
+            <h2></h2>
+                        </div>
+        <div class="nav-button">
+            <ul>
+                                                                                                                                        <li><a href="http://twitter.com/jonromero">Twitter</a></li>
+                                                <li><a href="http://www.linkedin.com/in/johnvlachoyiannis">LinkedIn</a></li>
+                                                <li><a href="http://github.com/jonromero/">Github</a></li>
+                                                <li><a href="http://bitbucket.org/jonromero/">Bitbucket</a></li>
+                                 </ul>
+         </div>
+     </section>
+
+     <section id="sidebar">
+        <div class="user_meta">
+            <h1 id="user"><a href=".." class="">Jon V <h2>BigData. Startups. Trading.</h2></a></h1>
+            <h2></h2>
+            <ul>
+                                                                                                            <li><a href="http://twitter.com/jonromero">Twitter</a></li>
+                                        <li><a href="http://www.linkedin.com/in/johnvlachoyiannis">LinkedIn</a></li>
+                                        <li><a href="http://github.com/jonromero/">Github</a></li>
+                                        <li><a href="http://bitbucket.org/jonromero/">Bitbucket</a></li>
+                            </ul>
+        </div>
+        <footer>
+            <address>
+                Powered by <a href='http://docs.getpelican.com/en/latest/'>Pelican</a>,
+                <a href='https://github.com/jamescooke/pelican-svbtle#readme'>theme info</a>.
+            </address>
+        </footer>
+    </section>
+
+    <section id="posts">
+        <article>
+    <h1 class="title">
+        <a href="../connecting-to-a-broker.html" rel="bookmark">Connecting to a broker</a>
+    </h1>
+
+    <div class='article-content'>
+        <p>Time to talk about brokers, how to place a trade programmatically and most importanly how not to get scammed.</p>
+<p>This is the third part of the series: <a href="what-is-forex.html">How to build your own algotrading platform</a>.</p>
+<p>A broker is nothing more than a company that lets you trade (buy or sell) assets on a market through the platform. What is very important for algotrading is: 
+1. The broker offers an API in order for us to place orders
+2. You can have a demo account to run your staging environment and experiment
+3. The spread is as small as possible</p>
+<p>In our case, we don't really care about spread as we won't be doing Ultra High Frequency trading (for now).</p>
+<p>Even though brokers are regulated, there have been incidents in the past couple of years, were brokers folded due to certain conditions. Be <em>very</em> wary if 
+1. There are no reviews of the broker on the internet (or most of them are bad)
+2. If the broker offers you some crazy leverage (like 1:200)
+3. If the broker seems to be in a very strange country</p>
+<p>What could happen is that you start making some money and you wouldn't be able to pull them out. Seriously. Super stressful situation.</p>
+<p>But let's switch to a happier note which is opening an account and placing our first programmatic trade!</p>
+<p>I am using Oanda as a broker (http://www.oanda.com/) and I am not affiliated with them but they offer a pretty decent API, libraries on github and a free demo account. Go and open a fxTrade Practice account (https://fxtrade.oanda.com/your_account/fxtrade/register/gate)</p>
+<p>After you get your free demo account, go to your profile <img> and you can change your leverage (switch it to 50:1) and then go back to your <Manage API Access>. There you can find your API key which we are going to use in our system to place trades on your behaf. <em>MAKE SURE YOU DON'T SHARE THIS KEY</em>.</p>
+<p>The code for this is at https://github.com/jonromero/Forex-algotrading and you can install it and run (it is pretty easy).</p>
+<p>What are we doing is straigh forward. We connect to Oanda, to a practise account with our token and we are asking the prices (bid/ask) for the pair EUR_USD. We print the buy price and then we place a <em>market</em> trade. Super easy. Don't worry about what EURUSD is or how many units we are buying or what a market trade is. For now, we have placed our first trade from our laptop and we are going to build our own API to place trades. Exciting stuff!</p>
+<p>You can read Oanda's documentation here:http://developer.oanda.com/ to see what else you can do with their API.</p>
+<p>Coming up next, connect to a real <em>LIVE</em> algotrading system, running from my RaspberryPI at home. You'll be able to see the (almost) final program running and we'll talk more about Forex and strategies.</p>
+<p>If you have more feedback, ping me at <a href="http://www.twitter.com/jonromero">jonromero</a> or signup to the <a href="http://eepurl.com/bGbOnb">newsletter</a>. </p>
+<p>Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
+If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. </p>
+    </div>
+
+    <div class='post-footer'>
+        <div class='share-footer'>
+            <div id='dated' class="abbr published" title='2015-11-20T22:33:56'>
+                Posted Fri 20 November 2015
+            </div>
+
+             
+        </div>
+
+        <div id="article_meta">
+                        Category:
+            <a href="../category/trading.html">trading</a>
+                                    <br />Tags:
+                        <a href="../tag/algotrading.html">algotrading</a>
+                                </div>
+
+        
+    </div>
+</article>
+
+<footer>
+    <a href="../" class="button_accent">&larr;&nbsp;&nbsp;&nbsp;Back to blog</a>
+</footer>
+
+    </section>
+
+    </body>
+</html>
