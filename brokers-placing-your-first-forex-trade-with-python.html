@@ -84,12 +84,12 @@
 <p>The code is straight-forward. We connect to Oanda, to a practice account with our token </p>
 <div class="highlight"><pre><span class="n">oanda</span> <span class="o">=</span> <span class="n">oandapy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">environment</span><span class="o">=</span><span class="s">&quot;practice&quot;</span><span class="p">,</span>
                    <span class="n">access_token</span><span class="o">=</span><span class="n">OANDA_ACCESS_TOKEN</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">oanda</span><span class="o">.</span><span class="n">get_prices</span><span class="p">(</span><span class="n">instruments</span><span class="o">=</span><span class="s">&quot;EUR_USD&quot;</span><span class="p">)</span>
+<span class="n">prices</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;prices&quot;</span><span class="p">)</span>
+<span class="n">buy_price</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;bid&quot;</span><span class="p">)</span>
 </pre></div>
 
 
-<p>response = oanda.get_prices(instruments="EUR_USD")
-  prices = response.get("prices")
-  buy_price = prices[0].get("bid")</p>
 <p>and we are asking the prices (bid/ask) for the pair EUR_USD. </p>
 <p>We print the buy price and then we place a <em>market</em> trade. </p>
 <div class="highlight"><pre><span class="k">print</span> <span class="s">&quot;Buy at&quot;</span><span class="p">,</span> <span class="n">buy_price</span>
