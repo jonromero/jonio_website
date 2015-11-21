@@ -63,15 +63,11 @@
 2. You can have a demo account to run your staging environment and experiment
 3. The spread is as small as possible</p>
 <p>In our case, we don't really care about spread as we won't be doing High Frequency Trading any time soon.</p>
-<p>Even though brokers are regulated, there have been incidents in the past couple of years, were brokers folded due to certain conditions. Be <em>very</em> wary if 
-1. There are no reviews of the broker on the internet (or most of them are bad)</p>
+<p>Even though brokers are regulated, there have been incidents in the past couple of years, were brokers folded due to certain conditions. Be <em>very</em> wary if </p>
 <ol>
-<li>
-<p>If the broker offers you some crazy leverage (like 1:200)</p>
-</li>
-<li>
-<p>If the broker seems to be in a very strange country</p>
-</li>
+<li>There are no reviews of the broker on the internet (or most of them are bad)</li>
+<li>If the broker offers you some crazy leverage (like 1:200)</li>
+<li>If the broker seems to be in a very strange country</li>
 </ol>
 <p>What could happen is that when you start making some money and you wouldn't be able to pull them out. Seriously. Super stressful situation.</p>
 <p>But let's switch to a happier note which is opening an account and placing our first programmatic trade!</p>
@@ -79,7 +75,7 @@
 <p>Go and open a free <a href="https://fxtrade.oanda.com/your_account/fxtrade/register/gate">fxTrade Practice account</a>.</p>
 <p>After you get your free demo account, go to your profile 
 <img src="https://dl.dropboxusercontent.com/u/757245/jonio/oanda.png" /></p>
-<p>and you can change your leverage (switch it to 50:1) and then go back to your <Manage API Access>. There you can find your API key which we are going to use in our system to place trades. <em>MAKE SURE YOU DON'T SHARE THIS KEY</em>.</p>
+<p>and you can change your leverage (switch it to 50:1) and then go back to your <Manage API Access>. There you can find your API key which we are going to use in our system to place trades. <strong>MAKE SURE YOU DON'T SHARE THIS KEY</strong>.</p>
 <p>The code for this is and all other posts is on my <a href="https://github.com/jonromero/Forex-algotrading">github</a> and you can install it and run it pretty easily.</p>
 <p>The code is straight-forward. We connect to Oanda, to a practice account with our token </p>
 <div class="highlight"><pre><span class="n">oanda</span> <span class="o">=</span> <span class="n">oandapy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">environment</span><span class="o">=</span><span class="s">&quot;practice&quot;</span><span class="p">,</span>
@@ -101,7 +97,7 @@
 
 <p>Super easy. Don't worry about what EURUSD is or how many units we are buying or what a market order is. For now, we have placed our first trade from our laptop and we are going to build our own API to place trades. Exciting stuff!</p>
 <p>You can read Oanda's documentation <a href="http://developer.oanda.com/">here</a> to see what else you can do with their API.</p>
-<p>Coming up next, connecting to a real <em>LIVE</em> algotrading system, running from my RaspberryPI at home. You'll be able to see the (almost) final program running and we'll talk more about Forex and strategies.</p>
+<p>Coming up next, connecting to a real <strong>LIVE</strong> algotrading system, running from my RaspberryPI at home. You'll be able to see the (almost) final program running and we'll talk more about Forex and strategies.</p>
 <p>If you have more feedback, ping me at <a href="http://www.twitter.com/jonromero">jonromero</a> or signup to the <a href="http://eepurl.com/bGbOnb">newsletter</a>. </p>
 <p>Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
 If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. </p>
