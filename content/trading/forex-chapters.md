@@ -38,7 +38,7 @@ Post One: [Building your own algotrading platform](how-to-build-your-own-algorit
 
 Post Two: [What is Forex](what-is-forex.html)
 
-Post Three: [Placing you first trade](forex-brokers.html) 
+Post Three: [Placing your first trade](placing-your-first-forex-trade-with-python.html) 
 
 Post Four: Connecting to a real, live algotrading system
 
