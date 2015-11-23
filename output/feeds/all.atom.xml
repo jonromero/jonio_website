@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Jon.IO</title><link href="http://jon.io/" rel="alternate"></link><link href="http://jon.io/feeds/all.atom.xml" rel="self"></link><id>http://jon.io/</id><updated>2015-10-20T22:48:00Z</updated><entry><title>Placing your first Forex trade with Python</title><link href="http://jon.io/placing-your-first-forex-trade-with-python.html" rel="alternate"></link><updated>2015-10-20T22:48:00Z</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2015-10-20:placing-your-first-forex-trade-with-python.html</id><summary type="html">&lt;p&gt;Time to talk about brokers, how to place a trade programmatically and most importantly how not to get scammed.&lt;/p&gt;
+&lt;p&gt;This is the third part of the series: &lt;a href="how-to-build-your-own-algorithmic-trading-platform.html"&gt;How to build your own algotrading platform&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;A broker is nothing more than a company that lets you trade (buy or sell) assets on a market through their platform. What is very important for algotrading is: &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The broker offers an API in order for us to place orders&lt;/li&gt;
+&lt;li&gt;You can have a demo account to run your staging environment and experiment&lt;/li&gt;
+&lt;li&gt;The spread is as small as possible&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In our case, we don't really care about spread as we won't be doing High Frequency Trading any time soon.&lt;/p&gt;
+&lt;p&gt;Even though brokers are regulated, there have been incidents in the past couple of years, were brokers folded due to certain conditions. Be &lt;em&gt;very&lt;/em&gt; wary if &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;There are no reviews of the broker on the internet (or most of them are bad)&lt;/li&gt;
+&lt;li&gt;If the broker offers you some crazy leverage (like 1:200)&lt;/li&gt;
+&lt;li&gt;If the broker seems to be in a very strange country&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;What could happen is that you start making some money and you aren't be able to pull them out. Seriously. Super stressful situation.&lt;/p&gt;
+&lt;p&gt;But let's switch to a happier note which is opening an account and placing our first programmatic trade. Whooha!&lt;/p&gt;
+&lt;p&gt;I am using &lt;a href="http://www.oanda.com/"&gt;Oanda&lt;/a&gt; as a broker (I am not affiliated with them) and they offer a pretty decent API, libraries on github and a free demo account. &lt;/p&gt;
+&lt;p&gt;Go and open a free &lt;a href="https://fxtrade.oanda.com/your_account/fxtrade/register/gate"&gt;fxTrade Practice account&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;After you get your free demo account, go to your profile 
+&lt;img src="https://dl.dropboxusercontent.com/u/757245/jonio/oanda.png" /&gt;&lt;/p&gt;
+&lt;p&gt;and you can change your leverage (switch it to 50:1) and then go back to your &lt;strong&gt;Manage API Access&lt;/strong&gt;. There you can find your API key which we are going to use in our system to place trades. &lt;strong&gt;MAKE SURE YOU DON'T SHARE THIS KEY&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The code for this is and all other posts is on my &lt;a href="https://github.com/jonromero/Forex-algotrading"&gt;github&lt;/a&gt; and you can install it and run it pretty easily.&lt;/p&gt;
+&lt;p&gt;The code is straight-forward. We connect to Oanda, to a practice account with our token &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;oanda&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;oandapy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;API&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;practice&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                   &lt;span class="n"&gt;access_token&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;OANDA_ACCESS_TOKEN&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;response&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;oanda&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_prices&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;instruments&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;EUR_USD&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;prices&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;prices&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;buy_price&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;prices&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;bid&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;and we are requesting the prices (bid/ask) for the pair EUR_USD. &lt;/p&gt;
+&lt;p&gt;We print the buy price and then we place a &lt;em&gt;market&lt;/em&gt; order. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;Buy at&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;buy_price&lt;/span&gt;
+&lt;span class="n"&gt;trade_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;oanda&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create_order&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;OANDA_ACCOUNT_ID&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;instrument&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;EUR_USD&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;units&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                  &lt;span class="n"&gt;side&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;buy&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                  &lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;market&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Super easy. Don't worry about what EURUSD is or how many units we are buying or what a market order is. For now, we have placed our first trade from our laptop and we are going to build our own API to place trades. Exciting stuff!&lt;/p&gt;
+&lt;p&gt;You can read Oanda's documentation &lt;a href="http://developer.oanda.com/"&gt;here&lt;/a&gt; to see what else you can do with their API.&lt;/p&gt;
+&lt;p&gt;Coming up next, connecting to a real &lt;strong&gt;LIVE&lt;/strong&gt; algotrading system, running from my RaspberryPI at home. &lt;/p&gt;
+&lt;p&gt;&lt;img src="https://dl.dropboxusercontent.com/u/757245/jonio/trades-nov.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;You'll be able to see the (almost) final program running and we'll talk more about Forex and strategies. &lt;/p&gt;
+&lt;p&gt;If you have more feedback, ping me at &lt;a href="http://www.twitter.com/jonromero"&gt;jonromero&lt;/a&gt; or signup to the &lt;a href="http://eepurl.com/bGbOnb"&gt;newsletter&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
+If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. &lt;/p&gt;</summary><category term="algotrading"></category></entry><entry><title>What is Forex</title><link href="http://jon.io/what-is-forex.html" rel="alternate"></link><updated>2015-10-12T22:48:00Z</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2015-10-12:what-is-forex.html</id><summary type="html">&lt;p&gt;This is the second part of the series: &lt;a href="how-to-build-your-own-algorithmic-trading-platform.html"&gt;How to build your own algotrading platform&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Before building any algotrading systems, you need to know how to trade manually. What that actually means is that you need to lose money on your own before blaming the machine. As simple as that.&lt;/p&gt;
+&lt;p&gt;So, let's talk about Foreign Exchange or Forex as the cool guys call it.&lt;/p&gt;
+&lt;p&gt;First of all, why do we choose Forex for algotrading? Why don't we become millionaires trading like everybody else? Why not just buy Tesla, Amazon, Google, Facebook, Twitter and hope for the best (PS: please read the legal outro at the end of this blog post before buying any stocks).&lt;/p&gt;
+&lt;p&gt;Easy answer. You cannot win (or lose) money fast enough by buying stocks.&lt;/p&gt;
+&lt;p&gt;Forex has a nice (or terrible, depending on which side of the coin you are) thing called &lt;em&gt;leverage&lt;/em&gt;. &lt;/p&gt;
+&lt;p&gt;Leverage can be 1:10, 1:50, 1:100, 1:200, 1:1000 depending on how suicidal you are or how sketchy your broker is (don't worry, we'll talk about brokers in the next post). Let's see an example.&lt;/p&gt;
+&lt;p&gt;We want to place a trade of $1k. The logical thing is that in order to buy something that costs $1k, you need to have in your account $1k, right? Nope. You can always get a loan. Oooooooor: Enter leverage.&lt;/p&gt;
+&lt;p&gt;If we have a 1:100 leverage, we can place a trade and "control" $1k with just $10. For those that failed at math (don't be ashamed, I am one of you), $10 x 100 (leverage) = $1,000.
+That means you can trade big and win big! Actually 100 times more &lt;em&gt;big&lt;/em&gt;! The catch is that you can actually go 100 times more &lt;em&gt;small&lt;/em&gt;. Let's have another example.&lt;/p&gt;
+&lt;p&gt;I just got my bonus ($1k) and I want to play on Forex.
+Without any leverage, I can buy 1,000 Forex units that cost $1 (by the way, there are no Forex units but we'll talk about this later). 
+How many units can I buy with 1:50 leverage?&lt;/p&gt;
+&lt;p&gt;If you answer if 100,000, you did something wrong. The answer is 50,000 ($1,000 x 50 leverage). &lt;/p&gt;
+&lt;p&gt;There you have it. One of the reasons that we are doing Forex, is because you can lose/win big. We'll get back to leverage when we start placing trades.&lt;/p&gt;
+&lt;p&gt;There are three more exciting reasons actually that are even more awesome (dare to say awesomer?).
+1. Forex (almost) never sleeps. The markets are open ALL DAY, six days per week. To be more exact, there is not one market but four and they are overlapping providing the "all day" effect.
+2. Forex is very volatile and there are tons of money moving around (more than 5 trillion &lt;em&gt;per day&lt;/em&gt;). Crazy right? 
+3. No fees on trades. You don't pay $10 per trade like you are doing with stocks. Here you pay &lt;em&gt;the spread&lt;/em&gt; which is just a fraction of a cent (again, we'll talk about this in another post).&lt;/p&gt;
+&lt;p&gt;All these reasons (leverage, all-day, volatility, fees) make Forex the most exciting platform to build and deploy your algorithms. &lt;/p&gt;
+&lt;p&gt;Coming up next, Forex brokers. How not to be scammed before even writing a line of code.&lt;/p&gt;
+&lt;p&gt;If you have more feedback, ping me at &lt;a href="http://www.twitter.com/jonromero"&gt;jonromero&lt;/a&gt; or signup to the &lt;a href="http://eepurl.com/bGbOnb"&gt;newsletter&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
+If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. &lt;/p&gt;</summary><category term="algotrading"></category></entry><entry><title>How to build your own algorithmic trading platform - Part One</title><link href="http://jon.io/how-to-build-your-own-algorithmic-trading-platform-part-one.html" rel="alternate"></link><updated>2015-10-01T22:48:00Z</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2015-10-01:how-to-build-your-own-algorithmic-trading-platform-part-one.html</id><summary type="html">&lt;p&gt;That's it. Every week, I get at least 10 DMs on twitter asking on how to experiment with algotrading, Forex and portfolio analysis and I've decided that it's time to do something about it.&lt;/p&gt;
+&lt;p&gt;Update: Find the posts (here)[how-to-build-your-own-algorithmic-trading-platform.html].&lt;/p&gt;
+&lt;p&gt;So, I am planning to cover the basics of how to build your own trading platform, write your own strategies and go on vacations while electrons are making you money. Or zeroing your account. Either way, it is going to be fun!&lt;/p&gt;
+&lt;p&gt;The majority of the examples are going to be in Python even though there might be parts in Erlang and I'll try to keep it as easy as it can be. &lt;/p&gt;
+&lt;p&gt;Let's talk now about what the final product will look like.&lt;/p&gt;
+&lt;p&gt;We are building a system where you will be able to:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Simulate your strategy (this is called backtesting)&lt;/li&gt;
+&lt;li&gt;Execute your strategy without supervision&lt;/li&gt;
+&lt;li&gt;Alert you via sms/email for trades and errors&lt;/li&gt;
+&lt;li&gt;Be scalable and trivial to deploy new updates&lt;/li&gt;
+&lt;li&gt;Being able to run even from your home (from a raspberrypi for example)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I assume this is going to be a total of 20 chapters, give or take.&lt;/p&gt;
+&lt;p&gt;That is a system similar to the one that I am running the last year and includes a UI, sms alerts, backtesting pipeline, continuous delivery and all the cool stuff that us geeks love.&lt;/p&gt;
+&lt;p&gt;All code will be on github and if everything goes well, I'll wrap it up in a book for everyone to enjoy.&lt;/p&gt;
+&lt;p&gt;I have like three chapters almost done, so if you want early access just ping me at - &lt;a href="http://www.twitter.com/jonromero"&gt;jonromero&lt;/a&gt;.&lt;/p&gt;</summary><category term="algotrading"></category></entry><entry><title>How to build your own algorithmic trading platform</title><link href="http://jon.io/how-to-build-your-own-algorithmic-trading-platform.html" rel="alternate"></link><updated>2015-09-28T22:48:00Z</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2015-09-28:how-to-build-your-own-algorithmic-trading-platform.html</id><summary type="html">&lt;p&gt;These are all the post that have been written up until now.&lt;/p&gt;
+&lt;!-- Begin MailChimp Signup Form --&gt;
+
+&lt;p&gt;&lt;link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css"&gt;
+&lt;style type="text/css"&gt;
+    #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+    /&lt;em&gt; Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+       We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. &lt;/em&gt;/
+&lt;/style&gt;
+&lt;div id="mc_embed_signup"&gt;
+&lt;form action="//jon.us2.list-manage.com/subscribe/post?u=d41a019257dd51ec51a105e74&amp;amp;id=b1233e19f3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate&gt;
+    &lt;div id="mc_embed_signup_scroll"&gt;
+    &lt;h2&gt;Get early access and free insights for Algotrading and Forex!&lt;/h2&gt;
+&lt;div class="indicates-required"&gt;&lt;span class="asterisk"&gt;&lt;em&gt;&lt;/span&gt; indicates required&lt;/div&gt;
+&lt;div class="mc-field-group"&gt;
+    &lt;label for="mce-EMAIL"&gt;Email Address  &lt;span class="asterisk"&gt;&lt;/em&gt;&lt;/span&gt;
+&lt;/label&gt;
+    &lt;input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL"&gt;
+&lt;/div&gt;
+    &lt;div id="mce-responses" class="clear"&gt;
+        &lt;div class="response" id="mce-error-response" style="display:none"&gt;&lt;/div&gt;
+        &lt;div class="response" id="mce-success-response" style="display:none"&gt;&lt;/div&gt;
+    &lt;/div&gt;    &lt;!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups--&gt;
+    &lt;div style="position: absolute; left: -5000px;" aria-hidden="true"&gt;&lt;input type="text" name="b_d41a019257dd51ec51a105e74_b1233e19f3" tabindex="-1" value=""&gt;&lt;/div&gt;
+    &lt;div class="clear"&gt;&lt;input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+&lt;/div&gt;
+&lt;script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'&gt;&lt;/script&gt;&lt;script type='text/javascript'&gt;(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);&lt;/script&gt;
+&lt;!--End mc_embed_signup--&gt;&lt;/p&gt;
+&lt;p&gt;Post One: &lt;a href="how-to-build-your-own-algorithmic-trading-platform-part-one.html"&gt;Building your own algotrading platform&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Post Two: &lt;a href="what-is-forex.html"&gt;What is Forex&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Post Three: &lt;a href="placing-your-first-forex-trade-with-python.html"&gt;Placing your first trade&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;Post Four: Connecting to a real, live algotrading system&lt;/p&gt;
+&lt;p&gt;Post Five: Forex Phychology | Machines beating humans&lt;/p&gt;
+&lt;p&gt;Post Six: Winner, winner, chicken, dinner | Building our first algorithm&lt;/p&gt;
+&lt;p&gt;Post Seven: Logging and analysis results&lt;/p&gt;
+&lt;p&gt;Post Eight: Backtesting&lt;/p&gt;
+&lt;p&gt;Post Nine: Deploy and automate&lt;/p&gt;
+&lt;p&gt;Post Ten: Notifications, SMS and remote control&lt;/p&gt;
+&lt;p&gt;Post Eleven: Optimizing with neural networks&lt;/p&gt;
+&lt;p&gt;Post Twelve: Deep Learning and kicking (human) ass&lt;/p&gt;
+&lt;p&gt;Post Thirteen: Forex advanced&lt;/p&gt;
+&lt;p&gt;Port Fourteen: Into to HFT&lt;/p&gt;</summary><category term="algotrading"></category></entry><entry><title>Mapping and processing data in Clojure</title><link href="http://jon.io/mapping-and-processing-data-in-clojure.html" rel="alternate"></link><updated>2014-11-20T22:48:00Z</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2014-11-20:mapping-and-processing-data-in-clojure.html</id><summary type="html">&lt;p&gt;I have to admit that I have a thing for DSLs. You can see it at &lt;a href="https://github.com/jonromero/music-as-data"&gt;music-as-data&lt;/a&gt; were notes and rhythm/beat is "mapped" to data and you can apply data transformations. &lt;/p&gt;
+&lt;p&gt;The same thing I want to do with &lt;a href="http://en.wikipedia.org/wiki/Data_at_Rest"&gt;data at-rest&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here is a scenario:
+I have lots of data sitting as CSV on my hard-drive and I want to process them. Not query them. Process them.&lt;/p&gt;
+&lt;p&gt;What would be really interesting is to be able to define (dynamically) a schema like that:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defschema&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;EURUSD&amp;quot;&lt;/span&gt; 
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;tokenizer&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;.split&lt;/span&gt; &lt;span class="nv"&gt;%&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;:&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;  
+    &lt;span class="c1"&gt;;; the mapping is done here&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;columns&lt;/span&gt; &lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;time&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt; &lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;open&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt; &lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;high&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt; &lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;low&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt; &lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;close&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt; &lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;volume&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Let me explain.
+First of all, a "tokenize" function. Each dataline is tokenized based on a function. Do you want regex? Something more complex? You are free to write anything you like. I really hate frameworks that you must write a complex regular expression or use a compicated system just to tokenize a line.&lt;/p&gt;
+&lt;p&gt;As you can imagine, tokenize returns a list of data that are mapped to "columns".&lt;/p&gt;
+&lt;p&gt;Now, the interesting stuff. &lt;/p&gt;
+&lt;p&gt;You can write scripts like the following:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;&amp;gt; &lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;close&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt; &lt;span class="mf"&gt;1.45&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;place-order&lt;/span&gt; &lt;span class="ss"&gt;:buy&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;place-order&lt;/span&gt; &lt;span class="ss"&gt;:sell&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Thoughts? &lt;/p&gt;
+&lt;p&gt;ping me here -&amp;gt; &lt;a href="http://www.twitter.com/jonromero"&gt;JR&lt;/a&gt;&lt;/p&gt;</summary><category term="databases"></category><category term="clojure"></category></entry><entry><title>HybrisDB</title><link href="http://jon.io/hybrisdb.html" rel="alternate"></link><updated>2014-10-20T22:48:00Z</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2014-10-20:hybrisdb.html</id><summary type="html">&lt;p&gt;I love Forex because:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;It has enormous amount of data (volume)&lt;/li&gt;
+&lt;li&gt;These data are coming extremely fast (velocity)&lt;/li&gt;
+&lt;li&gt;You need to consider multiple resources when you are building your strategy (variety)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;My definition of BigData is that you have volume-velocity-variety information &lt;strong&gt;and&lt;/strong&gt; you need to react on it right now (realtime). It is one of the main reasons why I don't like Hadoop (ok, the other is because I don't like Java:). &lt;/p&gt;
+&lt;p&gt;Forex is the best place if you want to start playing with BigData. You have (at least) one data channel, hitting you with data, you need to keep running algorithms on this stream (sometimes doing correlations up to a week) and you need be able to respond very fast. If a garbage collector kicks in or if you need to grab data from a database (even if this DB is in memory - long live Redis) then you will have issues.&lt;/p&gt;
+&lt;p&gt;That's the reason why most of the "trading" databases have all their data in the same memory space and have custom languages doing the analysis (like &lt;a href="http://kx.com"&gt;Kdb&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;That was the inspiration for LDB.&lt;/p&gt;
+&lt;p&gt;Millions of data sources (mobile phones), hitting your database and calculating/updating for each one of the requests thousands of counters and running all sorts of algorithms. Per request. In realtime.&lt;/p&gt;
+&lt;p&gt;But let's face it. The vast majority of users/companies will never have millions (or even thousands) of requests hitting their servers. That's why I started a new opensource database with codename: HybrisDB.&lt;/p&gt;
+&lt;p&gt;HDB has the following characteristics:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Simple to install (no moving parts)&lt;/li&gt;
+&lt;li&gt;Simple to use (pre-defined dashboards)&lt;/li&gt;
+&lt;li&gt;It will be perfect for the 99% of users/companies but not for the 1% like Facebook or Google (sacrificing Enterprise features)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The concept is to have a dashboard, to watch indicators going on/off and then (maybe) connect to a system to place an order.&lt;/p&gt;
+&lt;p&gt;Sounds like an interesting cool hobby project and I still try to decide between using Erlang or Clojure for this.&lt;/p&gt;
+&lt;p&gt;Ping me on &lt;a href="http://www.twitter.com/jonromero"&gt;twitter&lt;/a&gt; if you have any ideas!&lt;/p&gt;
+&lt;p&gt;Cheers!&lt;/p&gt;
+&lt;p&gt;JR&lt;/p&gt;</summary><category term="databases"></category><category term="hybrisdb"></category></entry><entry><title>How to have 7 more days every month</title><link href="http://jon.io/how-to-have-7-more-days-every-month.html" rel="alternate"></link><updated>2014-01-26T04:44:53Z</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2014-01-26:how-to-have-7-more-days-every-month.html</id><summary type="html">&lt;p&gt;One of my new year's resolution was "study one of your habits each month" and I decided to focus on what activities I am spending my online time. So, I installed &lt;a href="https://www.rescuetime.com/"&gt;RescueTime&lt;/a&gt; which is a very cool app that sits on the background and creates reports about which apps and sites you are using the most. And no, it is not sending that info to NSA (you are not that important!).&lt;/p&gt;
+&lt;p&gt;Even though I spent most of my time working, writing and communicating, I also spent around 2 hours on average on Facebook (gasp!). No biggie. What I hated was that for the majority of times I was scrolling/refreshing for new updates.
+Like opening your refrigirator every two minutes even though you know it is empty! Damn you habits!&lt;/p&gt;
+&lt;p&gt;So, spending 2 hours every day (sometimes more) on Facebook, means 60 hours per month or &lt;em&gt;7 working days&lt;/em&gt;. 7 freaking working days each month. 7 days, each day with 8 full hours, to sleep, go out, exercise, write a book, learn something new.&lt;/p&gt;
+&lt;p&gt;What I did was installing &lt;a href="https://chrome.google.com/webstore/detail/stayfocusd/laankejkbhbdhmipfmgcngdelahlfoji"&gt;StayFocused&lt;/a&gt;, a free plugin for your browser that doesn't let you spent more than 10 minutes on specific sites everyday. And guess what. The "I am just using facebook to communicate" is such a lame excuse as I had no problem communicating with my friends, even by using facebook for 10 minutes.&lt;/p&gt;
+&lt;p&gt;Now, give it a shot and tell me what you built in your spare time!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.twitter.com/jonromero"&gt;JR&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="productivity"></category></entry><entry><title>Kicking time management in the nuts</title><link href="http://jon.io/kicking-time-management-in-the-nuts.html" rel="alternate"></link><updated>2013-12-30T08:41:43Z</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2013-12-30:kicking-time-management-in-the-nuts.html</id><summary type="html">&lt;p&gt;Building a Startup with pocket money and selling it for tons of cash in just two years, makes you learn a couple of tricks that change your life. One of those is time management.&lt;/p&gt;
+&lt;p&gt;Time management is one of the decisive factors of making someone happy. Having lots of time can lead to boredom, having no time can lead to stress and anxiety. The funny thing is that it's so easy jumping from one extreme to the other and impossible to stay "in the zone". &lt;/p&gt;
+&lt;p&gt;First of all, let me get something out of my chest: There is no such thing as "I have too many things to do that I need more than 24 hours a day". Bullshit. Even if you had 50 hours per day, you will still be struggling with todos. Why? Because, &lt;em&gt;time is irrelevant&lt;/em&gt;. Everything is about procedures.&lt;/p&gt;
+&lt;p&gt;What I really hate about time management is tracking time. It is inefficient, I get bored quickly and you cannot focus 100% on a task everytime for each specific timeslot (unless you are a buddist monk). What I love to do is ticking off tasks. The pleasure of striking out a task that has been on your list for the last couple of weeks is the same as eating a Sundae ice-cream in the sun. Sometimes even better.&lt;/p&gt;
+&lt;p&gt;I borrowed one of the most effective ways of "killing" tasks by a project management technic called &lt;a href="http://en.wikipedia.org/wiki/Scrum_(software_development)"&gt;Scrum&lt;/a&gt;. If you are in a Startup and haven't heard of Scrum, prepare to be amazed.&lt;/p&gt;
+&lt;p&gt;Based on this method, you create periods of work (called &lt;em&gt;sprints&lt;/em&gt;) and you add things to be done in these periods. Why is this much better than just having a huge todo list? It breaks down tasks in large, high-level time blocks which are easier to manage and easier to extract information about how you (or your team) performs.&lt;/p&gt;
+&lt;h2&gt;The Planning fallacy&lt;/h2&gt;
+&lt;p&gt;Whenever I talk with a Startup that is struggling to go to a release or prototype, there is a reccuring theme: They all have tasks, some even have milestones but noone has a high-level &lt;em&gt;action&lt;/em&gt; plan on what needs to be done. &lt;/p&gt;
+&lt;p&gt;We humans are pretty bad at calculating things that span more than a couple of weeks and what is worse, is that we suck at identifying this. It is an ego thing.&lt;/p&gt;
+&lt;p&gt;So, roll up your sleeves and let's do a small test. &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create a list of all the things you need to do and assign a number of how important this item is (from 1 to 5)&lt;/li&gt;
+&lt;li&gt;Add all the values and divide by the number of tasks (this is your average &lt;em&gt;velocity&lt;/em&gt;)&lt;/li&gt;
+&lt;li&gt;Organize the things in two groups (group A and group B). Make sure that each group has a summed value near to your average&lt;/li&gt;
+&lt;li&gt;Take the first group (group A) and divide it again in two groups (group C and group D)&lt;/li&gt;
+&lt;li&gt;Now, for the next two weeks, focus on resolving all the tasks in group C.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You might be wondering what is the great thing behind this and why this is so effective. First of all, it is a very easy system which translates to a very low abandonment rate. Second, even from the first week, you will be able to calculate your average velocity (which may be totally different from the one you calculated here) and "feel" the progress. And third, you will have a realistic feedback of how much work is for a single task versus the value this task actually delivers.&lt;/p&gt;
+&lt;p&gt;What you should do when the second week is done, is to put any unresolved tasks back to the pool of tasks (called the &lt;em&gt;backlog&lt;/em&gt;) and re-organize your groups based on your newly calculated average velocity. As a rule of thumb, you should calculate your velocity every month.  &lt;/p&gt;
+&lt;p&gt;Have in mind that there are more sophisticated systems (I'll talk more about them in an upcoming post) but my rule is that first you need something simple that works right now and then you can improve and iterate.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.twitter.com/jonromero"&gt;JR&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="startups"></category></entry><entry><title>New blog!</title><link href="http://jon.io/new-blog.html" rel="alternate"></link><updated>2013-07-30T14:49:33Z</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2013-07-30:new-blog.html</id><summary type="html">&lt;p&gt;I haven't blogged for a while and I think that I needed I new (virtual) home for my rants.
+This place is brand new (and white!) and it is going to be awesome!&lt;/p&gt;
+&lt;p&gt;I don't know what will happen with my previous domain (&lt;a href="http://jon.is.emotionull.com"&gt;emotionull&lt;/a&gt;) but I think it might be the new home for a new (underground) social network for traders. We'll see.&lt;/p&gt;
+&lt;p&gt;My hobby project right now, is a new opensource trading platform (for the first time not focused on HFT) and some experiments around a super fast, vertical scaling, full adhoc queries database (exactly the opposite of &lt;a href="http://www.bugsense.com/about/bigdata"&gt;LDB&lt;/a&gt; I've built at &lt;a href="http://www.bugsense.com"&gt;BugSense&lt;/a&gt;). I'll keep you posted.&lt;/p&gt;
+&lt;p&gt;Good times!&lt;/p&gt;
+&lt;p&gt;JR&lt;/p&gt;</summary><category term="intro"></category></entry></feed>
