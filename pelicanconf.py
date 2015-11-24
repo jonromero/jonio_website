@@ -4,7 +4,8 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Jon V <h2>BigData. Startups. Trading.</h2>'
 SITENAME = u'Jon.IO'
-SITEURL = ''
+SITEURL = u'http://jon.io'
+TIMEZONE = u'America/Los_Angeles'
 
 DEFAULT_LANG = u'en'
 
@@ -31,3 +32,4 @@ TWITTER_USERNAME = "jonromero"
 RELATIVE_URLS = True
 
 PLUGINS = ['sitemap']
+
