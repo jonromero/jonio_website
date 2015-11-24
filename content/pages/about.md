@@ -1,7 +1,7 @@
 Title: About
 Tags: about
 Summary: Who am I
-Status: draft
+status draft
 
 
 Serial Entrepreneur, Angel Investor, Awarded Software Engineer. Specialized in turning "impossible" to "possible".
