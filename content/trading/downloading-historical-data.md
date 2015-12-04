@@ -2,7 +2,7 @@ Title: Downloading historical Forex tick data and importing them in to Python us
 Tags: algotrading
 Date: 2015-12-03 22:48
 
-This is the another post of the series: [How to build your own algotrading platform](how-to-build-your-own-algorithmic-trading-platform.html).
+*This is the another post of the series: [How to build your own algotrading platform](how-to-build-your-own-algorithmic-trading-platform.html).*
 
 Before running any live algotrading system, it is a good practice to backtest (that means run a simulation) our algorithms. Have in mind that this doesn't mean that if your system is killing it for the last 5 years/months/days it will make a profit but it is a good indicator that you might be on to something.
 
