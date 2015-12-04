@@ -2,7 +2,7 @@ Title: How to build your own algorithmic trading platform
 Tags: algotrading
 Date: 2015-09-28 22:48
 
-These are all the post that have been written up until now.
+These are all the post that have been written up until now. I may add/remove post as I get more feedback. 
 
 <!-- Begin MailChimp Signup Form -->
 <link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
@@ -42,13 +42,13 @@ Post Three: [Placing your first trade](placing-your-first-forex-trade-with-pytho
 
 Post Four: Connecting to a real, live algotrading system
 
-Post Five: Forex Phychology | Machines beating humans
+Post Five: Forex Psychology | Machines beating humans
 
 Post Six: Winner, winner, chicken, dinner | Building our first algorithm
 
 Post Seven: Logging and analysis results
 
-Post Eight: Backtesting
+Post Eight: [Backtesting](downloading-historical-data.md)
 
 Post Nine: Deploy and automate
 
