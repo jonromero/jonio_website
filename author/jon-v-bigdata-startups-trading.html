@@ -22,6 +22,7 @@
         </div>
         <div class="nav-button">
             <ul>
+                                    <li><a href="../pages/about.html">About</a></li>
                             <li><a href="http://twitter.com/jonromero">Twitter</a></li>
                             <li><a href="http://www.linkedin.com/in/johnvlachoyiannis">LinkedIn</a></li>
                             <li><a href="http://github.com/jonromero/">Github</a></li>
@@ -35,6 +36,7 @@
             <h1 id="user"><a href=".." class="">Jon V <h2>BigData. Startups. Trading.</h2></a></h1>
             <h2></h2>
             <ul>
+                        <li><a href="../pages/about.html">About</a></li>
                         <li><a href="http://twitter.com/jonromero">Twitter</a></li>
                         <li><a href="http://www.linkedin.com/in/johnvlachoyiannis">LinkedIn</a></li>
                         <li><a href="http://github.com/jonromero/">Github</a></li>
@@ -51,6 +53,155 @@
 
     <section id="posts">
 	
+        <article class='listed'>
+            <h1 class="title">
+                <a href="../downloading-historical-forex-tick-data-and-importing-them-in-to-python-using-pandas.html" rel='bookmark'>Downloading historical Forex tick data and importing them in to Python using Pandas</a>
+            </h1>
+            <div class="article-content"> <p>Before running any live algotrading system, it is a good practice to backtest (that means run a simulation) our algorithms. Have in mind that this doesn't mean that if your system is killing it for the last 5 years/months/days it will make a profit but it is a good indicator that you might be on to something.</p>
+<p>There are four things that we need to take into consideration when we do our backtesting:</p>
+<ol>
+<li>The quality of the data</li>
+<li>How to load them efficiently </li>
+<li>How to built our backtesting system</li>
+<li>Try to have our backtesting and our live system share as much code as we can</li>
+</ol>
+<p>Today, we are going to focus on (1) and (2).</p>
+<p>For Forex data, I am using <a href="http://ratedata.gaincapital.com/">GainCapital</a>. Their data are in the form of <a href="http://www.investopedia.com/terms/t/tick.asp">ticks</a>. For a free source it is good enough. I used to use Oanda's historical data service but it seems that they moved it to a premium product. Too bad. Make sure that you use GainCapital's data only for experimentation.</p>
+<p>For any other kind of paid historical data (ETFs, stocks, options stc), I am using <a href="http://eoddata.com/">eoddata.com</a> (they also have some forex historical data but I haven't used them).</p>
+<p>Let's download data for a week and experiment a little bit.
+The link to the data is <a href="http://ratedata.gaincapital.com/2015/11%20November/EUR_USD_Week1.zip">http://ratedata.gaincapital.com/2015/11%20November/EUR_USD_Week1.zip</a> for the first week of November 2015.</p>
+<p>First we need to unzip the file
+    :::python
+    &gt;unzip EUR_USD_Week1.zip</p>
+<p>and you'll get a <em>25MB</em> file named EUR_USD_Week1.csv. These are data for one week for one currency pair. You can imagine the amount of data you need to process for all currencies for the last five years (hint: a lot!). But don't worry, we are going optimize this. For now, let's open the file and inspect.</p>
+<div class="highlight"><pre><span class="o">&gt;</span><span class="n">head</span> <span class="n">EUR_USD_Week1</span><span class="o">.</span><span class="n">csv</span>
+</pre></div>
+
+
+<table>
+<thead>
+<tr>
+<th>lTid</th>
+<th>cDealable</th>
+<th>CurrencyPair</th>
+<th>RateDateTime</th>
+<th>RateBid</th>
+<th>RateAsk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4464650058</td>
+<td>D</td>
+<td>EUR/USD</td>
+<td>2015-11-01 17:00:06.490000000</td>
+<td>1.103380</td>
+<td>1.103770</td>
+</tr>
+<tr>
+<td>4464650061</td>
+<td>D</td>
+<td>EUR/USD</td>
+<td>2015-11-01 17:00:06.740000000</td>
+<td>1.103400</td>
+<td>1.103760</td>
+</tr>
+<tr>
+<td>4464650072</td>
+<td>D</td>
+<td>EUR/USD</td>
+<td>2015-11-01 17:00:07.990000000</td>
+<td>1.103390</td>
+<td>1.103750</td>
+</tr>
+<tr>
+<td>4464650083</td>
+<td>D</td>
+<td>EUR/USD</td>
+<td>2015-11-01 17:00:08.990000000</td>
+<td>1.103400</td>
+<td>1.103750</td>
+</tr>
+</tbody>
+</table>
+<p>the things that we care about is the RateDateTime, RateBid and RateAsk. As you can understade each line has a timestamp and the how much was the price to buy or sell. Formats downloaded by other services are pretty similar.</p>
+<p>There are many ways to load these data into Python but the most preferable when it comes to data slicing and manipulating is using <a href="http://pandas.pydata.org/">Pandas</a>.
+We can always use the <a href="https://docs.python.org/2/library/csv.html">csv</a> library to load data (and it might be faster) but we need to do some optimizations and processing first that as you will see it is pretty easy with pandas. </p>
+<p>Another great tool to load TONS of GBs pretty efficiently and very fast is using <a href="http://bcolz.blosc.org/">Bcolz</a>, covered in a much later post (or you can read a preview if you have signed up in the <a href="http://eepurl.com/bGbOnb">newsletter</a>.</p>
+<p><em>Manipulating data using Pandas</em>
+The data we downloaded are in ticks. Unless we are building an UHFT (ultra high frequency trading) algorithm, it is much more efficient (memory, storage and processing-wise) to
+"group" these ticks into seconds (or minutes or hours depending on your strategy). This will make our download scale down from 25MB to just <em>35KB</em> which translate to HUGE performance and memory benefits.</p>
+<p>Let's group all these data in 15 minutes. How? Time to fall in love with resample.</p>
+<div class="highlight"><pre><span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;DateTime&#39;</span><span class="p">},</span> <span class="n">index_col</span><span class="o">=</span><span class="s">&#39;DateTime&#39;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Tid&#39;</span><span class="p">,</span> <span class="s">&#39;Dealable&#39;</span><span class="p">,</span> <span class="s">&#39;Pair&#39;</span><span class="p">,</span> <span class="s">&#39;DateTime&#39;</span><span class="p">,</span> <span class="s">&#39;Buy&#39;</span><span class="p">,</span> <span class="s">&#39;Sell&#39;</span><span class="p">],</span> <span class="n">date_parser</span><span class="o">=</span><span class="n">parse</span><span class="p">)</span>
+
+<span class="c"># let&#39;s erase the columns we don&#39;t need</span>
+<span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s">&#39;Tid&#39;</span><span class="p">]</span> 
+<span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s">&#39;Dealable&#39;</span><span class="p">]</span>
+<span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s">&#39;Pair&#39;</span><span class="p">]</span>
+
+<span class="c"># group every 15 minutes and create an OHLC bar</span>
+<span class="n">grouped_data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s">&#39;15Min&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s">&#39;ohlc&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>The resampled the dataset looks like this:</p>
+<table>
+<thead>
+<tr>
+<th>DateTime</th>
+<th>Buy</th>
+<th>Open</th>
+<th>Buy</th>
+<th>High</th>
+<th>Buy</th>
+<th>Low</th>
+<th>Buy</th>
+<th>Close</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2015-08-02 17:00:00</td>
+<td>1.09706</td>
+<td>1.09821</td>
+<td>1.09706</td>
+<td>1.09735</td>
+<td>1.09752</td>
+<td>1.09853</td>
+<td>1.09740</td>
+<td>1.09762</td>
+</tr>
+<tr>
+<td>2015-08-02 17:15:00</td>
+<td>1.09731</td>
+<td>1.09825</td>
+<td>1.09731</td>
+<td>1.09769</td>
+<td>1.09762</td>
+<td>1.09843</td>
+<td>1.09758</td>
+<td>1.09808</td>
+</tr>
+</tbody>
+</table>
+<p>This is called OHLC (Open High Low Close) bar for every <em>15 minutes</em>. You can see now that the ticks are grouped in 15 minute segments and you have the highest and lowest point that the price reached during these 15 minutes and also the open/close for buy and sell. Pure gold! Not only you have all the information you need but now it is extremely fast to load it. You just need to save the data:</p>
+<div class="highlight"><pre><span class="p">::</span> <span class="n">python</span>
+<span class="c"># save to file</span>
+<span class="n">grouped_data</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="n">filename</span><span class="o">+</span><span class="s">&#39;-OHLC.pkl&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>and then you can reuse this 35kb file. </p>
+<p>We can write a simple momentum algorithm that checks if there was a huge movement the last 15 minutes and if that was the case, let's buy. We will dive into this in a later post.</p>
+<p>You can see the code as always on <a href="https://github.com/jonromero/forex_algotrading/blob/master/post4/create_OHLC.py">github</a>.</p>
+<p>Coming up next, building a backtesting system from scratch!</p>
+<p>If you have more feedback, ping me at <a href="http://www.twitter.com/jonromero">jonromero</a> or signup to the <a href="http://eepurl.com/bGbOnb">newsletter</a>. </p>
+<p>Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
+If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. </p> </div>
+            <div class="abbr published">
+                Posted  <a href='../downloading-historical-forex-tick-data-and-importing-them-in-to-python-using-pandas.html' title='2015-12-03T22:48:00-08:00'>Thu 03 December 2015</a> in <a href="../category/trading.html">trading</a>.              
+            </div>
+        </article>
         <article class='listed'>
             <h1 class="title">
                 <a href="../placing-your-first-forex-trade-with-python.html" rel='bookmark'>Placing your first Forex trade with Python</a>
@@ -105,7 +256,7 @@
 <p>Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
 If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. </p> </div>
             <div class="abbr published">
-                Posted  <a href='../placing-your-first-forex-trade-with-python.html' title='2015-10-20T22:48:00+00:00'>Tue 20 October 2015</a> in <a href="../category/trading.html">trading</a>.              
+                Posted  <a href='../placing-your-first-forex-trade-with-python.html' title='2015-10-20T22:48:00-07:00'>Tue 20 October 2015</a> in <a href="../category/trading.html">trading</a>.              
             </div>
         </article>
         <article class='listed'>
@@ -137,7 +288,7 @@ How many units can I buy with 1:50 leverage?</p>
 <p>Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
 If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. </p> </div>
             <div class="abbr published">
-                Posted  <a href='../what-is-forex.html' title='2015-10-12T22:48:00+00:00'>Mon 12 October 2015</a> in <a href="../category/trading.html">trading</a>.              
+                Posted  <a href='../what-is-forex.html' title='2015-10-12T22:48:00-07:00'>Mon 12 October 2015</a> in <a href="../category/trading.html">trading</a>.              
             </div>
         </article>
         <article class='listed'>
@@ -162,14 +313,14 @@ If you lose any (or all) you money because you followed any trading advices or d
 <p>All code will be on github and if everything goes well, I'll wrap it up in a book for everyone to enjoy.</p>
 <p>I have like three chapters almost done, so if you want early access just ping me at - <a href="http://www.twitter.com/jonromero">jonromero</a>.</p> </div>
             <div class="abbr published">
-                Posted  <a href='../how-to-build-your-own-algorithmic-trading-platform-part-one.html' title='2015-10-01T22:48:00+00:00'>Thu 01 October 2015</a> in <a href="../category/trading.html">trading</a>.              
+                Posted  <a href='../how-to-build-your-own-algorithmic-trading-platform-part-one.html' title='2015-10-01T22:48:00-07:00'>Thu 01 October 2015</a> in <a href="../category/trading.html">trading</a>.              
             </div>
         </article>
         <article class='listed'>
             <h1 class="title">
                 <a href="../how-to-build-your-own-algorithmic-trading-platform.html" rel='bookmark'>How to build your own algorithmic trading platform</a>
             </h1>
-            <div class="article-content"> <p>These are all the post that have been written up until now.</p>
+            <div class="article-content"> <p>These are all the post that have been written up until now. I may add/remove post as I get more feedback. </p>
 <!-- Begin MailChimp Signup Form -->
 
 <p><link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
@@ -203,10 +354,10 @@ If you lose any (or all) you money because you followed any trading advices or d
 <p>Post Two: <a href="what-is-forex.html">What is Forex</a></p>
 <p>Post Three: <a href="placing-your-first-forex-trade-with-python.html">Placing your first trade</a> </p>
 <p>Post Four: Connecting to a real, live algotrading system</p>
-<p>Post Five: Forex Phychology | Machines beating humans</p>
+<p>Post Five: Forex Psychology | Machines beating humans</p>
 <p>Post Six: Winner, winner, chicken, dinner | Building our first algorithm</p>
 <p>Post Seven: Logging and analysis results</p>
-<p>Post Eight: Backtesting</p>
+<p>Post Eight: <a href="downloading-historical-data.md">Backtesting</a></p>
 <p>Post Nine: Deploy and automate</p>
 <p>Post Ten: Notifications, SMS and remote control</p>
 <p>Post Eleven: Optimizing with neural networks</p>
@@ -214,7 +365,7 @@ If you lose any (or all) you money because you followed any trading advices or d
 <p>Post Thirteen: Forex advanced</p>
 <p>Port Fourteen: Into to HFT</p> </div>
             <div class="abbr published">
-                Posted  <a href='../how-to-build-your-own-algorithmic-trading-platform.html' title='2015-09-28T22:48:00+00:00'>Mon 28 September 2015</a> in <a href="../category/trading.html">trading</a>.              
+                Posted  <a href='../how-to-build-your-own-algorithmic-trading-platform.html' title='2015-09-28T22:48:00-07:00'>Mon 28 September 2015</a> in <a href="../category/trading.html">trading</a>.              
             </div>
         </article>
         <article class='listed'>
@@ -247,7 +398,7 @@ First of all, a "tokenize" function. Each dataline is tokenized based on a funct
 <p>Thoughts? </p>
 <p>ping me here -&gt; <a href="http://www.twitter.com/jonromero">JR</a></p> </div>
             <div class="abbr published">
-                Posted  <a href='../mapping-and-processing-data-in-clojure.html' title='2014-11-20T22:48:00+00:00'>Thu 20 November 2014</a> in <a href="../category/databases.html">databases</a>.              
+                Posted  <a href='../mapping-and-processing-data-in-clojure.html' title='2014-11-20T22:48:00-08:00'>Thu 20 November 2014</a> in <a href="../category/databases.html">databases</a>.              
             </div>
         </article>
         <article class='listed'>
@@ -278,7 +429,7 @@ First of all, a "tokenize" function. Each dataline is tokenized based on a funct
 <p>Cheers!</p>
 <p>JR</p> </div>
             <div class="abbr published">
-                Posted  <a href='../hybrisdb.html' title='2014-10-20T22:48:00+00:00'>Mon 20 October 2014</a> in <a href="../category/databases.html">databases</a>.              
+                Posted  <a href='../hybrisdb.html' title='2014-10-20T22:48:00-07:00'>Mon 20 October 2014</a> in <a href="../category/databases.html">databases</a>.              
             </div>
         </article>
         <article class='listed'>
@@ -309,7 +460,7 @@ First of all, a "tokenize" function. Each dataline is tokenized based on a funct
 <li><a href="http://www.twitter.com/jonromero">JR</a></li>
 </ul> </div>
             <div class="abbr published">
-                Posted  <a href='../kicking-time-management-in-the-nuts.html' title='2013-12-30T08:41:43+00:00'>Mon 30 December 2013</a> in <a href="../category/startups.html">startups</a>.              
+                Posted  <a href='../kicking-time-management-in-the-nuts.html' title='2013-12-30T08:41:43-08:00'>Mon 30 December 2013</a> in <a href="../category/startups.html">startups</a>.              
             </div>
         </article>
         <article class='listed'>
@@ -326,7 +477,7 @@ Like opening your refrigirator every two minutes even though you know it is empt
 <li><a href="http://www.twitter.com/jonromero">JR</a></li>
 </ul> </div>
             <div class="abbr published">
-                Posted  <a href='../how-to-have-7-more-days-every-month.html' title='2013-10-20T22:48:00+00:00'>Sun 20 October 2013</a> in <a href="../category/productivity.html">productivity</a>.              
+                Posted  <a href='../how-to-have-7-more-days-every-month.html' title='2013-10-20T22:48:00-07:00'>Sun 20 October 2013</a> in <a href="../category/productivity.html">productivity</a>.              
             </div>
         </article>
     </section>
