@@ -135,6 +135,7 @@ The data we downloaded are in ticks. Unless we are building an UHFT (ultra high 
 
 &lt;p&gt;and then you can reuse this 35kb file. &lt;/p&gt;
 &lt;p&gt;We can write a simple momentum algorithm that checks if there was a huge movement the last 15 minutes and if that was the case, let's buy. We will dive into this in a later post.&lt;/p&gt;
+&lt;p&gt;You can see the code as always on &lt;a href="https://github.com/jonromero/forex_algotrading/blob/master/post4/create_OHLC.py"&gt;github&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Coming up next, building a backtesting system from scratch!&lt;/p&gt;
 &lt;p&gt;If you have more feedback, ping me at &lt;a href="http://www.twitter.com/jonromero"&gt;jonromero&lt;/a&gt; or signup to the &lt;a href="http://eepurl.com/bGbOnb"&gt;newsletter&lt;/a&gt;. &lt;/p&gt;
 &lt;p&gt;Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
