@@ -5,161 +5,175 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://jon.io/</loc>
-<lastmod>2015-11-22T18:40:20-00:00</lastmod>
+<lastmod>2015-12-03T23:22:27-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://jon.io/archives.html</loc>
-<lastmod>2015-11-22T18:40:20-00:00</lastmod>
+<lastmod>2015-12-03T23:22:27-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://jon.io/tags.html</loc>
-<lastmod>2015-11-22T18:40:20-00:00</lastmod>
+<lastmod>2015-12-03T23:22:27-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://jon.io/categories.html</loc>
-<lastmod>2015-11-22T18:40:20-00:00</lastmod>
+<lastmod>2015-12-03T23:22:27-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
+<loc>http://jon.io/pages/about.html</loc>
+<lastmod>2015-12-03T22:18:54-08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://jon.io/downloading-historical-forex-tick-data-and-importing-them-in-to-python-using-pandas.html</loc>
+<lastmod>2015-12-03T22:48:00-08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://jon.io/placing-your-first-forex-trade-with-python.html</loc>
-<lastmod>2015-10-20T22:48:00+00:00</lastmod>
+<lastmod>2015-10-20T22:48:00-07:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://jon.io/what-is-forex.html</loc>
-<lastmod>2015-10-12T22:48:00+00:00</lastmod>
+<lastmod>2015-10-12T22:48:00-07:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://jon.io/how-to-build-your-own-algorithmic-trading-platform-part-one.html</loc>
-<lastmod>2015-10-01T22:48:00+00:00</lastmod>
+<lastmod>2015-10-01T22:48:00-07:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://jon.io/how-to-build-your-own-algorithmic-trading-platform.html</loc>
-<lastmod>2015-09-28T22:48:00+00:00</lastmod>
+<lastmod>2015-09-28T22:48:00-07:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://jon.io/mapping-and-processing-data-in-clojure.html</loc>
-<lastmod>2014-11-20T22:48:00+00:00</lastmod>
+<lastmod>2014-11-20T22:48:00-08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://jon.io/hybrisdb.html</loc>
-<lastmod>2014-10-20T22:48:00+00:00</lastmod>
+<lastmod>2014-10-20T22:48:00-07:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://jon.io/kicking-time-management-in-the-nuts.html</loc>
-<lastmod>2013-12-30T08:41:43+00:00</lastmod>
+<lastmod>2013-12-30T08:41:43-08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://jon.io/how-to-have-7-more-days-every-month.html</loc>
-<lastmod>2013-10-20T22:48:00+00:00</lastmod>
+<lastmod>2013-10-20T22:48:00-07:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://jon.io/category/databases.html</loc>
-<lastmod>2014-11-20T22:48:00+00:00</lastmod>
+<lastmod>2014-11-20T22:48:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://jon.io/category/productivity.html</loc>
-<lastmod>2013-10-20T22:48:00+00:00</lastmod>
+<lastmod>2013-10-20T22:48:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://jon.io/category/startups.html</loc>
-<lastmod>2013-12-30T08:41:43+00:00</lastmod>
+<lastmod>2013-12-30T08:41:43-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://jon.io/category/trading.html</loc>
-<lastmod>2015-10-20T22:48:00+00:00</lastmod>
+<lastmod>2015-12-03T22:48:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://jon.io/tag/productivity.html</loc>
-<lastmod>2013-10-20T22:48:00+00:00</lastmod>
+<lastmod>2013-10-20T22:48:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://jon.io/tag/algotrading.html</loc>
-<lastmod>2015-10-20T22:48:00+00:00</lastmod>
+<lastmod>2015-12-03T22:48:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://jon.io/tag/hybrisdb.html</loc>
-<lastmod>2014-10-20T22:48:00+00:00</lastmod>
+<lastmod>2014-10-20T22:48:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://jon.io/tag/databases.html</loc>
-<lastmod>2014-11-20T22:48:00+00:00</lastmod>
+<lastmod>2014-11-20T22:48:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://jon.io/tag/startups.html</loc>
-<lastmod>2013-12-30T08:41:43+00:00</lastmod>
+<lastmod>2013-12-30T08:41:43-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://jon.io/tag/clojure.html</loc>
-<lastmod>2014-11-20T22:48:00+00:00</lastmod>
+<lastmod>2014-11-20T22:48:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://jon.io/author/jon-v-bigdata-startups-trading.html</loc>
-<lastmod>2015-10-20T22:48:00+00:00</lastmod>
+<lastmod>2015-12-03T22:48:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
