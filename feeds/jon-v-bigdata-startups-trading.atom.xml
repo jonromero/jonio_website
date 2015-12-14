@@ -260,7 +260,7 @@ If you lose any (or all) you money because you followed any trading advices or d
 &lt;p&gt;Let's talk now about what the final product will look like.&lt;/p&gt;
 &lt;p&gt;We are building a system where you will be able to:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Simulate your strategy (this is called backtesting)&lt;/li&gt;
+&lt;li&gt;Simulate your strategy (this is called &lt;a href="http://jon.io/building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html"&gt;backtesting&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;Execute your strategy without supervision&lt;/li&gt;
 &lt;li&gt;Alert you via sms/email for trades and errors&lt;/li&gt;
 &lt;li&gt;Be scalable and trivial to deploy new updates&lt;/li&gt;
