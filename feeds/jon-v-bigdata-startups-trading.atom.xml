@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Jon.IO</title><link href="http://jon.io/" rel="alternate"></link><link href="http://jon.io/feeds/jon-v-bigdata-startups-trading.atom.xml" rel="self"></link><id>http://jon.io/</id><updated>2015-12-03T22:48:00-08:00</updated><entry><title>Downloading historical Forex tick data and importing them in to Python using Pandas</title><link href="http://jon.io/downloading-historical-forex-tick-data-and-importing-them-in-to-python-using-pandas.html" rel="alternate"></link><updated>2015-12-03T22:48:00-08:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2015-12-03:downloading-historical-forex-tick-data-and-importing-them-in-to-python-using-pandas.html</id><summary type="html">&lt;p&gt;&lt;em&gt;This is the another post of the series: &lt;a href="how-to-build-your-own-algorithmic-trading-platform.html"&gt;How to build your own algotrading platform&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Jon.IO</title><link href="http://jon.io/" rel="alternate"></link><link href="http://jon.io/feeds/jon-v-bigdata-startups-trading.atom.xml" rel="self"></link><id>http://jon.io/</id><updated>2015-12-13T22:48:00-08:00</updated><entry><title>Building a backtesting system in Python: or how I lost $3400 in two hours</title><link href="http://jon.io/building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html" rel="alternate"></link><updated>2015-12-13T22:48:00-08:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2015-12-13:building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html</id><summary type="html">&lt;p&gt;&lt;em&gt;This is the another post of the series: &lt;a href="how-to-build-your-own-algorithmic-trading-platform.html"&gt;How to build your own algotrading platform&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Building a backtest system is actually pretty easy. Easy to screw up I mean. Even though there are tons of excellent libraries out there (and we'll go through them at some point), I always like doing this on my own in order to fine-tune it.&lt;/p&gt;
+&lt;p&gt;From all the backtesting systems I have seen, we can assume that there are two categories:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The "for-loopers"&lt;/li&gt;
+&lt;li&gt;The Event generators&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Today, we'll talk about for-loopers.&lt;/p&gt;
+&lt;p&gt;The "for-loopers" are my favorite type of backtesters. They are trivial to write and super fun to expand but they have some vital flows and sadly the majority of backtesters out there is "for-loopers" (ps: I need to find a better name for this!).&lt;/p&gt;
+&lt;p&gt;How for-loopers work? Using a for loop (as you might have guessed). It is something like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;each&lt;/span&gt; &lt;span class="n"&gt;element&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;readhistoricaldata&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt; 
+    &lt;span class="n"&gt;apply_strategy&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; 
+    &lt;span class="n"&gt;how_our_strategy_did&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Very simple right? This is how one backtesting system works, that runs a momentum strategy:&lt;/p&gt;
+&lt;script src="https://gist.github.com/jonromero/125cbca28067f0aefb2c.js"&gt;&lt;/script&gt;
+
+&lt;p&gt;So, what is the problem? &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Very difficult to scale (horizontally) &lt;/li&gt;
+&lt;li&gt;Needs lots of work to keep your apply_strategy() working on backtesting and production &lt;/li&gt;
+&lt;li&gt;You need to have everything in the same programming language&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Let's dive into these, one by one.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Scalability&lt;/em&gt;. 
+I was experimenting a couple a weeks ago with a &lt;a href="https://en.wikipedia.org/wiki/Hill_climbing"&gt;hill-climbing&lt;/a&gt; algorithm to optimize one of my strategies. It is still running. After two weeks. And I build uber-scalable systems for a living.
+Why is it still running? You can use &lt;a href="https://docs.python.org/2/library/multiprocessing.html"&gt;multiprocessing&lt;/a&gt;, &lt;a href="http://discoproject.org/"&gt;Disco&lt;/a&gt;, producer/consumer (using &lt;a href="http://zeromq.org/"&gt;ZeroMQ&lt;/a&gt;) or just threads to speed this up but some problems are not "&lt;a href="https://en.wikipedia.org/wiki/Embarrassingly_parallel"&gt;embarrassing parallel&lt;/a&gt;" (yes, this is an actual term, not one of my made-up words). The amount of work to scale a backtester like this (especially when you want to do same machine learning on top of it) is huge. You can do it but it is the wrong way.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Production and backtesting in sync&lt;/em&gt;
+This. The times I have been bitten by this. I can recall the lost trades where I was "hm, why I entered this trade?" or my old time favorite "WHY TRAILING STOP WAS APPLIED NOW?".&lt;/p&gt;
+&lt;p&gt;Story time: I had an idea in order to optimize my strategy, to run a backtester to see what would happen if I could put a trailing stop AFTER the trade was profitable in order to always secure profits. Backtesting worked like charm at a 13% increase of earnings and &lt;em&gt;production lost every single trade&lt;/em&gt;. I figure it out after my algo lost $3400 in a couple of hours (a very expensive lesson).&lt;/p&gt;
+&lt;p&gt;Keeping the apply_strategy in sync is very difficult and becomes almost impossible when you want to do it in a distributed fashion. And you don't want to have two version of your strategy that are "almost" identical. Unless you have $3400 to spare.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Using different languages&lt;/em&gt;
+I love Python. And Erlang. And Clojure. And J. And C. And R. And Ruby (no actually I hate Ruby). I want to be able to leverage the strength of other languages in my system. I want to try out strategies in R where there are very well-tested libraries and there is a huge community behind it. I want to have Erlang to scale my code and C to crunch data. If you want to be succesful (not only in trading), you need to be able to use all the available resources without prejudices. I have learnt tons of stuff from hanging out with R developers regarding how you can delta hedge bonds and visualize them or why Sharpe ratio can be a lie. Every language has a different crowd and you want as many people pouring ideas into your system.
+If you try to have apply_strategy in different language then good luck with (2).&lt;/p&gt;
+&lt;p&gt;Are you convinced now? Well, I am not trying to convince you as for-loopers is a great way to run your initial tests. It is how I started and for many strategies I don't send them down to the pipeline. A "better" way (so you can sleep at night) is the event generators.&lt;/p&gt;
+&lt;p&gt;Coming up next, sharing and discussing my simplest (but most successful) backtester!&lt;/p&gt;
+&lt;p&gt;If you have more feedback, ping me at &lt;a href="http://www.twitter.com/jonromero"&gt;jonromero&lt;/a&gt; or signup to the &lt;a href="http://eepurl.com/bGbOnb"&gt;newsletter&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
+If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. &lt;/p&gt;</summary><category term="algotrading"></category></entry><entry><title>Downloading historical Forex tick data and importing them in to Python using Pandas</title><link href="http://jon.io/downloading-historical-forex-tick-data-and-importing-them-in-to-python-using-pandas.html" rel="alternate"></link><updated>2015-12-03T22:48:00-08:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2015-12-03:downloading-historical-forex-tick-data-and-importing-them-in-to-python-using-pandas.html</id><summary type="html">&lt;p&gt;&lt;em&gt;This is the another post of the series: &lt;a href="how-to-build-your-own-algorithmic-trading-platform.html"&gt;How to build your own algotrading platform&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Before running any live algotrading system, it is a good practice to backtest (that means run a simulation) our algorithms. Have in mind that this doesn't mean that if your system is killing it for the last 5 years/months/days it will make a profit but it is a good indicator that you might be on to something.&lt;/p&gt;
 &lt;p&gt;There are four things that we need to take into consideration when we do our backtesting:&lt;/p&gt;
 &lt;ol&gt;
