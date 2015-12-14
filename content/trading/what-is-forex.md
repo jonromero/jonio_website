@@ -27,9 +27,10 @@ How many units can I buy with 1:50 leverage?
 
 If you answer if 100,000, you did something wrong. The answer is 50,000 ($1,000 x 50 leverage). 
 
-There you have it. One of the reasons that we are doing Forex, is because you can lose/win big. We'll get back to leverage when we start placing trades.
+There you have it. One of the reasons that we are doing Forex, is because you can [lose](http://jon.io/building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html)/win big. We'll get back to leverage when we start placing trades.
 
 There are three more exciting reasons actually that are even more awesome (dare to say awesomer?).
+
 1. Forex (almost) never sleeps. The markets are open ALL DAY, six days per week. To be more exact, there is not one market but four and they are overlapping providing the "all day" effect.
 2. Forex is very volatile and there are tons of money moving around (more than 5 trillion *per day*). Crazy right? 
 3. No fees on trades. You don't pay $10 per trade like you are doing with stocks. Here you pay *the spread* which is just a fraction of a cent (again, we'll talk about this in another post).

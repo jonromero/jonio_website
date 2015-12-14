@@ -83,7 +83,7 @@ We can write a simple momentum algorithm that checks if there was a huge movemen
 
 You can see the code as always on [github](https://github.com/jonromero/forex_algotrading/blob/master/post4/create_OHLC.py).
  
-Coming up next, building a backtesting system from scratch!
+Coming up next, [building a backtesting system from scratch](http://jon.io/building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html)!
 
 If you have more feedback, ping me at [jonromero](http://www.twitter.com/jonromero) or signup to the [newsletter](http://eepurl.com/bGbOnb). 
 

@@ -41,7 +41,7 @@ Why is it still running? You can use [multiprocessing](https://docs.python.org/2
 *Production and backtesting in sync*
 This. The times I have been bitten by this. I can recall the lost trades where I was "hm, why I entered this trade?" or my old time favorite "WHY TRAILING STOP WAS APPLIED NOW?".
 
-Story time: I had an idea in order to optimize my strategy, to run a backtester to see what would happen if I could put a trailing stop AFTER the trade was profitable in order to always secure profits. Backtesting worked like charm at a 13% increase of earnings and *production lost every single trade*. I figure it out after my algo lost $3400 in a couple of hours (a very expensive lesson).
+Story time: I had an idea in order to optimize my strategy, to run a backtester to see what would happen if I could put a trailing stop AFTER the trade was profitable in order to always secure profits. Backtesting worked like a charm at a 13% increase of earnings and *production lost every single trade*. I figured it out after my algo lost $3400 in a couple of hours (a very expensive lesson).
 
 Keeping the apply_strategy in sync is very difficult and becomes almost impossible when you want to do it in a distributed fashion. And you don't want to have two version of your strategy that are "almost" identical. Unless you have $3400 to spare.
 
