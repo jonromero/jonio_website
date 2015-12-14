@@ -55,6 +55,55 @@
 	
         <article class='listed'>
             <h1 class="title">
+                <a href="./building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html" rel='bookmark'>Building a backtesting system in Python: or how I lost $3400 in two hours</a>
+            </h1>
+            <div class="article-content"> <p><em>This is the another post of the series: <a href="how-to-build-your-own-algorithmic-trading-platform.html">How to build your own algotrading platform</a>.</em></p>
+<p>Building a backtest system is actually pretty easy. Easy to screw up I mean. Even though there are tons of excellent libraries out there (and we'll go through them at some point), I always like doing this on my own in order to fine-tune it.</p>
+<p>From all the backtesting systems I have seen, we can assume that there are two categories:</p>
+<ol>
+<li>The "for-loopers"</li>
+<li>The Event generators</li>
+</ol>
+<p>Today, we'll talk about for-loopers.</p>
+<p>The "for-loopers" are my favorite type of backtesters. They are trivial to write and super fun to expand but they have some vital flows and sadly the majority of backtesters out there is "for-loopers" (ps: I need to find a better name for this!).</p>
+<p>How for-loopers work? Using a for loop (as you might have guessed). It is something like this:</p>
+<div class="highlight"><pre><span class="k">for</span> <span class="n">each</span> <span class="n">element</span> <span class="n">of</span> <span class="n">readhistoricaldata</span><span class="p">():</span> 
+    <span class="n">apply_strategy</span><span class="p">()</span> 
+    <span class="n">how_our_strategy_did</span><span class="p">()</span>
+</pre></div>
+
+
+<p>Very simple right? This is how one backtesting system works, that runs a momentum strategy:</p>
+<script src="https://gist.github.com/jonromero/125cbca28067f0aefb2c.js"></script>
+
+<p>So, what is the problem? </p>
+<ol>
+<li>Very difficult to scale (horizontally) </li>
+<li>Needs lots of work to keep your apply_strategy() working on backtesting and production </li>
+<li>You need to have everything in the same programming language</li>
+</ol>
+<p>Let's dive into these, one by one.</p>
+<p><em>Scalability</em>. 
+I was experimenting a couple a weeks ago with a <a href="https://en.wikipedia.org/wiki/Hill_climbing">hill-climbing</a> algorithm to optimize one of my strategies. It is still running. After two weeks. And I build uber-scalable systems for a living.
+Why is it still running? You can use <a href="https://docs.python.org/2/library/multiprocessing.html">multiprocessing</a>, <a href="http://discoproject.org/">Disco</a>, producer/consumer (using <a href="http://zeromq.org/">ZeroMQ</a>) or just threads to speed this up but some problems are not "<a href="https://en.wikipedia.org/wiki/Embarrassingly_parallel">embarrassing parallel</a>" (yes, this is an actual term, not one of my made-up words). The amount of work to scale a backtester like this (especially when you want to do same machine learning on top of it) is huge. You can do it but it is the wrong way.</p>
+<p><em>Production and backtesting in sync</em>
+This. The times I have been bitten by this. I can recall the lost trades where I was "hm, why I entered this trade?" or my old time favorite "WHY TRAILING STOP WAS APPLIED NOW?".</p>
+<p>Story time: I had an idea in order to optimize my strategy, to run a backtester to see what would happen if I could put a trailing stop AFTER the trade was profitable in order to always secure profits. Backtesting worked like a charm at a 13% increase of earnings and <em>production lost every single trade</em>. I figured it out after my algo lost $3400 in a couple of hours (a very expensive lesson).</p>
+<p>Keeping the apply_strategy in sync is very difficult and becomes almost impossible when you want to do it in a distributed fashion. And you don't want to have two version of your strategy that are "almost" identical. Unless you have $3400 to spare.</p>
+<p><em>Using different languages</em>
+I love Python. And Erlang. And Clojure. And J. And C. And R. And Ruby (no actually I hate Ruby). I want to be able to leverage the strength of other languages in my system. I want to try out strategies in R where there are very well-tested libraries and there is a huge community behind it. I want to have Erlang to scale my code and C to crunch data. If you want to be succesful (not only in trading), you need to be able to use all the available resources without prejudices. I have learnt tons of stuff from hanging out with R developers regarding how you can delta hedge bonds and visualize them or why Sharpe ratio can be a lie. Every language has a different crowd and you want as many people pouring ideas into your system.
+If you try to have apply_strategy in different language then good luck with (2).</p>
+<p>Are you convinced now? Well, I am not trying to convince you as for-loopers is a great way to run your initial tests. It is how I started and for many strategies I don't send them down to the pipeline. A "better" way (so you can sleep at night) is the event generators.</p>
+<p>Coming up next, sharing and discussing my simplest (but most successful) backtester!</p>
+<p>If you have more feedback, ping me at <a href="http://www.twitter.com/jonromero">jonromero</a> or signup to the <a href="http://eepurl.com/bGbOnb">newsletter</a>. </p>
+<p>Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
+If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. </p> </div>
+            <div class="abbr published">
+                Posted  <a href='./building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html' title='2015-12-13T22:48:00-08:00'>Sun 13 December 2015</a> in <a href="./category/trading.html">trading</a>.              
+            </div>
+        </article>
+        <article class='listed'>
+            <h1 class="title">
                 <a href="./downloading-historical-forex-tick-data-and-importing-them-in-to-python-using-pandas.html" rel='bookmark'>Downloading historical Forex tick data and importing them in to Python using Pandas</a>
             </h1>
             <div class="article-content"> <p><em>This is the another post of the series: <a href="how-to-build-your-own-algorithmic-trading-platform.html">How to build your own algotrading platform</a>.</em></p>
@@ -195,7 +244,7 @@ The data we downloaded are in ticks. Unless we are building an UHFT (ultra high 
 <p>and then you can reuse this 35kb file. </p>
 <p>We can write a simple momentum algorithm that checks if there was a huge movement the last 15 minutes and if that was the case, let's buy. We will dive into this in a later post.</p>
 <p>You can see the code as always on <a href="https://github.com/jonromero/forex_algotrading/blob/master/post4/create_OHLC.py">github</a>.</p>
-<p>Coming up next, building a backtesting system from scratch!</p>
+<p>Coming up next, <a href="http://jon.io/building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html">building a backtesting system from scratch</a>!</p>
 <p>If you have more feedback, ping me at <a href="http://www.twitter.com/jonromero">jonromero</a> or signup to the <a href="http://eepurl.com/bGbOnb">newsletter</a>. </p>
 <p>Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
 If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. </p> </div>
@@ -278,11 +327,13 @@ That means you can trade big and win big! Actually 100 times more <em>big</em>! 
 Without any leverage, I can buy 1,000 Forex units that cost $1 (by the way, there are no Forex units but we'll talk about this later). 
 How many units can I buy with 1:50 leverage?</p>
 <p>If you answer if 100,000, you did something wrong. The answer is 50,000 ($1,000 x 50 leverage). </p>
-<p>There you have it. One of the reasons that we are doing Forex, is because you can lose/win big. We'll get back to leverage when we start placing trades.</p>
-<p>There are three more exciting reasons actually that are even more awesome (dare to say awesomer?).
-1. Forex (almost) never sleeps. The markets are open ALL DAY, six days per week. To be more exact, there is not one market but four and they are overlapping providing the "all day" effect.
-2. Forex is very volatile and there are tons of money moving around (more than 5 trillion <em>per day</em>). Crazy right? 
-3. No fees on trades. You don't pay $10 per trade like you are doing with stocks. Here you pay <em>the spread</em> which is just a fraction of a cent (again, we'll talk about this in another post).</p>
+<p>There you have it. One of the reasons that we are doing Forex, is because you can <a href="http://jon.io/building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html">lose</a>/win big. We'll get back to leverage when we start placing trades.</p>
+<p>There are three more exciting reasons actually that are even more awesome (dare to say awesomer?).</p>
+<ol>
+<li>Forex (almost) never sleeps. The markets are open ALL DAY, six days per week. To be more exact, there is not one market but four and they are overlapping providing the "all day" effect.</li>
+<li>Forex is very volatile and there are tons of money moving around (more than 5 trillion <em>per day</em>). Crazy right? </li>
+<li>No fees on trades. You don't pay $10 per trade like you are doing with stocks. Here you pay <em>the spread</em> which is just a fraction of a cent (again, we'll talk about this in another post).</li>
+</ol>
 <p>All these reasons (leverage, all-day, volatility, fees) make Forex the most exciting platform to build and deploy your algorithms. </p>
 <p>Coming up next, Forex brokers. How not to be scammed before even writing a line of code.</p>
 <p>If you have more feedback, ping me at <a href="http://www.twitter.com/jonromero">jonromero</a> or signup to the <a href="http://eepurl.com/bGbOnb">newsletter</a>. </p>
@@ -297,13 +348,13 @@ If you lose any (or all) you money because you followed any trading advices or d
                 <a href="./how-to-build-your-own-algorithmic-trading-platform-part-one.html" rel='bookmark'>How to build your own algorithmic trading platform - Part One</a>
             </h1>
             <div class="article-content"> <p>That's it. Every week, I get at least 10 DMs on twitter asking on how to experiment with algotrading, Forex and portfolio analysis and I've decided that it's time to do something about it.</p>
-<p>Update: Find the posts (here)[how-to-build-your-own-algorithmic-trading-platform.html].</p>
+<p>Update: Find the posts <a href="how-to-build-your-own-algorithmic-trading-platform.html">here</a>.</p>
 <p>So, I am planning to cover the basics of how to build your own trading platform, write your own strategies and go on vacations while electrons are making you money. Or zeroing your account. Either way, it is going to be fun!</p>
 <p>The majority of the examples are going to be in Python even though there might be parts in Erlang and I'll try to keep it as easy as it can be. </p>
 <p>Let's talk now about what the final product will look like.</p>
 <p>We are building a system where you will be able to:</p>
 <ol>
-<li>Simulate your strategy (this is called backtesting)</li>
+<li>Simulate your strategy (this is called <a href="http://jon.io/building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html">backtesting</a>)</li>
 <li>Execute your strategy without supervision</li>
 <li>Alert you via sms/email for trades and errors</li>
 <li>Be scalable and trivial to deploy new updates</li>
@@ -311,7 +362,7 @@ If you lose any (or all) you money because you followed any trading advices or d
 </ol>
 <p>I assume this is going to be a total of 20 chapters, give or take.</p>
 <p>That is a system similar to the one that I am running the last year and includes a UI, sms alerts, backtesting pipeline, continuous delivery and all the cool stuff that us geeks love.</p>
-<p>All code will be on github and if everything goes well, I'll wrap it up in a book for everyone to enjoy.</p>
+<p>All code will be on <a href="https://github.com/jonromero/forex_algotrading">github</a> and if everything goes well, I'll wrap it up in a book for everyone to enjoy.</p>
 <p>I have like three chapters almost done, so if you want early access just ping me at - <a href="http://www.twitter.com/jonromero">jonromero</a>.</p> </div>
             <div class="abbr published">
                 Posted  <a href='./how-to-build-your-own-algorithmic-trading-platform-part-one.html' title='2015-10-01T22:48:00-07:00'>Thu 01 October 2015</a> in <a href="./category/trading.html">trading</a>.              
@@ -354,11 +405,11 @@ If you lose any (or all) you money because you followed any trading advices or d
 <p>Post One: <a href="how-to-build-your-own-algorithmic-trading-platform-part-one.html">Building your own algotrading platform</a></p>
 <p>Post Two: <a href="what-is-forex.html">What is Forex</a></p>
 <p>Post Three: <a href="placing-your-first-forex-trade-with-python.html">Placing your first trade</a> </p>
-<p>Post Four: Connecting to a real, live algotrading system</p>
-<p>Post Five: Forex Psychology | Machines beating humans</p>
-<p>Post Six: Winner, winner, chicken, dinner | Building our first algorithm</p>
-<p>Post Seven: Logging and analysis results</p>
-<p>Post Eight: <a href="downloading-historical-data.md">Backtesting</a></p>
+<p>Post Four: <a href="http://jon.io/downloading-historical-forex-tick-data-and-importing-them-in-to-python-using-pandas.html">Downloading historical Forex tick data and importing them in to Python</a></p>
+<p>Post Five: <a href="http://jon.io/building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html">Building a backtesting system in Python: or how I lost $3400 in two hours</a></p>
+<p>Post Six: Forex Psychology | Machines beating humans</p>
+<p>Post Seven: Winner, winner, chicken, dinner | Building our first algorithm</p>
+<p>Post Eight: Logging and analysis results</p>
 <p>Post Nine: Deploy and automate</p>
 <p>Post Ten: Notifications, SMS and remote control</p>
 <p>Post Eleven: Optimizing with neural networks</p>
