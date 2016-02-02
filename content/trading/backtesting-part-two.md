@@ -16,22 +16,10 @@ We said that we have something like that:
 
 Sweet, let's load our strategy, load some [historical]() data, run our algorithm and print some results!
 
-def main(strategy_file):
-    order_book = []
-
-    strategy_data = read_strategy(strategy_file)
-
-	  # read csv files with daily data per second
-    data = pandas.read_pickle("../Data/EUR_USD.csv-OHLC-1M.pkl")
-    stats_days = run_algo(order_book, strategy_data, data)
-
-    save_trade_book()
-
-    #print_stats(stats_days)
-    #plot_wins_and_loss_per_day(stats_days)
+<script src="https://gist.github.com/jonromero/72428f085a41ddf85259.js"></script>
 
 
-I prefer to have my strategies in a JSON format that contains the name of the strategy and some specs (like how many pips for stop_loss or take_profit etc). By that way, when we'll start using an event-based backtester, we can pass the strategy through a machine learning algorithm and try to optimize it.
+I prefer to have my strategies in a JSON format that contains the name of the strategy and some specs (like how many pips for stop_loss or take_profit etc). That way, when we'll start using an event-based backtester, we can pass the strategy through a machine learning algorithm and try to optimize it.
 
 Next line is loading our data in. I know people don't like pickle and there other ways to load data (and we are going to talk about Bcolz at some point) but for now, just bare with me.
 
@@ -43,36 +31,7 @@ Let's focus on the algorithm a little bit and we can discuss plotting etc at a l
 
 Prepare to be amazed by how ridiculously easy to do this.
 
-    row_iterator = data.iterrows()
-    (i, previous_price) = row_iterator.next()
-    for (timestamp, current_price) in row_iterator:
-        if not in_trade and (previous_price['Buy']['high'] - previous_price['Buy']['low'] > pips(strategy_data['pips_to_trigger'])):
-            # Triggered
-            # place a sell order, a TP and a SL
-            add_order(order_book, timestamp, current_price['Sell']['open'], "SELL")
-            write_trade(current_price.name, 0, "trade", current_price['Sell']['open'])
-
-            in_trade = True
-            open_trade = 1
-            
-            days_open[timestamp.weekday()] = days_open[timestamp.weekday()] + 1
-            
-        if in_trade and (current_price['Buy']['high'] - order_book[-1]['Close'] > pips(strategy_data['pips_to_sl'])) :
-            # SL
-            write_trade(current_price.name, -strategy_data['pips_to_sl'], "sl", current_price['Buy']['close'])
-            winnings -= strategy_data['pips_to_sl']
-            in_trade = False
-            #print "lose"
-            #print "current", current_price['Buy']['close']
-            #print "order", order_book[-1]['Close']
-            #print "----"
-            open_trade = 0            
-            loses += 1
-            loses_in_a_row += 1
-            wins_in_a_row = 0
-            if loses_in_a_row > max_loses:
-                max_loses = loses_in_a_row
-            days_close_lose[timestamp.weekday()] = days_close_lose[timestamp.weekday()] + 1
+<script src="https://gist.github.com/jonromero/7792e71e9079f75ce9a5.js"></script>
 
 *Short comings*
 What happens with this type of backtesting is that 
@@ -83,7 +42,6 @@ What happens with this type of backtesting is that
 5. More stuff
 
 BUT remember that this is the BEST and fastest way to start out and figure out how all these things work. 
-
 
 Coming up next, using other well-known backtesters in Python and adding graphs to our own!
 
