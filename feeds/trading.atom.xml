@@ -2,10 +2,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Jon.IO</title><link href="http://jon.io/" rel="alternate"></link><link href="http://jon.io/feeds/trading.atom.xml" rel="self"></link><id>http://jon.io/</id><updated>2016-02-01T22:30:00-08:00</updated><entry><title>You don't need to be a scientist to build a backtesting algotrading system in Python</title><link href="http://jon.io/you-dont-need-to-be-a-scientist-to-build-a-backtesting-algotrading-system-in-python.html" rel="alternate"></link><updated>2016-02-01T22:30:00-08:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2016-02-01:you-dont-need-to-be-a-scientist-to-build-a-backtesting-algotrading-system-in-python.html</id><summary type="html">&lt;p&gt;&lt;em&gt;This is the another post of the series: &lt;a href="how-to-build-your-own-algorithmic-trading-platform.html"&gt;How to build your own algotrading platform&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Last time we talked about &lt;a href="building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html"&gt;The "for-looper" backtester&lt;/a&gt; (as I love to call them). Now it's time to see some code!&lt;/p&gt;
 &lt;p&gt;We said that we have something like that:&lt;/p&gt;
-&lt;p&gt;:::python
-    for each element of readhistoricaldata(): 
-        apply_strategy() 
-        how_our_strategy_did()&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;each&lt;/span&gt; &lt;span class="n"&gt;element&lt;/span&gt; &lt;span class="n"&gt;of&lt;/span&gt; &lt;span class="n"&gt;readhistoricaldata&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt; 
+        &lt;span class="n"&gt;apply_strategy&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; 
+        &lt;span class="n"&gt;how_our_strategy_did&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Sweet, let's load our strategy, load some &lt;a href="downloading-historical-forex-tick-data-and-importing-them-in-to-python-using-pandas.html"&gt;historical&lt;/a&gt; data, run our algorithm and print some results!&lt;/p&gt;
 &lt;script src="https://gist.github.com/jonromero/72428f085a41ddf85259.js"&gt;&lt;/script&gt;
 

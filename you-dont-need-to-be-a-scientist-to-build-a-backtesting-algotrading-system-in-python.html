@@ -59,10 +59,12 @@
         <p><em>This is the another post of the series: <a href="how-to-build-your-own-algorithmic-trading-platform.html">How to build your own algotrading platform</a>.</em></p>
 <p>Last time we talked about <a href="building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html">The "for-looper" backtester</a> (as I love to call them). Now it's time to see some code!</p>
 <p>We said that we have something like that:</p>
-<p>:::python
-    for each element of readhistoricaldata(): 
-        apply_strategy() 
-        how_our_strategy_did()</p>
+<div class="highlight"><pre>    <span class="k">for</span> <span class="n">each</span> <span class="n">element</span> <span class="n">of</span> <span class="n">readhistoricaldata</span><span class="p">():</span> 
+        <span class="n">apply_strategy</span><span class="p">()</span> 
+        <span class="n">how_our_strategy_did</span><span class="p">()</span>
+</pre></div>
+
+
 <p>Sweet, let's load our strategy, load some <a href="downloading-historical-forex-tick-data-and-importing-them-in-to-python-using-pandas.html">historical</a> data, run our algorithm and print some results!</p>
 <script src="https://gist.github.com/jonromero/72428f085a41ddf85259.js"></script>
 
