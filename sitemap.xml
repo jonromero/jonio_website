@@ -5,35 +5,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://jon.io/</loc>
-<lastmod>2016-02-14T20:28:40-00:00</lastmod>
+<lastmod>2016-02-14T20:29:14-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://jon.io/archives.html</loc>
-<lastmod>2016-02-14T20:28:40-00:00</lastmod>
+<lastmod>2016-02-14T20:29:14-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://jon.io/tags.html</loc>
-<lastmod>2016-02-14T20:28:40-00:00</lastmod>
+<lastmod>2016-02-14T20:29:14-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://jon.io/categories.html</loc>
-<lastmod>2016-02-14T20:28:40-00:00</lastmod>
+<lastmod>2016-02-14T20:29:14-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://jon.io/you-dont-need-to-be-a-scientist-to-build-a-backtesting-algotrading-system-in-python.html</loc>
-<lastmod>2016-02-14T20:27:46-08:00</lastmod>
+<lastmod>2016-02-01T22:30:00-08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -138,7 +138,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://jon.io/category/trading.html</loc>
-<lastmod>2016-02-14T20:27:46-07:53</lastmod>
+<lastmod>2016-02-01T22:30:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -152,7 +152,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://jon.io/tag/algotrading.html</loc>
-<lastmod>2015-12-28T22:13:00-07:53</lastmod>
+<lastmod>2016-02-01T22:30:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -187,7 +187,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://jon.io/author/jon-v-bigdata-startups-trading.html</loc>
-<lastmod>2016-02-14T20:27:46-07:53</lastmod>
+<lastmod>2016-02-01T22:30:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
