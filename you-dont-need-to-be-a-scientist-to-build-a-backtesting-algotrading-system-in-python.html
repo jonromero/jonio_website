@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="./theme/css/style.css"> 
+    <link rel="stylesheet" type="text/css" href="./theme/css/pygments.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:800,400,300|Inconsolata' rel='stylesheet' type='text/css'>
+	<link href="http://jon.io/" type="application/atom+xml" rel="alternate" title="Jon.IO ATOM Feed" />
+
+
+        <title>You don't need to be a scientist to build a backtesting algotrading system in Python - Jon.IO</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Jon V <h2>BigData. Startups. Trading.</h2>">
+<script src="//load.sumome.com/" data-sumo-site-id="fee114a4f556c3310f466abe1eb7a9bab628c1b53aa6dac75200d0af9af9c330" async="async"></script>
+</head>
+
+<body>
+    <section id="navbar">
+        <div class="user_meta">
+            <h1 id="user"><a href="." class="">Jon V <h2>BigData. Startups. Trading.</h2></a></h1>
+            <h2></h2>
+        </div>
+        <div class="nav-button">
+            <ul>
+                            <li><a href="http://twitter.com/jonromero">Twitter</a></li>
+                            <li><a href="http://www.linkedin.com/in/johnvlachoyiannis">LinkedIn</a></li>
+                            <li><a href="http://github.com/jonromero/">Github</a></li>
+                            <li><a href="http://bitbucket.org/jonromero/">Bitbucket</a></li>
+             </ul>
+         </div>
+     </section>
+
+     <section id="sidebar">
+        <div class="user_meta">
+            <h1 id="user"><a href="." class="">Jon V <h2>BigData. Startups. Trading.</h2></a></h1>
+            <h2></h2>
+            <ul>
+                        <li><a href="http://twitter.com/jonromero">Twitter</a></li>
+                        <li><a href="http://www.linkedin.com/in/johnvlachoyiannis">LinkedIn</a></li>
+                        <li><a href="http://github.com/jonromero/">Github</a></li>
+                        <li><a href="http://bitbucket.org/jonromero/">Bitbucket</a></li>
+            </ul>
+        </div>
+        <footer>
+            <address>
+                Powered by <a href='http://docs.getpelican.com/en/latest/'>Pelican</a>,
+                <a href='https://github.com/jamescooke/pelican-svbtle#readme'>theme info</a>.
+            </address>
+        </footer>
+    </section>
+
+    <section id="posts">
+<article>
+    <h1 class="title">
+        <a href="./you-dont-need-to-be-a-scientist-to-build-a-backtesting-algotrading-system-in-python.html" rel="bookmark">You don't need to be a scientist to build a backtesting algotrading system in Python</a>
+    </h1>
+
+    <div class='article-content'>
+        <p>Building the simplest backtesting system in Python
+Tags: algotrading
+Date: 2016-02-01 22:30</p>
+<p><em>This is the another post of the series: <a href="how-to-build-your-own-algorithmic-trading-platform.html">How to build your own algotrading platform</a>.</em></p>
+<p>Last time we talked about <a href="building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html">The "for-looper" backtester</a> (as I love to call them). Now it's time to see some code!</p>
+<p>We said that we have something like that:</p>
+<p>:::python
+    for each element of readhistoricaldata(): 
+        apply_strategy() 
+        how_our_strategy_did()</p>
+<p>Sweet, let's load our strategy, load some <a href="downloading-historical-forex-tick-data-and-importing-them-in-to-python-using-pandas.html">historical</a> data, run our algorithm and print some results!</p>
+<script src="https://gist.github.com/jonromero/72428f085a41ddf85259.js"></script>
+
+<p>I prefer to have my strategies in a JSON format that contains the name of the strategy and some specs (like how many pips for stop_loss or take_profit etc). That way, when we'll start using an event-based backtester, we can pass the strategy through a machine learning algorithm and try to optimize it.</p>
+<p>Next line is loading our data in. I know people don't like pickle and there other ways to load data (and we are going to talk about BColz at some point) but for now, just bare with me.</p>
+<p>The next line is self-explanatory. We pass the historical data to our algo and we get back some stats to print.</p>
+<p>Let's focus on the algorithm a little bit and we can discuss plotting etc at a later point.</p>
+<p><em>The magic of the simple backtesting system</em></p>
+<p>Prepare to be amazed by how ridiculously easy to do this.</p>
+<script src="https://gist.github.com/jonromero/7792e71e9079f75ce9a5.js"></script>
+
+<p><em>Short comings</em>
+What happens with this type of backtesting is that 
+1. <a href="building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html">you'll probably make mistakes when you want to using the exact same algorithm</a>
+2. You won't be able to write a very complex strategy (at least that easy)
+3. Very difficult to scale (compared to event-based)
+4. You need to have your simulation and execution in the same language</p>
+<p>BUT remember that this is the BEST and fastest way to start out and figure out how all these things work. </p>
+<p>Coming up next, using other well-known backtesters in Python and adding graphs to our own!</p>
+<p>If you have more feedback, ping me at <a href="http://www.twitter.com/jonromero">jonromero</a> or signup to the <a href="http://eepurl.com/bGbOnb">newsletter</a>. </p>
+<p>Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
+If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. </p>
+    </div>
+
+    <div class='post-footer'>
+        <div class='share-footer'>
+            <div id='dated' class="abbr published" title='2016-02-14T20:27:46-08:00'>
+                Posted Sun 14 February 2016
+            </div>
+
+ 
+        </div>
+
+        <div id="article_meta">
+            Category:
+            <a href="./category/trading.html">trading</a>
+        </div>
+
+
+    </div>
+</article>
+
+<footer>
+    <a href="./" class="button_accent">&larr;&nbsp;&nbsp;&nbsp;Back to blog</a>
+</footer>
+
+    </section>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-12225850-10', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

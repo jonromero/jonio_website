@@ -1,5 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Jon.IO</title><link href="http://jon.io/" rel="alternate"></link><link href="http://jon.io/feeds/jon-v-bigdata-startups-trading.atom.xml" rel="self"></link><id>http://jon.io/</id><updated>2015-12-13T22:48:00-08:00</updated><entry><title>Building a backtesting system in Python: or how I lost $3400 in two hours</title><link href="http://jon.io/building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html" rel="alternate"></link><updated>2015-12-13T22:48:00-08:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2015-12-13:building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html</id><summary type="html">&lt;p&gt;&lt;em&gt;This is the another post of the series: &lt;a href="how-to-build-your-own-algorithmic-trading-platform.html"&gt;How to build your own algotrading platform&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Jon.IO</title><link href="http://jon.io/" rel="alternate"></link><link href="http://jon.io/feeds/jon-v-bigdata-startups-trading.atom.xml" rel="self"></link><id>http://jon.io/</id><updated>2016-02-14T20:27:46-08:00</updated><entry><title>You don't need to be a scientist to build a backtesting algotrading system in Python</title><link href="http://jon.io/you-dont-need-to-be-a-scientist-to-build-a-backtesting-algotrading-system-in-python.html" rel="alternate"></link><updated>2016-02-14T20:27:46-08:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2016-02-14:you-dont-need-to-be-a-scientist-to-build-a-backtesting-algotrading-system-in-python.html</id><summary type="html">&lt;p&gt;Building the simplest backtesting system in Python
+Tags: algotrading
+Date: 2016-02-01 22:30&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This is the another post of the series: &lt;a href="how-to-build-your-own-algorithmic-trading-platform.html"&gt;How to build your own algotrading platform&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Last time we talked about &lt;a href="building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html"&gt;The "for-looper" backtester&lt;/a&gt; (as I love to call them). Now it's time to see some code!&lt;/p&gt;
+&lt;p&gt;We said that we have something like that:&lt;/p&gt;
+&lt;p&gt;:::python
+    for each element of readhistoricaldata(): 
+        apply_strategy() 
+        how_our_strategy_did()&lt;/p&gt;
+&lt;p&gt;Sweet, let's load our strategy, load some &lt;a href="downloading-historical-forex-tick-data-and-importing-them-in-to-python-using-pandas.html"&gt;historical&lt;/a&gt; data, run our algorithm and print some results!&lt;/p&gt;
+&lt;script src="https://gist.github.com/jonromero/72428f085a41ddf85259.js"&gt;&lt;/script&gt;
+
+&lt;p&gt;I prefer to have my strategies in a JSON format that contains the name of the strategy and some specs (like how many pips for stop_loss or take_profit etc). That way, when we'll start using an event-based backtester, we can pass the strategy through a machine learning algorithm and try to optimize it.&lt;/p&gt;
+&lt;p&gt;Next line is loading our data in. I know people don't like pickle and there other ways to load data (and we are going to talk about BColz at some point) but for now, just bare with me.&lt;/p&gt;
+&lt;p&gt;The next line is self-explanatory. We pass the historical data to our algo and we get back some stats to print.&lt;/p&gt;
+&lt;p&gt;Let's focus on the algorithm a little bit and we can discuss plotting etc at a later point.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;The magic of the simple backtesting system&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Prepare to be amazed by how ridiculously easy to do this.&lt;/p&gt;
+&lt;script src="https://gist.github.com/jonromero/7792e71e9079f75ce9a5.js"&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;Short comings&lt;/em&gt;
+What happens with this type of backtesting is that 
+1. &lt;a href="building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html"&gt;you'll probably make mistakes when you want to using the exact same algorithm&lt;/a&gt;
+2. You won't be able to write a very complex strategy (at least that easy)
+3. Very difficult to scale (compared to event-based)
+4. You need to have your simulation and execution in the same language&lt;/p&gt;
+&lt;p&gt;BUT remember that this is the BEST and fastest way to start out and figure out how all these things work. &lt;/p&gt;
+&lt;p&gt;Coming up next, using other well-known backtesters in Python and adding graphs to our own!&lt;/p&gt;
+&lt;p&gt;If you have more feedback, ping me at &lt;a href="http://www.twitter.com/jonromero"&gt;jonromero&lt;/a&gt; or signup to the &lt;a href="http://eepurl.com/bGbOnb"&gt;newsletter&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
+If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. &lt;/p&gt;</summary></entry><entry><title>Strategies for Forex and trading</title><link href="http://jon.io/strategies-for-forex-and-trading.html" rel="alternate"></link><updated>2015-12-28T22:13:00-08:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2015-12-28:strategies-for-forex-and-trading.html</id><summary type="html">&lt;p&gt;&lt;em&gt;This is the another post of the series: &lt;a href="how-to-build-your-own-algorithmic-trading-platform.html"&gt;How to build your own algotrading platform&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;What is a good algotrading system without some neat strategies to deploy?&lt;/p&gt;
+&lt;p&gt;Below there is a list of strategies that I found online (or sent to me by traders that are on the &lt;a href="http://eepurl.com/bGbOnb"&gt;newsletter&lt;/a&gt;). I plan to update the list as I keep coming across to new ideas.&lt;/p&gt;
+&lt;p&gt;The concept is that as we keep diving more and more into our algotrading system, I will show you how to code and deploy these strategies. I know for sure that most of them work with minimal changes. Worst case scenario, you'll have a system to test out your assumptions.   &lt;/p&gt;
+&lt;p&gt;Here is the list (and please send me any other strategy that you think it should be included):&lt;/p&gt;
+&lt;p&gt;Coming up next, sharing and discussing my simplest (but most successful) backtester!&lt;/p&gt;
+&lt;p&gt;If you have more feedback, ping me at &lt;a href="http://www.twitter.com/jonromero"&gt;jonromero&lt;/a&gt; or signup to the &lt;a href="http://eepurl.com/bGbOnb"&gt;newsletter&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
+If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. &lt;/p&gt;</summary><category term="algotrading"></category></entry><entry><title>Building a backtesting system in Python: or how I lost $3400 in two hours</title><link href="http://jon.io/building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html" rel="alternate"></link><updated>2015-12-13T22:48:00-08:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2015-12-13:building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html</id><summary type="html">&lt;p&gt;&lt;em&gt;This is the another post of the series: &lt;a href="how-to-build-your-own-algorithmic-trading-platform.html"&gt;How to build your own algotrading platform&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Building a backtest system is actually pretty easy. Easy to screw up I mean. Even though there are tons of excellent libraries out there (and we'll go through them at some point), I always like doing this on my own in order to fine-tune it.&lt;/p&gt;
 &lt;p&gt;From all the backtesting systems I have seen, we can assume that there are two categories:&lt;/p&gt;
 &lt;ol&gt;
@@ -304,9 +343,9 @@ If you lose any (or all) you money because you followed any trading advices or d
 &lt;p&gt;Post Three: &lt;a href="placing-your-first-forex-trade-with-python.html"&gt;Placing your first trade&lt;/a&gt; &lt;/p&gt;
 &lt;p&gt;Post Four: &lt;a href="http://jon.io/downloading-historical-forex-tick-data-and-importing-them-in-to-python-using-pandas.html"&gt;Downloading historical Forex tick data and importing them in to Python&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Post Five: &lt;a href="http://jon.io/building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html"&gt;Building a backtesting system in Python: or how I lost $3400 in two hours&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Post Six: Forex Psychology | Machines beating humans&lt;/p&gt;
+&lt;p&gt;Post Six: [You don't need to be a scientist to build a backtesting algotrading system in Python](](http://jon.io/backtesting-part-two.html)&lt;/p&gt;
 &lt;p&gt;Post Seven: Winner, winner, chicken, dinner | Building our first algorithm&lt;/p&gt;
-&lt;p&gt;Post Eight: Logging and analysis results&lt;/p&gt;
+&lt;p&gt;Post Eight: Forex Psychology | Machines beating humans&lt;/p&gt;
 &lt;p&gt;Post Nine: Deploy and automate&lt;/p&gt;
 &lt;p&gt;Post Ten: Notifications, SMS and remote control&lt;/p&gt;
 &lt;p&gt;Post Eleven: Optimizing with neural networks&lt;/p&gt;
@@ -358,7 +397,29 @@ First of all, a "tokenize" function. Each dataline is tokenized based on a funct
 &lt;p&gt;Sounds like an interesting cool hobby project and I still try to decide between using Erlang or Clojure for this.&lt;/p&gt;
 &lt;p&gt;Ping me on &lt;a href="http://www.twitter.com/jonromero"&gt;twitter&lt;/a&gt; if you have any ideas!&lt;/p&gt;
 &lt;p&gt;Cheers!&lt;/p&gt;
-&lt;p&gt;JR&lt;/p&gt;</summary><category term="databases"></category><category term="hybrisdb"></category></entry><entry><title>How to have 7 more days every month</title><link href="http://jon.io/how-to-have-7-more-days-every-month.html" rel="alternate"></link><updated>2013-10-20T22:48:00-07:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2013-10-20:how-to-have-7-more-days-every-month.html</id><summary type="html">&lt;p&gt;One of my new year's resolution was "study one of your habits each month" and I decided to focus on what activities I am spending my online time. So, I installed &lt;a href="https://www.rescuetime.com/"&gt;RescueTime&lt;/a&gt; which is a very cool app that sits on the background and creates reports about which apps and sites you are using the most. And no, it is not sending that info to NSA (you are not that important!).&lt;/p&gt;
+&lt;p&gt;JR&lt;/p&gt;</summary><category term="databases"></category><category term="hybrisdb"></category></entry><entry><title>Kicking time management in the nuts</title><link href="http://jon.io/kicking-time-management-in-the-nuts.html" rel="alternate"></link><updated>2013-12-30T08:41:43-08:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2013-12-30:kicking-time-management-in-the-nuts.html</id><summary type="html">&lt;p&gt;Building a Startup with pocket money and selling it for tons of cash in just two years, makes you learn a couple of tricks that change your life. One of those is time management.&lt;/p&gt;
+&lt;p&gt;Time management is one of the decisive factors of making someone happy. Having lots of time can lead to boredom, having no time can lead to stress and anxiety. The funny thing is that it's so easy jumping from one extreme to the other and impossible to stay "in the zone". &lt;/p&gt;
+&lt;p&gt;First of all, let me get something out of my chest: There is no such thing as "I have too many things to do that I need more than 24 hours a day". Bullshit. Even if you had 50 hours per day, you will still be struggling with todos. Why? Because, &lt;em&gt;time is irrelevant&lt;/em&gt;. Everything is about procedures.&lt;/p&gt;
+&lt;p&gt;What I really hate about time management is tracking time. It is inefficient, I get bored quickly and you cannot focus 100% on a task everytime for each specific timeslot (unless you are a buddist monk). What I love to do is ticking off tasks. The pleasure of striking out a task that has been on your list for the last couple of weeks is the same as eating a Sundae ice-cream in the sun. Sometimes even better.&lt;/p&gt;
+&lt;p&gt;I borrowed one of the most effective ways of "killing" tasks by a project management technic called &lt;a href="http://en.wikipedia.org/wiki/Scrum_(software_development)"&gt;Scrum&lt;/a&gt;. If you are in a Startup and haven't heard of Scrum, prepare to be amazed.&lt;/p&gt;
+&lt;p&gt;Based on this method, you create periods of work (called &lt;em&gt;sprints&lt;/em&gt;) and you add things to be done in these periods. Why is this much better than just having a huge todo list? It breaks down tasks in large, high-level time blocks which are easier to manage and easier to extract information about how you (or your team) performs.&lt;/p&gt;
+&lt;h2&gt;The Planning fallacy&lt;/h2&gt;
+&lt;p&gt;Whenever I talk with a Startup that is struggling to go to a release or prototype, there is a reccuring theme: They all have tasks, some even have milestones but noone has a high-level &lt;em&gt;action&lt;/em&gt; plan on what needs to be done. &lt;/p&gt;
+&lt;p&gt;We humans are pretty bad at calculating things that span more than a couple of weeks and what is worse, is that we suck at identifying this. It is an ego thing.&lt;/p&gt;
+&lt;p&gt;So, roll up your sleeves and let's do a small test. &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create a list of all the things you need to do and assign a number of how important this item is (from 1 to 5)&lt;/li&gt;
+&lt;li&gt;Add all the values and divide by the number of tasks (this is your average &lt;em&gt;velocity&lt;/em&gt;)&lt;/li&gt;
+&lt;li&gt;Organize the things in two groups (group A and group B). Make sure that each group has a summed value near to your average&lt;/li&gt;
+&lt;li&gt;Take the first group (group A) and divide it again in two groups (group C and group D)&lt;/li&gt;
+&lt;li&gt;Now, for the next two weeks, focus on resolving all the tasks in group C.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You might be wondering what is the great thing behind this and why this is so effective. First of all, it is a very easy system which translates to a very low abandonment rate. Second, even from the first week, you will be able to calculate your average velocity (which may be totally different from the one you calculated here) and "feel" the progress. And third, you will have a realistic feedback of how much work is for a single task versus the value this task actually delivers.&lt;/p&gt;
+&lt;p&gt;What you should do when the second week is done, is to put any unresolved tasks back to the pool of tasks (called the &lt;em&gt;backlog&lt;/em&gt;) and re-organize your groups based on your newly calculated average velocity. As a rule of thumb, you should calculate your velocity every month.  &lt;/p&gt;
+&lt;p&gt;Have in mind that there are more sophisticated systems (I'll talk more about them in an upcoming post) but my rule is that first you need something simple that works right now and then you can improve and iterate.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.twitter.com/jonromero"&gt;JR&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="startups"></category></entry><entry><title>How to have 7 more days every month</title><link href="http://jon.io/how-to-have-7-more-days-every-month.html" rel="alternate"></link><updated>2013-10-20T22:48:00-07:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2013-10-20:how-to-have-7-more-days-every-month.html</id><summary type="html">&lt;p&gt;One of my new year's resolution was "study one of your habits each month" and I decided to focus on what activities I am spending my online time. So, I installed &lt;a href="https://www.rescuetime.com/"&gt;RescueTime&lt;/a&gt; which is a very cool app that sits on the background and creates reports about which apps and sites you are using the most. And no, it is not sending that info to NSA (you are not that important!).&lt;/p&gt;
 &lt;p&gt;Even though I spent most of my time working, writing and communicating, I also spent around 2 hours on average on Facebook (gasp!). No biggie. What I hated was that for the majority of times I was scrolling/refreshing for new updates.
 Like opening your refrigirator every two minutes even though you know it is empty! Damn you habits!&lt;/p&gt;
 &lt;p&gt;So, spending 2 hours every day (sometimes more) on Facebook, means 60 hours per month or &lt;em&gt;7 working days&lt;/em&gt;. 7 freaking working days each month. 7 days, each day with 8 full hours, to sleep, go out, exercise, write a book, learn something new.&lt;/p&gt;
