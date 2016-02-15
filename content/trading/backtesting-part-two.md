@@ -1,10 +1,11 @@
-Title: Building the simplest backtesting system in Python
+Title: You don't need to be a scientist to build a backtesting algotrading system in Python
+Building the simplest backtesting system in Python
 Tags: algotrading
 Date: 2016-02-01 22:30
 
 *This is the another post of the series: [How to build your own algotrading platform](how-to-build-your-own-algorithmic-trading-platform.html).*
 
-Last time we talked about [The "for-looper" backtester](asda) (as I love to call them). Now it's time to see some code!
+Last time we talked about [The "for-looper" backtester](building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html) (as I love to call them). Now it's time to see some code!
 
 We said that we have something like that:
 
@@ -14,14 +15,13 @@ We said that we have something like that:
 		how_our_strategy_did()
 
 
-Sweet, let's load our strategy, load some [historical]() data, run our algorithm and print some results!
+Sweet, let's load our strategy, load some [historical](downloading-historical-forex-tick-data-and-importing-them-in-to-python-using-pandas.html) data, run our algorithm and print some results!
 
 <script src="https://gist.github.com/jonromero/72428f085a41ddf85259.js"></script>
 
-
 I prefer to have my strategies in a JSON format that contains the name of the strategy and some specs (like how many pips for stop_loss or take_profit etc). That way, when we'll start using an event-based backtester, we can pass the strategy through a machine learning algorithm and try to optimize it.
 
-Next line is loading our data in. I know people don't like pickle and there other ways to load data (and we are going to talk about Bcolz at some point) but for now, just bare with me.
+Next line is loading our data in. I know people don't like pickle and there other ways to load data (and we are going to talk about BColz at some point) but for now, just bare with me.
 
 The next line is self-explanatory. We pass the historical data to our algo and we get back some stats to print.
 
@@ -35,11 +35,10 @@ Prepare to be amazed by how ridiculously easy to do this.
 
 *Short comings*
 What happens with this type of backtesting is that 
-1. [you'll probably make mistakes when you want to using the exact same algorithm]
+1. [you'll probably make mistakes when you want to using the exact same algorithm](building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html)
 2. You won't be able to write a very complex strategy (at least that easy)
 3. Very difficult to scale (compared to event-based)
 4. You need to have your simulation and execution in the same language
-5. More stuff
 
 BUT remember that this is the BEST and fastest way to start out and figure out how all these things work. 
 
