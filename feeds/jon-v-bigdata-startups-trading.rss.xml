@@ -19,15 +19,15 @@
 &lt;p&gt;Prepare to be amazed by how ridiculously easy to do this.&lt;/p&gt;
 &lt;script src="https://gist.github.com/jonromero/7792e71e9079f75ce9a5.js"&gt;&lt;/script&gt;
 
-&lt;p&gt;&lt;strong&gt;Short comings&lt;/strong&gt;
-What happens with this type of backtesting is that 
+&lt;p&gt;&lt;strong&gt;Short comings&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;What happens with this type of backtesting is that 
 1. &lt;a href="building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html"&gt;you'll probably make mistakes when you want to using the exact same algorithm&lt;/a&gt;
 2. You won't be able to write a very complex strategy (at least that easy)
 3. Very difficult to scale (compared to event-based)
 4. You need to have your simulation and execution in the same language&lt;/p&gt;
 &lt;p&gt;BUT remember that this is the BEST and fastest way to start out and figure out how all these things work. &lt;/p&gt;
 &lt;p&gt;Coming up next, using other well-known backtesters in Python and adding graphs to our own!&lt;/p&gt;
-&lt;p&gt;If you have more feedback, ping me at &lt;a href="http://www.twitter.com/jonromero"&gt;jonromero&lt;/a&gt; or signup to the &lt;a href="http://eepurl.com/bGbOnb"&gt;newsletter&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;If you have more feedback, ping me at &lt;a href="http://www.twitter.com/jonromero"&gt;jonromero&lt;/a&gt; or signup to the &lt;a href="http://eepurl.com/bGbOnb"&gt;newsletter&lt;/a&gt;. It is awesome :)&lt;/p&gt;
 &lt;p&gt;Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
 If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</dc:creator><pubDate>Mon, 01 Feb 2016 22:30:00 -0800</pubDate><guid>tag:jon.io,2016-02-01:you-dont-need-to-be-a-scientist-to-build-a-backtesting-algotrading-system-in-python.html</guid><category>algotrading</category></item><item><title>Strategies for Forex and trading</title><link>http://jon.io/strategies-for-forex-and-trading.html</link><description>&lt;p&gt;&lt;em&gt;This is the another post of the series: &lt;a href="how-to-build-your-own-algorithmic-trading-platform.html"&gt;How to build your own algotrading platform&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;What is a good algotrading system without some neat strategies to deploy?&lt;/p&gt;
