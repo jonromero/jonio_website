@@ -16,7 +16,7 @@
 &lt;p&gt;The next line is self-explanatory. We pass the historical data to our algo and we get back some stats to print.&lt;/p&gt;
 &lt;p&gt;Let's focus on the algorithm a little bit and we can discuss plotting etc at a later point.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;The magic of the simple backtesting system&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Prepare to be amazed by how ridiculously easy to do this.&lt;/p&gt;
+&lt;p&gt;Prepare to be amazed by how ridiculously easy it is to do it.&lt;/p&gt;
 &lt;script src="https://gist.github.com/jonromero/7792e71e9079f75ce9a5.js"&gt;&lt;/script&gt;
 
 &lt;p&gt;&lt;strong&gt;Short comings&lt;/strong&gt;&lt;/p&gt;
