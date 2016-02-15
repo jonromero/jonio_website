@@ -20,11 +20,13 @@
 &lt;script src="https://gist.github.com/jonromero/7792e71e9079f75ce9a5.js"&gt;&lt;/script&gt;
 
 &lt;p&gt;&lt;strong&gt;Short comings&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;What happens with this type of backtesting is that 
-1. &lt;a href="building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html"&gt;you'll probably make mistakes when you want to using the exact same algorithm&lt;/a&gt;
-2. You won't be able to write a very complex strategy (at least that easy)
-3. Very difficult to scale (compared to event-based)
-4. You need to have your simulation and execution in the same language&lt;/p&gt;
+&lt;p&gt;What happens with this type of backtesting is that &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html"&gt;you'll probably make mistakes when you want to using the exact same algorithm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;You won't be able to write a very complex strategy (at least that easy)&lt;/li&gt;
+&lt;li&gt;Very difficult to scale (compared to event-based)&lt;/li&gt;
+&lt;li&gt;You need to have your simulation and execution in the same language&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;BUT remember that this is the BEST and fastest way to start out and figure out how all these things work. &lt;/p&gt;
 &lt;p&gt;Coming up next, using other well-known backtesters in Python and adding graphs to our own!&lt;/p&gt;
 &lt;p&gt;If you have more feedback, ping me at &lt;a href="http://www.twitter.com/jonromero"&gt;jonromero&lt;/a&gt; or signup to the &lt;a href="http://eepurl.com/bGbOnb"&gt;newsletter&lt;/a&gt;. It is awesome :)&lt;/p&gt;
