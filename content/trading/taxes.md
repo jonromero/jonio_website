@@ -1,4 +1,4 @@
-Title: Why the IRS loves Forex
+Title: Forex and Taxes for new traders
 Tags: algotrading
 Date: 2016-04-01 22:30
 

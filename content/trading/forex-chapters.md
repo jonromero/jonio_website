@@ -46,7 +46,7 @@ Post Five: [Building a backtesting system in Python: or how I lost $3400 in two 
 
 Post Six: [You don't need to be a scientist to build a backtesting algotrading system in Python](](http://jon.io/backtesting-part-two.html)
 
-Post Seven: [Why the IRS loves Taxes](http://jon.io/why-the-irs-loves-forex.html)
+Post Seven: [Forex and Taxes for new traders](http://jon.io/forex-and-taxes-for-new-traders.html)
 
 Post Eight: Winner, winner, chicken, dinner | Building our first algorithm
 
