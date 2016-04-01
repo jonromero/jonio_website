@@ -4,7 +4,7 @@
 &lt;p&gt;Here is a scenario:
 I have lots of data sitting as CSV on my hard-drive and I want to process them. Not query them. Process them.&lt;/p&gt;
 &lt;p&gt;What would be really interesting is to be able to define (dynamically) a schema like that:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defschema&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;EURUSD&amp;quot;&lt;/span&gt; 
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;defschema&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;EURUSD&amp;quot;&lt;/span&gt; 
     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;tokenizer&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;.split&lt;/span&gt; &lt;span class="nv"&gt;%&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;:&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;  
     &lt;span class="c1"&gt;;; the mapping is done here&lt;/span&gt;
     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;columns&lt;/span&gt; &lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;time&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt; &lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;open&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt; &lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;high&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt; &lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;low&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt; &lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;close&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt; &lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;volume&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
@@ -16,7 +16,7 @@ First of all, a "tokenize" function. Each dataline is tokenized based on a funct
 &lt;p&gt;As you can imagine, tokenize returns a list of data that are mapped to "columns".&lt;/p&gt;
 &lt;p&gt;Now, the interesting stuff. &lt;/p&gt;
 &lt;p&gt;You can write scripts like the following:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;&amp;gt; &lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;close&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt; &lt;span class="mf"&gt;1.45&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;if &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;&amp;gt; &lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt;&lt;span class="nv"&gt;close&lt;/span&gt;&lt;span class="err"&gt;|&lt;/span&gt; &lt;span class="mf"&gt;1.45&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;place-order&lt;/span&gt; &lt;span class="ss"&gt;:buy&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nf"&gt;place-order&lt;/span&gt; &lt;span class="ss"&gt;:sell&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;

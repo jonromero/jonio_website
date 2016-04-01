@@ -53,17 +53,44 @@
 	
         <article class='listed'>
             <h1 class="title">
-                <a href="../you-dont-need-to-be-a-scientist-to-build-a-backtesting-algotrading-system-in-python.html" rel='bookmark'>You don't need to be a scientist to build a backtesting algotrading system in Python</a>
+                <a href="../why-the-irs-loves-forex.html" rel='bookmark'>Why the IRS loves Forex</a>
             </h1>
             <div class="article-content"> <p><em>This is the another post of the series: <a href="how-to-build-your-own-algorithmic-trading-platform.html">How to build your own algotrading platform</a>.</em></p>
+<p>Update: The Machine Learning post is going to be epic but it takes so much time to make the code presentable. Bear with me, cool things are coming (as you've read on the newsletter).</p>
+<p>Disclaimer: THIS IS NOT TAX ADVICE. </p>
+<p>What is really surprising is that the majority of the requests in the newsletter are:
+1. Use tools to assist Trading
+2. Machine Learning to optimize trades
+3. Taxes</p>
+<p>The first two, I can understand. Everybody wants to be a better trader. I get it. But taxes? TAXES? </p>
+<p>This is your lucky day. Forex taxes are super easy. Seriously. By default (this is called <em>Section 988</em>), all your losses are going to offset your income taxes without the 3k limit per year. This is much better than stock trading where losses offset your capital gains. But what happens to gains? WHY DO YOU CARE? WHY? <a href="building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html">The majority of the Forex traders lose money</a> (I call it "paying tuition") the first year(s), so you are better off keeping it simple until you have a proven and consistent strategy (and an architecture that scales).</p>
+<p>Having said that, if you actually make a profit, you are taxed at the short-term capital gain (sometimes up to 40%).
+The solutions to when you start making money are:
+1. Opting out of Section 988 and get taxed under Section 1256 where 60% of profits are taxed as long term capital gains and 40% as short term (but now losses cannot offset your income). This is very good when you make money, very bad when you don't.
+2. Start an LLC</p>
+<p>For people that just started experimenting with Forex and algotrading, I always suggest them to stay with Section 988 (the default) and when they start making some money (consistently) or they want to go full time, talk to me :) Seriously, there are so many things that you will start doing differently when you go from the "hobby" stage to "second income" to "full-time job" that there is no reason to over-optimize this. </p>
+<p>Coming up next: Machine Learning and Trading!</p>
+<p>If you have more feedback, ping me at <a href="http://www.twitter.com/jonromero">jonromero</a> or signup to the <a href="http://eepurl.com/bGbOnb">newsletter</a>. </p>
+<p>Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
+If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. </p> </div>
+            <div class="abbr published">
+                Posted  <a href='../why-the-irs-loves-forex.html' title='2016-04-01T22:30:00-07:00'>Fri 01 April 2016</a> in <a href="../category/trading.html">trading</a>.              
+            </div>
+        </article>
+        <article class='listed'>
+            <h1 class="title">
+                <a href="../you-dont-need-to-be-a-scientist-to-build-a-backtesting-algotrading-system-in-python.html" rel='bookmark'>You don't need to be a scientist to build a backtesting algotrading system in Python</a>
+            </h1>
+            <div class="article-content"> <p>Building the simplest backtesting system in Python
+Tags: algotrading
+Date: 2016-02-01 22:30</p>
+<p><em>This is the another post of the series: <a href="how-to-build-your-own-algorithmic-trading-platform.html">How to build your own algotrading platform</a>.</em></p>
 <p>Last time we talked about <a href="building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html">The "for-looper" backtester</a> (as I love to call them). Now it's time to see some code!</p>
 <p>We said that we have something like that:</p>
-<div class="highlight"><pre>    <span class="k">for</span> <span class="n">each</span> <span class="n">element</span> <span class="n">of</span> <span class="n">readhistoricaldata</span><span class="p">():</span> 
-        <span class="n">apply_strategy</span><span class="p">()</span> 
-        <span class="n">how_our_strategy_did</span><span class="p">()</span>
-</pre></div>
-
-
+<p>:::python
+    for each element of readhistoricaldata(): 
+        apply_strategy() 
+        how_our_strategy_did()</p>
 <p>Sweet, let's load our strategy, load some <a href="downloading-historical-forex-tick-data-and-importing-them-in-to-python-using-pandas.html">historical</a> data, run our algorithm and print some results!</p>
 <script src="https://gist.github.com/jonromero/72428f085a41ddf85259.js"></script>
 
@@ -71,25 +98,23 @@
 <p>Next line is loading our data in. I know people don't like pickle and there other ways to load data (and we are going to talk about BColz at some point) but for now, just bare with me.</p>
 <p>The next line is self-explanatory. We pass the historical data to our algo and we get back some stats to print.</p>
 <p>Let's focus on the algorithm a little bit and we can discuss plotting etc at a later point.</p>
-<p><strong>The magic of the simple backtesting system</strong></p>
-<p>Prepare to be amazed by how ridiculously easy it is to do it.</p>
+<p><em>The magic of the simple backtesting system</em></p>
+<p>Prepare to be amazed by how ridiculously easy to do this.</p>
 <script src="https://gist.github.com/jonromero/7792e71e9079f75ce9a5.js"></script>
 
-<p><strong>Short comings</strong></p>
-<p>What happens with this type of backtesting is that </p>
-<ol>
-<li><a href="building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html">you'll probably make mistakes when you want to use the exact same algorithm</a></li>
-<li>You won't be able to write a very complex strategy (at least that easy)</li>
-<li>Very difficult to scale (compared to event-based)</li>
-<li>You need to have your simulation and execution in the same language</li>
-</ol>
+<p><em>Short comings</em>
+What happens with this type of backtesting is that 
+1. <a href="building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html">you'll probably make mistakes when you want to using the exact same algorithm</a>
+2. You won't be able to write a very complex strategy (at least that easy)
+3. Very difficult to scale (compared to event-based)
+4. You need to have your simulation and execution in the same language</p>
 <p>BUT remember that this is the BEST and fastest way to start out and figure out how all these things work. </p>
 <p>Coming up next, using other well-known backtesters in Python and adding graphs to our own!</p>
-<p>If you have more feedback, ping me at <a href="http://www.twitter.com/jonromero">jonromero</a> or signup to the <a href="http://eepurl.com/bGbOnb">newsletter</a>. It is awesome :)</p>
+<p>If you have more feedback, ping me at <a href="http://www.twitter.com/jonromero">jonromero</a> or signup to the <a href="http://eepurl.com/bGbOnb">newsletter</a>. </p>
 <p>Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
 If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. </p> </div>
             <div class="abbr published">
-                Posted  <a href='../you-dont-need-to-be-a-scientist-to-build-a-backtesting-algotrading-system-in-python.html' title='2016-02-01T22:30:00-08:00'>Mon 01 February 2016</a> in <a href="../category/trading.html">trading</a>.              
+                Posted  <a href='../you-dont-need-to-be-a-scientist-to-build-a-backtesting-algotrading-system-in-python.html' title='2016-04-01T14:17:47-07:00'>Fri 01 April 2016</a> in <a href="../category/trading.html">trading</a>.              
             </div>
         </article>
         <article class='listed'>
@@ -123,7 +148,7 @@ If you lose any (or all) you money because you followed any trading advices or d
 <p>Today, we'll talk about for-loopers.</p>
 <p>The "for-loopers" are my favorite type of backtesters. They are trivial to write and super fun to expand but they have some vital flows and sadly the majority of backtesters out there is "for-loopers" (ps: I need to find a better name for this!).</p>
 <p>How for-loopers work? Using a for loop (as you might have guessed). It is something like this:</p>
-<div class="highlight"><pre><span class="k">for</span> <span class="n">each</span> <span class="n">element</span> <span class="n">of</span> <span class="n">readhistoricaldata</span><span class="p">():</span> 
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">each</span> <span class="n">element</span> <span class="n">of</span> <span class="n">readhistoricaldata</span><span class="p">():</span> 
     <span class="n">apply_strategy</span><span class="p">()</span> 
     <span class="n">how_our_strategy_did</span><span class="p">()</span>
 </pre></div>
@@ -180,7 +205,7 @@ The link to the data is <a href="http://ratedata.gaincapital.com/2015/11%20Novem
     :::python
     &gt;unzip EUR_USD_Week1.zip</p>
 <p>and you'll get a <em>25MB</em> file named EUR_USD_Week1.csv. These are data for one week for one currency pair. You can imagine the amount of data you need to process for all currencies for the last five years (hint: a lot!). But don't worry, we are going optimize this. For now, let's open the file and inspect.</p>
-<div class="highlight"><pre><span class="o">&gt;</span><span class="n">head</span> <span class="n">EUR_USD_Week1</span><span class="o">.</span><span class="n">csv</span>
+<div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">head</span> <span class="n">EUR_USD_Week1</span><span class="o">.</span><span class="n">csv</span>
 </pre></div>
 
 
@@ -238,15 +263,15 @@ We can always use the <a href="https://docs.python.org/2/library/csv.html">csv</
 The data we downloaded are in ticks. Unless we are building an UHFT (ultra high frequency trading) algorithm, it is much more efficient (memory, storage and processing-wise) to
 "group" these ticks into seconds (or minutes or hours depending on your strategy). This will make our download scale down from 25MB to just <em>35KB</em> which translate to HUGE performance and memory benefits.</p>
 <p>Let's group all these data in 15 minutes. How? Time to fall in love with resample.</p>
-<div class="highlight"><pre><span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;DateTime&#39;</span><span class="p">},</span> <span class="n">index_col</span><span class="o">=</span><span class="s">&#39;DateTime&#39;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Tid&#39;</span><span class="p">,</span> <span class="s">&#39;Dealable&#39;</span><span class="p">,</span> <span class="s">&#39;Pair&#39;</span><span class="p">,</span> <span class="s">&#39;DateTime&#39;</span><span class="p">,</span> <span class="s">&#39;Buy&#39;</span><span class="p">,</span> <span class="s">&#39;Sell&#39;</span><span class="p">],</span> <span class="n">date_parser</span><span class="o">=</span><span class="n">parse</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;DateTime&#39;</span><span class="p">},</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;DateTime&#39;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Tid&#39;</span><span class="p">,</span> <span class="s1">&#39;Dealable&#39;</span><span class="p">,</span> <span class="s1">&#39;Pair&#39;</span><span class="p">,</span> <span class="s1">&#39;DateTime&#39;</span><span class="p">,</span> <span class="s1">&#39;Buy&#39;</span><span class="p">,</span> <span class="s1">&#39;Sell&#39;</span><span class="p">],</span> <span class="n">date_parser</span><span class="o">=</span><span class="n">parse</span><span class="p">)</span>
 
-<span class="c"># let&#39;s erase the columns we don&#39;t need</span>
-<span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s">&#39;Tid&#39;</span><span class="p">]</span> 
-<span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s">&#39;Dealable&#39;</span><span class="p">]</span>
-<span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s">&#39;Pair&#39;</span><span class="p">]</span>
+<span class="c1"># let&#39;s erase the columns we don&#39;t need</span>
+<span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tid&#39;</span><span class="p">]</span> 
+<span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Dealable&#39;</span><span class="p">]</span>
+<span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Pair&#39;</span><span class="p">]</span>
 
-<span class="c"># group every 15 minutes and create an OHLC bar</span>
-<span class="n">grouped_data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s">&#39;15Min&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s">&#39;ohlc&#39;</span><span class="p">)</span>
+<span class="c1"># group every 15 minutes and create an OHLC bar</span>
+<span class="n">grouped_data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;15Min&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;ohlc&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -291,9 +316,9 @@ The data we downloaded are in ticks. Unless we are building an UHFT (ultra high 
 </tbody>
 </table>
 <p>This is called OHLC (Open High Low Close) bar for every <em>15 minutes</em>. You can see now that the ticks are grouped in 15 minute segments and you have the highest and lowest point that the price reached during these 15 minutes and also the open/close for buy and sell. Pure gold! Not only you have all the information you need but now it is extremely fast to load it. You just need to save the data:</p>
-<div class="highlight"><pre><span class="p">::</span> <span class="n">python</span>
-<span class="c"># save to file</span>
-<span class="n">grouped_data</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="n">filename</span><span class="o">+</span><span class="s">&#39;-OHLC.pkl&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="p">::</span> <span class="n">python</span>
+<span class="c1"># save to file</span>
+<span class="n">grouped_data</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="n">filename</span><span class="o">+</span><span class="s1">&#39;-OHLC.pkl&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -336,20 +361,20 @@ If you lose any (or all) you money because you followed any trading advices or d
 <p>and you can change your leverage (switch it to 50:1) and then go back to your <strong>Manage API Access</strong>. There you can find your API key which we are going to use in our system to place trades. <strong>MAKE SURE YOU DON'T SHARE THIS KEY</strong>.</p>
 <p>The code for this is and all other posts is on my <a href="https://github.com/jonromero/Forex-algotrading">github</a> and you can install it and run it pretty easily.</p>
 <p>The code is straight-forward. We connect to Oanda, to a practice account with our token </p>
-<div class="highlight"><pre><span class="n">oanda</span> <span class="o">=</span> <span class="n">oandapy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">environment</span><span class="o">=</span><span class="s">&quot;practice&quot;</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><span class="n">oanda</span> <span class="o">=</span> <span class="n">oandapy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">environment</span><span class="o">=</span><span class="s2">&quot;practice&quot;</span><span class="p">,</span>
                    <span class="n">access_token</span><span class="o">=</span><span class="n">OANDA_ACCESS_TOKEN</span><span class="p">)</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">oanda</span><span class="o">.</span><span class="n">get_prices</span><span class="p">(</span><span class="n">instruments</span><span class="o">=</span><span class="s">&quot;EUR_USD&quot;</span><span class="p">)</span>
-<span class="n">prices</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;prices&quot;</span><span class="p">)</span>
-<span class="n">buy_price</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;bid&quot;</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">oanda</span><span class="o">.</span><span class="n">get_prices</span><span class="p">(</span><span class="n">instruments</span><span class="o">=</span><span class="s2">&quot;EUR_USD&quot;</span><span class="p">)</span>
+<span class="n">prices</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;prices&quot;</span><span class="p">)</span>
+<span class="n">buy_price</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;bid&quot;</span><span class="p">)</span>
 </pre></div>
 
 
 <p>and we are requesting the prices (bid/ask) for the pair EUR_USD. </p>
 <p>We print the buy price and then we place a <em>market</em> order. </p>
-<div class="highlight"><pre><span class="k">print</span> <span class="s">&quot;Buy at&quot;</span><span class="p">,</span> <span class="n">buy_price</span>
-<span class="n">trade_id</span> <span class="o">=</span> <span class="n">oanda</span><span class="o">.</span><span class="n">create_order</span><span class="p">(</span><span class="n">OANDA_ACCOUNT_ID</span><span class="p">,</span><span class="n">instrument</span><span class="o">=</span><span class="s">&quot;EUR_USD&quot;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
-                  <span class="n">side</span><span class="o">=</span><span class="s">&#39;buy&#39;</span><span class="p">,</span>
-                  <span class="nb">type</span><span class="o">=</span><span class="s">&#39;market&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="k">print</span> <span class="s2">&quot;Buy at&quot;</span><span class="p">,</span> <span class="n">buy_price</span>
+<span class="n">trade_id</span> <span class="o">=</span> <span class="n">oanda</span><span class="o">.</span><span class="n">create_order</span><span class="p">(</span><span class="n">OANDA_ACCOUNT_ID</span><span class="p">,</span><span class="n">instrument</span><span class="o">=</span><span class="s2">&quot;EUR_USD&quot;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+                  <span class="n">side</span><span class="o">=</span><span class="s1">&#39;buy&#39;</span><span class="p">,</span>
+                  <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;market&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -463,7 +488,7 @@ If you lose any (or all) you money because you followed any trading advices or d
 <p>Post Three: <a href="placing-your-first-forex-trade-with-python.html">Placing your first trade</a> </p>
 <p>Post Four: <a href="http://jon.io/downloading-historical-forex-tick-data-and-importing-them-in-to-python-using-pandas.html">Downloading historical Forex tick data and importing them in to Python</a></p>
 <p>Post Five: <a href="http://jon.io/building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html">Building a backtesting system in Python: or how I lost $3400 in two hours</a></p>
-<p>Post Six: <a href="http://jon.io/you-dont-need-to-be-a-scientist-to-build-a-backtesting-algotrading-system-in-python.html">You don't need to be a scientist to build a backtesting algotrading system in Python</a></p>
+<p>Post Six: [You don't need to be a scientist to build a backtesting algotrading system in Python](](http://jon.io/backtesting-part-two.html)</p>
 <p>Post Seven: Winner, winner, chicken, dinner | Building our first algorithm</p>
 <p>Post Eight: Forex Psychology | Machines beating humans</p>
 <p>Post Nine: Deploy and automate</p>
@@ -485,7 +510,7 @@ If you lose any (or all) you money because you followed any trading advices or d
 <p>Here is a scenario:
 I have lots of data sitting as CSV on my hard-drive and I want to process them. Not query them. Process them.</p>
 <p>What would be really interesting is to be able to define (dynamically) a schema like that:</p>
-<div class="highlight"><pre><span class="p">(</span><span class="nf">defschema</span> <span class="s">&quot;EURUSD&quot;</span> 
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">defschema</span> <span class="s">&quot;EURUSD&quot;</span> 
     <span class="p">(</span><span class="nf">tokenizer</span> <span class="o">#</span><span class="p">(</span><span class="nf">.split</span> <span class="nv">%</span> <span class="s">&quot;:&quot;</span><span class="p">))</span>  
     <span class="c1">;; the mapping is done here</span>
     <span class="p">(</span><span class="nf">columns</span> <span class="err">|</span><span class="nv">time</span><span class="err">|</span> <span class="err">|</span><span class="nv">open</span><span class="err">|</span> <span class="err">|</span><span class="nv">high</span><span class="err">|</span> <span class="err">|</span><span class="nv">low</span><span class="err">|</span> <span class="err">|</span><span class="nv">close</span><span class="err">|</span> <span class="err">|</span><span class="nv">volume</span><span class="err">|</span><span class="p">))</span>
@@ -497,7 +522,7 @@ First of all, a "tokenize" function. Each dataline is tokenized based on a funct
 <p>As you can imagine, tokenize returns a list of data that are mapped to "columns".</p>
 <p>Now, the interesting stuff. </p>
 <p>You can write scripts like the following:</p>
-<div class="highlight"><pre><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt; </span><span class="err">|</span><span class="nv">close</span><span class="err">|</span> <span class="mf">1.45</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt; </span><span class="err">|</span><span class="nv">close</span><span class="err">|</span> <span class="mf">1.45</span><span class="p">)</span>
     <span class="p">(</span><span class="nf">place-order</span> <span class="ss">:buy</span><span class="p">)</span>
     <span class="p">(</span><span class="nf">place-order</span> <span class="ss">:sell</span><span class="p">))</span>
 </pre></div>
@@ -538,37 +563,6 @@ First of all, a "tokenize" function. Each dataline is tokenized based on a funct
 <p>JR</p> </div>
             <div class="abbr published">
                 Posted  <a href='../hybrisdb.html' title='2014-10-20T22:48:00-07:00'>Mon 20 October 2014</a> in <a href="../category/databases.html">databases</a>.              
-            </div>
-        </article>
-        <article class='listed'>
-            <h1 class="title">
-                <a href="../kicking-time-management-in-the-nuts.html" rel='bookmark'>Kicking time management in the nuts</a>
-            </h1>
-            <div class="article-content"> <p>Building a Startup with pocket money and selling it for tons of cash in just two years, makes you learn a couple of tricks that change your life. One of those is time management.</p>
-<p>Time management is one of the decisive factors of making someone happy. Having lots of time can lead to boredom, having no time can lead to stress and anxiety. The funny thing is that it's so easy jumping from one extreme to the other and impossible to stay "in the zone". </p>
-<p>First of all, let me get something out of my chest: There is no such thing as "I have too many things to do that I need more than 24 hours a day". Bullshit. Even if you had 50 hours per day, you will still be struggling with todos. Why? Because, <em>time is irrelevant</em>. Everything is about procedures.</p>
-<p>What I really hate about time management is tracking time. It is inefficient, I get bored quickly and you cannot focus 100% on a task everytime for each specific timeslot (unless you are a buddist monk). What I love to do is ticking off tasks. The pleasure of striking out a task that has been on your list for the last couple of weeks is the same as eating a Sundae ice-cream in the sun. Sometimes even better.</p>
-<p>I borrowed one of the most effective ways of "killing" tasks by a project management technic called <a href="http://en.wikipedia.org/wiki/Scrum_(software_development)">Scrum</a>. If you are in a Startup and haven't heard of Scrum, prepare to be amazed.</p>
-<p>Based on this method, you create periods of work (called <em>sprints</em>) and you add things to be done in these periods. Why is this much better than just having a huge todo list? It breaks down tasks in large, high-level time blocks which are easier to manage and easier to extract information about how you (or your team) performs.</p>
-<h2>The Planning fallacy</h2>
-<p>Whenever I talk with a Startup that is struggling to go to a release or prototype, there is a reccuring theme: They all have tasks, some even have milestones but noone has a high-level <em>action</em> plan on what needs to be done. </p>
-<p>We humans are pretty bad at calculating things that span more than a couple of weeks and what is worse, is that we suck at identifying this. It is an ego thing.</p>
-<p>So, roll up your sleeves and let's do a small test. </p>
-<ol>
-<li>Create a list of all the things you need to do and assign a number of how important this item is (from 1 to 5)</li>
-<li>Add all the values and divide by the number of tasks (this is your average <em>velocity</em>)</li>
-<li>Organize the things in two groups (group A and group B). Make sure that each group has a summed value near to your average</li>
-<li>Take the first group (group A) and divide it again in two groups (group C and group D)</li>
-<li>Now, for the next two weeks, focus on resolving all the tasks in group C.</li>
-</ol>
-<p>You might be wondering what is the great thing behind this and why this is so effective. First of all, it is a very easy system which translates to a very low abandonment rate. Second, even from the first week, you will be able to calculate your average velocity (which may be totally different from the one you calculated here) and "feel" the progress. And third, you will have a realistic feedback of how much work is for a single task versus the value this task actually delivers.</p>
-<p>What you should do when the second week is done, is to put any unresolved tasks back to the pool of tasks (called the <em>backlog</em>) and re-organize your groups based on your newly calculated average velocity. As a rule of thumb, you should calculate your velocity every month.  </p>
-<p>Have in mind that there are more sophisticated systems (I'll talk more about them in an upcoming post) but my rule is that first you need something simple that works right now and then you can improve and iterate.</p>
-<ul>
-<li><a href="http://www.twitter.com/jonromero">JR</a></li>
-</ul> </div>
-            <div class="abbr published">
-                Posted  <a href='../kicking-time-management-in-the-nuts.html' title='2013-12-30T08:41:43-08:00'>Mon 30 December 2013</a> in <a href="../category/startups.html">startups</a>.              
             </div>
         </article>
         <article class='listed'>

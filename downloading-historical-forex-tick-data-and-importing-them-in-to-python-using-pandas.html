@@ -74,7 +74,7 @@ The link to the data is <a href="http://ratedata.gaincapital.com/2015/11%20Novem
     :::python
     &gt;unzip EUR_USD_Week1.zip</p>
 <p>and you'll get a <em>25MB</em> file named EUR_USD_Week1.csv. These are data for one week for one currency pair. You can imagine the amount of data you need to process for all currencies for the last five years (hint: a lot!). But don't worry, we are going optimize this. For now, let's open the file and inspect.</p>
-<div class="highlight"><pre><span class="o">&gt;</span><span class="n">head</span> <span class="n">EUR_USD_Week1</span><span class="o">.</span><span class="n">csv</span>
+<div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">head</span> <span class="n">EUR_USD_Week1</span><span class="o">.</span><span class="n">csv</span>
 </pre></div>
 
 
@@ -132,15 +132,15 @@ We can always use the <a href="https://docs.python.org/2/library/csv.html">csv</
 The data we downloaded are in ticks. Unless we are building an UHFT (ultra high frequency trading) algorithm, it is much more efficient (memory, storage and processing-wise) to
 "group" these ticks into seconds (or minutes or hours depending on your strategy). This will make our download scale down from 25MB to just <em>35KB</em> which translate to HUGE performance and memory benefits.</p>
 <p>Let's group all these data in 15 minutes. How? Time to fall in love with resample.</p>
-<div class="highlight"><pre><span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;DateTime&#39;</span><span class="p">},</span> <span class="n">index_col</span><span class="o">=</span><span class="s">&#39;DateTime&#39;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Tid&#39;</span><span class="p">,</span> <span class="s">&#39;Dealable&#39;</span><span class="p">,</span> <span class="s">&#39;Pair&#39;</span><span class="p">,</span> <span class="s">&#39;DateTime&#39;</span><span class="p">,</span> <span class="s">&#39;Buy&#39;</span><span class="p">,</span> <span class="s">&#39;Sell&#39;</span><span class="p">],</span> <span class="n">date_parser</span><span class="o">=</span><span class="n">parse</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;DateTime&#39;</span><span class="p">},</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;DateTime&#39;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Tid&#39;</span><span class="p">,</span> <span class="s1">&#39;Dealable&#39;</span><span class="p">,</span> <span class="s1">&#39;Pair&#39;</span><span class="p">,</span> <span class="s1">&#39;DateTime&#39;</span><span class="p">,</span> <span class="s1">&#39;Buy&#39;</span><span class="p">,</span> <span class="s1">&#39;Sell&#39;</span><span class="p">],</span> <span class="n">date_parser</span><span class="o">=</span><span class="n">parse</span><span class="p">)</span>
 
-<span class="c"># let&#39;s erase the columns we don&#39;t need</span>
-<span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s">&#39;Tid&#39;</span><span class="p">]</span> 
-<span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s">&#39;Dealable&#39;</span><span class="p">]</span>
-<span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s">&#39;Pair&#39;</span><span class="p">]</span>
+<span class="c1"># let&#39;s erase the columns we don&#39;t need</span>
+<span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tid&#39;</span><span class="p">]</span> 
+<span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Dealable&#39;</span><span class="p">]</span>
+<span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Pair&#39;</span><span class="p">]</span>
 
-<span class="c"># group every 15 minutes and create an OHLC bar</span>
-<span class="n">grouped_data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s">&#39;15Min&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s">&#39;ohlc&#39;</span><span class="p">)</span>
+<span class="c1"># group every 15 minutes and create an OHLC bar</span>
+<span class="n">grouped_data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;15Min&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;ohlc&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -185,9 +185,9 @@ The data we downloaded are in ticks. Unless we are building an UHFT (ultra high 
 </tbody>
 </table>
 <p>This is called OHLC (Open High Low Close) bar for every <em>15 minutes</em>. You can see now that the ticks are grouped in 15 minute segments and you have the highest and lowest point that the price reached during these 15 minutes and also the open/close for buy and sell. Pure gold! Not only you have all the information you need but now it is extremely fast to load it. You just need to save the data:</p>
-<div class="highlight"><pre><span class="p">::</span> <span class="n">python</span>
-<span class="c"># save to file</span>
-<span class="n">grouped_data</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="n">filename</span><span class="o">+</span><span class="s">&#39;-OHLC.pkl&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="p">::</span> <span class="n">python</span>
+<span class="c1"># save to file</span>
+<span class="n">grouped_data</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="n">filename</span><span class="o">+</span><span class="s1">&#39;-OHLC.pkl&#39;</span><span class="p">)</span>
 </pre></div>
 
 

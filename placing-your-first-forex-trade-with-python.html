@@ -80,20 +80,20 @@
 <p>and you can change your leverage (switch it to 50:1) and then go back to your <strong>Manage API Access</strong>. There you can find your API key which we are going to use in our system to place trades. <strong>MAKE SURE YOU DON'T SHARE THIS KEY</strong>.</p>
 <p>The code for this is and all other posts is on my <a href="https://github.com/jonromero/Forex-algotrading">github</a> and you can install it and run it pretty easily.</p>
 <p>The code is straight-forward. We connect to Oanda, to a practice account with our token </p>
-<div class="highlight"><pre><span class="n">oanda</span> <span class="o">=</span> <span class="n">oandapy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">environment</span><span class="o">=</span><span class="s">&quot;practice&quot;</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><span class="n">oanda</span> <span class="o">=</span> <span class="n">oandapy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">environment</span><span class="o">=</span><span class="s2">&quot;practice&quot;</span><span class="p">,</span>
                    <span class="n">access_token</span><span class="o">=</span><span class="n">OANDA_ACCESS_TOKEN</span><span class="p">)</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">oanda</span><span class="o">.</span><span class="n">get_prices</span><span class="p">(</span><span class="n">instruments</span><span class="o">=</span><span class="s">&quot;EUR_USD&quot;</span><span class="p">)</span>
-<span class="n">prices</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;prices&quot;</span><span class="p">)</span>
-<span class="n">buy_price</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;bid&quot;</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">oanda</span><span class="o">.</span><span class="n">get_prices</span><span class="p">(</span><span class="n">instruments</span><span class="o">=</span><span class="s2">&quot;EUR_USD&quot;</span><span class="p">)</span>
+<span class="n">prices</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;prices&quot;</span><span class="p">)</span>
+<span class="n">buy_price</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;bid&quot;</span><span class="p">)</span>
 </pre></div>
 
 
 <p>and we are requesting the prices (bid/ask) for the pair EUR_USD. </p>
 <p>We print the buy price and then we place a <em>market</em> order. </p>
-<div class="highlight"><pre><span class="k">print</span> <span class="s">&quot;Buy at&quot;</span><span class="p">,</span> <span class="n">buy_price</span>
-<span class="n">trade_id</span> <span class="o">=</span> <span class="n">oanda</span><span class="o">.</span><span class="n">create_order</span><span class="p">(</span><span class="n">OANDA_ACCOUNT_ID</span><span class="p">,</span><span class="n">instrument</span><span class="o">=</span><span class="s">&quot;EUR_USD&quot;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
-                  <span class="n">side</span><span class="o">=</span><span class="s">&#39;buy&#39;</span><span class="p">,</span>
-                  <span class="nb">type</span><span class="o">=</span><span class="s">&#39;market&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="k">print</span> <span class="s2">&quot;Buy at&quot;</span><span class="p">,</span> <span class="n">buy_price</span>
+<span class="n">trade_id</span> <span class="o">=</span> <span class="n">oanda</span><span class="o">.</span><span class="n">create_order</span><span class="p">(</span><span class="n">OANDA_ACCOUNT_ID</span><span class="p">,</span><span class="n">instrument</span><span class="o">=</span><span class="s2">&quot;EUR_USD&quot;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+                  <span class="n">side</span><span class="o">=</span><span class="s1">&#39;buy&#39;</span><span class="p">,</span>
+                  <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;market&#39;</span><span class="p">)</span>
 </pre></div>
 
 
