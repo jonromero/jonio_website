@@ -46,15 +46,15 @@ Post Five: [Building a backtesting system in Python: or how I lost $3400 in two 
 
 Post Six: [You don't need to be a scientist to build a backtesting algotrading system in Python](](http://jon.io/backtesting-part-two.html)
 
-Post Seven: Winner, winner, chicken, dinner | Building our first algorithm
+Post Seven: [Why the IRS loves Taxes](http://jon.io/why-the-irs-loves-forex.html)
 
-Post Eight: Forex Psychology | Machines beating humans
+Post Eight: Winner, winner, chicken, dinner | Building our first algorithm
 
-Post Nine: Deploy and automate
+Post Nine: Forex Psychology | Machines beating humans
 
-Post Ten: Notifications, SMS and remote control
+Post Ten: Deploy and automate
 
-Post Eleven: Optimizing with neural networks
+Post Eleven: Notifications, SMS and remote control
 
 Post Twelve: Deep Learning and kicking (human) ass
 
