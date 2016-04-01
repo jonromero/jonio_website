@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Jon.IO</title><link href="http://jon.io/" rel="alternate"></link><link href="http://jon.io/feeds/all.atom.xml" rel="self"></link><id>http://jon.io/</id><updated>2016-04-01T22:30:00-07:00</updated><entry><title>Why the IRS loves Forex</title><link href="http://jon.io/why-the-irs-loves-forex.html" rel="alternate"></link><updated>2016-04-01T22:30:00-07:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2016-04-01:why-the-irs-loves-forex.html</id><summary type="html">&lt;p&gt;&lt;em&gt;This is the another post of the series: &lt;a href="how-to-build-your-own-algorithmic-trading-platform.html"&gt;How to build your own algotrading platform&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Update: The Machine Learning post is going to be epic but it takes so much time to make the code presentable. Bear with me, cool things are coming (as you've read on the newsletter).&lt;/p&gt;
-&lt;p&gt;Disclaimer: THIS IS NOT TAX ADVICE. &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Update: The Machine Learning post is going to be epic but it takes so much time to make the code presentable. Bear with me, cool things are coming (as you've read at the &lt;a href="http://eepurl.com/bGbOnb"&gt;newsletter&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Disclaimer: &lt;strong&gt;THIS IS NOT TAX ADVICE.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;What is really surprising is that the majority of the requests in the newsletter are:
 1. Use tools to assist Trading
 2. Machine Learning to optimize trades
@@ -361,11 +361,11 @@ If you lose any (or all) you money because you followed any trading advices or d
 &lt;p&gt;Post Four: &lt;a href="http://jon.io/downloading-historical-forex-tick-data-and-importing-them-in-to-python-using-pandas.html"&gt;Downloading historical Forex tick data and importing them in to Python&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Post Five: &lt;a href="http://jon.io/building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html"&gt;Building a backtesting system in Python: or how I lost $3400 in two hours&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Post Six: [You don't need to be a scientist to build a backtesting algotrading system in Python](](http://jon.io/backtesting-part-two.html)&lt;/p&gt;
-&lt;p&gt;Post Seven: Winner, winner, chicken, dinner | Building our first algorithm&lt;/p&gt;
-&lt;p&gt;Post Eight: Forex Psychology | Machines beating humans&lt;/p&gt;
-&lt;p&gt;Post Nine: Deploy and automate&lt;/p&gt;
-&lt;p&gt;Post Ten: Notifications, SMS and remote control&lt;/p&gt;
-&lt;p&gt;Post Eleven: Optimizing with neural networks&lt;/p&gt;
+&lt;p&gt;Post Seven: &lt;a href="http://jon.io/why-the-irs-loves-forex.html"&gt;Why the IRS loves Taxes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Post Eight: Winner, winner, chicken, dinner | Building our first algorithm&lt;/p&gt;
+&lt;p&gt;Post Nine: Forex Psychology | Machines beating humans&lt;/p&gt;
+&lt;p&gt;Post Ten: Deploy and automate&lt;/p&gt;
+&lt;p&gt;Post Eleven: Notifications, SMS and remote control&lt;/p&gt;
 &lt;p&gt;Post Twelve: Deep Learning and kicking (human) ass&lt;/p&gt;
 &lt;p&gt;Post Thirteen: Forex advanced&lt;/p&gt;
 &lt;p&gt;Port Fourteen: Into to HFT&lt;/p&gt;</summary><category term="algotrading"></category></entry><entry><title>Mapping and processing data in Clojure</title><link href="http://jon.io/mapping-and-processing-data-in-clojure.html" rel="alternate"></link><updated>2014-11-20T22:48:00-08:00</updated><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2014-11-20:mapping-and-processing-data-in-clojure.html</id><summary type="html">&lt;p&gt;I have to admit that I have a thing for DSLs. You can see it at &lt;a href="https://github.com/jonromero/music-as-data"&gt;music-as-data&lt;/a&gt; were notes and rhythm/beat is "mapped" to data and you can apply data transformations. &lt;/p&gt;
