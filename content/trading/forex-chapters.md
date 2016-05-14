@@ -44,7 +44,7 @@ Post Four: [Downloading historical Forex tick data and importing them in to Pyth
 
 Post Five: [Building a backtesting system in Python: or how I lost $3400 in two hours](http://jon.io/building-a-backtesting-system-in-python-or-how-i-lost-3400-in-two-hours.html)
 
-Post Six: [You don't need to be a scientist to build a backtesting algotrading system in Python]((http://jon.io/backtesting-part-two.html)
+Post Six: [You don't need to be a scientist to build a backtesting algotrading system in Python](http://jon.io/backtesting-part-two.html)
 
 Post Seven: [Forex and Taxes for new traders](http://jon.io/forex-and-taxes-for-new-traders.html)
 
