@@ -9,7 +9,7 @@ Machine learning and trading is a very interesting subject. It is also a subject
 In the nexts posts, we are going to talk about:
 
 1. Optimize entries and exits. This and only this could make a ton of difference in your bank roll.
-2. Calculate position size (in case you don't like Kelly's critirion)
+2. Calculate position size (in case you don't like [Kelly criterion](https://en.wikipedia.org/wiki/Kelly_criterion))
 3. Find possible correlation between different pairs (pair trading). I love the EURUSD vs GBPJPY correlation!
 4. Calculate support & resistance lines
 
