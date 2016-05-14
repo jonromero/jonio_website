@@ -48,7 +48,7 @@ Post Six: [You don't need to be a scientist to build a backtesting algotrading s
 
 Post Seven: [Forex and Taxes for new traders](http://jon.io/forex-and-taxes-for-new-traders.html)
 
-Post Eight: [Machines Learning and Trading](http://jon.io/machine-beats-human-using-machine-learning-in-forex.html)
+Post Eight: [Machine Learning and Trading](http://jon.io/machine-beats-human-using-machine-learning-in-forex.html)
 
 Post Nine: Forex Psychology 
 
