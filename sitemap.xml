@@ -5,29 +5,36 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://jon.io/</loc>
-<lastmod>2016-04-01T14:43:16-00:00</lastmod>
+<lastmod>2016-05-13T18:02:28-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://jon.io/archives.html</loc>
-<lastmod>2016-04-01T14:43:16-00:00</lastmod>
+<lastmod>2016-05-13T18:02:28-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://jon.io/tags.html</loc>
-<lastmod>2016-04-01T14:43:16-00:00</lastmod>
+<lastmod>2016-05-13T18:02:28-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://jon.io/categories.html</loc>
-<lastmod>2016-04-01T14:43:16-00:00</lastmod>
+<lastmod>2016-05-13T18:02:28-00:00</lastmod>
 <changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://jon.io/machine-beats-human-using-machine-learning-in-forex.html</loc>
+<lastmod>2016-05-13T22:30:00-07:00</lastmod>
+<changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
@@ -131,7 +138,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://jon.io/category/trading.html</loc>
-<lastmod>2016-04-01T22:30:00-07:53</lastmod>
+<lastmod>2016-05-13T22:30:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -152,7 +159,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://jon.io/tag/algotrading.html</loc>
-<lastmod>2016-04-01T22:30:00-07:53</lastmod>
+<lastmod>2016-05-13T22:30:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -173,7 +180,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://jon.io/author/jon-v-bigdata-startups-trading.html</loc>
-<lastmod>2016-04-01T22:30:00-07:53</lastmod>
+<lastmod>2016-05-13T22:30:00-07:53</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
