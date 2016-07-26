@@ -1,5 +1,4 @@
-Title: You don't need to be a scientist to build a backtesting algotrading system in Python
-Building the simplest backtesting system in Python
+Title: Building the simplest backtesting system in Python
 Tags: algotrading
 Date: 2016-02-01 22:30
 
