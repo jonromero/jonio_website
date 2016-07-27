@@ -50,6 +50,8 @@ Post Seven: [Forex and Taxes for new traders](http://jon.io/forex-and-taxes-for-
 
 Post Eight: [Machine Learning and Trading](http://jon.io/machine-beats-human-using-machine-learning-in-forex.html)
 
+Post Eight+: [Trading Ethereum: Making 10% every 20 minutes](http://jon.io/trading-ethereum-making-10-every-20-minutes.html)
+
 Post Nine: Forex Psychology 
 
 Post Ten: Deploy and automate
