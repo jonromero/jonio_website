@@ -1,5 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Jon.IO</title><link href="http://jon.io/" rel="alternate"></link><link href="http://jon.io/feeds/all.atom.xml" rel="self"></link><id>http://jon.io/</id><updated>2016-05-13T22:30:00-07:00</updated><entry><title>Machine Beats Human: Using Machine Learning in Forex</title><link href="http://jon.io/machine-beats-human-using-machine-learning-in-forex.html" rel="alternate"></link><published>2016-05-13T22:30:00-07:00</published><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2016-05-13:machine-beats-human-using-machine-learning-in-forex.html</id><summary type="html">&lt;p&gt;&lt;em&gt;This is the another post of the series: &lt;a href="how-to-build-your-own-algorithmic-trading-platform.html"&gt;How to build your own algotrading platform&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Jon.IO</title><link href="http://jon.io/" rel="alternate"></link><link href="http://jon.io/feeds/all.atom.xml" rel="self"></link><id>http://jon.io/</id><updated>2016-07-27T22:34:00-07:00</updated><entry><title>Trading Ethereum: Making 10% every 20 minutes</title><link href="http://jon.io/trading-ethereum-making-10-every-20-minutes.html" rel="alternate"></link><published>2016-07-27T22:34:00-07:00</published><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2016-07-27:trading-ethereum-making-10-every-20-minutes.html</id><summary type="html">&lt;p&gt;This is more of a &lt;em&gt;"How to build your own algotrading strategy - the Ethereum edition"&lt;/em&gt; and not a "make money fast" blog post.&lt;/p&gt;
+&lt;p&gt;It is also a real example with real returns (and real production errors that cost me money) where you can see how to identify opportunities, why algotrading is awesome and why risk management can save your ass.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This is the another post of the series: &lt;a href="how-to-build-your-own-algorithmic-trading-platform.html"&gt;How to build your own algotrading platform&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="theme/images/bigShort.jpg" class="" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;I get this question almost on a daily basis. How can I find a good strategy? How can I built my own? Do I need to have a PhD in mathematics? Statistics?&lt;/p&gt;
+&lt;p&gt;Newsflash: If I can write a strategy, anyone can write a strategy. Trust me on that. The only trick is to &lt;strong&gt;look for a simple one&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cryptocurrencies&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Update: This post has been rewritten "at least" five times (as &lt;a href="https://bitcoinmagazine.com/articles/ethereum-s-dao-forking-crisis-the-bitcoin-perspective-1467404395"&gt;"The DAO drama"&lt;/a&gt; escalated) and it is the perfect example of a strategy doing a full circle.&lt;/p&gt;
+&lt;p&gt;I started getting involved with &lt;a href="https://www.ethereum.org/"&gt;Ethereum&lt;/a&gt; early on as I really liked the "run your algorithms on the blockchain" thing. When &lt;a href="https://daohub.org/"&gt;TheDAO&lt;/a&gt; came out, I read everything about it and loved the idea.
+You don't need to understand what Ethereum, theDAO, blockchain is at this point (I promise I will ramble on a another post). The same ideas apply to Forex, Stocks even Pokemon balls.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;     As I said before, simple ideas turn into (simple?) strategies.
+     Complex strategies turn into mayhem that is impossible to backtest
+     and deploy without errors.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt; My four step - captain obvious - system &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I personally, have a specific way that I work.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Step one&lt;/em&gt; : Identify an idea.&lt;/p&gt;
+&lt;p&gt;My idea in this case is that there are a couple of exchanges offering Ethereum and DAO tokens. What if there was an &lt;strong&gt;arbitrage&lt;/strong&gt; between those?&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Step two&lt;/em&gt; : Manually test the idea.&lt;/p&gt;
+&lt;p&gt;If something "kinda works", I am on to something. All I had to do is execute all the steps manually and write down any fees, conditions or anything that should be documented. &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Step three&lt;/em&gt; : Automate&lt;/p&gt;
+&lt;p&gt;This algorithm is not a high frequency trading algorithm. There is a considerable amount of time risk (which you can eliminate as we'll see later on) but what I did could be done manually. The problem is that I would have to spend all time in front of my computer, checking if there is an arbitrage condition and if there was, I had to act fast and without messing up. Oh and I had to recruit five of my friends to scale this up.&lt;/p&gt;
+&lt;p&gt;Long story short, I spent Presidents' Day writing a simple program that will replay all my manual steps. The program would crash and it was not more that 100 lines of code. This is the data collection stage where I see if there is an advantage that algorithms can give me. Advantages can be:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Something that be automated and run 1000 of times per seconds or 1000 times in parallel&lt;/li&gt;
+&lt;li&gt;Something that thinks faster than I can&lt;/li&gt;
+&lt;li&gt;Something that has no feelings to screw up my system&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;If there is at least one or more conditions met, I will start building and rewriting the algo.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Step four&lt;/em&gt; : All in&lt;/p&gt;
+&lt;p&gt;I am kidding and you'll see in a bit why risk management is super important in this business.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; The Arbitrage &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Let's discuss a little bit about what this arbitrage was.&lt;/p&gt;
+&lt;p&gt;The idea is: "I wonder whether Kraken and Shapeshift have different prices for the same assets". This is a classic arbitrage case (Kraken and Shapeshift are "exchanges").
+I could exchange DAO for ETH on Kraken, transfer ETH to Shapeshift, exchange ETH for DAO and send them back to Kraken and due to price inconsintencies I would end up with more DAO than I initially started! &lt;strong&gt;Risk-free money, the best kind of money&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;You can make money as long as
+ETHDAO from Kraken  * DAOETH from ShapeShift &amp;gt; 1 (+ fees + gas). Very simple formula, right? &lt;/p&gt;
+&lt;p&gt;Every cycle, was a 2% to 10% return of my capital. After a while, I started hitting the limits of Shapeshift and I had to make this run in parallel. &lt;/p&gt;
+&lt;p&gt;The question is &lt;strong&gt;what would you do if you had an algorithm that makes you 10% of your money every 20 minutes&lt;/strong&gt;? The stupidest thing you could do is put tons of money into it.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Hybris&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If you are not familiar with the Greek word &lt;a href="https://en.wikipedia.org/wiki/Hubris"&gt;hybris&lt;/a&gt;, consider yourself lucky. Hybris is when you think that you are invincible, better than gods. And this is the biggest NO NO you can do in trading.&lt;/p&gt;
+&lt;p&gt;After a couple of weeks, theDAO was hacked. 160 million dollars were stolen (or should I say frozen?) and noone knew what was going to happen. For me, this happened, 10 minutes before boarding a plane to fly to New York. &lt;strong&gt;Hybris&lt;/strong&gt;. Or as people in the US say: &lt;strong&gt;Fuck&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;I was smart(lucky?) enough to have good risk management habits (thank you Forex). I never, ever, ever risk more that 2% of my capital even if it seems the best kind of deal.&lt;/p&gt;
+&lt;p&gt;Luckily, the money were "restored" and I could withdraw/convert my DAO to Ethereum (but yes, I bought in-flight WiFi to keep up with what's going on).&lt;/p&gt;
+&lt;p&gt;This whole experience is a reminder that there are always things that you cannot predict. Things that you cannot control.
+This was a &lt;a href="https://en.wikipedia.org/wiki/Systematic_risk"&gt;systematic risk&lt;/a&gt; and there was no way I could have seen it coming. Pushing buttons and building algorithms is not enough. Proper risk management and knowing when you need to take a chill pill is what can keep you in the game.&lt;/p&gt;
+&lt;p&gt;On the next post, I will post the whole algorithm and go line by line. I also plan to discuss a little bit more about theDAO and Ethereum. If you don't want to miss any of these and get some more additional info, feel free to sign up to the &lt;a href="http://eepurl.com/bGbOnb"&gt;newsletter&lt;/a&gt; where I talk about fintech, algorithms and the markets.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; Coming next: Diving into the ETHDAO algotrading program &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If you have more feedback, ping me at &lt;a href="http://www.twitter.com/jonromero"&gt;jonromero&lt;/a&gt; or signup to the &lt;a href="http://eepurl.com/bGbOnb"&gt;newsletter&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
+If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. &lt;/p&gt;</summary><category term="algotrading"></category></entry><entry><title>Machine Beats Human: Using Machine Learning in Forex</title><link href="http://jon.io/machine-beats-human-using-machine-learning-in-forex.html" rel="alternate"></link><published>2016-05-13T22:30:00-07:00</published><author><name>Jon V &lt;h2&gt;BigData. Startups. Trading.&lt;/h2&gt;</name></author><id>tag:jon.io,2016-05-13:machine-beats-human-using-machine-learning-in-forex.html</id><summary type="html">&lt;p&gt;&lt;em&gt;This is the another post of the series: &lt;a href="how-to-build-your-own-algorithmic-trading-platform.html"&gt;How to build your own algotrading platform&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Machine learning and trading is a very interesting subject. It is also a subject where you can spend tons of time writing code and reading papers and then a kid can beat you while playing Mario Kart. &lt;/p&gt;
 &lt;p&gt;In the nexts posts, we are going to talk about:&lt;/p&gt;
 &lt;ol&gt;
