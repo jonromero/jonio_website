@@ -45,9 +45,10 @@ If you don't know how to use EthereumWallet, Mist or the command line, ping me o
 
 
 ** Where is the code? **
-The code is (here)[https://github.com/jonromero/ethereum_contracts]. 
+The code is [here](https://github.com/jonromero/ethereum_contracts/blob/master/HugCoin.eth).
 
 Enjoy!
+
 
 If you have any feedback, ping me at [jonromero](http://www.twitter.com/jonromero) or signup to the [newsletter](http://eepurl.com/bGbOnb). 
 
