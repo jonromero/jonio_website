@@ -1,23 +1,24 @@
-Title: HugCoin: Hug someone and have their name on blockchain forever
+Title: HugCoin: Build your own cryptocurrency (coin)
 Tags: ethereum
 Date: 2016-08-17 22:34
-Status: draft
 
 This is a departure from our [how to build your own algotrading platform](how-to-build-your-own-algorithmic-trading-platform.html) series but I think it is interesting and fun.
 
-** What HugCoin is **
+** HugCoin **
 
 It all started after experimenting building a DAO that works like the democracy in Ancient Greece. Automated taxation, basic income and tons of other cool stuff.
 While optimizing the DAO code, I had some cool ideas that I wanted to try out. One of them ended up in HugCoin.
 
-HugCoin a cryptocurrency I made, running on the Ethereum blockchain, meaning it is a coin I made mostly for fun. The code is tight so you can experiment pretty easily.
+HugCoin is a cryptocurrency, running on the Ethereum blockchain. The code is tight so you can experiment pretty easily. It is also an awesome way to see how sending coins works, how to put your name on the blockchain, call functions etc. 
 
 
 ** Features **
 <img>
 
-One coin = One hug. You can send AS many hugs as you want. You will never run out.
-Whenever you send a hug, you get to name the hugged person and his/her name will always exist in the public chain. Awesome right?
+One coin = One hug. You can send/transfer AS many hugs as you want. You will never run out. 
+If you use the function *giveHugTo*, you also get to name the hugged person and his/her name will always exist in the public chain. Awesome right?
+
+HugCoin also keeps track how many people have been hugged.
 
 Let's see how many huggers are out there!
 
@@ -25,9 +26,26 @@ Let's see how many huggers are out there!
 ** Adding in to your wallet **
 Instructions
 
+** Hugging people **
+Easy. Too easy! Open Ethereum-Wallet (or Mist), go to *Contracts* ->  *Watch Contract* and add these:
+
+      CONTRACT NAME: HugCoin
+      CONTRACT ADDRESS: 0x84Da7438508EEC850080f88ff5d76Ba10511d025
+      JSON INTERFACE: [ { "constant": true, "inputs": [], "name": "name", "outputs": [ { "name": "", "type": "string", "value": "HugCoin" } ], "type": "function" }, { "constant": true, "inputs": [], "name": "totalHuggers", "outputs": [ { "name": "", "type": "uint256", "value": "2" } ], "type": "function" }, { "constant": true, "inputs": [ { "name": "", "type": "address" } ], "name": "balanceOf", "outputs": [ { "name": "", "type": "uint256", "value": "0" } ], "type": "function" }, { "constant": false, "inputs": [ { "name": "receipient_name", "type": "string" }, { "name": "_to", "type": "address" } ], "name": "giveHugTo", "outputs": [ { "name": "success", "type": "bool" } ], "type": "function" }, { "constant": false, "inputs": [], "name": "destroy", "outputs": [], "type": "function" }, { "constant": true, "inputs": [], "name": "symbol", "outputs": [ { "name": "", "type": "string", "value": "<3" } ], "type": "function" }, { "constant": false, "inputs": [ { "name": "_to", "type": "address" }, { "name": "_value", "type": "uint256" } ], "name": "transfer", "outputs": [ { "name": "success", "type": "bool" } ], "type": "function" }, { "constant": true, "inputs": [ { "name": "", "type": "uint256" } ], "name": "hugged", "outputs": [ { "name": "member", "type": "address", "value": "0x6b365fe592881e916dc77ef410e5f9ce4654369a" }, { "name": "name", "type": "string", "value": "Jon V" }, { "name": "memberSince", "type": "uint256", "value": "1471670740" } ], "type": "function" }, { "inputs": [], "type": "constructor" }, { "anonymous": false, "inputs": [ { "indexed": true, "name": "_from", "type": "address" }, { "indexed": true, "name": "_to", "type": "address" }, { "indexed": false, "name": "_value", "type": "uint256" } ], "name": "Transfer", "type": "event" } ]
+
+
+<img src="theme/images/contract.png" class="" alt="" />
+
+
+and press OK.
+
+
+There you'll be able to see all the available functions.
+If you don't know how to use EthereumWallet, Mist or the command line, ping me on twitter and I'll send you some hugs! 
+
 
 ** Where is the code? **
-The code is (here)[https://github.com/jonromero/ethereum_contracts]. Enjoy.
+The code is (here)[https://github.com/jonromero/ethereum_contracts]. 
 
 Enjoy!
 

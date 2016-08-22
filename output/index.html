@@ -53,6 +53,45 @@
 	
         <article class='listed'>
             <h1 class="title">
+                <a href="./hugcoin-build-your-own-cryptocurrency-coin.html" rel='bookmark'>HugCoin: Build your own cryptocurrency (coin)</a>
+            </h1>
+            <div class="article-content"> <p>This is a departure from our <a href="how-to-build-your-own-algorithmic-trading-platform.html">how to build your own algotrading platform</a> series but I think it is interesting and fun.</p>
+<p><strong> HugCoin </strong></p>
+<p>It all started after experimenting building a DAO that works like the democracy in Ancient Greece. Automated taxation, basic income and tons of other cool stuff.
+While optimizing the DAO code, I had some cool ideas that I wanted to try out. One of them ended up in HugCoin.</p>
+<p>HugCoin is a cryptocurrency, running on the Ethereum blockchain. The code is tight so you can experiment pretty easily. It is also an awesome way to see how sending coins works, how to put your name on the blockchain, call functions etc. </p>
+<p><strong> Features </strong>
+<img></p>
+<p>One coin = One hug. You can send/transfer AS many hugs as you want. You will never run out. 
+If you use the function <em>giveHugTo</em>, you also get to name the hugged person and his/her name will always exist in the public chain. Awesome right?</p>
+<p>HugCoin also keeps track how many people have been hugged.</p>
+<p>Let's see how many huggers are out there!</p>
+<p><strong> Adding in to your wallet </strong>
+Instructions</p>
+<p><strong> Hugging people </strong>
+Easy. Too easy! Open Ethereum-Wallet (or Mist), go to <em>Contracts</em> -&gt;  <em>Watch Contract</em> and add these:</p>
+<div class="highlight"><pre><span></span>  CONTRACT NAME: HugCoin
+  CONTRACT ADDRESS: 0x84Da7438508EEC850080f88ff5d76Ba10511d025
+  JSON INTERFACE: [ { &quot;constant&quot;: true, &quot;inputs&quot;: [], &quot;name&quot;: &quot;name&quot;, &quot;outputs&quot;: [ { &quot;name&quot;: &quot;&quot;, &quot;type&quot;: &quot;string&quot;, &quot;value&quot;: &quot;HugCoin&quot; } ], &quot;type&quot;: &quot;function&quot; }, { &quot;constant&quot;: true, &quot;inputs&quot;: [], &quot;name&quot;: &quot;totalHuggers&quot;, &quot;outputs&quot;: [ { &quot;name&quot;: &quot;&quot;, &quot;type&quot;: &quot;uint256&quot;, &quot;value&quot;: &quot;2&quot; } ], &quot;type&quot;: &quot;function&quot; }, { &quot;constant&quot;: true, &quot;inputs&quot;: [ { &quot;name&quot;: &quot;&quot;, &quot;type&quot;: &quot;address&quot; } ], &quot;name&quot;: &quot;balanceOf&quot;, &quot;outputs&quot;: [ { &quot;name&quot;: &quot;&quot;, &quot;type&quot;: &quot;uint256&quot;, &quot;value&quot;: &quot;0&quot; } ], &quot;type&quot;: &quot;function&quot; }, { &quot;constant&quot;: false, &quot;inputs&quot;: [ { &quot;name&quot;: &quot;receipient_name&quot;, &quot;type&quot;: &quot;string&quot; }, { &quot;name&quot;: &quot;_to&quot;, &quot;type&quot;: &quot;address&quot; } ], &quot;name&quot;: &quot;giveHugTo&quot;, &quot;outputs&quot;: [ { &quot;name&quot;: &quot;success&quot;, &quot;type&quot;: &quot;bool&quot; } ], &quot;type&quot;: &quot;function&quot; }, { &quot;constant&quot;: false, &quot;inputs&quot;: [], &quot;name&quot;: &quot;destroy&quot;, &quot;outputs&quot;: [], &quot;type&quot;: &quot;function&quot; }, { &quot;constant&quot;: true, &quot;inputs&quot;: [], &quot;name&quot;: &quot;symbol&quot;, &quot;outputs&quot;: [ { &quot;name&quot;: &quot;&quot;, &quot;type&quot;: &quot;string&quot;, &quot;value&quot;: &quot;&lt;3&quot; } ], &quot;type&quot;: &quot;function&quot; }, { &quot;constant&quot;: false, &quot;inputs&quot;: [ { &quot;name&quot;: &quot;_to&quot;, &quot;type&quot;: &quot;address&quot; }, { &quot;name&quot;: &quot;_value&quot;, &quot;type&quot;: &quot;uint256&quot; } ], &quot;name&quot;: &quot;transfer&quot;, &quot;outputs&quot;: [ { &quot;name&quot;: &quot;success&quot;, &quot;type&quot;: &quot;bool&quot; } ], &quot;type&quot;: &quot;function&quot; }, { &quot;constant&quot;: true, &quot;inputs&quot;: [ { &quot;name&quot;: &quot;&quot;, &quot;type&quot;: &quot;uint256&quot; } ], &quot;name&quot;: &quot;hugged&quot;, &quot;outputs&quot;: [ { &quot;name&quot;: &quot;member&quot;, &quot;type&quot;: &quot;address&quot;, &quot;value&quot;: &quot;0x6b365fe592881e916dc77ef410e5f9ce4654369a&quot; }, { &quot;name&quot;: &quot;name&quot;, &quot;type&quot;: &quot;string&quot;, &quot;value&quot;: &quot;Jon V&quot; }, { &quot;name&quot;: &quot;memberSince&quot;, &quot;type&quot;: &quot;uint256&quot;, &quot;value&quot;: &quot;1471670740&quot; } ], &quot;type&quot;: &quot;function&quot; }, { &quot;inputs&quot;: [], &quot;type&quot;: &quot;constructor&quot; }, { &quot;anonymous&quot;: false, &quot;inputs&quot;: [ { &quot;indexed&quot;: true, &quot;name&quot;: &quot;_from&quot;, &quot;type&quot;: &quot;address&quot; }, { &quot;indexed&quot;: true, &quot;name&quot;: &quot;_to&quot;, &quot;type&quot;: &quot;address&quot; }, { &quot;indexed&quot;: false, &quot;name&quot;: &quot;_value&quot;, &quot;type&quot;: &quot;uint256&quot; } ], &quot;name&quot;: &quot;Transfer&quot;, &quot;type&quot;: &quot;event&quot; } ]
+</pre></div>
+
+
+<p><img src="theme/images/contract.png" class="" alt="" /></p>
+<p>and press OK.</p>
+<p>There you'll be able to see all the available functions.
+If you don't know how to use EthereumWallet, Mist or the command line, ping me on twitter and I'll send you some hugs! </p>
+<p><strong> Where is the code? </strong>
+The code is (here)[https://github.com/jonromero/ethereum_contracts]. </p>
+<p>Enjoy!</p>
+<p>If you have any feedback, ping me at <a href="http://www.twitter.com/jonromero">jonromero</a> or signup to the <a href="http://eepurl.com/bGbOnb">newsletter</a>. </p>
+<p>Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
+If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. </p> </div>
+            <div class="abbr published">
+                Posted  <a href='./hugcoin-build-your-own-cryptocurrency-coin.html' title='2016-08-17T22:34:00-07:00'>Wed 17 August 2016</a> in <a href="./category/trading.html">trading</a>.              
+            </div>
+        </article>
+        <article class='listed'>
+            <h1 class="title">
                 <a href="./trading-ethereum-making-10-every-20-minutes.html" rel='bookmark'>Trading Ethereum: Making 10% every 20 minutes</a>
             </h1>
             <div class="article-content"> <p>This is more of a <em>"How to build your own algotrading strategy - the Ethereum edition"</em> and not a "make money fast" blog post.</p>
