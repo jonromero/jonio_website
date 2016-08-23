@@ -57,29 +57,29 @@
             </h1>
             <div class="article-content"> <p>This is a departure from our <a href="how-to-build-your-own-algorithmic-trading-platform.html">how to build your own algotrading platform</a> series but I think it is interesting and fun.</p>
 <p><strong> HugCoin </strong></p>
+<p><img src="theme/images/hugcoin.png" class="" alt="" /></p>
 <p>It all started after experimenting building a DAO that works like the democracy in Ancient Greece. Automated taxation, basic income and tons of other cool stuff.
 While optimizing the DAO code, I had some cool ideas that I wanted to try out. One of them ended up in HugCoin.</p>
 <p>HugCoin is a cryptocurrency, running on the Ethereum blockchain. The code is tight so you can experiment pretty easily. It is also an awesome way to see how sending coins works, how to put your name on the blockchain, call functions etc. </p>
-<p><strong> Features </strong>
-<img></p>
+<p><strong> Features </strong></p>
 <p>One coin = One hug. You can send/transfer AS many hugs as you want. You will never run out. 
 If you use the function <em>giveHugTo</em>, you also get to name the hugged person and his/her name will always exist in the public chain. Awesome right?</p>
 <p>HugCoin also keeps track how many people have been hugged.</p>
 <p>Let's see how many huggers are out there!</p>
-<p><strong> Adding in to your wallet </strong>
-Instructions</p>
-<p><strong> Hugging people </strong>
-Easy. Too easy! Open Ethereum-Wallet (or Mist), go to <em>Contracts</em> -&gt;  <em>Watch Contract</em> and add these:</p>
-<div class="highlight"><pre><span></span>  CONTRACT NAME: HugCoin
-  CONTRACT ADDRESS: 0x84Da7438508EEC850080f88ff5d76Ba10511d025
-  JSON INTERFACE: [ { &quot;constant&quot;: true, &quot;inputs&quot;: [], &quot;name&quot;: &quot;name&quot;, &quot;outputs&quot;: [ { &quot;name&quot;: &quot;&quot;, &quot;type&quot;: &quot;string&quot;, &quot;value&quot;: &quot;HugCoin&quot; } ], &quot;type&quot;: &quot;function&quot; }, { &quot;constant&quot;: true, &quot;inputs&quot;: [], &quot;name&quot;: &quot;totalHuggers&quot;, &quot;outputs&quot;: [ { &quot;name&quot;: &quot;&quot;, &quot;type&quot;: &quot;uint256&quot;, &quot;value&quot;: &quot;2&quot; } ], &quot;type&quot;: &quot;function&quot; }, { &quot;constant&quot;: true, &quot;inputs&quot;: [ { &quot;name&quot;: &quot;&quot;, &quot;type&quot;: &quot;address&quot; } ], &quot;name&quot;: &quot;balanceOf&quot;, &quot;outputs&quot;: [ { &quot;name&quot;: &quot;&quot;, &quot;type&quot;: &quot;uint256&quot;, &quot;value&quot;: &quot;0&quot; } ], &quot;type&quot;: &quot;function&quot; }, { &quot;constant&quot;: false, &quot;inputs&quot;: [ { &quot;name&quot;: &quot;receipient_name&quot;, &quot;type&quot;: &quot;string&quot; }, { &quot;name&quot;: &quot;_to&quot;, &quot;type&quot;: &quot;address&quot; } ], &quot;name&quot;: &quot;giveHugTo&quot;, &quot;outputs&quot;: [ { &quot;name&quot;: &quot;success&quot;, &quot;type&quot;: &quot;bool&quot; } ], &quot;type&quot;: &quot;function&quot; }, { &quot;constant&quot;: false, &quot;inputs&quot;: [], &quot;name&quot;: &quot;destroy&quot;, &quot;outputs&quot;: [], &quot;type&quot;: &quot;function&quot; }, { &quot;constant&quot;: true, &quot;inputs&quot;: [], &quot;name&quot;: &quot;symbol&quot;, &quot;outputs&quot;: [ { &quot;name&quot;: &quot;&quot;, &quot;type&quot;: &quot;string&quot;, &quot;value&quot;: &quot;&lt;3&quot; } ], &quot;type&quot;: &quot;function&quot; }, { &quot;constant&quot;: false, &quot;inputs&quot;: [ { &quot;name&quot;: &quot;_to&quot;, &quot;type&quot;: &quot;address&quot; }, { &quot;name&quot;: &quot;_value&quot;, &quot;type&quot;: &quot;uint256&quot; } ], &quot;name&quot;: &quot;transfer&quot;, &quot;outputs&quot;: [ { &quot;name&quot;: &quot;success&quot;, &quot;type&quot;: &quot;bool&quot; } ], &quot;type&quot;: &quot;function&quot; }, { &quot;constant&quot;: true, &quot;inputs&quot;: [ { &quot;name&quot;: &quot;&quot;, &quot;type&quot;: &quot;uint256&quot; } ], &quot;name&quot;: &quot;hugged&quot;, &quot;outputs&quot;: [ { &quot;name&quot;: &quot;member&quot;, &quot;type&quot;: &quot;address&quot;, &quot;value&quot;: &quot;0x6b365fe592881e916dc77ef410e5f9ce4654369a&quot; }, { &quot;name&quot;: &quot;name&quot;, &quot;type&quot;: &quot;string&quot;, &quot;value&quot;: &quot;Jon V&quot; }, { &quot;name&quot;: &quot;memberSince&quot;, &quot;type&quot;: &quot;uint256&quot;, &quot;value&quot;: &quot;1471670740&quot; } ], &quot;type&quot;: &quot;function&quot; }, { &quot;inputs&quot;: [], &quot;type&quot;: &quot;constructor&quot; }, { &quot;anonymous&quot;: false, &quot;inputs&quot;: [ { &quot;indexed&quot;: true, &quot;name&quot;: &quot;_from&quot;, &quot;type&quot;: &quot;address&quot; }, { &quot;indexed&quot;: true, &quot;name&quot;: &quot;_to&quot;, &quot;type&quot;: &quot;address&quot; }, { &quot;indexed&quot;: false, &quot;name&quot;: &quot;_value&quot;, &quot;type&quot;: &quot;uint256&quot; } ], &quot;name&quot;: &quot;Transfer&quot;, &quot;type&quot;: &quot;event&quot; } ]
+<p><strong> Time to hug people and get some free coins! </strong></p>
+<p>Easy. Too easy! Open Ethereum-Wallet (or Mist), go to <em>Contracts</em> -&gt;  <em>Watch Contract</em> and add these:</p>
+<div class="highlight"><pre>  <span class="nx">CONTRACT</span> <span class="nx">NAME</span><span class="o">:</span> <span class="nx">HugCoin</span>
+  <span class="nx">CONTRACT</span> <span class="nx">ADDRESS</span><span class="o">:</span> <span class="mh">0x6B365Fe592881E916dc77Ef410e5f9CE4654369A</span>
+  <span class="nx">JSON</span> <span class="nx">INTERFACE</span><span class="o">:</span> <span class="cp">[</span> <span class="p">{</span> <span class="s2">&quot;constant&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;inputs&quot;</span><span class="p">:</span> <span class="err">[</span><span class="cp">]</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;outputs&quot;</span><span class="o">:</span> <span class="cp">[</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;HugCoin&quot;</span> <span class="p">}</span> <span class="cp">]</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;function&quot;</span> <span class="p">},</span> <span class="p">{</span> <span class="s2">&quot;constant&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;inputs&quot;</span><span class="o">:</span> <span class="cp">[]</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;totalHuggers&quot;</span><span class="p">,</span> <span class="s2">&quot;outputs&quot;</span><span class="o">:</span> <span class="cp">[</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;uint256&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span> <span class="p">}</span> <span class="cp">]</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;function&quot;</span> <span class="p">},</span> <span class="p">{</span> <span class="s2">&quot;constant&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;inputs&quot;</span><span class="o">:</span> <span class="cp">[</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;address&quot;</span> <span class="p">}</span> <span class="cp">]</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;balanceOf&quot;</span><span class="p">,</span> <span class="s2">&quot;outputs&quot;</span><span class="o">:</span> <span class="cp">[</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;uint256&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span> <span class="p">}</span> <span class="cp">]</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;function&quot;</span> <span class="p">},</span> <span class="p">{</span> <span class="s2">&quot;constant&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="s2">&quot;inputs&quot;</span><span class="o">:</span> <span class="cp">[</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;receipient_name&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span> <span class="p">},</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;_to&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;address&quot;</span> <span class="p">}</span> <span class="cp">]</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;giveHugTo&quot;</span><span class="p">,</span> <span class="s2">&quot;outputs&quot;</span><span class="o">:</span> <span class="cp">[</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bool&quot;</span> <span class="p">}</span> <span class="cp">]</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;function&quot;</span> <span class="p">},</span> <span class="p">{</span> <span class="s2">&quot;constant&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="s2">&quot;inputs&quot;</span><span class="o">:</span> <span class="cp">[]</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;destroy&quot;</span><span class="p">,</span> <span class="s2">&quot;outputs&quot;</span><span class="o">:</span> <span class="cp">[]</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;function&quot;</span> <span class="p">},</span> <span class="p">{</span> <span class="s2">&quot;constant&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;inputs&quot;</span><span class="o">:</span> <span class="cp">[]</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;symbol&quot;</span><span class="p">,</span> <span class="s2">&quot;outputs&quot;</span><span class="o">:</span> <span class="cp">[</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;🤗&quot;</span> <span class="p">}</span> <span class="cp">]</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;function&quot;</span> <span class="p">},</span> <span class="p">{</span> <span class="s2">&quot;constant&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="s2">&quot;inputs&quot;</span><span class="o">:</span> <span class="cp">[</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;_to&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;address&quot;</span> <span class="p">},</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;_value&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;uint256&quot;</span> <span class="p">}</span> <span class="cp">]</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;transfer&quot;</span><span class="p">,</span> <span class="s2">&quot;outputs&quot;</span><span class="o">:</span> <span class="cp">[</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bool&quot;</span> <span class="p">}</span> <span class="cp">]</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;function&quot;</span> <span class="p">},</span> <span class="p">{</span> <span class="s2">&quot;constant&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;inputs&quot;</span><span class="o">:</span> <span class="cp">[</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;uint256&quot;</span> <span class="p">}</span> <span class="cp">]</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;hugged&quot;</span><span class="p">,</span> <span class="s2">&quot;outputs&quot;</span><span class="o">:</span> <span class="cp">[</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;member&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;address&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;0x6b365fe592881e916dc77ef410e5f9ce4654369a&quot;</span> <span class="p">},</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Jon V&quot;</span> <span class="p">},</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;memberSince&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;uint256&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;1471932635&quot;</span> <span class="p">}</span> <span class="cp">]</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;function&quot;</span> <span class="p">},</span> <span class="p">{</span> <span class="s2">&quot;inputs&quot;</span><span class="o">:</span> <span class="cp">[</span> <span class="p">{</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;sym&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;index&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;typeShort&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;bits&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;displayName&quot;</span><span class="p">:</span> <span class="s2">&quot;sym&quot;</span><span class="p">,</span> <span class="s2">&quot;template&quot;</span><span class="p">:</span> <span class="s2">&quot;elements_input_string&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;🤗&quot;</span> <span class="p">}</span> <span class="cp">]</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;constructor&quot;</span> <span class="p">},</span> <span class="p">{</span> <span class="s2">&quot;anonymous&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="s2">&quot;inputs&quot;</span><span class="o">:</span> <span class="cp">[</span> <span class="p">{</span> <span class="s2">&quot;indexed&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;_from&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;address&quot;</span> <span class="p">},</span> <span class="p">{</span> <span class="s2">&quot;indexed&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;_to&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;address&quot;</span> <span class="p">},</span> <span class="p">{</span> <span class="s2">&quot;indexed&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;_value&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;uint256&quot;</span> <span class="p">}</span> <span class="cp">]</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Transfer&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;event&quot;</span> <span class="p">}</span> <span class="p">]</span>
 </pre></div>
 
 
 <p><img src="theme/images/contract.png" class="" alt="" /></p>
 <p>and press OK.</p>
-<p>There you'll be able to see all the available functions.
-If you don't know how to use EthereumWallet, Mist or the command line, ping me on twitter and I'll send you some hugs! </p>
+<p>There you'll be able to see all the available functions.</p>
+<p><img src="theme/images/functions.png" class="" alt="" /></p>
+<p>If you don't know how to use EthereumWallet, Mist or the command line, ping me on twitter and I'll send you some hugs! </p>
+<p><img src="theme/images/forever_on_the_chain.png" class="" alt="" /></p>
 <p><strong> Where is the code? </strong>
 The code is <a href="https://github.com/jonromero/ethereum_contracts/blob/master/HugCoin.eth">here</a>.</p>
 <p>Enjoy!</p>
@@ -104,7 +104,7 @@ If you lose any (or all) you money because you followed any trading advices or d
 <p>Update: This post has been rewritten "at least" five times (as <a href="https://bitcoinmagazine.com/articles/ethereum-s-dao-forking-crisis-the-bitcoin-perspective-1467404395">"The DAO drama"</a> escalated) and it is the perfect example of a strategy doing a full circle.</p>
 <p>I started getting involved with <a href="https://www.ethereum.org/">Ethereum</a> early on as I really liked the "run your algorithms on the blockchain" thing. When <a href="https://daohub.org/">TheDAO</a> came out, I read everything about it and loved the idea.
 You don't need to understand what Ethereum, theDAO, blockchain is at this point (I promise I will ramble on a another post). The same ideas apply to Forex, Stocks even Pokemon balls.</p>
-<div class="highlight"><pre><span></span>     As I said before, simple ideas turn into (simple?) strategies.
+<div class="highlight"><pre>     As I said before, simple ideas turn into (simple?) strategies.
      Complex strategies turn into mayhem that is impossible to backtest
      and deploy without errors.
 </pre></div>
@@ -168,7 +168,7 @@ If you lose any (or all) you money because you followed any trading advices or d
 <p><img src="theme/images/stallone.jpg" class="" alt="" />
 (image from <a href="http://www.fastcompany.com/3028414/how-facebooks-machines-got-so-good-at-recognizing-your-face">fastcompany</a>)</p>
 <p>Machine learning algorithms are algorithms where <strong>a machine can identify patterns in your data</strong>. Yeap, it is that simple. For example, find all the animals in this photo and draw a box around them. Also, name that animal. Crazy I know. For trading as you can imagine it is pretty similar:</p>
-<div class="highlight"><pre><span></span>&quot;Find how can I make money based on this chart and do all the trades.
+<div class="highlight"><pre>&quot;Find how can I make money based on this chart and do all the trades.
 Then wash my underwear and don&#39;t mix the colored with the whites&quot;
 </pre></div>
 
@@ -182,7 +182,7 @@ Ladies and gents (and robots), let me introduce you to <a href="https://en.wikip
 <p>Spoiler: <strong>It works</strong>.</p>
 <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
 
-<div class="highlight"><pre><span></span>
+<div class="highlight"><pre>
 </pre></div>
 
 
@@ -265,7 +265,7 @@ width: 700,
 <p>The system is able to process any kind of timeseries data (stocks, forex, gold, whatever) and it  will render an html interactive chart (like the chart above) with your data and the machine generated S/L. The code is <a href="https://github.com/jonromero/forex_algotrading">here</a> so go crazy.</p>
 <p>Now let's step through the code.
 After you have your set of data you need to read them and clean them. Prepare for some <a href="http://pandas.pydata.org/">pandas</a> magic.</p>
-<div class="highlight"><pre><span></span># read csv files with daily data per tick
+<div class="highlight"><pre># read csv files with daily data per tick
 df = pandas.read_csv(filename, parse_dates=[0], index_col=0, names=[&#39;Date_Time&#39;, &#39;Buy&#39;, &#39;Sell&#39;],
                      date_parser=lambda x: pandas.to_datetime(x, format=&quot;%d/%m/%y %H:%M:%S&quot;))
 
@@ -277,7 +277,7 @@ ticks_data = grouped_data[&#39;Sell&#39;].resample(&#39;24H&#39;).ohlc()
 
 <p>We drop the empty values (weekends) and then we resample the data to 24 hours candlesticks (ohcl). This makes it MUCH easier to plot. The grouped_data are the data that we will feed into the ml algorithm.</p>
 <p>Then we prepare the data that we are going to use in the algo.</p>
-<div class="highlight"><pre><span></span># use &#39;ask&#39;
+<div class="highlight"><pre># use &#39;ask&#39;
 sell_data = grouped_data.as_matrix(columns=[&#39;Sell&#39;])
 
 # calculate bandwidth (expirement with quantile and samples)
@@ -397,7 +397,7 @@ If you lose any (or all) you money because you followed any trading advices or d
 <p>Today, we'll talk about for-loopers.</p>
 <p>The "for-loopers" are my favorite type of backtesters. They are trivial to write and super fun to expand but they have some vital flows and sadly the majority of backtesters out there is "for-loopers" (ps: I need to find a better name for this!).</p>
 <p>How for-loopers work? Using a for loop (as you might have guessed). It is something like this:</p>
-<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">each</span> <span class="n">element</span> <span class="n">of</span> <span class="n">readhistoricaldata</span><span class="p">():</span> 
+<div class="highlight"><pre><span class="k">for</span> <span class="n">each</span> <span class="n">element</span> <span class="n">of</span> <span class="n">readhistoricaldata</span><span class="p">():</span> 
     <span class="n">apply_strategy</span><span class="p">()</span> 
     <span class="n">how_our_strategy_did</span><span class="p">()</span>
 </pre></div>
@@ -454,7 +454,7 @@ The link to the data is <a href="http://ratedata.gaincapital.com/2015/11%20Novem
     :::python
     &gt;unzip EUR_USD_Week1.zip</p>
 <p>and you'll get a <em>25MB</em> file named EUR_USD_Week1.csv. These are data for one week for one currency pair. You can imagine the amount of data you need to process for all currencies for the last five years (hint: a lot!). But don't worry, we are going optimize this. For now, let's open the file and inspect.</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">head</span> <span class="n">EUR_USD_Week1</span><span class="o">.</span><span class="n">csv</span>
+<div class="highlight"><pre><span class="o">&gt;</span><span class="n">head</span> <span class="n">EUR_USD_Week1</span><span class="o">.</span><span class="n">csv</span>
 </pre></div>
 
 
@@ -512,15 +512,15 @@ We can always use the <a href="https://docs.python.org/2/library/csv.html">csv</
 The data we downloaded are in ticks. Unless we are building an UHFT (ultra high frequency trading) algorithm, it is much more efficient (memory, storage and processing-wise) to
 "group" these ticks into seconds (or minutes or hours depending on your strategy). This will make our download scale down from 25MB to just <em>35KB</em> which translate to HUGE performance and memory benefits.</p>
 <p>Let's group all these data in 15 minutes. How? Time to fall in love with resample.</p>
-<div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;DateTime&#39;</span><span class="p">},</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;DateTime&#39;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Tid&#39;</span><span class="p">,</span> <span class="s1">&#39;Dealable&#39;</span><span class="p">,</span> <span class="s1">&#39;Pair&#39;</span><span class="p">,</span> <span class="s1">&#39;DateTime&#39;</span><span class="p">,</span> <span class="s1">&#39;Buy&#39;</span><span class="p">,</span> <span class="s1">&#39;Sell&#39;</span><span class="p">],</span> <span class="n">date_parser</span><span class="o">=</span><span class="n">parse</span><span class="p">)</span>
+<div class="highlight"><pre><span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;DateTime&#39;</span><span class="p">},</span> <span class="n">index_col</span><span class="o">=</span><span class="s">&#39;DateTime&#39;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Tid&#39;</span><span class="p">,</span> <span class="s">&#39;Dealable&#39;</span><span class="p">,</span> <span class="s">&#39;Pair&#39;</span><span class="p">,</span> <span class="s">&#39;DateTime&#39;</span><span class="p">,</span> <span class="s">&#39;Buy&#39;</span><span class="p">,</span> <span class="s">&#39;Sell&#39;</span><span class="p">],</span> <span class="n">date_parser</span><span class="o">=</span><span class="n">parse</span><span class="p">)</span>
 
-<span class="c1"># let&#39;s erase the columns we don&#39;t need</span>
-<span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tid&#39;</span><span class="p">]</span> 
-<span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Dealable&#39;</span><span class="p">]</span>
-<span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Pair&#39;</span><span class="p">]</span>
+<span class="c"># let&#39;s erase the columns we don&#39;t need</span>
+<span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s">&#39;Tid&#39;</span><span class="p">]</span> 
+<span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s">&#39;Dealable&#39;</span><span class="p">]</span>
+<span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s">&#39;Pair&#39;</span><span class="p">]</span>
 
-<span class="c1"># group every 15 minutes and create an OHLC bar</span>
-<span class="n">grouped_data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;15Min&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;ohlc&#39;</span><span class="p">)</span>
+<span class="c"># group every 15 minutes and create an OHLC bar</span>
+<span class="n">grouped_data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s">&#39;15Min&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s">&#39;ohlc&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -565,9 +565,9 @@ The data we downloaded are in ticks. Unless we are building an UHFT (ultra high 
 </tbody>
 </table>
 <p>This is called OHLC (Open High Low Close) bar for every <em>15 minutes</em>. You can see now that the ticks are grouped in 15 minute segments and you have the highest and lowest point that the price reached during these 15 minutes and also the open/close for buy and sell. Pure gold! Not only you have all the information you need but now it is extremely fast to load it. You just need to save the data:</p>
-<div class="highlight"><pre><span></span><span class="p">::</span> <span class="n">python</span>
-<span class="c1"># save to file</span>
-<span class="n">grouped_data</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="n">filename</span><span class="o">+</span><span class="s1">&#39;-OHLC.pkl&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span class="p">::</span> <span class="n">python</span>
+<span class="c"># save to file</span>
+<span class="n">grouped_data</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="n">filename</span><span class="o">+</span><span class="s">&#39;-OHLC.pkl&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -610,20 +610,20 @@ If you lose any (or all) you money because you followed any trading advices or d
 <p>and you can change your leverage (switch it to 50:1) and then go back to your <strong>Manage API Access</strong>. There you can find your API key which we are going to use in our system to place trades. <strong>MAKE SURE YOU DON'T SHARE THIS KEY</strong>.</p>
 <p>The code for this is and all other posts is on my <a href="https://github.com/jonromero/Forex-algotrading">github</a> and you can install it and run it pretty easily.</p>
 <p>The code is straight-forward. We connect to Oanda, to a practice account with our token </p>
-<div class="highlight"><pre><span></span><span class="n">oanda</span> <span class="o">=</span> <span class="n">oandapy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">environment</span><span class="o">=</span><span class="s2">&quot;practice&quot;</span><span class="p">,</span>
+<div class="highlight"><pre><span class="n">oanda</span> <span class="o">=</span> <span class="n">oandapy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">environment</span><span class="o">=</span><span class="s">&quot;practice&quot;</span><span class="p">,</span>
                    <span class="n">access_token</span><span class="o">=</span><span class="n">OANDA_ACCESS_TOKEN</span><span class="p">)</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">oanda</span><span class="o">.</span><span class="n">get_prices</span><span class="p">(</span><span class="n">instruments</span><span class="o">=</span><span class="s2">&quot;EUR_USD&quot;</span><span class="p">)</span>
-<span class="n">prices</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;prices&quot;</span><span class="p">)</span>
-<span class="n">buy_price</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;bid&quot;</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">oanda</span><span class="o">.</span><span class="n">get_prices</span><span class="p">(</span><span class="n">instruments</span><span class="o">=</span><span class="s">&quot;EUR_USD&quot;</span><span class="p">)</span>
+<span class="n">prices</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;prices&quot;</span><span class="p">)</span>
+<span class="n">buy_price</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;bid&quot;</span><span class="p">)</span>
 </pre></div>
 
 
 <p>and we are requesting the prices (bid/ask) for the pair EUR_USD. </p>
 <p>We print the buy price and then we place a <em>market</em> order. </p>
-<div class="highlight"><pre><span></span><span class="k">print</span> <span class="s2">&quot;Buy at&quot;</span><span class="p">,</span> <span class="n">buy_price</span>
-<span class="n">trade_id</span> <span class="o">=</span> <span class="n">oanda</span><span class="o">.</span><span class="n">create_order</span><span class="p">(</span><span class="n">OANDA_ACCOUNT_ID</span><span class="p">,</span><span class="n">instrument</span><span class="o">=</span><span class="s2">&quot;EUR_USD&quot;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
-                  <span class="n">side</span><span class="o">=</span><span class="s1">&#39;buy&#39;</span><span class="p">,</span>
-                  <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;market&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span class="k">print</span> <span class="s">&quot;Buy at&quot;</span><span class="p">,</span> <span class="n">buy_price</span>
+<span class="n">trade_id</span> <span class="o">=</span> <span class="n">oanda</span><span class="o">.</span><span class="n">create_order</span><span class="p">(</span><span class="n">OANDA_ACCOUNT_ID</span><span class="p">,</span><span class="n">instrument</span><span class="o">=</span><span class="s">&quot;EUR_USD&quot;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+                  <span class="n">side</span><span class="o">=</span><span class="s">&#39;buy&#39;</span><span class="p">,</span>
+                  <span class="nb">type</span><span class="o">=</span><span class="s">&#39;market&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -760,7 +760,7 @@ If you lose any (or all) you money because you followed any trading advices or d
 <p>Here is a scenario:
 I have lots of data sitting as CSV on my hard-drive and I want to process them. Not query them. Process them.</p>
 <p>What would be really interesting is to be able to define (dynamically) a schema like that:</p>
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">defschema</span> <span class="s">&quot;EURUSD&quot;</span> 
+<div class="highlight"><pre><span class="p">(</span><span class="nf">defschema</span> <span class="s">&quot;EURUSD&quot;</span> 
     <span class="p">(</span><span class="nf">tokenizer</span> <span class="o">#</span><span class="p">(</span><span class="nf">.split</span> <span class="nv">%</span> <span class="s">&quot;:&quot;</span><span class="p">))</span>  
     <span class="c1">;; the mapping is done here</span>
     <span class="p">(</span><span class="nf">columns</span> <span class="err">|</span><span class="nv">time</span><span class="err">|</span> <span class="err">|</span><span class="nv">open</span><span class="err">|</span> <span class="err">|</span><span class="nv">high</span><span class="err">|</span> <span class="err">|</span><span class="nv">low</span><span class="err">|</span> <span class="err">|</span><span class="nv">close</span><span class="err">|</span> <span class="err">|</span><span class="nv">volume</span><span class="err">|</span><span class="p">))</span>
@@ -772,7 +772,7 @@ First of all, a "tokenize" function. Each dataline is tokenized based on a funct
 <p>As you can imagine, tokenize returns a list of data that are mapped to "columns".</p>
 <p>Now, the interesting stuff. </p>
 <p>You can write scripts like the following:</p>
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt; </span><span class="err">|</span><span class="nv">close</span><span class="err">|</span> <span class="mf">1.45</span><span class="p">)</span>
+<div class="highlight"><pre><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt; </span><span class="err">|</span><span class="nv">close</span><span class="err">|</span> <span class="mf">1.45</span><span class="p">)</span>
     <span class="p">(</span><span class="nf">place-order</span> <span class="ss">:buy</span><span class="p">)</span>
     <span class="p">(</span><span class="nf">place-order</span> <span class="ss">:sell</span><span class="p">))</span>
 </pre></div>
@@ -813,6 +813,37 @@ First of all, a "tokenize" function. Each dataline is tokenized based on a funct
 <p>JR</p> </div>
             <div class="abbr published">
                 Posted  <a href='../hybrisdb.html' title='2014-10-20T22:48:00-07:00'>Mon 20 October 2014</a> in <a href="../category/databases.html">databases</a>.              
+            </div>
+        </article>
+        <article class='listed'>
+            <h1 class="title">
+                <a href="../kicking-time-management-in-the-nuts.html" rel='bookmark'>Kicking time management in the nuts</a>
+            </h1>
+            <div class="article-content"> <p>Building a Startup with pocket money and selling it for tons of cash in just two years, makes you learn a couple of tricks that change your life. One of those is time management.</p>
+<p>Time management is one of the decisive factors of making someone happy. Having lots of time can lead to boredom, having no time can lead to stress and anxiety. The funny thing is that it's so easy jumping from one extreme to the other and impossible to stay "in the zone". </p>
+<p>First of all, let me get something out of my chest: There is no such thing as "I have too many things to do that I need more than 24 hours a day". Bullshit. Even if you had 50 hours per day, you will still be struggling with todos. Why? Because, <em>time is irrelevant</em>. Everything is about procedures.</p>
+<p>What I really hate about time management is tracking time. It is inefficient, I get bored quickly and you cannot focus 100% on a task everytime for each specific timeslot (unless you are a buddist monk). What I love to do is ticking off tasks. The pleasure of striking out a task that has been on your list for the last couple of weeks is the same as eating a Sundae ice-cream in the sun. Sometimes even better.</p>
+<p>I borrowed one of the most effective ways of "killing" tasks by a project management technic called <a href="http://en.wikipedia.org/wiki/Scrum_(software_development)">Scrum</a>. If you are in a Startup and haven't heard of Scrum, prepare to be amazed.</p>
+<p>Based on this method, you create periods of work (called <em>sprints</em>) and you add things to be done in these periods. Why is this much better than just having a huge todo list? It breaks down tasks in large, high-level time blocks which are easier to manage and easier to extract information about how you (or your team) performs.</p>
+<h2>The Planning fallacy</h2>
+<p>Whenever I talk with a Startup that is struggling to go to a release or prototype, there is a reccuring theme: They all have tasks, some even have milestones but noone has a high-level <em>action</em> plan on what needs to be done. </p>
+<p>We humans are pretty bad at calculating things that span more than a couple of weeks and what is worse, is that we suck at identifying this. It is an ego thing.</p>
+<p>So, roll up your sleeves and let's do a small test. </p>
+<ol>
+<li>Create a list of all the things you need to do and assign a number of how important this item is (from 1 to 5)</li>
+<li>Add all the values and divide by the number of tasks (this is your average <em>velocity</em>)</li>
+<li>Organize the things in two groups (group A and group B). Make sure that each group has a summed value near to your average</li>
+<li>Take the first group (group A) and divide it again in two groups (group C and group D)</li>
+<li>Now, for the next two weeks, focus on resolving all the tasks in group C.</li>
+</ol>
+<p>You might be wondering what is the great thing behind this and why this is so effective. First of all, it is a very easy system which translates to a very low abandonment rate. Second, even from the first week, you will be able to calculate your average velocity (which may be totally different from the one you calculated here) and "feel" the progress. And third, you will have a realistic feedback of how much work is for a single task versus the value this task actually delivers.</p>
+<p>What you should do when the second week is done, is to put any unresolved tasks back to the pool of tasks (called the <em>backlog</em>) and re-organize your groups based on your newly calculated average velocity. As a rule of thumb, you should calculate your velocity every month.  </p>
+<p>Have in mind that there are more sophisticated systems (I'll talk more about them in an upcoming post) but my rule is that first you need something simple that works right now and then you can improve and iterate.</p>
+<ul>
+<li><a href="http://www.twitter.com/jonromero">JR</a></li>
+</ul> </div>
+            <div class="abbr published">
+                Posted  <a href='../kicking-time-management-in-the-nuts.html' title='2013-12-30T08:41:43-08:00'>Mon 30 December 2013</a> in <a href="../category/startups.html">startups</a>.              
             </div>
         </article>
         <article class='listed'>
