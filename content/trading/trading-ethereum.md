@@ -92,6 +92,9 @@ This was a [systematic risk](https://en.wikipedia.org/wiki/Systematic_risk) and 
 
 On the next post, I will post the whole algorithm and go line by line. I also plan to discuss a little bit more about theDAO and Ethereum. If you don't want to miss any of these and get some more additional info, feel free to sign up to the [newsletter](http://eepurl.com/bGbOnb) where I talk about fintech, algorithms and the markets.
 
+By the way, if you want to make your own cryptocurrency and learn more about Ethereum, I have a great post with the code posted [here](hugcoin-build-your-own-cryptocurrency-coin.html).
+
+
 ** Coming next: Diving into the ETHDAO algotrading program **
 
 If you have more feedback, ping me at [jonromero](http://www.twitter.com/jonromero) or signup to the [newsletter](http://eepurl.com/bGbOnb). 
