@@ -1,6 +1,6 @@
 Title: Placing your first Forex trade with Python
 Tags: algotrading
-Date: 2015-10-20 22:48
+Date: 2016-12-06 22:48
 
 Update: I updated the code so it works with Oanda's new API. Get it [here](https://github.com/jonromero/forex_algotrading)
 
@@ -31,16 +31,16 @@ I am using [Oanda](http://www.oanda.com/) as a broker (I am not affiliated with 
 
 Go and open a free [fxTrade Practice account](https://www.oanda.com/register/#/sign-up/demo) and then [sign in](https://www.oanda.com/demo-account/login).
 
-After you get your sign in to your demo account, go to **Manage API Access**. There you can find your API key which we are going to use in our system to place trades. **MAKE SURE YOU DON'T SHARE THIS KEY**.
+After you sign in to your demo account, go to **Manage API Access**. There you can find your API key which we are going to use in our system to place trades. **MAKE SURE YOU DON'T SHARE THIS KEY**.
 
-The code for this is and all other posts is on my [github](https://github.com/jonromero/Forex-algotrading) and you can install it and run it pretty easily.
+The code for this is and all other posts is on [github](https://github.com/jonromero/Forex-algotrading) and you can install it and run it pretty easily.
 
 Update: Oanda released a new (kickass) execution engine called **v20** and they have released a new (improved) API. This post has been updated in order to use the new API but if (for any reason) you want to check the old code, it is [right here](https://github.com/jonromero/forex_algotrading/blob/86db3f7f567897ad74c1e611cf2d6f337f4a9c24/post3/runner.py). You lucky you!
 
 
 Connecting to Oanda needs a conf file - which you can generate using a script that Oanda provides [here](https://github.com/oanda/v20-python-samples) *or* you can just create it yourself. Why would you want that? First of all when it comes to credentials (and my money), I prefer to know everything that is going on. And I don't like having to install PyYAML just to read a conf file. Feel free to use either method. 
 
-Now, prepare to be amazed. The code is straight-forward. We initialize our API:
+Now, prepare to be amazed. The code is straight-forward. We initialize the API:
 
 	:::python
     import v20
@@ -48,7 +48,6 @@ Now, prepare to be amazed. The code is straight-forward. We initialize our API:
     api = v20.Context(
             'api-fxpractice.oanda.com',
             '443',
-            args.port,
             token='HERE GOES YOUR API KEY')
 
 and now let's place an order (buy 5000 units of EURUSD)
@@ -60,12 +59,13 @@ and now let's place an order (buy 5000 units of EURUSD)
                  instrument='EUR_USD',
                  units=5000)
 
-   print("Response: {} ({})".format(response.status, response.reason))
+    print("Response: {} ({})".format(response.status, response.reason))
 
-   >Response: 201 (Created)
+    >Response: 201 (Created)
 
 
-We print the buy price and then we place a *market* order. 
+Check the current price is as easy!
+
 	:::python
     from datetime import datetime
 
