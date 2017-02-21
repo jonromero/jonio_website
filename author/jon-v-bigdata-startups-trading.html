@@ -13,8 +13,14 @@
         <meta name="author" content="Jon V <h2>BigData. Startups. Trading.</h2>">
 <script src="//load.sumome.com/" data-sumo-site-id="fee114a4f556c3310f466abe1eb7a9bab628c1b53aa6dac75200d0af9af9c330" async="async"></script>
 </head>
-
 <body>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-5816350521610729",
+    enable_page_level_ads: true
+  });
+</script>
     <section id="navbar">
         <div class="user_meta">
             <h1 id="user"><a href=".." class="">Jon V <h2>BigData. Startups. Trading.</h2></a></h1>
@@ -53,6 +59,85 @@
 	
         <article class='listed'>
             <h1 class="title">
+                <a href="../placing-your-first-forex-trade-with-python.html" rel='bookmark'>Placing your first Forex trade with Python</a>
+            </h1>
+            <div class="article-content"> <p>Update: I updated the code so it works with Oanda's new API. Get it <a href="https://github.com/jonromero/forex_algotrading">here</a></p>
+<p>Time to talk about brokers, how to place a trade programmatically and most importantly how not to get scammed.</p>
+<p>This is the third part of the series: <a href="how-to-build-your-own-algorithmic-trading-platform.html">How to build your own algotrading platform</a>.</p>
+<p>A broker is nothing more than a company that lets you trade (buy or sell) assets on a market through their platform. What is very important for algotrading is: </p>
+<ol>
+<li>The broker offers an API in order for us to place orders</li>
+<li>You can have a demo account to run your staging environment and experiment</li>
+<li>The spread is as small as possible</li>
+</ol>
+<p>In our case, we don't really care about spread as we won't be doing High Frequency Trading any time soon.</p>
+<p>Even though brokers are regulated, there have been incidents in the past couple of years, were brokers folded due to certain conditions. Be <em>very</em> wary if </p>
+<ol>
+<li>There are no reviews of the broker on the internet (or most of them are bad)</li>
+<li>If the broker offers you some crazy leverage (like 1:200)</li>
+<li>If the broker seems to be in a very strange country</li>
+</ol>
+<p>What could happen is that you start making some money and you aren't be able to pull them out. Seriously. Super stressful situation.</p>
+<p>But let's switch to a happier note which is opening an account and placing our first programmatic trade. Whooha!</p>
+<p>I am using <a href="http://www.oanda.com/">Oanda</a> as a broker (I am not affiliated with them) and they offer a pretty decent API, libraries on github and a free demo account. </p>
+<p>Go and open a free <a href="https://www.oanda.com/register/#/sign-up/demo">fxTrade Practice account</a> and then <a href="https://www.oanda.com/demo-account/login">sign in</a>.</p>
+<p>After you sign in to your demo account, go to <strong>Manage API Access</strong>. There you can find your API key which we are going to use in our system to place trades. <strong>MAKE SURE YOU DON'T SHARE THIS KEY</strong>.</p>
+<p>The code for this is and all other posts is on <a href="https://github.com/jonromero/Forex-algotrading">github</a> and you can install it and run it pretty easily.</p>
+<p>Update: Oanda released a new (kickass) execution engine called <strong>v20</strong> and they have released a new (improved) API. This post has been updated in order to use the new API but if (for any reason) you want to check the old code, it is <a href="https://github.com/jonromero/forex_algotrading/blob/86db3f7f567897ad74c1e611cf2d6f337f4a9c24/post3/runner.py">right here</a>. You lucky you!</p>
+<p>Connecting to Oanda needs a conf file - which you can generate using a script that Oanda provides <a href="https://github.com/oanda/v20-python-samples">here</a> <em>or</em> you can just create it yourself. Why would you want that? First of all when it comes to credentials (and my money), I prefer to know everything that is going on. And I don't like having to install PyYAML just to read a conf file. Feel free to use either method. </p>
+<p>Now, prepare to be amazed. The code is straight-forward. We initialize the API:</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">v20</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="n">v20</span><span class="o">.</span><span class="n">Context</span><span class="p">(</span>
+        <span class="s">&#39;api-fxpractice.oanda.com&#39;</span><span class="p">,</span>
+        <span class="s">&#39;443&#39;</span><span class="p">,</span>
+        <span class="n">token</span><span class="o">=</span><span class="s">&#39;HERE GOES YOUR API KEY&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>and now let's place an order (buy 5000 units of EURUSD)</p>
+<div class="highlight"><pre><span class="n">response</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">order</span><span class="o">.</span><span class="n">market</span><span class="p">(</span>
+             <span class="s">&#39;ACCOUNT ID&#39;</span><span class="p">,</span>
+             <span class="n">instrument</span><span class="o">=</span><span class="s">&#39;EUR_USD&#39;</span><span class="p">,</span>
+             <span class="n">units</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Response: {} ({})&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">reason</span><span class="p">))</span>
+
+<span class="o">&gt;</span><span class="n">Response</span><span class="p">:</span> <span class="mi">201</span> <span class="p">(</span><span class="n">Created</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Check the current price is as easy!</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="n">latest_price_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="s">&#39;T&#39;</span><span class="p">)</span><span class="o">+</span><span class="s">&#39;Z&#39;</span><span class="p">,</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">pricing</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+                <span class="n">account_id</span><span class="p">,</span>
+                <span class="n">instruments</span><span class="o">=</span><span class="s">&#39;EUR_USD&#39;</span><span class="p">,</span>
+                <span class="n">since</span><span class="o">=</span><span class="n">latest_price_time</span><span class="p">,</span>
+                <span class="n">includeUnitsAvailable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">price</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;prices&quot;</span><span class="p">,</span> <span class="mi">200</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">latest_price_time</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="n">price</span><span class="o">.</span><span class="n">time</span> <span class="o">&gt;</span> <span class="n">latest_price_time</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">&quot;Buy at&quot;</span><span class="p">,</span> <span class="n">price</span><span class="o">.</span><span class="n">bids</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">price</span>
+</pre></div>
+
+
+<p>Super easy. Don't worry about what EURUSD is or how many units we are buying or what a market order is. For now, we have placed our first trade from our laptop and we are going to build our own API to place trades. Exciting stuff!</p>
+<p>You can read Oanda's documentation <a href="http://developer.oanda.com/">here</a> to see what else you can do with their API and find the Python library <a href="https://github.com/oanda/v20-python">here</a>.Tons of examples are available from Oanda's github page <a href="https://github.com/oanda/v20-python-sample">here</a>.</p>
+<p>Coming up next, connecting to a real <strong>LIVE</strong> algotrading system, running from my RaspberryPI at home. </p>
+<p><img src="https://dl.dropboxusercontent.com/u/757245/jonio/trades-nov.jpg" /></p>
+<p>You'll be able to see the (almost) final program running and we'll talk more about Forex and strategies. </p>
+<p>If you have more feedback, ping me at <a href="http://www.twitter.com/jonromero">jonromero</a> or signup to the <a href="http://eepurl.com/bGbOnb">newsletter</a>. </p>
+<p>Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
+If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. </p> </div>
+            <div class="abbr published">
+                Posted  <a href='../placing-your-first-forex-trade-with-python.html' title='2016-12-06T22:48:00-08:00'>Tue 06 December 2016</a> in <a href="../category/trading.html">trading</a>.              
+            </div>
+        </article>
+        <article class='listed'>
+            <h1 class="title">
                 <a href="../trading-ethereum-making-10-every-20-minutes.html" rel='bookmark'>Trading Ethereum: Making 10% every 20 minutes</a>
             </h1>
             <div class="article-content"> <p>This is more of a <em>"How to build your own algotrading strategy - the Ethereum edition"</em> and not a "make money fast" blog post.</p>
@@ -65,7 +150,7 @@
 <p>Update: This post has been rewritten "at least" five times (as <a href="https://bitcoinmagazine.com/articles/ethereum-s-dao-forking-crisis-the-bitcoin-perspective-1467404395">"The DAO drama"</a> escalated) and it is the perfect example of a strategy doing a full circle.</p>
 <p>I started getting involved with <a href="https://www.ethereum.org/">Ethereum</a> early on as I really liked the "run your algorithms on the blockchain" thing. When <a href="https://daohub.org/">TheDAO</a> came out, I read everything about it and loved the idea.
 You don't need to understand what Ethereum, theDAO, blockchain is at this point (I promise I will ramble on a another post). The same ideas apply to Forex, Stocks even Pokemon balls.</p>
-<div class="highlight"><pre><span></span>     As I said before, simple ideas turn into (simple?) strategies.
+<div class="highlight"><pre>     As I said before, simple ideas turn into (simple?) strategies.
      Complex strategies turn into mayhem that is impossible to backtest
      and deploy without errors.
 </pre></div>
@@ -130,7 +215,7 @@ If you lose any (or all) you money because you followed any trading advices or d
 <p><img src="theme/images/stallone.jpg" class="" alt="" />
 (image from <a href="http://www.fastcompany.com/3028414/how-facebooks-machines-got-so-good-at-recognizing-your-face">fastcompany</a>)</p>
 <p>Machine learning algorithms are algorithms where <strong>a machine can identify patterns in your data</strong>. Yeap, it is that simple. For example, find all the animals in this photo and draw a box around them. Also, name that animal. Crazy I know. For trading as you can imagine it is pretty similar:</p>
-<div class="highlight"><pre><span></span>&quot;Find how can I make money based on this chart and do all the trades.
+<div class="highlight"><pre>&quot;Find how can I make money based on this chart and do all the trades.
 Then wash my underwear and don&#39;t mix the colored with the whites&quot;
 </pre></div>
 
@@ -144,7 +229,7 @@ Ladies and gents (and robots), let me introduce you to <a href="https://en.wikip
 <p>Spoiler: <strong>It works</strong>.</p>
 <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
 
-<div class="highlight"><pre><span></span>
+<div class="highlight"><pre>
 </pre></div>
 
 
@@ -227,7 +312,7 @@ width: 700,
 <p>The system is able to process any kind of timeseries data (stocks, forex, gold, whatever) and it  will render an html interactive chart (like the chart above) with your data and the machine generated S/L. The code is <a href="https://github.com/jonromero/forex_algotrading">here</a> so go crazy.</p>
 <p>Now let's step through the code.
 After you have your set of data you need to read them and clean them. Prepare for some <a href="http://pandas.pydata.org/">pandas</a> magic.</p>
-<div class="highlight"><pre><span></span># read csv files with daily data per tick
+<div class="highlight"><pre># read csv files with daily data per tick
 df = pandas.read_csv(filename, parse_dates=[0], index_col=0, names=[&#39;Date_Time&#39;, &#39;Buy&#39;, &#39;Sell&#39;],
                      date_parser=lambda x: pandas.to_datetime(x, format=&quot;%d/%m/%y %H:%M:%S&quot;))
 
@@ -239,7 +324,7 @@ ticks_data = grouped_data[&#39;Sell&#39;].resample(&#39;24H&#39;).ohlc()
 
 <p>We drop the empty values (weekends) and then we resample the data to 24 hours candlesticks (ohcl). This makes it MUCH easier to plot. The grouped_data are the data that we will feed into the ml algorithm.</p>
 <p>Then we prepare the data that we are going to use in the algo.</p>
-<div class="highlight"><pre><span></span># use &#39;ask&#39;
+<div class="highlight"><pre># use &#39;ask&#39;
 sell_data = grouped_data.as_matrix(columns=[&#39;Sell&#39;])
 
 # calculate bandwidth (expirement with quantile and samples)
@@ -359,7 +444,7 @@ If you lose any (or all) you money because you followed any trading advices or d
 <p>Today, we'll talk about for-loopers.</p>
 <p>The "for-loopers" are my favorite type of backtesters. They are trivial to write and super fun to expand but they have some vital flows and sadly the majority of backtesters out there is "for-loopers" (ps: I need to find a better name for this!).</p>
 <p>How for-loopers work? Using a for loop (as you might have guessed). It is something like this:</p>
-<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">each</span> <span class="n">element</span> <span class="n">of</span> <span class="n">readhistoricaldata</span><span class="p">():</span> 
+<div class="highlight"><pre><span class="k">for</span> <span class="n">each</span> <span class="n">element</span> <span class="n">of</span> <span class="n">readhistoricaldata</span><span class="p">():</span> 
     <span class="n">apply_strategy</span><span class="p">()</span> 
     <span class="n">how_our_strategy_did</span><span class="p">()</span>
 </pre></div>
@@ -416,7 +501,7 @@ The link to the data is <a href="http://ratedata.gaincapital.com/2015/11%20Novem
     :::python
     &gt;unzip EUR_USD_Week1.zip</p>
 <p>and you'll get a <em>25MB</em> file named EUR_USD_Week1.csv. These are data for one week for one currency pair. You can imagine the amount of data you need to process for all currencies for the last five years (hint: a lot!). But don't worry, we are going optimize this. For now, let's open the file and inspect.</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">head</span> <span class="n">EUR_USD_Week1</span><span class="o">.</span><span class="n">csv</span>
+<div class="highlight"><pre><span class="o">&gt;</span><span class="n">head</span> <span class="n">EUR_USD_Week1</span><span class="o">.</span><span class="n">csv</span>
 </pre></div>
 
 
@@ -474,15 +559,15 @@ We can always use the <a href="https://docs.python.org/2/library/csv.html">csv</
 The data we downloaded are in ticks. Unless we are building an UHFT (ultra high frequency trading) algorithm, it is much more efficient (memory, storage and processing-wise) to
 "group" these ticks into seconds (or minutes or hours depending on your strategy). This will make our download scale down from 25MB to just <em>35KB</em> which translate to HUGE performance and memory benefits.</p>
 <p>Let's group all these data in 15 minutes. How? Time to fall in love with resample.</p>
-<div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;DateTime&#39;</span><span class="p">},</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;DateTime&#39;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Tid&#39;</span><span class="p">,</span> <span class="s1">&#39;Dealable&#39;</span><span class="p">,</span> <span class="s1">&#39;Pair&#39;</span><span class="p">,</span> <span class="s1">&#39;DateTime&#39;</span><span class="p">,</span> <span class="s1">&#39;Buy&#39;</span><span class="p">,</span> <span class="s1">&#39;Sell&#39;</span><span class="p">],</span> <span class="n">date_parser</span><span class="o">=</span><span class="n">parse</span><span class="p">)</span>
+<div class="highlight"><pre><span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;DateTime&#39;</span><span class="p">},</span> <span class="n">index_col</span><span class="o">=</span><span class="s">&#39;DateTime&#39;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Tid&#39;</span><span class="p">,</span> <span class="s">&#39;Dealable&#39;</span><span class="p">,</span> <span class="s">&#39;Pair&#39;</span><span class="p">,</span> <span class="s">&#39;DateTime&#39;</span><span class="p">,</span> <span class="s">&#39;Buy&#39;</span><span class="p">,</span> <span class="s">&#39;Sell&#39;</span><span class="p">],</span> <span class="n">date_parser</span><span class="o">=</span><span class="n">parse</span><span class="p">)</span>
 
-<span class="c1"># let&#39;s erase the columns we don&#39;t need</span>
-<span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tid&#39;</span><span class="p">]</span> 
-<span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Dealable&#39;</span><span class="p">]</span>
-<span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Pair&#39;</span><span class="p">]</span>
+<span class="c"># let&#39;s erase the columns we don&#39;t need</span>
+<span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s">&#39;Tid&#39;</span><span class="p">]</span> 
+<span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s">&#39;Dealable&#39;</span><span class="p">]</span>
+<span class="k">del</span> <span class="n">df</span><span class="p">[</span><span class="s">&#39;Pair&#39;</span><span class="p">]</span>
 
-<span class="c1"># group every 15 minutes and create an OHLC bar</span>
-<span class="n">grouped_data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;15Min&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;ohlc&#39;</span><span class="p">)</span>
+<span class="c"># group every 15 minutes and create an OHLC bar</span>
+<span class="n">grouped_data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s">&#39;15Min&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s">&#39;ohlc&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -527,9 +612,9 @@ The data we downloaded are in ticks. Unless we are building an UHFT (ultra high 
 </tbody>
 </table>
 <p>This is called OHLC (Open High Low Close) bar for every <em>15 minutes</em>. You can see now that the ticks are grouped in 15 minute segments and you have the highest and lowest point that the price reached during these 15 minutes and also the open/close for buy and sell. Pure gold! Not only you have all the information you need but now it is extremely fast to load it. You just need to save the data:</p>
-<div class="highlight"><pre><span></span><span class="p">::</span> <span class="n">python</span>
-<span class="c1"># save to file</span>
-<span class="n">grouped_data</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="n">filename</span><span class="o">+</span><span class="s1">&#39;-OHLC.pkl&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span class="p">::</span> <span class="n">python</span>
+<span class="c"># save to file</span>
+<span class="n">grouped_data</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="n">filename</span><span class="o">+</span><span class="s">&#39;-OHLC.pkl&#39;</span><span class="p">)</span>
 </pre></div>
 
 
@@ -542,64 +627,6 @@ The data we downloaded are in ticks. Unless we are building an UHFT (ultra high 
 If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. </p> </div>
             <div class="abbr published">
                 Posted  <a href='../downloading-historical-forex-tick-data-and-importing-them-in-to-python-using-pandas.html' title='2015-12-03T22:48:00-08:00'>Thu 03 December 2015</a> in <a href="../category/trading.html">trading</a>.              
-            </div>
-        </article>
-        <article class='listed'>
-            <h1 class="title">
-                <a href="../placing-your-first-forex-trade-with-python.html" rel='bookmark'>Placing your first Forex trade with Python</a>
-            </h1>
-            <div class="article-content"> <p>Update: I updated the code so it works with Oanda's new API. Get it <a href="https://github.com/jonromero/forex_algotrading">here</a></p>
-<p>Time to talk about brokers, how to place a trade programmatically and most importantly how not to get scammed.</p>
-<p>This is the third part of the series: <a href="how-to-build-your-own-algorithmic-trading-platform.html">How to build your own algotrading platform</a>.</p>
-<p>A broker is nothing more than a company that lets you trade (buy or sell) assets on a market through their platform. What is very important for algotrading is: </p>
-<ol>
-<li>The broker offers an API in order for us to place orders</li>
-<li>You can have a demo account to run your staging environment and experiment</li>
-<li>The spread is as small as possible</li>
-</ol>
-<p>In our case, we don't really care about spread as we won't be doing High Frequency Trading any time soon.</p>
-<p>Even though brokers are regulated, there have been incidents in the past couple of years, were brokers folded due to certain conditions. Be <em>very</em> wary if </p>
-<ol>
-<li>There are no reviews of the broker on the internet (or most of them are bad)</li>
-<li>If the broker offers you some crazy leverage (like 1:200)</li>
-<li>If the broker seems to be in a very strange country</li>
-</ol>
-<p>What could happen is that you start making some money and you aren't be able to pull them out. Seriously. Super stressful situation.</p>
-<p>But let's switch to a happier note which is opening an account and placing our first programmatic trade. Whooha!</p>
-<p>I am using <a href="http://www.oanda.com/">Oanda</a> as a broker (I am not affiliated with them) and they offer a pretty decent API, libraries on github and a free demo account. </p>
-<p>Go and open a free <a href="https://www.oanda.com/register/#/sign-up/demo">fxTrade Practice account</a> and then <a href="https://www.oanda.com/demo-account/login">sign in</a>.</p>
-<p>After you get your sign in to your demo account, go to <strong>Manage API Access</strong>. There you can find your API key which we are going to use in our system to place trades. <strong>MAKE SURE YOU DON'T SHARE THIS KEY</strong>.</p>
-<p>The code for this is and all other posts is on my <a href="https://github.com/jonromero/Forex-algotrading">github</a> and you can install it and run it pretty easily.</p>
-<p>Update: Oanda released a new (kickass) execution engine called <strong>v20</strong> and they have released a new (improved) API. This post has been updated in order to use the new API but if (for any reason) you want to check the old code, it is <a href="https://github.com/jonromero/forex_algotrading/blob/86db3f7f567897ad74c1e611cf2d6f337f4a9c24/post3/runner.py">right here</a>.</p>
-<p>Connecting to Oanda needs a conf file - which you can generate using a script that Oanda provides <a href="https://github.com/oanda/v20-python-samples">here</a> <em>or</em> you can just create it yourself. Why would you want that? First of all when it comes to credentials (and my money), I prefer to know everything that is going on. And I don't like having to install PyYAML just to read a conf file. Feel free to use either method. </p>
-<p>The code is straight-forward. We connect to Oanda, to a practice account with our token </p>
-<div class="highlight"><pre><span></span><span class="n">oanda</span> <span class="o">=</span> <span class="n">oandapy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">environment</span><span class="o">=</span><span class="s2">&quot;practice&quot;</span><span class="p">,</span>
-                   <span class="n">access_token</span><span class="o">=</span><span class="n">OANDA_ACCESS_TOKEN</span><span class="p">)</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">oanda</span><span class="o">.</span><span class="n">get_prices</span><span class="p">(</span><span class="n">instruments</span><span class="o">=</span><span class="s2">&quot;EUR_USD&quot;</span><span class="p">)</span>
-<span class="n">prices</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;prices&quot;</span><span class="p">)</span>
-<span class="n">buy_price</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;bid&quot;</span><span class="p">)</span>
-</pre></div>
-
-
-<p>and we are requesting the prices (bid/ask) for the pair EUR_USD. </p>
-<p>We print the buy price and then we place a <em>market</em> order. </p>
-<div class="highlight"><pre><span></span><span class="k">print</span> <span class="s2">&quot;Buy at&quot;</span><span class="p">,</span> <span class="n">buy_price</span>
-<span class="n">trade_id</span> <span class="o">=</span> <span class="n">oanda</span><span class="o">.</span><span class="n">create_order</span><span class="p">(</span><span class="n">OANDA_ACCOUNT_ID</span><span class="p">,</span><span class="n">instrument</span><span class="o">=</span><span class="s2">&quot;EUR_USD&quot;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
-                  <span class="n">side</span><span class="o">=</span><span class="s1">&#39;buy&#39;</span><span class="p">,</span>
-                  <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;market&#39;</span><span class="p">)</span>
-</pre></div>
-
-
-<p>Super easy. Don't worry about what EURUSD is or how many units we are buying or what a market order is. For now, we have placed our first trade from our laptop and we are going to build our own API to place trades. Exciting stuff!</p>
-<p>You can read Oanda's documentation <a href="http://developer.oanda.com/">here</a> to see what else you can do with their API and find the Python library <a href="https://github.com/oanda/v20-python">here</a>.Tons of examples are available from Oanda's github page <a href="https://github.com/oanda/v20-python-sample">here</a>.</p>
-<p>Coming up next, connecting to a real <strong>LIVE</strong> algotrading system, running from my RaspberryPI at home. </p>
-<p><img src="https://dl.dropboxusercontent.com/u/757245/jonio/trades-nov.jpg" /></p>
-<p>You'll be able to see the (almost) final program running and we'll talk more about Forex and strategies. </p>
-<p>If you have more feedback, ping me at <a href="http://www.twitter.com/jonromero">jonromero</a> or signup to the <a href="http://eepurl.com/bGbOnb">newsletter</a>. </p>
-<p>Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
-If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. </p> </div>
-            <div class="abbr published">
-                Posted  <a href='../placing-your-first-forex-trade-with-python.html' title='2015-10-20T22:48:00-07:00'>Tue 20 October 2015</a> in <a href="../category/trading.html">trading</a>.              
             </div>
         </article>
         <article class='listed'>
@@ -723,7 +750,7 @@ If you lose any (or all) you money because you followed any trading advices or d
 <p>Here is a scenario:
 I have lots of data sitting as CSV on my hard-drive and I want to process them. Not query them. Process them.</p>
 <p>What would be really interesting is to be able to define (dynamically) a schema like that:</p>
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">defschema</span> <span class="s">&quot;EURUSD&quot;</span> 
+<div class="highlight"><pre><span class="p">(</span><span class="nf">defschema</span> <span class="s">&quot;EURUSD&quot;</span> 
     <span class="p">(</span><span class="nf">tokenizer</span> <span class="o">#</span><span class="p">(</span><span class="nf">.split</span> <span class="nv">%</span> <span class="s">&quot;:&quot;</span><span class="p">))</span>  
     <span class="c1">;; the mapping is done here</span>
     <span class="p">(</span><span class="nf">columns</span> <span class="err">|</span><span class="nv">time</span><span class="err">|</span> <span class="err">|</span><span class="nv">open</span><span class="err">|</span> <span class="err">|</span><span class="nv">high</span><span class="err">|</span> <span class="err">|</span><span class="nv">low</span><span class="err">|</span> <span class="err">|</span><span class="nv">close</span><span class="err">|</span> <span class="err">|</span><span class="nv">volume</span><span class="err">|</span><span class="p">))</span>
@@ -735,7 +762,7 @@ First of all, a "tokenize" function. Each dataline is tokenized based on a funct
 <p>As you can imagine, tokenize returns a list of data that are mapped to "columns".</p>
 <p>Now, the interesting stuff. </p>
 <p>You can write scripts like the following:</p>
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt; </span><span class="err">|</span><span class="nv">close</span><span class="err">|</span> <span class="mf">1.45</span><span class="p">)</span>
+<div class="highlight"><pre><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt; </span><span class="err">|</span><span class="nv">close</span><span class="err">|</span> <span class="mf">1.45</span><span class="p">)</span>
     <span class="p">(</span><span class="nf">place-order</span> <span class="ss">:buy</span><span class="p">)</span>
     <span class="p">(</span><span class="nf">place-order</span> <span class="ss">:sell</span><span class="p">))</span>
 </pre></div>
@@ -776,6 +803,37 @@ First of all, a "tokenize" function. Each dataline is tokenized based on a funct
 <p>JR</p> </div>
             <div class="abbr published">
                 Posted  <a href='../hybrisdb.html' title='2014-10-20T22:48:00-07:00'>Mon 20 October 2014</a> in <a href="../category/databases.html">databases</a>.              
+            </div>
+        </article>
+        <article class='listed'>
+            <h1 class="title">
+                <a href="../kicking-time-management-in-the-nuts.html" rel='bookmark'>Kicking time management in the nuts</a>
+            </h1>
+            <div class="article-content"> <p>Building a Startup with pocket money and selling it for tons of cash in just two years, makes you learn a couple of tricks that change your life. One of those is time management.</p>
+<p>Time management is one of the decisive factors of making someone happy. Having lots of time can lead to boredom, having no time can lead to stress and anxiety. The funny thing is that it's so easy jumping from one extreme to the other and impossible to stay "in the zone". </p>
+<p>First of all, let me get something out of my chest: There is no such thing as "I have too many things to do that I need more than 24 hours a day". Bullshit. Even if you had 50 hours per day, you will still be struggling with todos. Why? Because, <em>time is irrelevant</em>. Everything is about procedures.</p>
+<p>What I really hate about time management is tracking time. It is inefficient, I get bored quickly and you cannot focus 100% on a task everytime for each specific timeslot (unless you are a buddist monk). What I love to do is ticking off tasks. The pleasure of striking out a task that has been on your list for the last couple of weeks is the same as eating a Sundae ice-cream in the sun. Sometimes even better.</p>
+<p>I borrowed one of the most effective ways of "killing" tasks by a project management technic called <a href="http://en.wikipedia.org/wiki/Scrum_(software_development)">Scrum</a>. If you are in a Startup and haven't heard of Scrum, prepare to be amazed.</p>
+<p>Based on this method, you create periods of work (called <em>sprints</em>) and you add things to be done in these periods. Why is this much better than just having a huge todo list? It breaks down tasks in large, high-level time blocks which are easier to manage and easier to extract information about how you (or your team) performs.</p>
+<h2>The Planning fallacy</h2>
+<p>Whenever I talk with a Startup that is struggling to go to a release or prototype, there is a reccuring theme: They all have tasks, some even have milestones but noone has a high-level <em>action</em> plan on what needs to be done. </p>
+<p>We humans are pretty bad at calculating things that span more than a couple of weeks and what is worse, is that we suck at identifying this. It is an ego thing.</p>
+<p>So, roll up your sleeves and let's do a small test. </p>
+<ol>
+<li>Create a list of all the things you need to do and assign a number of how important this item is (from 1 to 5)</li>
+<li>Add all the values and divide by the number of tasks (this is your average <em>velocity</em>)</li>
+<li>Organize the things in two groups (group A and group B). Make sure that each group has a summed value near to your average</li>
+<li>Take the first group (group A) and divide it again in two groups (group C and group D)</li>
+<li>Now, for the next two weeks, focus on resolving all the tasks in group C.</li>
+</ol>
+<p>You might be wondering what is the great thing behind this and why this is so effective. First of all, it is a very easy system which translates to a very low abandonment rate. Second, even from the first week, you will be able to calculate your average velocity (which may be totally different from the one you calculated here) and "feel" the progress. And third, you will have a realistic feedback of how much work is for a single task versus the value this task actually delivers.</p>
+<p>What you should do when the second week is done, is to put any unresolved tasks back to the pool of tasks (called the <em>backlog</em>) and re-organize your groups based on your newly calculated average velocity. As a rule of thumb, you should calculate your velocity every month.  </p>
+<p>Have in mind that there are more sophisticated systems (I'll talk more about them in an upcoming post) but my rule is that first you need something simple that works right now and then you can improve and iterate.</p>
+<ul>
+<li><a href="http://www.twitter.com/jonromero">JR</a></li>
+</ul> </div>
+            <div class="abbr published">
+                Posted  <a href='../kicking-time-management-in-the-nuts.html' title='2013-12-30T08:41:43-08:00'>Mon 30 December 2013</a> in <a href="../category/startups.html">startups</a>.              
             </div>
         </article>
         <article class='listed'>
