@@ -26,7 +26,7 @@ LINKS =  ()
 DEFAULT_PAGINATION = False
 THEME = "pelican-svbtle-master"
 DEFAULT_DATE = "fs"
-GOOGLE_ANALYTICS = "YES"
+GOOGLE_ANALYTICS = True
 TWITTER_USERNAME = "jonromero"
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
