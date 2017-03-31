@@ -2,15 +2,6 @@
 <html lang="{{ DEFAULT_LANG }}">
 <head>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- first -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-5816350521610729"
-     data-ad-slot="1500669629"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/style.css"> 
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/pygments.css">
@@ -33,10 +24,14 @@
 <script src="//load.sumome.com/" data-sumo-site-id="fee114a4f556c3310f466abe1eb7a9bab628c1b53aa6dac75200d0af9af9c330" async="async"></script>
 </head>
 <body>
+
+{% include 'adsense.html' %}
+
     <section id="navbar">
         <div class="user_meta">
             <h1 id="user"><a href="{{ SITEURL }}" class="">{{ AUTHOR }}</a></h1>
             <h2>{{ TAGLINE }}</h2>
+            
                 {% if AUTHOR_BIO %}
                     <p class="bio">{{ AUTHOR_BIO }}</p>
                 {% endif %}
@@ -66,6 +61,9 @@
         <div class="user_meta">
             <h1 id="user"><a href="{{ SITEURL }}" class="">{{ AUTHOR }}</a></h1>
             <h2>{{ TAGLINE }}</h2>
+
+{% include 'adsense_sidebar.html' %}
+
             <ul>
                 {% for title, link in MENUITEMS %}
                     <li><a href="{{ link }}">{{ title }}</a></li>
@@ -92,8 +90,11 @@
         </footer>
     </section>
 
+
+
     <section id="posts">
         {% block content %}
+
         {% endblock %}
     </section>
 
