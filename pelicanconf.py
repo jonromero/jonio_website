@@ -7,29 +7,40 @@ SITENAME = u'Jon.IO'
 SITEURL = u'http://jon.io'
 TIMEZONE = u'America/Los_Angeles'
 
-DEFAULT_LANG = u'en'
+PATH = 'content'
+
+TIMEZONE = 'America/Los_Angeles'
+
+DEFAULT_LANG = 'en'
+DEFAULT_DATE = "fs"
+GOOGLE_ANALYTICS = True
+
+THEME = 'mytheme'
+CSS = 'mytheme/static/css'
+IMAGES = 'mytheme/static/images'
+
+STATIC_PATHS = ['images']
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
+
+LINKS = (('Newsletter', 'http://getpelican.com/'),
+         ('YouTube', 'http://python.org/'),
+         ('Projects', 'http://jinja.pocoo.org/'),
+         ('My Story', '#'),
+         ('Start here', '#'),)
 
 # Social widget
-SOCIAL = (('Twitter', 'http://twitter.com/jonromero'),
-          ('LinkedIn', 'http://www.linkedin.com/in/johnvlachoyiannis'),
-          ('Github', 'http://github.com/jonromero/'),
-          ('Bitbucket', 'http://bitbucket.org/jonromero/'),)
+SOCIAL = (('You can add links in your config file', '#'),
+          ('Another social link', '#'),)
 
-# Blogroll
-LINKS =  ()
+DEFAULT_PAGINATION = 10
 
-DEFAULT_PAGINATION = False
-THEME = "pelican-svbtle-master"
-DEFAULT_DATE = "fs"
-GOOGLE_ANALYTICS = True
-TWITTER_USERNAME = "jonromero"
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
 PLUGINS = ['sitemap']
-

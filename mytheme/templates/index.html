@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Intro -->
+<div class="flex mt-4 break-words bg-gray-100 shadow-md p-8">
+    <div class="m-4/5 text-2xl px-3">
+        <b>Hello!</b> I am the Founder and Trouble maker at <a
+            class="bg-green-500 p-2 rounded-lg hover:bg-green-700 text-white" target="_blank"
+            href=" https://AgentRisk.com">AgentRisk</a>, where
+        we
+        help
+        entrepreneurs
+        kick more ass.
+        Before that I was the Director of Engineering at <a class="text-blue-500 hover:text-blue-800" target="_blank"
+            href="
+                https://splunk.com">Splunk</a>
+        because they
+        acquired my company and #1 in
+        BugSense. <br /> <br />
+        If you are an Entrepreneur or just like building stuff, we are going to be best friends.
+    </div>
+    <div class="bg-fixed  w-full h-64 m-1/5" style="background-image: url({{IMAGES}}/o.webp)">
+
+    </div>
+</div>
+
+<div class="px-32">
+    <!-- Latest posts -->
+    <div class="mt-8">
+        <div class="text-right font-extrabold text-3xl">
+            Latest posts
+        </div>
+
+        <div class="flex flex-wrap mb-4">
+
+            {% for article in articles_page.object_list %}
+            <div class="p-10 w-1/2">
+                <div class="shadow-md">
+                    <div>
+                        <img class="mb-5 object-cover" src="{{IMAGES}}/{{ article.image }}" alt="#">
+                    </div>
+                    <div class="px-2">
+                        <div class="font-semibold text-center text-2xl leading-tight">{{ article.title }}
+                        </div>
+                        <img class="w-6" src=" images/linkedin.jpg" alt="" />
+                    </div>
+                    <div class="h-full mt-10 text-center">
+                        <a href="{{ SITEURL }}/{{ article.url }}" class="btn-primary bg-pink-700 w-48">Read more</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            <div class="p-10 w-1/2">
+                <div class="shadow-md">
+                    <div>
+                        <img class="mb-5 object-cover" src="images/bg-jon.jpg" alt="#">
+                    </div>
+                    <div class="px-2">
+                        <div class="font-semibold text-2xl leading-tight">How I become awesome and got these
+                            glasses
+                        </div>
+                        <img class="w-6" src=" images/linkedin.jpg" alt="" />
+                    </div>
+                    <div class="h-full mt-10 text-center">
+                        <a href="#" class="btn-primary bg-pink-700 w-48">Read more</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-10 w-1/2">
+                <div class="shadow-md">
+                    <div>
+                        <img class="mb-5 object-cover" src="images/bg-jon.jpg" alt="#">
+                    </div>
+                    <div class="px-2">
+                        <div class="font-semibold text-2xl leading-tight">How I become awesome and got these
+                            glasses
+                        </div>
+                        <img class="w-6" src=" images/linkedin.jpg" alt="" />
+                    </div>
+                    <div class="h-full mt-10 text-center">
+                        <a href="#" class="btn-primary bg-pink-700 w-48">Read more</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-10 w-1/2">
+                <div class="shadow-md">
+                    <div>
+                        <img class="mb-5 object-cover" src="images/bg-jon.jpg" alt="#">
+                    </div>
+                    <div class="px-2">
+                        <div class="font-semibold text-2xl leading-tight">How I become awesome and got these
+                            glasses
+                        </div>
+                        <img class="w-6" src=" images/linkedin.jpg" alt="" />
+                    </div>
+                    <div class="h-full mt-10 text-center">
+                        <a href="#" class="btn-primary bg-pink-700 w-48">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Watch -->
+    <div class="container mx-auto">
+        <div class="text-right font-extrabold text-4xl mb-12">
+            Watch
+        </div>
+        <div class="flex flex-col">
+            <div class="h-32 p-10">
+            </div>
+            <div class="bg-gray-200 px-32">
+                <iframe class="w-full -mt-32" height="515" src="https://www.youtube.com/embed/AO0qI99rUjg"
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+
+                <!-- small videos -->
+                <div class="container w-full h-32 flex mt-8">
+                    <div class="w-1/4 px-2">
+                        <iframe class="w-full h-32" src="https://www.youtube.com/embed/xzGBkO1_Gew" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="w-1/4">
+                        <iframe class="w-full h-32 px-2" src="https://www.youtube.com/embed/xzGBkO1_Gew" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="w-1/4">
+                        <iframe class="w-full h-32 px-2" src="https://www.youtube.com/embed/xzGBkO1_Gew" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="w-1/4">
+                        <iframe class="w-full h-32 px-2" src="https://www.youtube.com/embed/xzGBkO1_Gew" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="py-8 text-center">
+                    <a href="#" class="btn-primary bg-pink-700">Watch more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="flex justify-center mt-8 bg-gray-300">
+    <div class="mb-6 mt-6">
+        <div class="m-4 text-2xl font-semibold">Get all my stories about building companies,
+            investing, branding and insane
+            productivity</div>
+
+        <iframe src="https://jonv.substack.com/embed" class="h-20 p-0 m-0" frameborder="0" scrolling="no"></iframe>
+    </div>
+</div>
+
+<div class="px-64">
+    <div class="">
+        <div class="text-2xl">
+            Best articles to start
+        </div>
+        <div class="mt-2">
+            <ul>
+                <li>One</li>
+                <li>One</li>
+                <li>One</li>
+                <li>One</li>
+                <li>One</li>
+                <li>One</li>
+                <li>One</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="px-64">
+    <div class="">
+        <div class="text-2xl">
+            Categories
+        </div>
+        <div class="mt-2">
+            <ul>
+                {% for category, articles in categories %}
+                <li><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

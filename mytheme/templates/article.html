@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}{{ article.title }} - {{ SITENAME }}{%endblock%}
+{% block content %}
+<article>
+    <h1 class="title">
+        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark">{{ article.title }}</a>
+    </h1>
+
+    <img src="{{IMAGES}}/{{ article.image }}" alt="">
+    <div class='article-content'>
+        {{ article.content }}
+    </div>
+
+    <div class='post-footer'>
+        <div class='share-footer'>
+            <div id='dated' class="abbr published" title='{{ article.date.isoformat() }}'>
+                Posted {{ article.locale_date }}
+            </div>
+
+            {% include 'addthis.html' %}
+        </div>
+
+        <div id="article_meta">
+            {% if not article.category == 'posts' %}
+            Category:
+            <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+            {% endif %}
+            {% if article.tags %}
+            <br />Tags:
+            {% for tag in article.tags %}
+            <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+            {% endfor %}
+            {% endif %}
+        </div>
+
+        {% if article.related_posts %}
+        <div class='related-posts'>
+            <h2>Related Posts:</h2>
+
+            <ul>
+                {% for related_post in article.related_posts %}
+                <li><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+    </div>
+</article>
+
+{% include 'adsense.html' %}
+
+<footer>
+    <a href="{{ SITEURL }}/" class="button_accent">&larr;&nbsp;&nbsp;&nbsp;Back to blog</a>
+</footer>
+
+{% if DISQUS_SITENAME %}
+<div id="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_identifier = "{{ article.url }}";
+        (function () {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://{{ DISQUS_SITENAME }}.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view <a href="http://disqus.com/?ref_noscript">comments</a>.</noscript>
+</div>
+{% endif %}
+{% endblock %}

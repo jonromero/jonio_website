@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="{{ DEFAULT_LANG }}">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="stylesheet" href="{{ CSS }}/tailwind.css">
+
+    <title>Jon V</title>
+
+    <link href="{{ FEED_DOMAIN }}/{{ FEED }}" type="application/atom+xml" rel="alternate"
+        title="{{ SITENAME }} ATOM Feed" />
+    {% if FEED_RSS %}
+    <link href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/atom+xml" rel="alternate"
+        title="{{ SITENAME }} RSS Feed" />
+    {% endif %}
+
+    {% if article and article.latex %}
+    {{ article.latex }}
+    {% endif %}
+
+    {% block head %}
+    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+    <meta name="author" content="{{ AUTHOR }}">
+    {% endblock head %}
+    <script src="//load.sumome.com/"
+        data-sumo-site-id="fee114a4f556c3310f466abe1eb7a9bab628c1b53aa6dac75200d0af9af9c330" async="async">
+        </script>
+</head>
+
+<body class="">
+    <div class="px-32">
+        <!-- Nav bar -->
+        <div class="container mx-auto py-5">
+            <nav class="md:flex md:justify-between">
+                <div class="flex justify-between">
+                    <a href="{{ SITEURL }}">Jon V.</a>
+
+                    <p id="hamburgerbtn" class="md:hidden bg-purple-800">
+                        menu
+                    </p>
+                </div>
+
+                <ul class="hidden md:flex md:flex-row" id="mobileMenu">
+                    {% for title, link in MENUITEMS %}
+                    <li><a href="{{ link }}">{{ title }}</a></li>
+                    {% endfor %}
+                    {% if DISPLAY_PAGES_ON_MENU %}
+                    {% for p in PAGES %}
+                    <li{% if p == page %} class="active" {% endif %}><a
+                            href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
+                        </li>
+                        {% endfor %}
+                        {% else %}
+                        {% for cat, null in categories %}
+                        <li{% if cat == category %} class="pr-5 active" {% endif %}><a
+                                href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+                            {% endfor %}
+                            {% endif %}
+                            {% for name, link in LINKS %}
+                            <li class="pr-4"><a href="{{ link }}">{{ name }}</a></li>
+                            {% endfor %}
+                </ul>
+            </nav>
+        </div>
+
+        <style>
+            .active {
+                display: block;
+            }
+        </style>
+
+        <script>
+            let hamburger = document.getElementById('hamburgerbtn');
+
+            let mobileMenu = document.getElementById('mobileMenu');
+
+            hamburger.addEventListener('click', function () {
+                mobileMenu.classList.toggle('active');
+            });
+        </script>
+
+        <section id="posts">
+            {% block content %}
+
+            {% endblock %}
+        </section>
+
+        {% include 'analytics.html' %}
+</body>
+
+</html>
