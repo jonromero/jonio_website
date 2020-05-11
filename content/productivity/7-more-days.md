@@ -1,6 +1,7 @@
 Title: How to have 7 more days every month  
 Tags: productivity
 Date: 2013-10-20 22:48
+Status: draft
 
 One of my new year's resolution was "study one of your habits each month" and I decided to focus on what activities I am spending my online time. So, I installed [RescueTime](https://www.rescuetime.com/) which is a very cool app that sits on the background and creates reports about which apps and sites you are using the most. And no, it is not sending that info to NSA (you are not that important!).
 

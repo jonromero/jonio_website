@@ -2,29 +2,36 @@
 {% block title %}{{ article.title }} - {{ SITENAME }}{%endblock%}
 {% block content %}
 <article>
-    <h1 class="title">
-        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark">{{ article.title }}</a>
-    </h1>
-
-    <img src="{{IMAGES}}/{{ article.image }}" alt="">
-    <div class='article-content'>
-        {{ article.content }}
+    <div class="flex m-1/5 mr-16 ml-16">
+        <img class="h-full w-full" src="images/{{ article.image }}" alt="">
     </div>
 
+    <div class="flex ml-32 mr-32 -mt-32 shadow-xl">
+        <div class="-mt-64">
+            <div class="-mt-64 p-16 h-auto w-auto bg-white">
+                <h1 class="text-5xl font-semibold">
+                    <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark">{{ article.title }}</a>
+                </h1>
+
+                <div class="text-1xl font-thin text-gray-500">Last updated on {{  article.locale_date }} - <a
+                        class="bg-green-500 p-1 rounded-lg hover:bg-green-700 text-white"
+                        href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+                </div>
+
+
+                <div class='mt-8 markdown-body'>
+                    {{ article.content }}
+                </div>
+
+            </div>
+        </div>
+    </div>
     <div class='post-footer'>
         <div class='share-footer'>
-            <div id='dated' class="abbr published" title='{{ article.date.isoformat() }}'>
-                Posted {{ article.locale_date }}
-            </div>
-
             {% include 'addthis.html' %}
         </div>
 
         <div id="article_meta">
-            {% if not article.category == 'posts' %}
-            Category:
-            <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
-            {% endif %}
             {% if article.tags %}
             <br />Tags:
             {% for tag in article.tags %}

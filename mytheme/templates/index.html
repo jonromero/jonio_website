@@ -31,12 +31,11 @@
         </div>
 
         <div class="flex flex-wrap mb-4">
-
-            {% for article in articles_page.object_list %}
+            {% for article in articles_page.object_list[:4] %}
             <div class="p-10 w-1/2">
                 <div class="shadow-md">
                     <div>
-                        <img class="mb-5 object-cover" src="{{IMAGES}}/{{ article.image }}" alt="#">
+                        <img class="mb-5 object-cover h-64" src="images/{{ article.image }}" alt="#">
                     </div>
                     <div class="px-2">
                         <div class="font-semibold text-center text-2xl leading-tight">{{ article.title }}
@@ -49,57 +48,6 @@
                 </div>
             </div>
             {% endfor %}
-
-            <div class="p-10 w-1/2">
-                <div class="shadow-md">
-                    <div>
-                        <img class="mb-5 object-cover" src="images/bg-jon.jpg" alt="#">
-                    </div>
-                    <div class="px-2">
-                        <div class="font-semibold text-2xl leading-tight">How I become awesome and got these
-                            glasses
-                        </div>
-                        <img class="w-6" src=" images/linkedin.jpg" alt="" />
-                    </div>
-                    <div class="h-full mt-10 text-center">
-                        <a href="#" class="btn-primary bg-pink-700 w-48">Read more</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="p-10 w-1/2">
-                <div class="shadow-md">
-                    <div>
-                        <img class="mb-5 object-cover" src="images/bg-jon.jpg" alt="#">
-                    </div>
-                    <div class="px-2">
-                        <div class="font-semibold text-2xl leading-tight">How I become awesome and got these
-                            glasses
-                        </div>
-                        <img class="w-6" src=" images/linkedin.jpg" alt="" />
-                    </div>
-                    <div class="h-full mt-10 text-center">
-                        <a href="#" class="btn-primary bg-pink-700 w-48">Read more</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="p-10 w-1/2">
-                <div class="shadow-md">
-                    <div>
-                        <img class="mb-5 object-cover" src="images/bg-jon.jpg" alt="#">
-                    </div>
-                    <div class="px-2">
-                        <div class="font-semibold text-2xl leading-tight">How I become awesome and got these
-                            glasses
-                        </div>
-                        <img class="w-6" src=" images/linkedin.jpg" alt="" />
-                    </div>
-                    <div class="h-full mt-10 text-center">
-                        <a href="#" class="btn-primary bg-pink-700 w-48">Read more</a>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 

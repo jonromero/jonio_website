@@ -7,17 +7,15 @@ SITENAME = u'Jon.IO'
 SITEURL = u'http://jon.io'
 TIMEZONE = u'America/Los_Angeles'
 
-PATH = 'content'
-
-TIMEZONE = 'America/Los_Angeles'
+PATH = 'content/'
 
 DEFAULT_LANG = 'en'
 DEFAULT_DATE = "fs"
 GOOGLE_ANALYTICS = True
 
 THEME = 'mytheme'
-CSS = 'mytheme/static/css'
-IMAGES = 'mytheme/static/images'
+CSS = 'theme/css'
+IMAGES = 'theme/images'
 
 STATIC_PATHS = ['images']
 
