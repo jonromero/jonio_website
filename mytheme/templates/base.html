@@ -33,7 +33,7 @@
 </head>
 
 <body class="">
-    <div class="px-32">
+    <div class="container mx-auto">
         <!-- Nav bar -->
         <div class="container mx-auto py-5">
             <nav class="md:flex md:justify-between">
@@ -62,35 +62,36 @@
                             {% endfor %}
                             {% endif %}
                             {% for name, link in LINKS %}
-                            <li class="pr-4"><a href="{{ link }}">{{ name }}</a></li>
+                            <li class="pr-10"><a href="{{ link }}">{{ name }}</a></li>
                             {% endfor %}
                 </ul>
             </nav>
         </div>
+    </div>
 
-        <style>
-            .active {
-                display: block;
-            }
-        </style>
+    <style>
+        .active {
+            display: block;
+        }
+    </style>
 
-        <script>
-            let hamburger = document.getElementById('hamburgerbtn');
+    <script>
+        let hamburger = document.getElementById('hamburgerbtn');
 
-            let mobileMenu = document.getElementById('mobileMenu');
+        let mobileMenu = document.getElementById('mobileMenu');
 
-            hamburger.addEventListener('click', function () {
-                mobileMenu.classList.toggle('active');
-            });
-        </script>
+        hamburger.addEventListener('click', function () {
+            mobileMenu.classList.toggle('active');
+        });
+    </script>
 
-        <section id="posts">
-            {% block content %}
+    <section id="posts">
+        {% block content %}
 
-            {% endblock %}
-        </section>
+        {% endblock %}
+    </section>
 
-        {% include 'analytics.html' %}
+    {% include 'analytics.html' %}
 </body>
 
 </html>

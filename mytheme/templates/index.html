@@ -1,59 +1,90 @@
 {% extends "base.html" %}
 {% block content %}
 <!-- Intro -->
-<div class="flex mt-4 break-words bg-gray-100 shadow-md p-8">
-    <div class="m-4/5 text-2xl px-3">
-        <b>Hello!</b> I am the Founder and Trouble maker at <a
-            class="bg-green-500 p-2 rounded-lg hover:bg-green-700 text-white" target="_blank"
-            href=" https://AgentRisk.com">AgentRisk</a>, where
-        we
+<div class="container mx-auto flex mt-10 break-words">
+    <div
+        class="m-4/5 mt-8 text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:leading-none sm:text-6xl lg:text-5xl">
+        I
         help
         entrepreneurs
         kick more ass.
-        Before that I was the Director of Engineering at <a class="text-blue-500 hover:text-blue-800" target="_blank"
-            href="
-                https://splunk.com">Splunk</a>
-        because they
-        acquired my company and #1 in
-        BugSense. <br /> <br />
-        If you are an Entrepreneur or just like building stuff, we are going to be best friends.
-    </div>
-    <div class="bg-fixed  w-full h-64 m-1/5" style="background-image: url({{IMAGES}}/o.webp)">
 
+        <div class="flex justify-center mt-8 bg-white">
+            <div class="mb-6 mt-6">
+                <div class="m-4 text-2xl font-semibold">Get all my stories about building companies,
+                    investing, branding and insane
+                    productivity</div>
+
+                <form method="post" class="sm:flex" action="https://sendfox.com/form/1we8gr/3ejnj0" id="3ejnj0"
+                    data-async="true">
+                    <input type="email"
+                        class="appearance-none block w-full px-3 py-3 border border-gray-300 text-base leading-6 rounded-md placeholder-gray-500 shadow-sm focus:outline-none focus:placeholder-gray-400 focus:shadow-outline focus:border-blue-300 transition duration-150 ease-in-out sm:flex-1"
+                        placeholder="Email" name="email" required />
+                    <!-- no botz please -->
+
+                    <button
+                        class="mt-3 w-full px-6 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-800 shadow-sm hover:bg-gray-700 focus:outline-none focus:shadow-outline active:bg-gray-900 transition duration-150 ease-in-out sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto"
+                        type="submit">Get it</button>
+                </form>
+                <script src="https://sendfox.com/js/form.js"></script>
+            </div>
+        </div>
+    </div>
+    <div class="w-full h-64 m-1/5">
+        <div class="p-64">
+            <div class="bg-fixed h-full" style="background-image: url({{IMAGES}}/o.webp)">
+            </div>
+        </div>
     </div>
 </div>
 
-<div class="px-32">
+<div class="px-12 bg-gray-100">
     <!-- Latest posts -->
-    <div class="mt-8">
-        <div class="text-right font-extrabold text-3xl">
+    <div class="pt-16">
+        <div class="text-center font-extrabold text-4xl">
             Latest posts
         </div>
 
-        <div class="flex flex-wrap mb-4">
-            {% for article in articles_page.object_list[:4] %}
-            <div class="p-10 w-1/2">
-                <div class="shadow-md">
-                    <div>
-                        <img class="mb-5 object-cover h-64" src="images/{{ article.image }}" alt="#">
-                    </div>
-                    <div class="px-2">
-                        <div class="font-semibold text-center text-2xl leading-tight">{{ article.title }}
+        <div class="container mx-auto mt-8 flex flex-wrap mb-4">
+            {% for article in articles_page.object_list[:8] %}
+
+            <div class="p-2 w-1/4">
+                <a href="{{ SITERL }}/{{ article.url }}" class="">
+                    <div class="rounded-lg shadow-lg p-6">
+                        <div>
+                            <img class="mb-5 object-cover h-48 w-full" src="images/{{ article.image }}" alt="#">
                         </div>
-                        <img class="w-6" src=" images/linkedin.jpg" alt="" />
+                        <div
+                            class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium leading-5 bg-blue-100 text-blue-800">
+                            {{ article.category.name.capitalize() }}
+                        </div>
+                        <div class="h-16">
+                            <div class="font-semibold text-xl leading-tight">{{ article.title }}
+                            </div>
+                            <img class="w-6" src=" images/linkedin.jpg" alt="" />
+                        </div>
+
                     </div>
-                    <div class="h-full mt-10 text-center">
-                        <a href="{{ SITEURL }}/{{ article.url }}" class="btn-primary bg-pink-700 w-48">Read more</a>
-                    </div>
-                </div>
+                </a>
             </div>
+
             {% endfor %}
         </div>
     </div>
 
-    <!-- Watch -->
+    <!-- Intermission -->
     <div class="container mx-auto">
-        <div class="text-right font-extrabold text-4xl mb-12">
+        <div class="w-full">
+            <div class="p-8">
+                <div class="bg-fixed w-full h-64" style="background-image: url({{IMAGES}}/o.webp)">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Watch -->
+    <div class=" container mx-auto">
+        <div class="pt-16 text-center font-extrabold text-4xl mb-12">
             Watch
         </div>
         <div class="flex flex-col">
@@ -97,13 +128,25 @@
 </div>
 </div>
 
-<div class="flex justify-center mt-8 bg-gray-300">
+<!-- Subscribe -->
+<div class="flex justify-center mt-8 pb-8 bg-gray-300">
     <div class="mb-6 mt-6">
         <div class="m-4 text-2xl font-semibold">Get all my stories about building companies,
             investing, branding and insane
             productivity</div>
 
-        <iframe src="https://jonv.substack.com/embed" class="h-20 p-0 m-0" frameborder="0" scrolling="no"></iframe>
+        <form method="post" class="sm:flex" action="https://sendfox.com/form/1we8gr/3ejnj0" id="3ejnj0"
+            data-async="true">
+            <input type="email"
+                class="appearance-none block w-full px-3 py-3 border border-gray-300 text-base leading-6 rounded-md placeholder-gray-500 shadow-sm focus:outline-none focus:placeholder-gray-400 focus:shadow-outline focus:border-blue-300 transition duration-150 ease-in-out sm:flex-1"
+                placeholder="Email" name="email" required />
+            <!-- no botz please -->
+
+            <button
+                class="mt-3 w-full px-6 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-gray-800 shadow-sm hover:bg-gray-700 focus:outline-none focus:shadow-outline active:bg-gray-900 transition duration-150 ease-in-out sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto"
+                type="submit">Get it</button>
+        </form>
+        <script src="https://sendfox.com/js/form.js"></script>
     </div>
 </div>
 
