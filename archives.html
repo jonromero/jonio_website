@@ -24,7 +24,7 @@
 </head>
 
 <body class="">
-    <div class="px-32">
+    <div class="container mx-auto">
         <!-- Nav bar -->
         <div class="container mx-auto py-5">
             <nav class="md:flex md:justify-between">
@@ -37,32 +37,33 @@
                 </div>
 
                 <ul class="hidden md:flex md:flex-row" id="mobileMenu">
-                            <li class="pr-4"><a href="http://getpelican.com/">Newsletter</a></li>
-                            <li class="pr-4"><a href="http://python.org/">YouTube</a></li>
-                            <li class="pr-4"><a href="http://jinja.pocoo.org/">Projects</a></li>
-                            <li class="pr-4"><a href="#">My Story</a></li>
-                            <li class="pr-4"><a href="#">Start here</a></li>
+                            <li class="pr-10"><a href="http://getpelican.com/">Newsletter</a></li>
+                            <li class="pr-10"><a href="http://python.org/">YouTube</a></li>
+                            <li class="pr-10"><a href="http://jinja.pocoo.org/">Projects</a></li>
+                            <li class="pr-10"><a href="#">My Story</a></li>
+                            <li class="pr-10"><a href="#">Start here</a></li>
                 </ul>
             </nav>
         </div>
+    </div>
 
-        <style>
-            .active {
-                display: block;
-            }
-        </style>
+    <style>
+        .active {
+            display: block;
+        }
+    </style>
 
-        <script>
-            let hamburger = document.getElementById('hamburgerbtn');
+    <script>
+        let hamburger = document.getElementById('hamburgerbtn');
 
-            let mobileMenu = document.getElementById('mobileMenu');
+        let mobileMenu = document.getElementById('mobileMenu');
 
-            hamburger.addEventListener('click', function () {
-                mobileMenu.classList.toggle('active');
-            });
-        </script>
+        hamburger.addEventListener('click', function () {
+            mobileMenu.classList.toggle('active');
+        });
+    </script>
 
-        <section id="posts">
+    <section id="posts">
 <h1>Archives for Jon.IO</h1>
 
 <dl>
@@ -95,7 +96,7 @@
     <dt>Mon 20 October 2014</dt>
     <dd><a href="./hybrisdb.html">HybrisDB</a></dd>
 </dl>
-        </section>
+    </section>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
