@@ -1,5 +1,6 @@
 Title: Machine Beats Human: Using Machine Learning in Forex 
-Tags: algotrading
+Category: MachineLearning
+Tags: popular
 Date: 2016-05-13 22:30
 
 *This is the another post of the series: [How to build your own algotrading platform](how-to-build-your-own-algorithmic-trading-platform.html).*

@@ -4,15 +4,14 @@
 <div class="container mx-auto flex mt-10 break-words">
     <div
         class="m-4/5 mt-8 text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:leading-none sm:text-6xl lg:text-5xl">
-        I
-        help
-        Entrepreneurs
-        kick ass.
+        Moonshots with slingshots.
 
         <div class="flex justify-center mt-8 bg-white">
             <div class="mb-6 mt-6">
-                <div class="mb-4 text-2xl font-semibold">Learn how to build your company without funding,
-                    how to invest, why life is epic etc</div>
+                <div class="mb-4 text-2xl font-semibold">Learn how to build <b>EPIC</b> companies with limited resources
+                    but
+                    unlimited impact.
+                </div>
 
                 <form method="post" class="sm:flex" action="https://sendfox.com/form/1we8gr/3ejnj0" id="3ejnj0"
                     data-async="true">
@@ -31,22 +30,52 @@
     </div>
     <div class="w-full h-64 m-1/5 mt-8">
         <div class="ml-16">
-            <div class="bg-fixed h-64" style="background-image: url({{IMAGES}}/o.webp)">
+            <div class="bg-fixed rounded-sm bg-no-repeat bg-right-top h-64"
+                style="background-image: url({{IMAGES}}/jon_red_40.png)">
             </div>
         </div>
     </div>
 </div>
 
 <div class="px-12 bg-gray-100">
-    <!-- Latest posts -->
+    <!-- Latest news -->
+    <div class="pt-16">
+        <div class="container mx-auto mt-8 flex flex-wrap mb-4">
+            {% for article in articles_page.object_list[:1] %}
+            {% if article.category.name == "news" %}
+            <div class="p-2 w-full">
+                <a href="{{ SITERL }}/{{ article.url }}" class="">
+                    <div class="shadow-lg">
+                        <div
+                            class="inline-flex items-center px-3 py-0.5 text-sm font-medium leading-5 bg-red-400 text-white">
+                            Latest
+                        </div>
+                        <div class="h-32 m-8">
+                            <div class="font-semibold text-xl leading-tight pb-2">{{ article.title }}
+                            </div>
+                            {{ article.content[:300] }} ...
+                            <a class="text-blue-500" href=" {{ SITERL }}/{{ article.url }}"> (read
+                                more)</a>
+                        </div>
+
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <!-- Popular posts -->
     <div class="pt-16">
         <div class="text-center font-extrabold text-4xl">
             Popular posts
         </div>
 
         <div class="container mx-auto mt-8 flex flex-wrap mb-4">
-            {% for article in articles_page.object_list[:8] %}
-
+            {% for article in articles_page.object_list[:4] %}
+            {% if 'popular' in article.tags  %}
             <div class="p-2 w-1/4">
                 <a href="{{ SITERL }}/{{ article.url }}" class="">
                     <div class="rounded-lg shadow-lg p-6">
@@ -66,7 +95,7 @@
                     </div>
                 </a>
             </div>
-
+            {% endif %}
             {% endfor %}
         </div>
     </div>
