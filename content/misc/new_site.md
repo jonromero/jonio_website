@@ -1,6 +1,13 @@
-Title: It is me, MARIO!
-Tags: news
+Title: Who am I
+Category: story
 Date: 2020-07-14 22:48
+
+I am an Entrepreneur that likes and hates
+These are the things I've done the last 5 years:
+
+1/ Fly a plane
+
+
 A couple years ago I was teaching a small course at Stanford about Entrepreneurship and I remember the **number one** question was how to raise money.  
 
 To tell you the truth, I was surprised because the most important question someone that wants to start a business should ask is how to make a product that people want. Anything else is details. Short of.
