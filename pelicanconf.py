@@ -16,6 +16,7 @@ GOOGLE_ANALYTICS = True
 THEME = 'mytheme'
 CSS = 'theme/css'
 IMAGES = 'theme/images'
+JS = 'theme/js'
 
 STATIC_PATHS = ['images']
 
