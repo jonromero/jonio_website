@@ -29,17 +29,14 @@ AUTHOR_FEED_RSS = None
 
 RELATED_POSTS_MAX = 4
 
-LINKS = (('Newsletter', 'http://getpelican.com/'),
-         ('YouTube', 'http://python.org/'),
-         ('Projects', 'http://jinja.pocoo.org/'),
-         ('My Story', '#'),
-         ('Start here', '#'),)
-
-# Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
-
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = 5
+PAGINATED_TEMPLATES = {
+    'index': None,
+    'tag': None,
+    'category': None,
+    'author': None,
+    'archives': None
+}
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
