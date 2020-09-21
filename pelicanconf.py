@@ -27,6 +27,8 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+RELATED_POSTS_MAX = 4
+
 LINKS = (('Newsletter', 'http://getpelican.com/'),
          ('YouTube', 'http://python.org/'),
          ('Projects', 'http://jinja.pocoo.org/'),
@@ -42,4 +44,4 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
-PLUGINS = ['sitemap']
+PLUGINS = ['sitemap', 'related_posts']

@@ -87,7 +87,7 @@
                                 {{ article.title }}
                             </h3>
                             <p class="mt-3 text-base leading-6 text-gray-500">
-                                {{article.content[:300]}} [...]
+                                {{article.summary}}
                             </p>
 
                     </div>
@@ -104,7 +104,9 @@
             {% endif %}
             {% endfor %}
         </div>
-        <div class="pt-6 text-right"><a href=""> Read more</a></div>
+        <div class="pt-6 text-right"><a
+                class="text-base leading-6 font-semibold text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150"
+                href=""> Read more</a></div>
     </div>
 </div>
 <!-- END Popular posts-->

@@ -3,6 +3,7 @@ Category: Startups
 Tags: popular
 Date: 2020-05-09 10:48
 Image: youtube-click.png
+Related: trading-ethereum-making-10-every-20-minutes
 
 A couple years ago I was teaching a small course at Stanford about Entrepreneurship and I remember the **number one** question was how to raise money.  
 
@@ -52,6 +53,5 @@ You start with your friends, family and expand to your social media. After that 
 
 If you fantasize that you could do it, stop right now and actually do it. And then send me your a screenshot of your hustle and I’ll be the first person to send you $1 via Venmo. No bullshit.
 
-- [JR](http://www.twitter.com/jonromero)
   
  
