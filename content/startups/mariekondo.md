@@ -1,9 +1,7 @@
 Title: Marie Kondo your Startup 
 Category: Startups
 Date: 2020-05-17 10:48
-Tags: popular
 Image: kondo.png
-Related: trading-ethereum-making-10-every-20-minutes
 
 > Ask yourself if it sparks revenue
 

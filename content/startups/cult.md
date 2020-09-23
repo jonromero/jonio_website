@@ -1,9 +1,7 @@
 Title: The #RoamCult: Why creating a cult for your Startups is what you should be doing right now
-Category: Productivity 
+Category: Startups 
 Date: 2020-07-11 10:48
-Tags: popular
 Image: church.jpeg
-Related: trading-ethereum-making-10-every-20-minutes
 
 > Or why you should have a "Believer" plan
 

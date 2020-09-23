@@ -1,7 +1,6 @@
 Title: I tried a Digital Sabbath and it was epic
 Category: Productivity 
 Date: 2020-07-11 10:48
-Tags: popular
 Image: sabbath.jpeg
 Related: trading-ethereum-making-10-every-20-minutes
 

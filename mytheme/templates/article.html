@@ -44,23 +44,22 @@
                         </form>
                     </div>
                 </div>
-                {% if article.related_posts %}
                 <div class="mt-6 grid gap-16 border-t-2 border-gray-100 pt-10 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
-                    {% for related_post in article.related_posts %}
+                    {% for tag_article in articles[:6] if tag_article.category == article.category and article != tag_article %}
                     <div>
                         <p class="text-sm leading-5 text-gray-500">
-                            <time datetime="">{{related_post.locale_date}}</time>
+                            <time datetime="">{{tag_article.locale_date}}</time>
                         </p>
-                        <a href="#" class="block">
+                        <a href="{{tag_article.url}}" class="block">
                             <h3 class="mt-2 text-xl leading-7 font-semibold text-gray-900">
-                                {{related_post.title}}
+                                {{tag_article.title}}
                             </h3>
                             <p class="mt-3 text-base leading-6 text-gray-500">
-                                {{related_post.summary}}
+                                {{tag_article.summary}}
                             </p>
                         </a>
                         <div class="mt-3">
-                            <a href="{{related_post.url}}"
+                            <a href="{{tag_article.url}}"
                                 class="text-base leading-6 font-semibold text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150">
                                 Read full story
                             </a>
@@ -68,8 +67,10 @@
                     </div>
                     {% endfor %}
                 </div>
-                {% endif %}
             </div>
+            <div class="pt-6 text-right"><a
+                    class="font-semibold text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150"
+                    href="{{filename}}/archives"> Read more</a></div>
         </div>
         <!-- END Related posts-->
 

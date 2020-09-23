@@ -1,15 +1,12 @@
 Title: Fund YOU: How to make fund raising 1000x times easier
 Category: Productivity 
 Date: 2020-06-13 10:48
-Tags: popular
 Image: nofail.jpeg
 Related: trading-ethereum-making-10-every-20-minutes
 
 If you are an Entrepreneur and have a pulse, fund raising is one of the worst things that you have to deal when you are running a Startup.
 
 Today, I am going to show you **how to love it**.
-
----
 
 Negotiating is the most important skill that any Entrepreneur should have. And it is the only skill that helped me save my company a couple of times.
 

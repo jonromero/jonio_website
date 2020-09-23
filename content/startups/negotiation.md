@@ -3,7 +3,6 @@ Category: Startups
 Date: 2020-05-25 10:48
 Tags: popular
 Image: palace.jpeg
-Related: trading-ethereum-making-10-every-20-minutes
 
 > Lessons in Information Asymmetry
 

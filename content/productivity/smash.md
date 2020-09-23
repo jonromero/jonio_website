@@ -1,7 +1,6 @@
 Title: 3 tricks to smash your goals
 Category: Productivity 
 Date: 2020-06-13 10:48
-Tags: popular
 Image: stop.jpeg
 Related: trading-ethereum-making-10-every-20-minutes
 
