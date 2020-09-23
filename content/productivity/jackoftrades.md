@@ -1,9 +1,7 @@
 Title: Jack of many trades, Master of Anything 
 Category: Productivity
 Date: 2020-03-09 10:48
-Tags: popular
 Image: master.png
-Related: trading-ethereum-making-10-every-20-minutes
 
 > Why *not* being focused is awesome
 

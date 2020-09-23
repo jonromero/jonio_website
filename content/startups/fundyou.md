@@ -1,6 +1,7 @@
 Title: Fund YOU: How to make fund raising 1000x times easier
 Category: Productivity 
 Date: 2020-06-13 10:48
+Tags: popular
 Image: nofail.jpeg
 Related: trading-ethereum-making-10-every-20-minutes
 

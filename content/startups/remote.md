@@ -1,9 +1,7 @@
 Title: Why I love working remotely (and why your company cannot and never will) 
 Category: Startups
 Date: 2018-10-18 10:48
-Tags: popular
 Image: italy.jpeg
-Related: trading-ethereum-making-10-every-20-minutes
 
 It is 4pm in Italy and I just had an epic pizza. Yes, not a slice but a whole pizza. Don’t judge, this is my lunch and I have a long day/night ahead.
 

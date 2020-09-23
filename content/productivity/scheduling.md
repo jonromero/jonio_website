@@ -1,9 +1,7 @@
 Title: Scheduling meetings like Arnold Schwarzenegger
 Category: Productivity 
 Date: 2018-06-12 10:48
-Tags: popular
 Image: arnold.jpeg
-Related: trading-ethereum-making-10-every-20-minutes
 
 What you are about to read, is one of these things that you are going to say “I couldn’t never do that because bla bla bla”. I have to stop you right there and tell you that you are wrong and I am right and I am awesome and you should shut up and read this epic post that will change your life. Ready? Let’s do it.
 

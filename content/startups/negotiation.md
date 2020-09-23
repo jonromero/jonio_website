@@ -1,7 +1,6 @@
 Title: Win in every negotiation
 Category: Startups
 Date: 2020-05-25 10:48
-Tags: popular
 Image: palace.jpeg
 
 > Lessons in Information Asymmetry

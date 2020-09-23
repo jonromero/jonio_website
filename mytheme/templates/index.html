@@ -36,7 +36,7 @@
                         <li>Invested to a unicorn🦄 by being annoying</li>
                     </ol>
                     <div class="text-right">
-                        <a class="underline" href="#">and many many more</a>
+                        <a class="underline" href="/archives">and many many more</a>
                     </div>
                     </p>
                     <div class="mt-8">
@@ -125,9 +125,7 @@
             </h2>
         </div>
         <div class="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
-            {% for article in articles[:6] %}
-            {% if 'popular' not in article.tags  %}
-
+            {% for article in articles | batch(6) | first %}
             <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
 
                 <div class="flex-shrink-0">
@@ -157,8 +155,6 @@
                 </div>
                 </a>
             </div>
-
-            {% endif %}
             {% endfor %}
         </div>
         <div class="pt-6 text-right"><a

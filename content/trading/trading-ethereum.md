@@ -1,6 +1,6 @@
 Title: Trading Ethereum: Making 10% every 20 minutes
 Tags: popular
-Category: Cryptocurrencies
+Category: Trading
 Date: 2016-07-27 22:34
 Image: bigShort.jpg
 

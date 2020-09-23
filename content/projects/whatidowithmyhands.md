@@ -1,6 +1,6 @@
 Title: Why I wrote a book about my hands  
 Category: Projects
-Date: 2020-12-30 10:48
+Date: 2019-12-30 10:48
 Image: myhands.jpg
 
 It was 2015 and my Startup had just [got acquired](https://www.splunk.com/view/SP-CAAAJJC) by [Splunk](https://splunk.com), a multi-billion dollar Company in the Silicon Valley.

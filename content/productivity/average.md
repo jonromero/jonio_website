@@ -1,7 +1,6 @@
 Title: It is bullshit that you are the average of the 5 people you spend most time with
 Category: Productivity
 Date: 2020-06-06 10:48
-Tags: popular
 Image: fiends.jpeg
 Related: trading-ethereum-making-10-every-20-minutes
 
