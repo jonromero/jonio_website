@@ -29,7 +29,7 @@ AUTHOR_FEED_RSS = None
 
 RELATED_POSTS_MAX = 4
 
-DEFAULT_PAGINATION = 5
+DEFAULT_PAGINATION = 10
 PAGINATED_TEMPLATES = {
     'index': None,
     'tag': None,
@@ -42,3 +42,6 @@ PAGINATED_TEMPLATES = {
 RELATIVE_URLS = True
 
 PLUGINS = ['sitemap', 'related_posts']
+
+SITEMAP = {
+    "format": "xml"}
