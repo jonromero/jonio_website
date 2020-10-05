@@ -3,7 +3,7 @@ Category: newsletter
 Date: 2018-05-09 10:48
 
 
-Since I was a little kid in Athens/Greece, I was fascinated with building things. Actually I loved breaking things down and then trying to build them up again to see how they work - which most of the times ended up with a lot of broken experiments.
+Since I was a little kid in Athens/Greece, I was fascinated with building things. Actually I loved breaking things down and then trying to build them up again to see how they work - which most of the times ended up with a lot of broken stuff.
 
 I had an unhealthy obsession with programming because I could mess up all I wanted in my own little universe of variables and conditions.  
 
@@ -29,7 +29,7 @@ When you are from Europe, failing is a death sentence. You are done. You are a l
 
 As I learnt after a while, I was an idiot. I figured out that if I wanted to progress and become the best, I had to possess one skill that noone else around me had: Fail.
 
-And that's what happened. Like a skinny guy going to the gym for the first time, I was ready to fail. Actually I was craving to fail like when you put too much weight and you are sure that this won't work but because **you are prepared** you make it. We grow by failing and then keep pushing. 
+And that's what happened. Like a skinny guy going to the gym for the first time, I was ready to fail. Actually I was craving to fail like when you put too much weight on the bar and you are sure that this won't work but because **you are prepared** you make it. We grow by failing and  keep pushing until we fail again.
 
 ## Revelation V: You will become the people that surround you
 
@@ -48,7 +48,7 @@ I made it in the big league.
 
 ## Revelation VI: Jack of many trades, Master of Anything
 
-In less than five years I learnt how to fly a real plane, sold my Startup to a public Silicon Valley company, won the North California powerlifting competion, created a new type of database that handled data from 500M mobile devices per day, became the Director of Engineering in one of the best companies in the world with a 7-digit salary/bonus/stocks, left that company to start a new one, run the first statistical arbitrage algorithm on blockchain, started a Wealth Management company to manage other people's lives, raised $1M in one week, started a Fund that was giving zero money and was getting zero equity but provided an insane network and saved a country from ecomomic meltdown.
+In less than five years I sold my Startup to a public Silicon Valley company, learnt how to fly (and land) a real plane, won the North California powerlifting competion, created a new type of database that handled data from 500M mobile devices per day, became the Director of Engineering in one of the best companies in the world with a 7-digit salary/bonus/stocks, left that company to start a new one, run the first statistical arbitrage algorithm on blockchain, started a Wealth Management company to manage other people's lives, raised $1M in one week, started a Fund that was giving zero money and was getting zero equity but provided an insane network and saved a country from ecomomic meltdown.
 
 I did some after stuff like interviewing Ice-T, helping United Nations identify illegal nuclear explosions and tons of other things that I never even thought that are possible but my drive wasn't vanity. 
 
@@ -75,5 +75,5 @@ I was wealthy enought to be able to come to the US with $300 and kick everyone's
 
 I was wealthy but more importantly I was never **alone**.
 
-Things will never be perfect but always be grateful abou the things and the people you already have.
+Things will never be perfect but always be grateful about the things and the people you already have.
 
