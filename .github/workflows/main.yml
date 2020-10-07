@@ -28,7 +28,7 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@master
       if: success()
       env:
-        ACCESS_TOKEN: ${{ secrets.deploy }}
+        ACCESS_TOKEN: ${{  GITHUB_TOKEN }}
         BASE_BRANCH: master # The branch the action should deploy from.
         BRANCH: production # The branch the action should deploy to.
         CNAME: jon.io
