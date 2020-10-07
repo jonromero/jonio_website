@@ -2,6 +2,7 @@ Title: Addictive design - using unpredictable rewards
 Category: Startups 
 Date: 2020-10-04 10:48
 Image: venicepier.jpg
+Tags: popular
 
 Have you ever high-fived the universe? If not, let me introduce you to **surfing**.
 
