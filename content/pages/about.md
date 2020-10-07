@@ -48,7 +48,7 @@ I made it in the big league.
 
 ## Revelation VI: Jack of many trades, Master of Anything
 
-In less than five years I sold my Startup to a public Silicon Valley company, learnt how to fly (and land) a real plane, won the North California powerlifting competion, created a new type of database that handled data from 500M mobile devices per day, became the Director of Engineering in one of the best companies in the world with a 7-digit salary/bonus/stocks, left that company to start a new one, run the first statistical arbitrage algorithm on blockchain, started a Wealth Management company to manage other people's money, raised $1M in one week, started a Fund that was giving zero money and was getting zero equity but provided an insane network and saved a country from ecomomic meltdown.
+In less than five years I sold my Startup to a public Silicon Valley company, learnt how to fly (and land) a real plane, won the North California powerlifting competion, created a new type of database that handled data from 500M mobile devices per day, became the Director of Engineering in one of the best companies in the world with a 7-digit salary/bonus/stocks, left that company to start a new one, run the first statistical arbitrage algorithm on blockchain, started a Wealth Management company to manage other people's money, raised $1M in one week, started a Fund that was giving zero money and was getting zero equity but provided an insane network and saved a country from economic meltdown.
 
 I did some after stuff like interviewing Ice-T, helping United Nations identify illegal nuclear explosions and tons of other things that I never even thought that are possible but my drive wasn't vanity. 
 
