@@ -13,7 +13,7 @@ branding:
     GH_PAGES_BRANCH:
       description: 'override the default `gh-pages` deployment branch'
       required: false
-      default: 'gh-pages'
+      default: 'production'
     PELICAN_CONFIG_FILE:
       description: 'override the default `pelicanconf.py` config file'
       required: false
