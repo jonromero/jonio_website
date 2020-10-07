@@ -72,7 +72,7 @@ I was wealthy from the education that was given to me (for free) from my country
 I was wealthy from inspiration from my friends and collegues.
 
 I was wealthy enought to be able to come to the US with $300 and kick everyone's ass.
-
+  
 I was wealthy but more importantly I was never **alone**.
 
 Things will never be perfect but always be grateful about the things and the people you already have.
