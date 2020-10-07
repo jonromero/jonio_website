@@ -11,7 +11,6 @@ PATH = 'content/'
 
 DEFAULT_LANG = 'en'
 DEFAULT_DATE = "fs"
-GOOGLE_ANALYTICS = True
 
 THEME = 'mytheme'
 CSS = 'theme/css'
