@@ -1,16 +1,15 @@
 Title: Trading Ethereum: Making 10% every 20 minutes
-Tags: algotrading
+Tags: popular
+Category: Trading
 Date: 2016-07-27 22:34
+Image: bigShort.jpg
 
 This is more of a *"How to build your own algotrading strategy - the Ethereum edition"* and not a "make money fast" blog post.
-
 
 It is also a real example with real returns (and real production errors that cost me money) where you can see how to identify opportunities, why algotrading is awesome and why risk management can save your ass.
 
 
 *This is the another post of the series: [How to build your own algotrading platform](how-to-build-your-own-algorithmic-trading-platform.html).*
-
-<img src="theme/images/bigShort.jpg" class="" alt="" />
 
 I get this question almost on a daily basis. How can I find a good strategy? How can I built my own? Do I need to have a PhD in mathematics? Statistics?
 

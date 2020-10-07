@@ -1,5 +1,7 @@
 Title: Machine Beats Human: Using Machine Learning in Forex 
-Tags: algotrading
+Tags: popular
+Category: Trading
+Image: lethe.png
 Date: 2016-05-13 22:30
 
 *This is the another post of the series: [How to build your own algotrading platform](how-to-build-your-own-algorithmic-trading-platform.html).*
@@ -17,7 +19,7 @@ In the nexts posts, we are going to talk about:
 
 **But what is Machine Learning?**
 
-<img src="theme/images/stallone.jpg" class="" alt="" />
+<!-- <img src="theme/images/stallone.jpg" class="" alt="" /> -->
 (image from [fastcompany](http://www.fastcompany.com/3028414/how-facebooks-machines-got-so-good-at-recognizing-your-face))
 
 Machine learning algorithms are algorithms where **a machine can identify patterns in your data**. Yeap, it is that simple. For example, find all the animals in this photo and draw a box around them. Also, name that animal. Crazy I know. For trading as you can imagine it is pretty similar:

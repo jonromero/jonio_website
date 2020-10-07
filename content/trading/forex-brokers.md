@@ -1,6 +1,7 @@
 Title: Placing your first Forex trade with Python
 Tags: algotrading
 Date: 2016-12-06 22:48
+Image: forex.png
 
 Update: I updated the code so it works with Oanda's new API. Get it [here](https://github.com/jonromero/forex_algotrading)
 
