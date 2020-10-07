@@ -2,10 +2,14 @@ Title: Thank you
 status: hidden
 
 Thank you for signing up!
-           
-Follow me on twitter [@jonromero](http://twitter.com/jonromero).
-Follow me on Instagram [@jonromero](http://twitter.com/jonvictory).
 
-Enjoy!
+**Prepare for EPICNESS**
+
+Until then:
+           
+1/ Follow me on twitter [@jonromero](http://twitter.com/jonromero).
+
+2/ Follow me on Instagram [@JonVictory](https://www.instagram.com/jonvictory/).
+
 
 
