@@ -1,4 +1,4 @@
-name: Pelican Builder
+name: Website (Jon.IO) static builder
 
 on:
   push:
