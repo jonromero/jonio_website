@@ -21,7 +21,7 @@ My first company was building websites and eshops in Greece. Tons of work. Tons 
 
 ## Revelation III: Build to scale
 
-For a year, I won (or ended top 3) in almost every competition that had a price. From building virtual machines to social wellness websites, if there was a price, I would crash the competition, get the money and start building. Tons of work. Tons of fun. I learnt how to build products very fast, test them out and then ... fail. Fail painfully hard.  
+For a year, I won (or ended top 3) in almost every competition that had a prize. From building virtual machines to social wellness websites, if there was a prize, I would crash the competition, get the money and start building. Tons of work. Tons of fun. I learnt how to build products very fast, test them out and then ... fail. Fail painfully hard.  
 
 ## Revelation IV: Build to fail
 
