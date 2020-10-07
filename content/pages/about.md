@@ -64,7 +64,7 @@ The Universe doesn't give a fuck about how you finished college and you should f
 ## Revelation VIII: Be grateful
 
 I am not a self-made man. I was already crazy wealthy before all of these started. 
-
+  
 I was wealthy from love and support from my family.
 
 I was wealthy from the education that was given to me (for free) from my country.
