@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Jon V <h2>BigData. Startups. Trading.</h2>'
 SITENAME = u'Jon.IO'
-SITEURL = u'http://jon.io'
+SITEURL = u''
 TIMEZONE = u'America/Los_Angeles'
 
 PATH = 'content/'
