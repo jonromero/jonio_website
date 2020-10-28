@@ -84,7 +84,7 @@
                     <div class="flex-1">
 
                         <p class="text-sm leading-5 font-medium text-indigo-600">
-                            <a href="category/{{article.category.name}}"> {{ article.category.name.capitalize() }}</a>
+                            <a href="category/{{article.category.name.lower() }}"> {{ article.category.name.capitalize() }}</a>
                         </p>
                         <a href="{{article.url}}">
                             <h3 class="mt-2 block text-xl leading-7 font-semibold text-gray-900">
@@ -135,7 +135,7 @@
                     <div class="flex-1">
 
                         <p class="text-sm leading-5 font-medium text-indigo-600">
-                            <a href="category/{{article.category.name}}"> {{ article.category.name.capitalize() }}</a>
+                            <a href="category/{{article.category.name.lower()}}"> {{ article.category.name.capitalize() }}</a>
                         </p>
                         <a href="{{article.url}}">
                             <h3 class="mt-2 block text-xl leading-7 font-semibold text-gray-900">
