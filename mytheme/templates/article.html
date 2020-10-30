@@ -1,5 +1,10 @@
 {% extends "base.html" %}
-{% block title %}{{ article.title }} - {{ SITENAME }}{%endblock%}
+
+{% block meta_image %}/images/{{article.image}}{%endblock%}
+{% block meta_desc %}{{article.summary}}{%endblock%}
+{% block meta_title %}{{article.title}}{%endblock%}
+
+{% block title %}{{ article.title }} - {{ SITENAME }} {%endblock%}
 {% block content %}
 
 <div class="relative py-16 bg-white overflow-hidden">
