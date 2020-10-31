@@ -91,10 +91,9 @@ If you want to learn how your users can use your product, eliminate all your bia
 Remember, you cannot make everyone happy. The Perfect User Does Not Exist.
 
 ## A huge thanks
-Goes to everyone who sent me their drawings and sorry if I yours is not included in this post. 
+Goes to everyone who sent me their drawings! You get free access to the course **forever** :)
 
-Please ping me on social media if you want me to add your name and a link and sign up to the mailing list to get updates about the course. 
-Oh, if you've sent me a drawing, you also get free access to the course forever. 
+If you want to learn more about the course, don't forget to sign up to the [mailing list](/pages/weekly-tips) 
 
 Now go and make some products that don't exist.
 
