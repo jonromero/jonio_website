@@ -93,7 +93,7 @@ Remember, you cannot make everyone happy. The Perfect User Does Not Exist.
 ## A huge thanks
 Goes to everyone who sent me their drawings! You get free access to the course **forever** :)
 
-If you want to learn more about the course, don't forget to sign up to the [mailing list](/pages/weekly-tips) 
+If you want to learn more about the course, don't forget to sign up to the [mailing list](/pages/weekly-tips).
 
 Now go and make some products that don't exist.
 
