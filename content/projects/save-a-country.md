@@ -1,7 +1,7 @@
 Title: How I spent my summer, helping to save a whole country
 Category: Projects 
 Date: 2020-11-30 10:48
-Image: greece-ml.jpg
+Image: greece-ml.jpeg
 
 It was three months ago when my friend Kimonas asked me if I can help him with a huge secret project that he had on his mind. It was kind of a cheap shot as “huge secret project” are my trigger words.
 
@@ -15,7 +15,7 @@ It turned out that the Prime Minister and his team of scientists were on the cal
 
 If you don’t know Greece, I assume it is because you hate good food, sunshine, breathtaking beaches, history, and you haven’t watched “My Big Greek Fat Wedding”. And this comes from someone that is 100% impartial on this (being Greek doesn’t mean I cannot be impartial, right?).
 
-![Photo by Jonathan Gallegos on Unsplash](/images/greece-ml.jpg)
+![Photo by Jonathan Gallegos on Unsplash](/images/greece-ml.jpeg)
 Photo by Jonathan Gallegos on Unsplash
 
 Greece has a population of 11 million and during non-COVID19 summers, the country hosts more than **33 million tourists**. This is **more than 3 times the population of the entire country**. They all come to Greece and spend most of their time on the (tiny) Greek Islands. Oh, and most of them come **during the three (summer) months**.
