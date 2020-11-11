@@ -1,6 +1,6 @@
 Title: How I spent my summer, helping to save a whole country
 Category: Projects 
-Date: 2020-11-30 10:48
+Date: 2020-11-10 10:48
 Image: greece-ml.jpeg
 
 It was three months ago when my friend Kimonas asked me if I can help him with a huge secret project that he had on his mind. It was kind of a cheap shot as “huge secret project” are my trigger words.
