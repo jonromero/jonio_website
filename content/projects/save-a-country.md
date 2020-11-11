@@ -11,8 +11,6 @@ It turned out that the Prime Minister and his team of scientists were on the cal
 
 > We are going to build something that has never been built before.
 
----
-
 If you don’t know Greece, I assume it is because you hate good food, sunshine, breathtaking beaches, history, and you haven’t watched “My Big Greek Fat Wedding”. And this comes from someone that is 100% impartial on this (being Greek doesn’t mean I cannot be impartial, right?).
 
 ![Photo by Jonathan Gallegos on Unsplash](/images/greece-ml.jpeg)
