@@ -60,6 +60,7 @@ EVA might seem like a “Deus Ex Machina” but as Greeks say
 EVA is the brain child of three very smart people. And me.
 
 The team is:
+
 - [Hamsa Bastani](https://www.linkedin.com/in/hamsa-bastani-4a346955/), assistant professor of operations, information and decisions from the Wharton School at the University of Pennsylvania
 - [Kimon Drakopoulos](https://www.linkedin.com/in/kimon-drakopoulos-a5663341/), assistant professors of data science and operations at the Marshall School
 - [Vishal Gupta](https://www.linkedin.com/in/vishal-gupta-usc/), assistant professors of data science and operations at the Marshall School
