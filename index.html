@@ -19,16 +19,13 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.6.0/dist/alpine.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tailwindcss/ui@latest/dist/tailwind-ui.min.css">
     <script src="./theme/js/main.js"></script>
-
+    <link rel="icon" href="/images/favicon.ico" />
 
     <meta property="og:image" content="/images/jon.jpg" />
     <meta property="og:description" content="Epic stories about how: I built and sold the most epic companies without going insane, how I helped a whole country fight COVID-19 🦠 with Machine Learning, how I created a wealth management company from scratch and kicked Wall Street's ass, how I ran the first arbitrage algorithms on blockchain, made and lost everything (and then made them back) [...]
     and many more!" />
     <meta property="og:url" content="https://jon.io" />
     <meta property="og:title" content="Algorithms pay my bills" />
-
-
-
 </head>
 
 <body>
@@ -190,7 +187,10 @@
                     <p class="mt-3 text-lg leading-7 ">
                     <ol class="text-left list-decimal list-outside my-5 pl-2">
                         <li>I built and sold the most <b>epic</b> companies without going insane 🤯</li>
-                        <li>I helped a whole country fight COVID-19 🦠 with Machine Learning
+                        <li>I helped a <a class="text-indigo-400"
+                                href="how-i-spent-my-summer-helping-to-save-a-whole-country">whole country </a> fight
+                            COVID-19 🦠 with
+                            Machine Learning
                         </li>
                         <li>I created a wealth management company from scratch and kicked Wall Street's ass
                         </li>
@@ -243,13 +243,43 @@
         <div class="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
             <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
                 <div class="flex-shrink-0">
+                    <img class="h-48 w-full object-cover" src="images/plane.png" alt="">
+                </div>
+                <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+                    <div class="flex-1">
+
+                        <p class="text-sm leading-5 font-medium text-indigo-600">
+                            <a href="category/startups">
+                                Startups</a>
+                        </p>
+                        <a href="your-blind-spots-will-bring-you-down">
+                            <h3 class="mt-2 block text-xl leading-7 font-semibold text-gray-900">
+                                Your blind spots will bring you down
+                            </h3>
+                            <p class="mt-3 text-base leading-6 text-gray-500">
+                                <p>It is 1943 and you are Head of the United States Eighth Air Force. Your mission is to destroy Germany's ability to wage war and free up the skies for the Allied Forces. The problem is that your Bombers are being zapped out of the sky like mosquitos drawn into …</p>
+                            </p>
+
+                    </div>
+                    <div class="mt-6 flex items-center">
+                        <div class="ml-3">
+                            <p class="text-sm leading-5 font-medium text-gray-900">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+                <div class="flex-shrink-0">
                     <img class="h-48 w-full object-cover" src="images/venicepier.jpg" alt="">
                 </div>
                 <div class="flex-1 bg-white p-6 flex flex-col justify-between">
                     <div class="flex-1">
 
                         <p class="text-sm leading-5 font-medium text-indigo-600">
-                            <a href="category/startups"> Startups</a>
+                            <a href="category/startups">
+                                Startups</a>
                         </p>
                         <a href="addictive-design-using-unpredictable-rewards">
                             <h3 class="mt-2 block text-xl leading-7 font-semibold text-gray-900">
@@ -273,45 +303,14 @@
             </div>
             <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
                 <div class="flex-shrink-0">
-                    <img class="h-48 w-full object-cover" src="images/church.jpeg" alt="">
-                </div>
-                <div class="flex-1 bg-white p-6 flex flex-col justify-between">
-                    <div class="flex-1">
-
-                        <p class="text-sm leading-5 font-medium text-indigo-600">
-                            <a href="category/startups"> Startups</a>
-                        </p>
-                        <a href="the-roamcult-why-creating-a-cult-for-your-startups-is-what-you-should-be-doing-right-now">
-                            <h3 class="mt-2 block text-xl leading-7 font-semibold text-gray-900">
-                                The #RoamCult: Why creating a cult for your Startups is what you should be doing right now
-                            </h3>
-                            <p class="mt-3 text-base leading-6 text-gray-500">
-                                <blockquote>
-<p>Or why you should have a "Believer" plan</p>
-</blockquote>
-<p>Recurring revenue. Two words synonym to predictable revenue and known for bringing smiles and high-fives to VCs and founders.</p>
-<p>Every single tech company I know has a recurring revenue business model. Even the big ones are trying moving to a SaaS model …</p>
-                            </p>
-
-                    </div>
-                    <div class="mt-6 flex items-center">
-                        <div class="ml-3">
-                            <p class="text-sm leading-5 font-medium text-gray-900">
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                </a>
-            </div>
-            <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
-                <div class="flex-shrink-0">
                     <img class="h-48 w-full object-cover" src="images/nofail.jpeg" alt="">
                 </div>
                 <div class="flex-1 bg-white p-6 flex flex-col justify-between">
                     <div class="flex-1">
 
                         <p class="text-sm leading-5 font-medium text-indigo-600">
-                            <a href="category/productivity"> Productivity</a>
+                            <a href="category/productivity">
+                                Productivity</a>
                         </p>
                         <a href="fund-you-how-to-make-fundraising-1000x-times-easier">
                             <h3 class="mt-2 block text-xl leading-7 font-semibold text-gray-900">
@@ -341,7 +340,8 @@
                     <div class="flex-1">
 
                         <p class="text-sm leading-5 font-medium text-indigo-600">
-                            <a href="category/startups"> Startups</a>
+                            <a href="category/startups">
+                                Startups</a>
                         </p>
                         <a href="how-to-try-your-startup-idea-with-0">
                             <h3 class="mt-2 block text-xl leading-7 font-semibold text-gray-900">
@@ -370,7 +370,8 @@
                     <div class="flex-1">
 
                         <p class="text-sm leading-5 font-medium text-indigo-600">
-                            <a href="category/trading"> Trading</a>
+                            <a href="category/trading">
+                                Trading</a>
                         </p>
                         <a href="trading-ethereum-making-10-every-20-minutes">
                             <h3 class="mt-2 block text-xl leading-7 font-semibold text-gray-900">
@@ -399,7 +400,8 @@
                     <div class="flex-1">
 
                         <p class="text-sm leading-5 font-medium text-indigo-600">
-                            <a href="category/trading"> Trading</a>
+                            <a href="category/trading">
+                                Trading</a>
                         </p>
                         <a href="machine-beats-human-using-machine-learning-in-forex">
                             <h3 class="mt-2 block text-xl leading-7 font-semibold text-gray-900">
@@ -443,13 +445,75 @@
             <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
 
                 <div class="flex-shrink-0">
+                    <img class="h-48 w-full object-cover" src="images/plane.png" alt="">
+                </div>
+                <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+                    <div class="flex-1">
+
+                        <p class="text-sm leading-5 font-medium text-indigo-600">
+                            <a href="category/startups">
+                                Startups</a>
+                        </p>
+                        <a href="your-blind-spots-will-bring-you-down">
+                            <h3 class="mt-2 block text-xl leading-7 font-semibold text-gray-900">
+                                Your blind spots will bring you down
+                            </h3>
+                            <p class="mt-3 text-base leading-6 text-gray-500">
+                                <p>It is 1943 and you are Head of the United States Eighth Air Force. Your mission is to destroy Germany's ability to wage war and free up the skies for the Allied Forces. The problem is that your Bombers are being zapped out of the sky like mosquitos drawn into …</p>
+                            </p>
+
+                    </div>
+                    <div class="mt-6 flex items-center">
+                        <div class="ml-3">
+                            <p class="text-sm leading-5 font-medium text-gray-900">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+
+                <div class="flex-shrink-0">
+                    <img class="h-48 w-full object-cover" src="images/greece-ml.jpeg" alt="">
+                </div>
+                <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+                    <div class="flex-1">
+
+                        <p class="text-sm leading-5 font-medium text-indigo-600">
+                            <a href="category/projects">
+                                Projects</a>
+                        </p>
+                        <a href="how-i-spent-my-summer-helping-to-save-a-whole-country">
+                            <h3 class="mt-2 block text-xl leading-7 font-semibold text-gray-900">
+                                How I spent my summer, helping to save a whole country
+                            </h3>
+                            <p class="mt-3 text-base leading-6 text-gray-500">
+                                <p>It was three months ago when my friend Kimonas asked me if I can help him with a huge secret project that he had on his mind. It was kind of a cheap shot as “huge secret project” are my trigger words.</p>
+<p>He asked me if I can join him …</p>
+                            </p>
+
+                    </div>
+                    <div class="mt-6 flex items-center">
+                        <div class="ml-3">
+                            <p class="text-sm leading-5 font-medium text-gray-900">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+
+                <div class="flex-shrink-0">
                     <img class="h-48 w-full object-cover" src="images/artcover.png" alt="">
                 </div>
                 <div class="flex-1 bg-white p-6 flex flex-col justify-between">
                     <div class="flex-1">
 
                         <p class="text-sm leading-5 font-medium text-indigo-600">
-                            <a href="category/startups"> Startups</a>
+                            <a href="category/startups">
+                                Startups</a>
                         </p>
                         <a href="this-product-doesnt-exist-building-products-super-fast">
                             <h3 class="mt-2 block text-xl leading-7 font-semibold text-gray-900">
@@ -479,7 +543,8 @@
                     <div class="flex-1">
 
                         <p class="text-sm leading-5 font-medium text-indigo-600">
-                            <a href="category/productivity"> Productivity</a>
+                            <a href="category/productivity">
+                                Productivity</a>
                         </p>
                         <a href="the-backfire-effect-how-to-convince-irrational-people">
                             <h3 class="mt-2 block text-xl leading-7 font-semibold text-gray-900">
@@ -509,7 +574,8 @@
                     <div class="flex-1">
 
                         <p class="text-sm leading-5 font-medium text-indigo-600">
-                            <a href="category/startups"> Startups</a>
+                            <a href="category/startups">
+                                Startups</a>
                         </p>
                         <a href="addictive-design-using-unpredictable-rewards">
                             <h3 class="mt-2 block text-xl leading-7 font-semibold text-gray-900">
@@ -540,7 +606,8 @@
                     <div class="flex-1">
 
                         <p class="text-sm leading-5 font-medium text-indigo-600">
-                            <a href="category/startups"> Startups</a>
+                            <a href="category/startups">
+                                Startups</a>
                         </p>
                         <a href="why-ive-built-a-custom-blog-with-pelican-and-tailwind">
                             <h3 class="mt-2 block text-xl leading-7 font-semibold text-gray-900">
@@ -550,76 +617,6 @@
                                 <p>There are so many website generators out there that let you build your website and blog in minutes. Why on earth someone will be building its own using <a href="https://blog.getpelican.com/">Pelican</a> and not <strong>AT LEAST</strong> NextJS?</p>
 <h2>Hm</h2>
 <p>I never had a personal website but I always had a blog. First on tumblr …</p>
-                            </p>
-
-                    </div>
-                    <div class="mt-6 flex items-center">
-                        <div class="ml-3">
-                            <p class="text-sm leading-5 font-medium text-gray-900">
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                </a>
-            </div>
-            <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
-
-                <div class="flex-shrink-0">
-                    <img class="h-48 w-full object-cover" src="images/sabbath.jpeg" alt="">
-                </div>
-                <div class="flex-1 bg-white p-6 flex flex-col justify-between">
-                    <div class="flex-1">
-
-                        <p class="text-sm leading-5 font-medium text-indigo-600">
-                            <a href="category/productivity"> Productivity</a>
-                        </p>
-                        <a href="i-tried-a-digital-sabbath-and-it-was-epic">
-                            <h3 class="mt-2 block text-xl leading-7 font-semibold text-gray-900">
-                                I tried a Digital Sabbath and it was epic
-                            </h3>
-                            <p class="mt-3 text-base leading-6 text-gray-500">
-                                <p><a href="https://en.wikipedia.org/wiki/Nassim_Nicholas_Taleb">Nicholas Taleb</a> once said:</p>
-<blockquote>
-<p>The three most harmful addictions are heroin, carbohydrates, and a monthly salary.</p>
-</blockquote>
-<p>If he was an Entrepreneur living in Los Angeles or San Francisco he would know that the quote should be:</p>
-<blockquote>
-<p>The three most harmful addictions are carbs, a monthly salary and Instagram.</p>
-</blockquote>
-<p>I spend …</p>
-                            </p>
-
-                    </div>
-                    <div class="mt-6 flex items-center">
-                        <div class="ml-3">
-                            <p class="text-sm leading-5 font-medium text-gray-900">
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                </a>
-            </div>
-            <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
-
-                <div class="flex-shrink-0">
-                    <img class="h-48 w-full object-cover" src="images/church.jpeg" alt="">
-                </div>
-                <div class="flex-1 bg-white p-6 flex flex-col justify-between">
-                    <div class="flex-1">
-
-                        <p class="text-sm leading-5 font-medium text-indigo-600">
-                            <a href="category/startups"> Startups</a>
-                        </p>
-                        <a href="the-roamcult-why-creating-a-cult-for-your-startups-is-what-you-should-be-doing-right-now">
-                            <h3 class="mt-2 block text-xl leading-7 font-semibold text-gray-900">
-                                The #RoamCult: Why creating a cult for your Startups is what you should be doing right now
-                            </h3>
-                            <p class="mt-3 text-base leading-6 text-gray-500">
-                                <blockquote>
-<p>Or why you should have a "Believer" plan</p>
-</blockquote>
-<p>Recurring revenue. Two words synonym to predictable revenue and known for bringing smiles and high-fives to VCs and founders.</p>
-<p>Every single tech company I know has a recurring revenue business model. Even the big ones are trying moving to a SaaS model …</p>
                             </p>
 
                     </div>
