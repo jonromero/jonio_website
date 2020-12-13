@@ -6,6 +6,7 @@
 {% block title %}{{ article.title }} - {{ SITENAME }} {%endblock%}
 {% block content %}
 
+
 <div class="relative py-16 bg-white overflow-hidden">
     <div class="relative px-4 sm:px-6 lg:px-8">
         <div class="text-lg max-w-prose mx-auto mb-6">
@@ -18,10 +19,41 @@
         </div>
         <div class="prose prose-lg text-gray-500 mx-auto">
             {{article.content}}
+
+            <!-- Course -->
+            <div class="mt-8 bg-gray-200">
+                <div class="shadow p-4 text-center">
+                    <span class="text-xl text-gray-800 font-bold">If you liked this article, you are going to love
+                        this</span>
+
+                    <div class="text-md pt-2">
+                        Learn my simple, repeatable process for transforming ideas into Startups using my free email
+                        course <a class="text-indigo-400" href="pages/built-to-fail">"Built To Fail"</a>.
+                        Enter your email in the box below and I'll send you Lesson #1.
+                    </div>
+                    <form method="post" action="https://sendfox.com/form/1we8gr/m82qdq" class="sendfox-form" id="m82qdq"
+                        data-async="true" data-recaptcha="true">
+                        <p><input autocomplete="email" required
+                                class="w-full px-5 py-3 border border-transparent placeholder-gray-500 focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white focus:border-white"
+                                placeholder="Enter your email" type="email" name="email" /></p>
+                        <!-- no botz please -->
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                                name="a_password" tabindex="-1" value="" autocomplete="off" /></div>
+                        <p><button
+                                class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500"
+                                type="submit">👉 Get the 1st lesson 👈</button></p>
+                    </form>
+                    <script src="https://sendfox.com/js/form.js"></script>
+                </div>
+            </div>
+            <!-- COURSE END -->
+
             <p class="text-right">
                 - {{  article.locale_date }}
             </p>
+
         </div>
+
 
         <!-- RELATED posts -->
         <div class="bg-white pt-16 pb-8 px-4 sm:px-6 lg:pt-24 lg:pb-9 lg:px-8">
