@@ -69,6 +69,22 @@ This year I started focusing more on "life design" (I'll post more about **life 
 
 Life design helps you build your day, week, month and year in a way that creates a perfect flow for you. It usually requires you to reprioritize your whole belief system but the main gist is if you are not ecstatic about something, you shouldn't do it. This new navigational framework is making ripples on the rest of my life as old milestones (like raising money for my company or even selling it) become swamps that will slow you down. 
 
+The core lies in finding the things that you are madly in love with and center your life around them while avoiding the things that you hate. Definititely not as easy as it sounds. 
+
+It needs you to be true to yourself, crash your ego and reevaluate your whole day/week/month/year/life. 
+
+> It is one of these things that start as a whisper and end up as a roar
+
+Here is an example:
+
+Someone sends you an email for a meeting. You are "so and so" but because you are polite, you respond and have the 30m meeting that goes nowhere.
+
+This is **definitely not** a HELL YEAH.
+
+Nowadays, I am not checking email (sometimes for a week) and then on new emails if it is not a **hell yeah**, I might not even respond. I know, it sounds like an asshole move and I ALWAYS tried to respond to everyone in the past but this is not aligned with my current life design. 
+
+Guard your time and [control your calendar else someone else will control your life](https://jon.io/3-tricks-to-smash-your-goals).
+
 I hope I convinced you to spend at least 10 minutes and write down the things that you love and the things that you hate. It is the only step to become better.
 
 Let me know what you think.
