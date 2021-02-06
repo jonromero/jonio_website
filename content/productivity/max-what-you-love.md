@@ -69,7 +69,7 @@ This year I started focusing more on "life design" (I'll post more about **life 
 
 Life design helps you build your day, week, month and year in a way that creates a perfect flow for you. It usually requires you to reprioritize your whole belief system but the main gist is if you are not ecstatic about something, you shouldn't do it. This new navigational framework is making ripples on the rest of my life as old milestones (like raising money for my company or even selling it) become swamps that will slow you down. 
 
-The core lies in finding the things that you are madly in love with and center your life around them while avoiding the things that you hate. Definititely not as easy as it sounds. 
+The core lies in finding the things that you are madly in love with and center your life around them while avoiding the things that you hate. Definitively not as easy as it sounds. 
 
 It needs you to be true to yourself, crash your ego and reevaluate your whole day/week/month/year/life. 
 
