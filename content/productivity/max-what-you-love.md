@@ -86,5 +86,3 @@ Nowadays, I am not checking email (sometimes for a week) and then on new emails 
 Guard your time and [control your calendar else someone else will control your life](https://jon.io/3-tricks-to-smash-your-goals).
 
 I hope I convinced you to spend at least 10 minutes and write down the things that you love and the things that you hate. It is the only step to become better.
-
-Let me know what you think.
