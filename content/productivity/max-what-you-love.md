@@ -27,7 +27,7 @@ I really missed writing code and building products that **just work** instead of
 
 And that put me in an interesting situation:
 
-Being the CEO of the Wealth Management company in the planet is an amazing ego booster. It is a social status that is higher than "a guy writing code and building stuff".  
+Being the CEO of the best Wealth Management company in the planet is an amazing ego booster. It is a social status that is higher than "a guy writing code and building stuff".  
 
 But it seems that it just is "not fun" for me. I definitely plan to fix this this year by "making investing fun again". 
 
