@@ -73,7 +73,7 @@ The core lies in finding the things that you are madly in love with and center y
 
 It needs you to be true to yourself, crash your ego and reevaluate your whole day/week/month/year/life. 
 
-> It is one of these things that start as a whisper and end up as a roar
+> It is one of these things that starts as a whisper and ends up as a roar
 
 Here is an example:
 

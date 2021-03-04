@@ -1,6 +1,5 @@
 Title: How to try your Startup idea with $0  
 Category: Startups
-Tags: popular
 Date: 2020-05-09 10:48
 Image: unicorn.png
 Related: trading-ethereum-making-10-every-20-minutes
