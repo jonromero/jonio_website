@@ -9,7 +9,7 @@ There are 9960 NFTs of the [first edition](https://omgdrops.com/jonv/piece-of-ca
 
 ![First edition](/images/jonscake.gif)
 
-The [second edition](https://omgdrops.com/jonv/piece-of-cake_v2s1Oc8vg1/) costs **Ξ 0.1** (UPDATE: it was sold out!), there are only 40 copies and has **unlockable content**. The content is a numbered acrylic art block that contains the NFT and I will ship it wherever you live. For free.
+The [second edition](https://omgdrops.com/jonv/piece-of-cake_v2s1Oc8vg1/) costs **Ξ 0.1** (UPDATE: it is sold out!), there are only 40 copies and has **unlockable content**. The content is a numbered acrylic art block that contains the NFT and I will ship it wherever you live. For free.
 
 > In case you didn't understand, this NFT comes also with a physical product, send to your place for free.
 
