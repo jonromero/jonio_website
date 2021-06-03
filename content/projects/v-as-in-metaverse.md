@@ -36,5 +36,7 @@ I am looking for speakers, people to help, sponsors, media sponsors and in gener
 
 Super excited and super stressed but it is going to be awesome!
 
+PS: If you bought [one of my NFTs](my-birthday-cake-as-an-nft), talk to me on Discord because you get a free ticket :D
+
 Coming Next: How difficult is to create a crypto island?
 
