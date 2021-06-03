@@ -25,7 +25,7 @@ jobs:
       run: |
         touch ./output/.nojekyll
     - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@master
+      uses: JamesIves/github-pages-deploy-action@main
       if: success()
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
