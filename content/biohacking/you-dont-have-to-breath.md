@@ -34,6 +34,8 @@ But what happens when you pump your system with too much oxygen all day long?
 
 ## Firestarter
 
+![](/images/firestarter.jpg)
+
 By overusing your mitochondria, you start creating inflamation in your body (you create free radicals). Inflamation can be good if it is controlled (like when you go to gym, you pump iron and then your muscles recover and you get stronger) but if it happens all the time is bad. Very bad. 
 
 On top of that, your mitochondria are not working very efficiently. They create energy that is not used as it supposed to.
