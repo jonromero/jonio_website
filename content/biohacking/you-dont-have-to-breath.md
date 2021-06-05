@@ -52,7 +52,7 @@ no idea that you are in danger. You are just very very happy (happy hormones suc
 ## Soooo, now oxygen is good?
 
 When you increase for **a bit** your CO2 levels, you are putting your body under stress. 
-Like going to the gym and you exercise. When the exercise is over the balance is restored, your body has improved. Your mitochondria are operating a bit more efficiently, the inflammation has gone down and the temporary inflamation created has actually attacked any possible diseases. 
+Like going to the gym and you exercise. When the exercise is over the balance is restored, your body has improved. Your mitochondria are operating a bit more efficiently, the inflammation has gone down and the temporary inflamation created has actually attacked any possible intruders. 
 
 By increasing **mindfully** your oxygen levels, you make your blood alkaline (you increase it's pH) and my increasing your CO2 levels, you make it acidic. This switch, makes your autonomous nervous system to rebalance and leads to reduced stress, anxiety and increased performance.
 
