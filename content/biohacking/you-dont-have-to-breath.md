@@ -8,7 +8,7 @@ This summer I was planning to spend some time practicing breathwork across Europ
 > Breathwork is breathing with intention in order to provoke physical or mental changes
 
 I found out very fast that the majority of people have no idea what a superpower breathing can be.
-And of course that we are breathing fundamentaly wrong (hint: you should breathe **less**).
+And of course that we are breathing fundamentally wrong (hint: you should breathe **less**).
 
 ## How can breathing make you stressed
 
