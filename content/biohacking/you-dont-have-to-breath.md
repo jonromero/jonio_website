@@ -68,7 +68,7 @@ In the next posts, we'll cover topics like:
 1. How to unblock your nose in 1 minute by alternating your breathing
 2. How to hold your breath for 2 minutes with less than 1 minute practice
 3. How you can improve your immune system with breathing exercises (and tons of scientific research)
-4. And six different breathworks for relaxation (Wim Hof, Holotropic, Buteyko etc)
+4. Six different breathworks for relaxation (Wim Hof, Holotropic, Buteyko etc)
 5. Why breathing from your mouth changes the structure of your whole face
 6. And tons of more cool factoids
 
