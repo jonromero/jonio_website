@@ -44,7 +44,7 @@ This has been linked to a lot of illnesses like diabetes, cancer and Alzheimer's
 ## Getting high on your own supply
 
 When I was training for my pilots' license, I was told about hypoxia - the phenomenon of not having enough oxygen. 
-It happens when you are over 20000 feet and you can check (this video)[https://www.youtube.com/watch?v=n_MI9UiYwJA] to see that it is hilarious (when you are on the ground). 
+It happens when you are over 20000 feet and you can check [this video](https://www.youtube.com/watch?v=n_MI9UiYwJA) to see that it is hilarious (when you are on the ground). 
 
 Hypoxia is deadly when you are flying a plane because you feel ephoric as your brain start hallucinating and you have
 no idea that you are in danger. You are just very very happy (happy hormones such as serotonin, dopamine, oxytocin, noradrenaline are released when CO2 levels are high). And this happens because there is lack of oxygen. 
