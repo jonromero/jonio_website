@@ -54,9 +54,9 @@ no idea that you are in danger. You are just very very happy (happy hormones suc
 When you increase for **a bit** your CO2 levels, you are putting your body under stress. 
 Like going to the gym and you exercise. When the exercise is over the balance is restored, your body has improved. Your mitochondria are operating a bit more efficiently, the inflammation has gone down and the temporary inflamation created has actually attacked any possible intruders. 
 
-By increasing **mindfully** your oxygen levels, you make your blood alkaline (you increase it's pH) and my increasing your CO2 levels, you make it acidic. This switch, makes your autonomous nervous system to rebalance and leads to reduced stress, anxiety and increased performance.
+By increasing **mindfully** your oxygen levels, you make your blood alkaline (you increase it's pH) and my increasing your CO2 levels, you make it acidic. This switch, makes your autonomous nervous system to rebalance and leads to reduced stress, reduced anxiety and increased performance.
 
-Increasing your CO2 levels (as we said you learn to increase them), you can increase your athletic performance. This is due to the fact that you increase production of ATP. As an example is using the Wim Hof breathing, you can perform a lot more push ups than you actually can **while you hold your breath**.
+Increasing your CO2 levels (as we said you can learn to increase the threshold with practice), you can increase your athletic performance. This is due to the fact that you increase production of ATP. An example is by using the Wim Hof breathing, you can perform a lot more push ups than you are able to do, all **while holding your breath**.
 
 
 ## Damn this is interesting
