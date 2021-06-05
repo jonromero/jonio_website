@@ -1,7 +1,7 @@
 Title: You are breathing wrong
 Category: Biohacking 
 Date: 2021-06-04 22:48
-Image: event.jpg
+Image: desert.jpg
 
 This summer I was planning to spend some time practicing breathwork across Europe. For those not familiar with what breathwork is 
 
