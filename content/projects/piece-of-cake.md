@@ -5,11 +5,11 @@ Image: jonscake.gif
 
 I just released the NFT "Piece of cake" for my birthday! And there are two editions. And both of them are epic.
 
-There are 9960 NFTs of the [first edition](https://omgdrops.com/jonv/pieceofcake/) that cost **Ξ 0.01** each. They have this epic NFT, pixelated and animated by me, stored in the brand new Decentralized App (DApp) of OMGDrops and on IPFS.
+There are 9960 NFTs of the [first edition](https://omgdrops.com/jonv/piece-of-cake_v2s1Oc8vg1/) that cost **Ξ 0.01** each. They have this epic NFT, pixelated and animated by me, stored in the brand new Decentralized App (DApp) of OMGDrops and on IPFS.
 
 ![First edition](/images/jonscake.gif)
 
-The [second edition](https://omgdrops.com/jonv/pieceofcake_limited/) costs **Ξ 0.1** , there are only 40 copies and has **unlockable content**. The content is a numbered acrylic art block that contains the NFT and I will ship it wherever you live. For free.
+The [second edition](https://omgdrops.com/jonv/piece-of-cake_v2s1Oc8vg1/) costs **Ξ 0.1** (UPDATE: it is sold out!), there are only 40 copies and has **unlockable content**. The content is a numbered acrylic art block that contains the NFT and I will ship it wherever you live. For free.
 
 > In case you didn't understand, this NFT comes also with a physical product, send to your place for free.
 

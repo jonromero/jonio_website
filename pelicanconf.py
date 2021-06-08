@@ -51,5 +51,4 @@ CATEGORY_URL = 'category/{slug}'
 
 PLUGINS = ['sitemap', 'related_posts']
 
-SITEMAP = {
-    "format": "xml"}
+SITEMAP = {"format": "xml"}

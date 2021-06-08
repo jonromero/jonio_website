@@ -25,13 +25,11 @@ jobs:
       run: |
         touch ./output/.nojekyll
     - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@master
-      if: success()
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BASE_BRANCH: master
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: output # The folder the action should deploy.
-          CLEAN: true # Automatically remove deleted files from the deploy branch
+      uses: JamesIves/github-pages-deploy-action@4.1.3
+      with: 
+        branch: gh-pages
+        folder: output
+        clean: true
+
      
       

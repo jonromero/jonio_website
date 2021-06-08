@@ -54,15 +54,14 @@ def format_date(date):
         tz = "-00:00"
     return date.strftime("%Y-%m-%dT%H:%M:%S") + tz
 
-class SitemapGenerator(object):
 
+class SitemapGenerator(object):
     def __init__(self, context, settings, path, theme, output_path, *null):
 
         self.output_path = output_path
         self.context = context
         self.now = datetime.now()
         self.siteurl = settings.get('SITEURL')
-
 
         self.default_timezone = settings.get('TIMEZONE', 'UTC')
         self.timezone = getattr(self, 'timezone', self.default_timezone)
@@ -76,11 +75,7 @@ class SitemapGenerator(object):
             'pages': 'monthly'
         }
 
-        self.priorities = {
-            'articles': 0.5,
-            'indexes': 0.5,
-            'pages': 0.5
-        }
+        self.priorities = {'articles': 0.5, 'indexes': 0.5, 'pages': 0.5}
 
         self.sitemapExclude = []
 
@@ -95,7 +90,8 @@ class SitemapGenerator(object):
             self.sitemapExclude = config.get('exclude', [])
 
             if fmt not in ('xml', 'txt'):
-                warning("sitemap plugin: SITEMAP['format'] must be `txt' or `xml'")
+                warning(
+                    "sitemap plugin: SITEMAP['format'] must be `txt' or `xml'")
                 warning("sitemap plugin: Setting SITEMAP['format'] on `xml'")
             elif fmt == 'txt':
                 self.format = fmt
@@ -103,7 +99,7 @@ class SitemapGenerator(object):
 
             valid_keys = ('articles', 'indexes', 'pages')
             valid_chfreqs = ('always', 'hourly', 'daily', 'weekly', 'monthly',
-                    'yearly', 'never')
+                             'yearly', 'never')
 
             if isinstance(pris, dict):
                 # We use items for Py3k compat. .iteritems() otherwise
@@ -124,13 +120,17 @@ class SitemapGenerator(object):
                 for k, v in chfreqs.items():
                     if k in valid_keys and v not in valid_chfreqs:
                         default = self.changefreqs[k]
-                        warning("sitemap plugin: invalid changefreq `{0}'".format(v))
-                        warning("sitemap plugin: setting SITEMAP['changefreqs']"
-                                "['{0}'] on '{1}'".format(k, default))
+                        warning(
+                            "sitemap plugin: invalid changefreq `{0}'".format(
+                                v))
+                        warning(
+                            "sitemap plugin: setting SITEMAP['changefreqs']"
+                            "['{0}'] on '{1}'".format(k, default))
                         chfreqs[k] = default
                 self.changefreqs.update(chfreqs)
             elif chfreqs is not None:
-                warning("sitemap plugin: SITEMAP['changefreqs'] must be a dict")
+                warning(
+                    "sitemap plugin: SITEMAP['changefreqs'] must be a dict")
                 warning("sitemap plugin: using the default values")
 
     def write_url(self, page, fd):
@@ -150,7 +150,8 @@ class SitemapGenerator(object):
         try:
             lastdate = self.get_date_modified(page, lastdate)
         except ValueError:
-            warning("sitemap plugin: " + page.save_as + " has invalid modification date,")
+            warning("sitemap plugin: " + page.save_as +
+                    " has invalid modification date,")
             warning("sitemap plugin: using date value as lastmod.")
         lastmod = format_date(lastdate)
 
@@ -165,7 +166,7 @@ class SitemapGenerator(object):
             chfreq = self.changefreqs['indexes']
 
         pageurl = '' if page.url == 'index.html' else page.url
-        
+
         #Exclude URLs from the sitemap:
         if self.format == 'xml':
             flag = False
@@ -174,7 +175,9 @@ class SitemapGenerator(object):
                     flag = True
                     break
             if not flag:
-                fd.write(XML_URL.format(self.siteurl, pageurl, lastmod, chfreq, pri))
+                fd.write(
+                    XML_URL.format(self.siteurl, pageurl, lastmod, chfreq,
+                                   pri))
         else:
             fd.write(self.siteurl + '/' + pageurl + '\n')
 
@@ -190,9 +193,11 @@ class SitemapGenerator(object):
         for (wrapper, articles) in wrappers:
             lastmod = datetime.min.replace(tzinfo=self.timezone)
             for article in articles:
-                lastmod = max(lastmod, article.date.replace(tzinfo=self.timezone))
+                lastmod = max(lastmod,
+                              article.date.replace(tzinfo=self.timezone))
                 try:
-                    modified = self.get_date_modified(article, datetime.min).replace(tzinfo=self.timezone)
+                    modified = self.get_date_modified(
+                        article, datetime.min).replace(tzinfo=self.timezone)
                     lastmod = max(lastmod, modified)
                 except ValueError:
                     # Supressed: user will be notified.
@@ -200,7 +205,8 @@ class SitemapGenerator(object):
             setattr(wrapper, 'modified', str(lastmod))
 
     def generate_output(self, writer):
-        path = os.path.join(self.output_path, 'sitemap.{0}'.format(self.format))
+        path = os.path.join(self.output_path,
+                            'sitemap.{0}'.format(self.format))
 
         pages = self.context['pages'] + self.context['articles'] \
                 + [ c for (c, a) in self.context['categories']] \
@@ -223,16 +229,13 @@ class SitemapGenerator(object):
             else:
                 fd.write(TXT_HEADER.format(self.siteurl))
 
-            FakePage = collections.namedtuple('FakePage',
-                                              ['status',
-                                               'date',
-                                               'url',
-                                               'save_as'])
+            FakePage = collections.namedtuple(
+                'FakePage', ['status', 'date', 'url', 'save_as'])
 
-            for standard_page_url in ['index.html',
-                                      'archives.html',
-                                      'tags.html',
-                                      'categories.html']:
+            for standard_page_url in [
+                    'index.html', 'archives.html', 'tags.html',
+                    'categories.html'
+            ]:
                 fake = FakePage(status='published',
                                 date=self.now,
                                 url=standard_page_url,
