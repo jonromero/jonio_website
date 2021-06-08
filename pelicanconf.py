@@ -17,7 +17,12 @@ CSS = 'theme/css'
 IMAGES = 'theme/images'
 JS = 'theme/js'
 
-STATIC_PATHS = ['images']
+STATIC_PATHS = ['images', 'raw']
+
+EXTRA_PATH_METADATA = {
+    'raw/metaverse2021.html': {'path': 'metaverse2021.html'}}
+
+ARTICLE_EXCLUDES = ['raw']
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
