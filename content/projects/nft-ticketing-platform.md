@@ -2,7 +2,6 @@ Title: Create your own NFT tickets for free in less than 1 minute
 Category: Projects 
 Date: 2021-07-27 11:48
 Image: desert.jpg
-Status: draft
 
 In 2021 a crypto event took place in Miami: Bitcoin2021. On of the things that stood out to me
 was that the tickets were not available to buy with Bitcoin or any other crypto. 
