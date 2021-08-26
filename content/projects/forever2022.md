@@ -2,6 +2,7 @@ Title: Living Forever - My second conference
 Category: Projects 
 Date: 2021-07-27 22:48
 Image: event.jpg
+Status: draft
 
 I never thought that I would have my own conference but here we are. It all started from [my first conference]() that was a blast. 
 

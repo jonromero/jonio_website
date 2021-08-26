@@ -2,6 +2,7 @@ Title: I organized my own conference like Gary Vee in 30 days
 Category: Projects 
 Date: 2021-07-27 22:48
 Image: /images/logo.jpg
+Status: draft
 
 This year (2021 for the visitors from the future), I run my first own conference: ["V as in Metaverse"](https://jon.io/metaverse2021).
 It didn't have thousands of attendees (because there is a thing called [COVID-19](how-i-spent-my-summer-helping-to-save-a-whole-country)) but it had [NFTs as tickets](how-nft-will-change-events-not-only-for-backstreet-boys), tons of sponsors and happened in the best place you can be for the summer - Greece. If you don't believe me ask [Jeff](https://greekreporter.com/2021/07/04/jeff-bezos-vacation-greece/) or [Justin](https://greekcitytimes.com/2021/06/28/justin-bieber-and-his-wife-hailey-getaway-to-greece-mykonos/).

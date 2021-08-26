@@ -2,6 +2,7 @@ Title: How NFT will change events - not only for Backstreet Boys
 Category: Projects 
 Date: 2021-06-06 11:48
 Image: desert.jpg
+Status: draft
 
 Your friend Cathrine loves Backstreet Boys and she got you some tickets! Hooray! But you hate these 
 well-dressed, kind-of-old-like-the-friends'-reunion singers and you don't really want to go but the ticket was kind of expensive. Thank you Cathrine for being such a good friend and getting me a VIP ticket that costs $1k. 
