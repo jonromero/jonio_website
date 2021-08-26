@@ -11,7 +11,7 @@ It didn't have thousands of attendees (because there is a thing called [COVID-19
 
 > You can read the story how (and why) this conference started right [here](https://jon.io/organizing-a-crypto-conference-in-europe-in-less-than-a-month).
 
-Consider this as a guide on how to do your own conference or a huge meetup. And maybe bug [Gary](https://twitter.com/garyvee) to use this brand new [NFT-as-tickets](create-your-own-nft-tickets-for-free-in-less-than-1-minute) technology. 
+Consider this as a guide on how to do your own conference or a huge meetup. And maybe bug [Gary](https://twitter.com/garyvee) to use this brand new [NFT-as-tickets](create-1000-nft-tickets-for-free-in-less-than-1-minute) technology. 
 
 Feel free also to [check some highlights](https://www.instagram.com/stories/highlights/17959015138460696/) on my Instagram. Here we go.
 
@@ -26,7 +26,7 @@ Obviously, you either need to cut corners **or** have an epic team helping you o
 ## Use NFTs as tickets
 
 I built my own NFT ticketing system and used it, front-running Gary here (sorry Gary).
-If you want to learn more about the technology and how to create your own NFT tickets (it is trivial and free!), check this post ([create your own NFT tickets for free in less than 1 minute](create-your-own-nft-tickets-for-free-in-less-than-1-minute)).
+If you want to learn more about the technology and how to create your own NFT tickets (it is trivial and free!), check this post ([create your own NFT tickets for free in less than 1 minute](create-1000-nft-tickets-for-free-in-less-than-1-minute)).
 
 The advantage of having NFT tickets are plenty and I have talked about NFT tickets [here](how-nft-will-change-events-not-only-for-backstreet-boys) if you want to take a look.
 
@@ -95,7 +95,7 @@ But the 29 days before that were not fun :)
 4. Food. Damn you COVID! We were not allowed to bring food to the conference so in my "built-to-fail" fashion, I started going to "private lunches" with each team separately. Money was not an issue (thank you again sponsors!) but having to eat 5 times in *Day One* and 0 in *Day Two* was not balanced.
 
 
-If you made it this far, thank you and I would love to hear what you think. Send me a message on Discord (or an email) - I always respond to all emails.
+If you made it this far, thank you and I would love to hear what you think. Send me a message on [Discord](https://discord.gg/eNWGH9GSMX) (or an email) - I always respond to all emails.
 
 Coming Next: How difficult is to create a crypto island?
 

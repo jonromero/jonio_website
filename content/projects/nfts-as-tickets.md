@@ -46,7 +46,7 @@ And that's it. That's the only thing. I used NFT tickets for my conference and a
 
 > It is not rocket science and this is how a community grows.
 
-If you are interested in learning more about ridiculisloy easy is to create your NFT tickets in a jiffy (what a strange the word **jiffy** is), [check this post](Create your own NFT tickets for free in less than 1 minute). 
+If you are interested in learning more about ridiculisloy easy is to create your NFT tickets in a jiffy (what a strange the word **jiffy** is), [check this post](create-1000-nft-tickets-for-free-in-less-than-1-minute). 
 
 Coming Next: Using the API to create as many NFTs as you want
 
