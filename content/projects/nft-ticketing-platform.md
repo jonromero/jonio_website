@@ -9,9 +9,9 @@ was that the tickets were not available for purchase with Bitcoin or any other c
 
 So, I decided for my annual conference ["V as in MetaVerse"](https://jon.io/metaverse2021) to use NFTs as tickets. 
 
-![](/images/metaimg.png)
-
 In this tutorial I will cover:
+
+![](/images/metaimg.png)
 
 1. How you can create as many NFT tickets as your want **for free**. The NFT tickets are 100% NFTs (ERC721), stored in IPFS and are available automatically on OpenSea after someone buys them.
 2. How you won't need any special software to "check-in" people - just a phone camera.

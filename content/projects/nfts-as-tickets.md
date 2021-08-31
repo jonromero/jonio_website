@@ -1,20 +1,25 @@
-Title: How NFT will change events - not only for Backstreet Boys
+Title: How NFTs will change events (and why Mark Cuban is a genious)? 
 Category: Projects 
 Date: 2021-06-06 11:48
-Image: desert.jpg
-Status: draft
+Image: LAbasket.jpg
 
-Your friend Cathrine loves Backstreet Boys and she got you some tickets! Hooray! But you hate these 
-well-dressed, kind-of-old-like-the-friends'-reunion singers and you don't really want to go but the ticket was kind of expensive. Thank you Cathrine for being such a good friend and getting me a VIP ticket that costs $1k. 
+Your friend Cathrine **loves** The Dallas Mavericks and she got you some tickets! Hooray! But you deep down you are really a Lakers fan 
+and you don't really want to go but the ticket was kind of expensive. 
 
-Your alternative is to try to sell it (at a loss - OBVIOUSLY) and try not to get scammed while selling it. So much stress for having good friends. 
+> Thank you Cathrine for being such a good friend and getting me a courtside seat ticket that costs **a fortune**. 
+
+Your alternative is to try to sell it (at a loss - OBVIOUSLY) and try not to get scammed (or knifed) while selling it. So much stress for having good friends. 
+
+![](images/LAbasket.jpg)
+Photo by <a href="https://unsplash.com/@nicholasjio?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nick Jio</a> on <a href="https://unsplash.com/s/photos/basketball?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
 
 ## Enter NFT Tickets
 
-Oh but your ticket was actually an NFT ticket. That means that you can sell it to one of the existing platforms pretty easily and probably **at a higher** price. If everything goes as planned (and people really care about Backstreet Boys), you should be able to sell it in under a minute or even put it up for auction. 
+Oh but your ticket was actually an NFT ticket. That means that you can sell it to one of the existing platforms pretty easily and probably **at a higher** price. If everything goes as planned, you should be able to sell it in under a minute or even put it up for auction. 
 
 But Cathrine is devastated that you want to sell her gift (and make a profit out of it). So you decide to go to the event.
-And it is actually pretty fun! The check-in is like a normal ticket with a QR code but what is epic is that BSB (this is how I am calling BackStreet Boys now) has "airdropped" (lingo for sending you for free) a new NFT that unlocks a new song. BOOM! Oh and now you have access to the highlights of the show! Oh and you can sell your **collectible** ticket after the event? 
+And it is actually pretty fun! The check-in is like a normal ticket with a QR code but what is epic is that the DallasM  has "airdropped" (lingo for sending you for free) a new NFT that unlocks a hoodie. BOOM! Oh and now you have access to the highlights of the show! Oh and you can sell your **collectible** ticket after the event? 
 
 > This.is.awesome.
 
@@ -24,6 +29,7 @@ And it is actually pretty fun! The check-in is like a normal ticket with a QR co
 If it is one utility for NFTs that is epic is being able to resale your tickets without having to jump through hoops or pay crazy fees. And I know this could be a heaven for scalpers (and hell for everyone else) but bear with me.
 
 The future is like this:
+
 1. I buy my ticket **with Ether** for Dallas Maverics vs LA Lakers
 2. I can resale the ticket if I want to and the team gets to participate on the resales - because that's how NFTs work (and blacklist scalpers)
 3. I check-in with my ticket without the need of complicated apps or internet
@@ -37,7 +43,7 @@ There are many issues with that future.
 
 1. Tickets **must be bought and sold** with Ether and that means some initial friction. I've seen tons of new NFT platforms and NFT ticketing solutions that are destined to crash and burn because they plan to sell NFTs with fiat ($ or euro). Why? Because if you really want to participate in selling your NFTs, stacking them up, unlocking content and doing all these crazy stuff in the Metaverse you need to be on the blockchain. If I am just an entry in your database and I am not really the owner of my NFT **why are we doing all this**?
 
-For example, after the initial friction of setting up a metamask wallet, users that bought my [NFT tickets for my conference](I organized my own conference like Gary Vee in 30 days) were able to immediately sell them in a HUGE market (OpenSea) or use them to unlock videos from the conference. 
+For example, after the initial friction of setting up a metamask wallet, users that bought my [NFT tickets for my conference](i-organized-my-own-conference-like-gary-vee-in-30-days) were able to immediately sell them in a HUGE market (OpenSea) or use them to unlock videos from the conference. 
 
 Being "on the chain" is hands down the best long term experience. Unless you want people not being able to resale your NFTs. Trust me on this. 
 
@@ -45,7 +51,7 @@ And that's it. That's the only thing. I used NFT tickets for my conference and a
 
 > It is not rocket science and this is how a community grows.
 
-If you are interested in learning more about ridiculisloy easy is to create your NFT tickets in a jiffy (what a strange the word **jiffy** is), [check this post](Create your own NFT tickets for free in less than 1 minute). 
+If you are interested in learning more about ridiculisloy easy is to create your NFT tickets in a jiffy (what a strange the word **jiffy** is), [check this post](create-1000-nft-tickets-for-free-in-less-than-1-minute). 
 
 Coming Next: Using the API to create as many NFTs as you want
 

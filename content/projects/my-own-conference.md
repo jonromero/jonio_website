@@ -2,9 +2,10 @@ Title: I organized my own conference like Gary Vee in 30 days
 Category: Projects 
 Date: 2021-07-27 22:48
 Image: metaverse2021/metaverse_selfie.png
+Tags: popular
 
 This year (2021 for the visitors from the future), I run my first own conference: ["V as in Metaverse"](https://jon.io/metaverse2021).
-It didn't have thousands of attendees (because there is a thing called [COVID-19](how-i-spent-my-summer-helping-to-save-a-whole-country)) but it had [NFTs as tickets](how-nft-will-change-events-not-only-for-backstreet-boys), tons of sponsors and happened in the best place you can be for the summer - Greece. If you don't believe me ask [Jeff](https://greekreporter.com/2021/07/04/jeff-bezos-vacation-greece/) or [Justin](https://greekcitytimes.com/2021/06/28/justin-bieber-and-his-wife-hailey-getaway-to-greece-mykonos/).
+It didn't have thousands of attendees (because there is a thing called [COVID-19](how-i-spent-my-summer-helping-to-save-a-whole-country)) but it had [NFTs as tickets](how-nfts-will-change-events-and-why-mark-cuban-is-a-genious), tons of sponsors and happened in the best place you can be for the summer - Greece. If you don't believe me ask [Jeff](https://greekreporter.com/2021/07/04/jeff-bezos-vacation-greece/) or [Justin](https://greekcitytimes.com/2021/06/28/justin-bieber-and-his-wife-hailey-getaway-to-greece-mykonos/).
 
 ![](/images/metaverse2021/metaverse_selfie.png)
 
@@ -102,7 +103,7 @@ But the 29 days before that were not fun :)
 
 ## Things that didn't work out
 
-1. We had 14 more sponsors that wanted to partipate (and they have already signed up for [next years' conference](living-forever-my-second-conference)!) but I didn't have time to on-board them, collect payments and get their images and websites. I know it sounds easy but I had tons of other things that HAD to happen and I couldn't outsource this. So, one thing I should do is make the process of onboarding automated or at least easier to be done by someone else than me. Definitely a "fail" moment.
+1. We had 14 more sponsors that wanted to partipate (and they have already signed up for next years' conference!) but I didn't have time to on-board them, collect payments and get their images and websites. I know it sounds easy but I had tons of other things that HAD to happen and I couldn't outsource this. So, one thing I should do is make the process of onboarding automated or at least easier to be done by someone else than me. Definitely a "fail" moment.
 
 2. Swag. Our swag provider didn't deliver on time. So we had no swag for the conference. Buuuuuut I am going to send swag to everyone that got a ticket. 
 
@@ -111,7 +112,7 @@ But the 29 days before that were not fun :)
 4. Food. Damn you COVID! We were not allowed to bring food to the conference so in my "built-to-fail" fashion, I started going to "private lunches" with each team separately. Money was not an issue (thank you again sponsors!) but having to eat 5 times in *Day One* and 0 in *Day Two* was not balanced.
 
 
-If you made it this far, thank you and I would love to hear what you think. Send me a message on Discord (or an email) - I always respond to all emails.
+If you made it this far, thank you and I would love to hear what you think. Send me a message on [Discord](https://discord.gg/eNWGH9GSMX) (or an email) - I always respond to all emails.
 
 Coming Next: How difficult is to create a crypto island?
 
