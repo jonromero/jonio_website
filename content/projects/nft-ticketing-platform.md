@@ -11,6 +11,8 @@ So, I decided for my annual conference ["V as in MetaVerse"](https://jon.io/meta
 
 In this tutorial I will cover:
 
+![](/images/metaimg.png)
+
 1. How you can create as many NFT tickets as your want **for free**. The NFT tickets are 100% NFTs (ERC721), stored in IPFS and are available automatically on OpenSea after someone buys them.
 2. How you won't need any special software to "check-in" people - just a phone camera.
 3. How you can charge and get paid in Ether for your event just by entering your wallet address.
