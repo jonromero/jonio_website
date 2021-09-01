@@ -2,7 +2,6 @@ Title: The Best way to measure real KPIs? Don't add a link to your product
 Category: Startups 
 Date: 2020-12-23 10:48
 Image: f1.png
-Tags: popular
 
 Whenever I build a new product, I follow this advice:
 
