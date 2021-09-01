@@ -103,7 +103,7 @@ But the 29 days before that were not fun :)
 
 ## Things that didn't work out
 
-1. We had 14 more sponsors that wanted to partipate (and they have already signed up for next years' conference!) but I didn't have time to on-board them, collect payments and get their images and websites. I know it sounds easy but I had tons of other things that HAD to happen and I couldn't outsource this. So, one thing I should do is make the process of onboarding automated or at least easier to be done by someone else than me. Definitely a "fail" moment.
+1. We had 14 more sponsors that wanted to participate (and they have already signed up for next years' conference!) but I didn't have time to on-board them, collect payments and get their images and websites. I know it sounds easy but I had tons of other things that HAD to happen and I couldn't outsource this. So, one thing I should do is make the process of onboarding automated or at least easier to be done by someone else than me. Definitely a "fail" moment.
 
 2. Swag. Our swag provider didn't deliver on time. So we had no swag for the conference. Buuuuuut I am going to send swag to everyone that got a ticket. 
 
