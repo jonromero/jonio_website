@@ -20,7 +20,7 @@ Newsflash: If I can write a strategy, anyone can write a strategy. Trust me on t
 
 Update: This post has been rewritten "at least" five times (as ["The DAO drama"](https://bitcoinmagazine.com/articles/ethereum-s-dao-forking-crisis-the-bitcoin-perspective-1467404395) escalated) and it is the perfect example of a strategy doing a full circle.
 
-I started getting involved with [Ethereum](https://www.ethereum.org/) early on as I really liked the "run your algorithms on the blockchain" thing. When [TheDAO](https://daohub.org/) came out, I read everything about it and loved the idea.
+I started getting involved with [Ethereum](https://www.ethereum.org/) early on as I really liked the "run your algorithms on the blockchain" thing. When the first DAO came out, I read everything about it and loved the idea.
 You don't need to understand what Ethereum, theDAO, blockchain is at this point (I promise I will ramble on a another post). The same ideas apply to Forex, Stocks even Pokemon balls.
 
     :::hl_lines 
@@ -89,14 +89,13 @@ Luckily, the money were "restored" and I could withdraw/convert my DAO to Ethere
 This whole experience is a reminder that there are always things that you cannot predict. Things that you cannot control.
 This was a [systematic risk](https://en.wikipedia.org/wiki/Systematic_risk) and there was no way I could have seen it coming. Pushing buttons and building algorithms is not enough. Proper risk management and knowing when you need to take a chill pill is what can keep you in the game.
 
-On the next post, I will post the whole algorithm and go line by line. I also plan to discuss a little bit more about theDAO and Ethereum. If you don't want to miss any of these and get some more additional info, feel free to sign up to the [newsletter](http://eepurl.com/bGbOnb) where I talk about fintech, algorithms and the markets.
+On the next post, I will post the whole algorithm and go line by line. I also plan to discuss a little bit more about theDAO and Ethereum. If you don't want to miss any of these and get some more additional info, feel free to sign up to the newsletter below where I talk about fintech, algorithms and the markets.
 
-By the way, if you want to make your own cryptocurrency and learn more about Ethereum, I have a great post with the code posted [here](hugcoin-build-your-own-cryptocurrency-coin.html).
+By the way, if you want to make your own cryptocurrency and learn more about Ethereum, I have a great post with the code posted [here](hugcoin-build-your-own-cryptocurrency-coin).
 
 
 ** Coming next: Diving into the ETHDAO algotrading program **
 
-If you have more feedback, ping me at [jonromero](http://www.twitter.com/jonromero) or signup to the [newsletter](http://eepurl.com/bGbOnb). 
 
 Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
 If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. 
