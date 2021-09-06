@@ -13,7 +13,7 @@ It didn't have thousands of attendees (because there is a thing called [COVID-19
 
 Consider this as a guide on how to do your own conference or a huge meetup. And maybe bug [Gary](https://twitter.com/garyvee) to use this brand new [NFT-as-tickets](create-1000-nft-tickets-for-free-in-less-than-1-minute) technology. 
 
-Feel free also to [check some highlights](https://www.instagram.com/stories/highlights/17959015138460696/) on my Instagram. Here we go.
+Feel free also to [check some highlights](https://www.instagram.com/s/aGlnaGxpZ2h0OjE3OTU5MDE1MTM4NDYwNjk2?story_media_id=2597301977270937775_35696786) on my Instagram. Here we go.
 
 ## Took me 1 month to organize it and execute it (while I was vacationing in Greece)
 
