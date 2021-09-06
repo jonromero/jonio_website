@@ -1,7 +1,6 @@
 Title: HugCoin: Build your own cryptocurrency (coin)
 Tags: ethereum
 Date: 2016-08-22 23:31
-status: hidden
 
 This is a small break from our [how to build your own algotrading platform](how-to-build-your-own-algorithmic-trading-platform.html) series but I think it is interesting and fun.
 
