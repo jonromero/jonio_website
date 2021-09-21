@@ -1,0 +1,291 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- HERO section -->
+<main class="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 xl:mt-28">
+    <div class="text-center">
+        <h2
+            class="text-4xl pb-8 tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
+            1-on-1<span class="text-blue-600"> coaching</span>
+            <br class="xl:hidden">
+            with JonV
+        </h2>
+    </div>
+
+    <!-- Box -->
+    <div class="relative bg-gray-800">
+        <div class="hidden md:block h-56 bg-indigo-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
+            <img class="w-full h-full object-cover" src="{{IMAGES}}/jon.jpg" alt="">
+        </div>
+        <div class="relative max-w-screen-xl mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+            <div class="md:ml-auto md:w-1/2 md:pl-10 text-gray-300">
+                <h2 class="mt-2 text-white text-3xl leading-9 font-extrabold tracking-tight sm:text-4xl sm:leading-10">
+                    Epic stories about how:
+                </h2>
+                <p class="mt-3 text-lg leading-7 ">
+                <ol class="text-left list-decimal list-outside my-5 pl-2">
+                    <li>I built and sold the most <b>epic</b> companies without going insane 🤯</li>
+                    <li>I helped a <a class="text-indigo-400"
+                            href="how-i-spent-my-summer-helping-to-save-a-whole-country">whole country </a> fight
+                        COVID-19 🦠 with
+                        Machine Learning
+                    </li>
+                    <li>I created a wealth management company from scratch and kicked Wall Street's ass
+                    </li>
+                    <li>I ran the first arbitrage
+                        algorithms on blockchain, made and lost everything (and then
+                        made them back) <a class="text-indigo-400"
+                            href="trading-ethereum-making-10-every-20-minutes.html">[...]</a>
+                    </li>
+                    <li>Invested in a unicorn🦄 by being annoying</li>
+                </ol>
+                <div class="text-right">
+                    <a class="underline" href="/archives">and many many more</a>
+                </div>
+                </p>
+                <div class="mt-8">
+                    <div class="rounded-md shadow">
+                        <form method="post" class="sm:flex" action="https://sendfox.com/form/1we8gr/3ejnj0" id="3ejnj0"
+                            data-async="true">
+                            <input type="email"
+                                class="appearance-none block w-full px-3 py-3 border border-gray-300 text-base leading-6 rounded-md placeholder-gray-500 shadow-sm focus:outline-none focus:text-gray-800 focus:shadow-outline focus:border-blue-300 transition duration-150 ease-in-out sm:flex-1"
+                                placeholder="Email" name="email" required />
+                            <!-- no botz please -->
+                            <button
+                                class="mt-3 w-full px-6 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 shadow-sm  focus:outline-none focus:shadow-outline active:bg-gray-900 transition duration-150 ease-in-out sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto"
+                                type="submit">Get them all here
+                            </button>
+                        </form>
+                        <script src="https://sendfox.com/js/form.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Box end -->
+
+</main>
+<!-- END HERO section -->
+
+
+<!-- Store items -->
+<div class="relative bg-gray-50 pt-2 pb-8 px-4 sm:px-6 lg:pt-2 lg:pb-8 lg:px-8">
+    <div class="absolute inset-0">
+        <div class="bg-white h-1/3 sm:h-2/3"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto">
+        <div class="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
+            {% for article in articles if 'store' in article.tags if article.tags is defined else None %}
+            <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+                <div class="flex-shrink-0">
+                    <a target="_blank" href="https://omgdrops.com/{{article.link}}">
+                        <img class="h-full w-full object-cover" src="images/{{ article.image }}" alt="">
+                    </a>
+                </div>
+                <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+                    <div class="flex-1">
+                        <a target="_blank" href="https://omgdrops.com/{{article.link}}">
+                            <h3 class="mt-2 mb-2 block text-xl leading-7 font-semibold text-gray-900">
+                                {{ article.title }}
+                            </h3>
+
+                            <h3 class="mb-2 text-sm leading-2 text-gray-500">
+                                {{article.summary}}
+                            </h3>
+
+                            <h3
+                                class="w-full px-3 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 shadow-sm  focus:outline-none focus:shadow-outline active:bg-gray-900 transition duration-150 ease-in-out sm:mt-0 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto">
+                                Click to see more
+                            </h3>
+
+                    </div>
+                    <div class="mt-6 flex items-center">
+                        <div class="ml-3">
+                            <p class="text-sm leading-5 font-medium text-gray-900">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- END store items -->
+
+<!-- FAQ -->
+<div class="bg-gray-50">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto divide-y-2 divide-gray-200">
+            <h2 class="text-center text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                Frequently asked questions
+            </h2>
+            <dl class="mt-6 space-y-6 divide-y divide-gray-200">
+                <div class="pt-6">
+                    <dt class="text-lg">
+                        <!-- Expand/collapse question button -->
+                        <button type="button" class="text-left w-full flex justify-between items-start text-gray-400"
+                            aria-controls="faq-0" aria-expanded="false">
+                            <span class="font-medium text-gray-900">
+                                What are DigiPhysical NFTs?
+                            </span>
+                        </button>
+                    </dt>
+                    <dd class="mt-2 pr-12" id="faq-0">
+                        <p class="text-base text-gray-500">
+                            The.Future.
+                        </p>
+                    </dd>
+                </div>
+
+                <div class="pt-6">
+                    <dt class="text-lg">
+                        <!-- Expand/collapse question button -->
+                        <button type="button" class="text-left w-full flex justify-between items-start text-gray-400"
+                            aria-controls="faq-0" aria-expanded="false">
+                            <span class="font-medium text-gray-900">
+                                What currencies are accepted? Can I buy in $?
+                            </span>
+                        </button>
+                    </dt>
+                    <dd class="mt-2 pr-12" id="faq-0">
+                        <p class="text-base text-gray-500">
+                            Nope. Only Ether is accepted.
+                        </p>
+                    </dd>
+                </div>
+
+                <div class="pt-6">
+                    <dt class="text-lg">
+                        <!-- Expand/collapse question button -->
+                        <button type="button" class="text-left w-full flex justify-between items-start text-gray-400"
+                            aria-controls="faq-0" aria-expanded="false">
+                            <span class="font-medium text-gray-900">
+                                How buying a digiphysical NFT works?
+                            </span>
+                        </button>
+                    </dt>
+                    <dd class="mt-2 pr-12" id="faq-0">
+                        <p class="text-base text-gray-500">
+                            Click on the item you love and you will be redirected to OMGDrops.com to buy your unique
+                            digiPhysical NFT. The NFT comes with
+                            unlockable content - your physical item!. After you have bought your NFT, you can "unlock
+                            it" and you will be asked for your email address.
+                            Someone from our team will reach out to that email address for next steps.
+                        </p>
+                    </dd>
+                </div>
+
+                <div class="pt-6">
+                    <dt class="text-lg">
+                        <!-- Expand/collapse question button -->
+                        <button type="button" class="text-left w-full flex justify-between items-start text-gray-400"
+                            aria-controls="faq-0" aria-expanded="false">
+                            <span class="font-medium text-gray-900">
+                                How long does it take to receive my item?
+                            </span>
+                        </button>
+                    </dt>
+                    <dd class="mt-2 pr-12" id="faq-0">
+                        <p class="text-base text-gray-500">
+                            It depends on your location. Expect it in 1 to 3 weeks.
+                        </p>
+                    </dd>
+                </div>
+
+                <div class="pt-6">
+                    <dt class="text-lg">
+                        <!-- Expand/collapse question button -->
+                        <button type="button" class="text-left w-full flex justify-between items-start text-gray-400"
+                            aria-controls="faq-0" aria-expanded="false">
+                            <span class="font-medium text-gray-900">
+                                I have questions, my order hasn't arrived etc. Where can I email you?
+                            </span>
+                        </button>
+                    </dt>
+                    <dd class="mt-2 pr-12" id="faq-0">
+                        <p class="text-base text-gray-500">
+                            Send us an email at store at jon.io.
+                        </p>
+                    </dd>
+                </div>
+
+                <div class="pt-6">
+                    <dt class="text-lg">
+                        <!-- Expand/collapse question button -->
+                        <button type="button" class="text-left w-full flex justify-between items-start text-gray-400"
+                            aria-controls="faq-0" aria-expanded="false">
+                            <span class="font-medium text-gray-900">
+                                What is your refund policy?
+                            </span>
+                        </button>
+                    </dt>
+                    <dd class="mt-2 pr-12" id="faq-0">
+                        <p class="text-base text-gray-500">
+                            Sadly, due to the nature of the blockchain, there are no refund available
+                        </p>
+                    </dd>
+                </div>
+
+                <div class="pt-6">
+                    <dt class="text-lg">
+                        <!-- Expand/collapse question button -->
+                        <button type="button" class="text-left w-full flex justify-between items-start text-gray-400"
+                            aria-controls="faq-0" aria-expanded="false">
+                            <span class="font-medium text-gray-900">
+                                How valuable is my NFT?
+                            </span>
+                        </button>
+                    </dt>
+                    <dd class="mt-2 pr-12" id="faq-0">
+                        <p class="text-base text-gray-500">
+                            It depends on the market. From $1 to $1000 is the range we have seen our NFTs getting sold
+                            in the secondary market
+                        </p>
+                    </dd>
+                </div>
+
+                <div class="pt-6">
+                    <dt class="text-lg">
+                        <!-- Expand/collapse question button -->
+                        <button type="button" class="text-left w-full flex justify-between items-start text-gray-400"
+                            aria-controls="faq-0" aria-expanded="false">
+                            <span class="font-medium text-gray-900">
+                                If I sell my NFT, do I need to send also the physical item?
+                            </span>
+                        </button>
+                    </dt>
+                    <dd class="mt-2 pr-12" id="faq-0">
+                        <p class="text-base text-gray-500">
+                            No.
+                        </p>
+                    </dd>
+                </div>
+
+                <div class="pt-6">
+                    <dt class="text-lg">
+                        <!-- Expand/collapse question button -->
+                        <button type="button" class="text-left w-full flex justify-between items-start text-gray-400"
+                            aria-controls="faq-0" aria-expanded="false">
+                            <span class="font-medium text-gray-900">
+                                How can I pick a size for a t-shirt?
+                            </span>
+                        </button>
+                    </dt>
+                    <dd class="mt-2 pr-12" id="faq-0">
+                        <p class="text-base text-gray-500">
+                            After you unlock your NFT, our team will reach out to ask you for your size.
+                        </p>
+                    </dd>
+                </div>
+
+                <!-- More questions... -->
+            </dl>
+        </div>
+    </div>
+</div>
+
+<!-- FAQ ends-->
+
+{% endblock content %}

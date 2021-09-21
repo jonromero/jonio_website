@@ -34,7 +34,7 @@ AUTHOR_FEED_RSS = None
 RELATED_POSTS_MAX = 4
 
 DIRECT_TEMPLATES = [
-    'store'
+    'store', 'mentoring', 'index'
 ]
 
 DEFAULT_PAGINATION = 10
