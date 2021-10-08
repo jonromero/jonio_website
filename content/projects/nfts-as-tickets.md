@@ -1,17 +1,17 @@
 Title: How NFTs will change events (and why Mark Cuban is a genius)? 
 Category: Projects 
 Date: 2021-06-06 11:48
-Image: LAbasket.jpg
+Image: ticket-red.jpg
+Tags: popular
 
 Your friend Cathrine **loves** The Dallas Mavericks and she got you some tickets! Hooray! But deep down you are really a Lakers fan 
 and you don't really want to go but the ticket was kind of expensive. 
 
 > Thank you Cathrine for being such a good friend and getting me a courtside seat ticket that costs **a fortune**. 
 
-Your alternative is to try to sell it (and maybe less than she got it for) and try not to get scammed (or knifed) while selling it. So much stress for having good friends. 
+![](images/ticket-red.jpg)
 
-![](images/LAbasket.jpg)
-Photo by <a href="https://unsplash.com/@nicholasjio?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nick Jio</a> on <a href="https://unsplash.com/s/photos/basketball?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+Your alternative is to try to sell it (and maybe less than she got it for) and try not to get scammed (or knifed) while selling it. So much stress for having good friends. 
   
 
 ## Enter NFT Tickets

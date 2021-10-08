@@ -2,7 +2,6 @@ Title: Startup Office hours
 Category: Projects 
 Date: 2021-09-21 13:48
 Image: youtube_episode_1.png
-Tags: popular
 
 One thing that I love more than build stuff is helping out Entrepreneurs. [I was helped](/pages/my-story) when I started so the least I can do is pay it forward. That has a **huge** downside.
 
