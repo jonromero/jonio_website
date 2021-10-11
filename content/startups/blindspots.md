@@ -1,7 +1,6 @@
 Title: Your blind spots will bring you down
 Category: Startups 
 Date: 2020-12-03 10:48
-Tags: popular
 Image: plane.png
 
 It is 1943 and you are Head of the United States Eighth Air Force. Your mission is to destroy Germany's ability to wage war and free up the skies for the Allied Forces. The problem is that your Bombers are being zapped out of the sky like mosquitos drawn into the fire in a summery night. 

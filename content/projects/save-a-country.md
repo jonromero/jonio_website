@@ -46,7 +46,9 @@ If you are sent for testing, your (anonymized) lab results will be fed back to E
 By digitizing the details of a visitor’s trip, Greece can make informed decisions on who should be tested, how tests should be allocated, or whether any borders need to be closed due to increasing risk.
 
 # How good EVA is?
-My personal opinion (using only public data) is that EVA is working.
+My personal opinion (using only public data) is that EVA is working. 
+
+> Update: [The paper that details EVA made it into Nature!](https://www.nature.com/articles/s41586-021-04014-z)
 
 Currently Greece has less than 20 new external infections from 100k visitors per day. The total infections are on average 150 to 200 mostly to internal spread of the virus which is extremely low.
 
@@ -66,7 +68,7 @@ The team is:
 - [Vishal Gupta](https://www.linkedin.com/in/vishal-gupta-usc/), assistant professors of data science and operations at the Marshall School
 - [And me](https://jon.io/pages/my-story)
 
-The whole team is committed in open-sourcing the important parts of EVA and of course a full publication will be coming up in December 2020.
+The whole team is committed in open-sourcing the important parts of EVA and of course a [full publication](https://www.nature.com/articles/s41586-021-04014-z) will be coming up in December 2020.
 
 You can find more information if you follow these links:
 
