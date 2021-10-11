@@ -3,14 +3,12 @@ status: hidden
 
 **Prepare for EPICNESS**
 
-> Almost there! Keep reading!
+Thank you for confirming your subscription! 
 
-You should have gotten by now, a **confirm your subscription** email (yes, it is that fast - most of the times).
+You'll get some intro emails the next couple of days to know each other better. 
 
-Make sure you also check your **spam folder** as sometimes it gets misplaced there.
+Let me know if I can help in any way. Just send me an email. I reply to all of them!
 
-Talk you soon,
-Jon V
 
 
 
