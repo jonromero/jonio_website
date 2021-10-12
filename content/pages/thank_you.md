@@ -3,6 +3,8 @@ status: hidden
 
 **Prepare for EPICNESS**
 
+![](/images/th.gif)
+
 Thank you for confirming your subscription! 
 
 You'll get some intro emails the next couple of days to know each other better. 
