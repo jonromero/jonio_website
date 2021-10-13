@@ -21,18 +21,19 @@ And so much more. Ready? Fill up the form below to get free access to the email 
                         <div class="shadow p-4 text-center">
             <span class="text-xl font-bold ">Grab this course!</span>
         
-            <form method="post" class="sm:flex" action="https://sendfox.com/form/1we8gr/3ejnj0"
-                                id="3ejnj0" data-async="true">
-                                <input type="email"
-                                    class="appearance-none block w-full px-3 py-3 border border-gray-300 text-base leading-6 rounded-md placeholder-gray-500 shadow-sm focus:outline-none focus:text-gray-800 focus:shadow-outline focus:border-blue-300 transition duration-150 ease-in-out sm:flex-1"
-                                    placeholder="Email" name="email" required />
-                                <!-- no botz please -->
-                                <button
-                                    class="mt-3 w-full px-6 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 shadow-sm  focus:outline-none focus:shadow-outline active:bg-gray-900 transition duration-150 ease-in-out sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto"
-                                    type="submit">Get them all here
-                                </button>
-                            </form>
-                            <script src="https://sendfox.com/js/form.js"></script>
+            <form method="post" action="https://sendfox.com/form/1we8gr/m82qdq" class="sendfox-form" id="m82qdq"
+                        data-async="true" data-recaptcha="true">
+                        <p><input autocomplete="email" required
+                                class="w-full px-5 py-3 border border-transparent placeholder-gray-500 focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white focus:border-white"
+                                placeholder="Enter your email" type="email" name="email" /></p>
+                        <!-- no botz please -->
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                                name="a_password" tabindex="-1" value="" autocomplete="off" /></div>
+                        <p><button
+                                class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500"
+                                type="submit">👉 Get the 1st lesson 👈</button></p>
+                    </form>
+                    <script src="https://sendfox.com/js/form.js"></script>
 </div>
 </div>
 
