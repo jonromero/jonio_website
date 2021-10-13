@@ -1,15 +1,14 @@
 Title: Thank you
 status: hidden
 
-**Prepare for EPICNESS**
+**Don't forget to confirm your subscription**. Check your spam folder!
 
 ![](/images/th.gif)
 
-Thank you for confirming your subscription! 
+In order to get all these spicy and epic email, you need to confirm your subscription. One click and awesome emails await you!
 
-You'll get some intro emails the next couple of days to know each other better. 
+Talk you soon, Jon V
 
-Let me know if I can help in any way. Just send me an email. I reply to all of them!
 
 
 
