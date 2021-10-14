@@ -1,5 +1,5 @@
 Title: How NFTs will change events (and why Mark Cuban is a genius)? 
-Category: Projects 
+Category: Crypto 
 Date: 2021-06-06 11:48
 Image: ticket-red.jpg
 Tags: popular
