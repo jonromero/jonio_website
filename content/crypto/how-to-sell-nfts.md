@@ -1,5 +1,5 @@
 Title: The ultimate guide to sell your NFTs
-Category: Projects 
+Category: Crypto 
 Date: 2021-07-27 22:48
 Image: metaverse2021/metaverse_selfie.png
 Tags: popular
