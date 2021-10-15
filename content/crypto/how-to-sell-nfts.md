@@ -1,79 +1,91 @@
-Title: The ultimate guide to sell your NFTs
+Title: Five reasons why you cannot sell your NFTs 
 Category: Crypto 
 Date: 2021-07-27 22:48
 Image: metaverse2021/metaverse_selfie.png
 Tags: popular
 Status: draft
 
-Five months ago, I decided to sell my first NFT, a piece of cake for my birthday, on my NFT platform. Since then, I sold more than 100 NFTs, sometimes for celebrities, other times for smaller creators or for my own conference (which sold out three times).
+Five months ago, I decided to sell my first NFT, [a piece of cake for my birthday](my-birthday-cake-as-an-nft), on [my NFT platform](https://omgdrops.com/). Since then, I sold more than 100 NFTs, sometimes for celebrities, other times for smaller creators or for [my own conference](https://jon.io/i-organized-my-own-conference-like-gary-vee-in-30-days) (which sold out three times).
 
 I talked with every big Hollywood talent agency and I saw them selling less than my birthday cake. 
 
-These are the things I've learnt that will help you get started.
+These are the reason why they fail and why you fail to sell your NFTs.
 
-## The platform doesn't matter
+## You think that the platform matters
 
-When you go to Amazon, do you go to browse on their homepage what is new to buy or you are going there to search something specific?
+When you go to Amazon, do you go and browse their homepage to find what is new or are you going there to search something specific?
 
 **This is exactly** how people buy NFTs. 
 
-People don't go on OpenSea and say "oh this little monkey from a creator I never heard before is on sale for 10 Ether,  I need to buy this right now". 
+People don't go on OpenSea and say "oh this little monkey from a creator I never heard before is on sale for 10 Ether, I need to buy this right now". 
 
 > 99% of NFT sales happen by sending people **directly** to an NFT. 
 
 You have higher chances on selling NFTs **outside** of OpenSea/Rarible/etc as your buyers won't get distracted by random NFTs. 
-See all the projects that make **consistent** sales. Hashmasks, Mekaverse, bla. Custom pages for drops. Of course, if you want resales you need to 
-be on OpenSea but don't be delussional thinking that anyone could find your NFT in this (well) sea of NFTs ;)
+See all the projects that make **consistent** sales. CryptoPunks, Hashmasks, Mekaverse - all of the big NFT projects have custom pages for their drops. Of course, if you want resales you need to end up on OpenSea but don't be delusional thinking that anyone could find your NFT in this (well) sea of NFTs.
 
-And you would know that this is true if ...
+And you would know that this is true but ...
 
-## You need to buy NFTs to understand how to sell NFTs
+## You haven't bought any NFTs
 
-Every single NFT I bought was because someone from my community recommended that I should check it out. And all NFTs that made me money where bought outside of OpenSea (ok, I made some Ether by also trading on OpenSea).
+You need to buy NFTs to understand how to sell NFTs. I met artists with millions of followers than wanted to sell NFTs and didn't have a Metamask wallet. Guess how many NFTs they sold? **Less than my birthday cake** - and usually *zero*. 
 
-To me, trying to sell NFTs without ever buying an NFT is like trying to be a soccer coach without knowing soccer (Ted Lasso is the exception. Also he is a fictional character). 
+Every single NFT I bought was because someone from my community recommended that I should check it out. And all NFTs that made me money where bought outside of OpenSea (ok, I made some Ether by also [trading on OpenSea](i-bought-this-image-for-1500-and-i-sold-it-for-50-in-two-weeks)).
 
-I am not saying go and spent all your momey buying random NFTs. But you need to get involved in projects and communities, see how things work and understand how and why people make money and you have only 4 views in your NFT.
+To me, trying to sell NFTs without ever buying one is like trying to be a soccer coach without knowing soccer (Ted Lasso is the exception. Also he is a fictional character). 
 
-The biggest example is having influencers trying to sell to their followers and making "pocket money" because their followers had NO idea how to setup a wallet or what Ether is. I guarantee you the most talent agencies with their infinite connections and budgets have ZERO idea how to make any NFT sales (that at least beat my birthday cake).
+I am not saying go and spend all your money buying random NFTs. But you need to get involved in projects and communities, see how things work and understand how and why people make money and you have only 4 views in your profile.
+
+The biggest example is having influencers trying to sell to their followers and making "pocket money" because their followers had NO idea how to setup a wallet or what Ether is. I guarantee you the biggest talent agencies with their infinite connections and budgets have ZERO idea how to make any sales.
 
 > Having more followers or being famous means shit in the Metaverse
 
-Which brings us to my next point
+Which brings us to the next reason on why noone buys your stuff:
 
-## Community
+## You have no Community
 
-If you are following me on social media, you would know by now that I am a true Metallica fan. I am the person that had travelled 4 hours to go an see Metallica performing in a Drive-in or fly to San Franscisco. I am a **true fan**. 
+If you are following me on social media, you know by now that I am a true Metallica fan. I am the person that drove 4 hours to go and see Metallica performing in a Drive-in. I am a **true fan**. 
 
-Community is the biggest asset and creator and company has. It cannot be copied. It cannot be stopped. It cannot be bought. 
+Community is the biggest asset any creator and company has. It cannot be copied. It cannot be stopped. It cannot be bought. 
 
 > Followers != Believers
 
 The random integers you see on your social profiles that represent how many "followers" you have are just a vanity metric. How many of them are actually going to **travel** to see you? How many share your values?
 
-
-To sale NFTs (and sale consistently) you need people that share your values. An excellent example is "..." an amazing creator that has a very small and active community. You should try and copy something that is true and sustainable and not obsess with becoming bla bla. Noone became Metallica in a day (or Justin Bieber if that's your thing).
+To sale NFTs (and sale consistently) you need people that share your values. An excellent example is [SuperNfty](https://www.supernfty.com/), an amazing creator that has a very active community. You should try and copy something that is true and sustainable. No one became Metallica in a day (or Justin Bieber if that's your thing).
 
 I'll do another post about how to build and maintain your community because there is so much stuff and tools to cover in just one post.
 
+But let's move to my favorite reason:
+
 ## Price
 
-Most of the creators I met, have no idea how much they should price their first NFTs. If you don't have a ballpark 
+Most of the creators I met, have no idea how much they should price their first NFTs. They go from 100 Ether (seriously) to zero not 
+making any sales. These creators are usually the people that call NFTs a scam. Especially when they don't make any sales. 
 
+Do you want me to tell you the price of your NFT? I don't even want to see it. It is zero. Yes, zero Ether. You put the work to create something but you haven't put the work to **honor your community**. Instead you are trying to rip them off. 
 
+If you want people to buy your stuff, you need make sure that your NFTs are 10x more valuable than you price them. If your NFTs have no value (because no one knows who you are or your vision) then you are doing a diservice to your believers (you see? - I didn't say followers).
 
-## Would you buy your NFT?
+If people don't make money by buying and selling your NFTs then will never survive in this space.
 
-## What should I do if I already have a big following?
+## Trying to sell on a different chain
 
-## Should I sell in a different chain?
+After you made zero sales on the Ethereum blockchain, you decided to go to Solana. Slow clap. I admire your Entrepreneurial spirit but no. 
 
-## I am a famous "traditional" artist? Would I sell?
-No
+> Build value, serve your belivers. Stop saying bullshit to yourself.
 
-## I am a photographer
-No
+And because I might have been to harse on you, these are two extra reasons: 
 
+## I am a famous "traditional" artist so I should make a png of my art
+
+No. Just no.
+
+## I am a photographer, I have an interesting photo to sell.
+
+See above.
+
+Coming Next: Selling your first NFT, step by step
 
 
 
