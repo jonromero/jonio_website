@@ -12,7 +12,7 @@ I talked with every big Hollywood talent agency and I saw them selling less than
 
 These are the reasons why they (and you) fail to sell your NFTs.
 
-## You think that the platform matters
+## You think the platform matters
 
 When you go to Amazon, do you go and browse their homepage to find what is new or are you searching for something specific?
 
