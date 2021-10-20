@@ -78,11 +78,11 @@ After you made zero sales on the Ethereum blockchain, you decided to go to Solan
 
 And because I might have been too harsh on you already, here are two extra reasons: 
 
-## I am a famous "traditional" artist so I should make a NFT of my art
+## You are a famous "traditional" artist so you should make an NFT of your art
 
 No. Just no.
 
-## I am a photographer, I have an interesting photo to sell.
+## You are a photographer and have an interesting photo to sell.
 
 See above.
 
