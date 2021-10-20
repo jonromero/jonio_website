@@ -1,7 +1,7 @@
 Title: Startup Office hours
 Category: Projects 
 Date: 2021-09-21 13:48
-Image: youtube_episode_1.png
+Image: youtube/ai-startup.jpeg
 
 One thing that I love more than build stuff is helping out Entrepreneurs. [I was helped](/pages/my-story) when I started so the least I can do is pay it forward. That has a **huge** downside.
 
@@ -24,9 +24,9 @@ my network consists mostly of Angel Investors, VCs and Entrepreneurs that can he
 
 So here it is. 
 
-[![](/images/youtube_episode_1.png)](https://www.youtube.com/watch?v=pn2w-ZYozDU)
+[![](/images/youtube/ai-startup.jpeg)](https://www.youtube.com/channel/UCdAC0o1hmy9JkYcph0GVrog)
 
-Go and check the [first video](https://www.youtube.com/watch?v=pn2w-ZYozDU) and subscribe to the YouTube channel. Oh, I am planning to post highlights on my Instagram account, so feel free to [follow me there too](https://www.instagram.com/jonvictory/).
+Go and check the [YouTube channel](https://www.youtube.com/channel/UCdAC0o1hmy9JkYcph0GVrog). Oh, I am planning to post highlights on my Instagram account, so feel free to [follow me there too](https://www.instagram.com/jonvictory/).
 
 If you are an Entrepreneur that wants a review, [go here](https://forms.gle/ARhTF4DydhqGizuK6).
 
