@@ -3,17 +3,16 @@ Category: Crypto
 Date: 2021-07-27 22:48
 Image: metaverse2021/metaverse_selfie.png
 Tags: popular
-Status: draft
 
 Five months ago, I decided to sell my first NFT, [a piece of cake for my birthday](my-birthday-cake-as-an-nft), on [my NFT platform](https://omgdrops.com/). Since then, I sold more than 100 NFTs, sometimes for celebrities, other times for smaller creators or for [my own conference](https://jon.io/i-organized-my-own-conference-like-gary-vee-in-30-days) (which sold out three times).
 
 I talked with every big Hollywood talent agency and I saw them selling less than my birthday cake. 
 
-These are the reason why they fail and why you fail to sell your NFTs.
+These are the reason why they (and you) fail to sell your NFTs.
 
 ## You think that the platform matters
 
-When you go to Amazon, do you go and browse their homepage to find what is new or are you going there to search something specific?
+When you go to Amazon, do you go and browse their homepage to find what is new or are you searching for something specific?
 
 **This is exactly** how people buy NFTs. 
 
@@ -22,21 +21,21 @@ People don't go on OpenSea and say "oh this little monkey from a creator I never
 > 99% of NFT sales happen by sending people **directly** to an NFT. 
 
 You have higher chances on selling NFTs **outside** of OpenSea/Rarible/etc as your buyers won't get distracted by random NFTs. 
-See all the projects that make **consistent** sales. CryptoPunks, Hashmasks, Mekaverse - all of the big NFT projects have custom pages for their drops. Of course, if you want resales you need to end up on OpenSea but don't be delusional thinking that anyone could find your NFT in this (well) sea of NFTs.
+See all the projects that make **consistent** sales. CryptoPunks, [Hashmasks](i-bought-this-image-for-1500-and-i-sold-it-for-50-in-two-weeks), Mekaverse - all of the big NFT projects have custom pages for their drops. Of course, if you want resales you need to end up on OpenSea but don't be delusional thinking that anyone could find your NFT in this (well) sea of NFTs.
 
-And you would know that this is true but ...
+And you would know that but ...
 
 ## You haven't bought any NFTs
 
-You need to buy NFTs to understand how to sell NFTs. I met artists with millions of followers than wanted to sell NFTs and didn't have a Metamask wallet. Guess how many NFTs they sold? **Less than my birthday cake** - and usually *zero*. 
+You need to buy NFTs to understand how to sell NFTs. I met artists with millions of followers that wanted to sell NFTs and didn't have a Metamask wallet. Guess how many NFTs they sold? **Less than my birthday cake** - and usually *zero*. 
 
-Every single NFT I bought was because someone from my community recommended that I should check it out. And all NFTs that made me money where bought outside of OpenSea (ok, I made some Ether by also [trading on OpenSea](i-bought-this-image-for-1500-and-i-sold-it-for-50-in-two-weeks)).
+Every single NFT I bought was because someone from my community recommended that I should check it out. And all NFTs that made me money where bought outside of OpenSea (ok, I made some Ether by [trading on OpenSea](i-bought-this-image-for-1500-and-i-sold-it-for-50-in-two-weeks)).
 
 To me, trying to sell NFTs without ever buying one is like trying to be a soccer coach without knowing soccer (Ted Lasso is the exception. Also he is a fictional character). 
 
 I am not saying go and spend all your money buying random NFTs. But you need to get involved in projects and communities, see how things work and understand how and why people make money and you have only 4 views in your profile.
 
-The biggest example is having influencers trying to sell to their followers and making "pocket money" because their followers had NO idea how to setup a wallet or what Ether is. I guarantee you the biggest talent agencies with their infinite connections and budgets have ZERO idea how to make any sales.
+The biggest example is influencers trying to sell to their followers and making "pocket money" only because their followers have NO idea how to setup a wallet or what Ether is. I guarantee you the biggest talent agencies with their infinite connections and budgets have ZERO idea how to make any sales.
 
 > Having more followers or being famous means shit in the Metaverse
 
