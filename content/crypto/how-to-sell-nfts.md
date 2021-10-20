@@ -9,7 +9,7 @@ Five months ago, I decided to sell my first NFT, [a piece of cake for my birthda
 
 I talked with every big Hollywood talent agency and I saw them selling less than my birthday cake. 
 
-These are the reason why they (and you) fail to sell your NFTs.
+These are the reasons why they (and you) fail to sell your NFTs.
 
 ## You think that the platform matters
 
