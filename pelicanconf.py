@@ -21,8 +21,8 @@ STATIC_PATHS = ['images', 'raw']
 
 EXTRA_PATH_METADATA = {
     'raw/metaverse2021.html': {'path': 'metaverse2021.html'},
-     'raw/youtube.html': {'path': 'youtube.html'}
-    }
+    'raw/youtube.html': {'path': 'youtube.html'}
+}
 
 ARTICLE_EXCLUDES = ['raw']
 
