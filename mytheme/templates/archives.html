@@ -4,15 +4,16 @@
 <div class="relative py-16 bg-white overflow-hidden">
     <div class="relative px-4 sm:px-6 lg:px-8">
         {% for article in articles_page.object_list %}
+
         <div class="text-lg max-w-prose mx-auto mb-6">
             <a class="leading-6 font-semibold text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150"
                 href="{{article.url}}">{{article.title}}</a>
             <span class="text-right text-sm">
-                - {{ article.locale_date }}
+                - {{ article.locale_date }} | <span class="font-light text-xs underline"><a
+                        href="/category/{{article.category}}">{{article.category}}</a>
+                </span>
             </span>
-
         </div>
-
         <div class="prose prose-lg text-gray-500 mx-auto">
 
         </div>
