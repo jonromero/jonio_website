@@ -18,11 +18,11 @@
     <title>Jon Vlachogiannis | Algorithms pay my bills</title>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.6.0/dist/alpine.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tailwindcss/ui@latest/dist/tailwind-ui.min.css">
-    <script src="../theme/js/main.js"></script>
+    <script src="./theme/js/main.js"></script>
     <link rel="icon" href="/images/favicon.ico" />
 
     <meta property="og:image" content="/images/" />
-    <meta property="og:title" content="Trades" />
+    <meta property="og:title" content="Supercomputers, A.I and losing $4M" />
 
 </head>
 
@@ -169,42 +169,58 @@
     <div class="relative px-4 sm:px-6 lg:px-8">
         <div class="text-lg max-w-prose mx-auto mb-6">
             <p class="text-base text-center leading-6 text-indigo-600 font-semibold tracking-wide uppercase">
-                <a class="text-indigo-600" href="../category/trading">trading</a>
+                <a class="text-indigo-600" href="./category/newsletters">Newsletters</a>
             </p>
             <h1
                 class="mt-2 mb-8 text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-                Trades</h1>
+                Supercomputers, A.I and losing $4M</h1>
         </div>
         <div class="prose prose-lg text-gray-500 mx-auto">
-            <p>Time to talk about brokers, how to place a trade programmatically and most importanly how not to get scammed.</p>
-<p>This is the third part of the series: <a href="what-is-forex.html">How to build your own algotrading platform</a>.</p>
-<p>A broker is nothing more than a company that lets you trade (buy or sell) assets on a market. For example, you can buy through a broker 10 stocks of Google with just a click and now you are actually owning a small part of Google (a reallyyyy small part so don't get excited). In order to buy these stocks, you place <em>buy</em> order in the broker's electronic platform (you can also do it through telephone or fax but we are not living in the 90's anymore) and if you have enough money in your account (around $7560) you can have 10 stocks of Google. Easy right?</p>
-<p>But how can you make money? Glad you asked.</p>
-<p>I told you that you need $7560 to own 10 stocks of Google. How did I come up with this number? If you search for Google's <em>ticker</em> https://www.google.com/search?q=GOOG you can see the current price that 1 share of Google is valued ($750.60 at the moment of writing). This price goes up and down many times per day. And that's where you come in.</p>
-<p>Let' say that the price five days from now is $770 per share. That means that your assets are valued now at $7700 while you only paid $7560! If you place a <em>sell</em> order to the broker, the broker will match you up with someone that wants to have 10 shares of GOOG and you'll get your money! You will have a profit of $140 in just a week. Same goes if you need </p>
-<p>Before building any algotrading systems, you need to know how to trade manually. What that actually means is that you need to lose money on your own before blaming the machine. As simple as that.</p>
-<p>So, let's talk about Foreign Exchange or Forex as the cool guys call it.</p>
-<p>First of all, why do we choose Forex for algotrading? Why don't we become millionaires trading like everybody else? Why not just buy Tesla, Amazon, Google, Facebook, Twitter and hope for the best (PS: please read the legal outro at the end of this blog post before buying any stocks).</p>
-<p>Easy answer. You cannot win (or lose) money fast enough by buying stocks.</p>
-<p>Forex has a nice (or terrible, depending on which side of the coin you are) thing called <em>leverage</em>. </p>
-<p>Leverage can be 1:10, 1:50, 1:100, 1:200, 1:1000 depending on how suicidal you are or how sketchy your broker is (don't worry, we'll talk about brokers in the next post). Let's see an example.</p>
-<p>We want to place a trade of $1k. The logical thing is that in order to buy something that costs $1k, you need to have in your account $1k, right? Nope. You can always get a loan. Oooooooor: Enter leverage.</p>
-<p>If we have a 1:100 leverage, we can place a trade and "control" $1k with just $10. For those that failed at math (don't be ashamed, I am one of you), $10 x 100 (leverage) = $1,000.
-That means you can trade big and win big! Actually 100 times more <em>big</em>! The catch is that you can actually go 100 times more <em>small</em>. Let's have another example.</p>
-<p>I just got my bonus ($1k) and I want to play on Forex.
-Without any leverage, I can buy 1,000 Forex units that cost $1 (by the way, there are no Forex units but we'll talk about this later). 
-How many units can I buy with 1:50 leverage?</p>
-<p>If you answer if 100,000, you did something wrong. The answer is 50,000 ($1,000 x 50 leverage). </p>
-<p>There you have it. One of the reasons that we are doing Forex, is because you can lose/win big. We'll get back to leverage when we start placing trades.</p>
-<p>There are three more exciting reasons actually that are even more awesome (dare to say awesomer?).
-1. Forex (almost) never sleeps. The markets are open ALL DAY, six days per week. To be more exact, there is not one market but four and they are overlapping providing the "all day" effect.
-2. Forex is very volatile and there are tons of money moving around (more than 5 trillion <em>per day</em>). Crazy right? 
-3. No fees on trades. You don't pay $10 per trade like you are doing with stocks. Here you pay <em>the spread</em> which is just a fraction of a cent (again, we'll talk about this in another post).</p>
-<p>All these reasons (leverage, all-day, volatility, fees) make Forex the most exciting platform to build and deploy your algorithms. </p>
-<p>Coming up next, Forex brokers. How not to be scammed before even writing a line of code.</p>
-<p>If you have more feedback, ping me at <a href="http://www.twitter.com/jonromero">jonromero</a> or signup to the <a href="http://eepurl.com/bGbOnb">newsletter</a>. </p>
-<p>Legal outro. This is an engineering tutorial on how to build an algotrading platform for experimentation and FUN. Any suggestions here are not financial advices. 
-If you lose any (or all) you money because you followed any trading advices or deployed this system in production, you cannot blame this random blog (and/or me). Enjoy at your own risk. </p>
+            <p>If you enjoy these newsletters and think a colleague or a friend should read them, please get them to sign up on this page. </p>
+<p>It is 2022 and and I am super excited! So many new stuff coming up and so many new opportunities! Let's jump straight to the top 5 highlights.</p>
+<p><br></p>
+<p>1/ This is the story, how a DAO bought the wrong item, at the wrong price, for the wrong reasons and lost $3M.</p>
+<p>A couple newsletters ago, I talked about how a <a href="https://jon.io/can-academics-build-products">DAO bought the unreleased album of Wu-Tang from FBI for $4M</a>. Since then, a lot of stuff were bought from DAOs but one of them was <strong>remarkably stupid</strong>.</p>
+<p>If for whatever reason you don't know what a DAO is, check <a href="https://www.youtube.com/watch?v=Rs6-8kllBCc">this video I made for you</a>. Back to our story.</p>
+<p>SpiceDAO is a DAO with the simple mission to buy the book of <a href="https://en.wikipedia.org/wiki/Dune_(novel)">"Dune"</a>. Money were raised, high fives were given but something went wrong. Very wrong.
+First, the bought the wrong book. Instead of buying the <strong>Frank Herbert’s</strong> <em>Dune</em>, they bought the hilarious film adaptation of  <strong>Jodorowsky’s</strong> Dune.</p>
+<p>If you don't know about Jodorowsky's adaptation, <a href="https://www.youtube.com/watch?v=m0cJNR8HEw0">watch this video</a>. Personally I believe it is a (hilarious) masterpiece.</p>
+<p>But there is more. Oh, there is more.
+The idea was that, after the acquisition of the book, they can create NFTs based on it's chapters and then burn the book! Then it only exists in the <em>metaverse</em>. 
+The issue of course is that when you buy something, <strong>you don't own the IP</strong>. For example, if I buy a BMW I cannot start selling t-shirts with BMW's logo! 
+Sadly, the DAO learnt about this after acquiring the book for $3M.</p>
+<p>And I know what you are thinking right now. They can still sell the book back right? 
+<strong>Nope</strong>. The actual book costs $30k. Yes, <strong>$30k</strong>.</p>
+<p>But it's ok, <a href="https://www.esquire.com/entertainment/books/a38815538/dune-crypto-nft-sale-mistake-explained/">we all do mistakes</a>.</p>
+<p><br></p>
+<p>2/ This week, we broke the 300 subscribers on my <a href="https://jon.io/youtube">YouTube channel</a>. I am loving it! If you haven't subscribed, consider doing it - it is awesome stuff.</p>
+<p>In the latest video, I review the pitch deck of a Startup that kept me excited during the whole time. Very nice pacing and metrics.</p>
+<p>Please leave a comment <a href="https://youtu.be/mM_MGWt8DrE">on the video</a>, I would love to know what you think.</p>
+<p><img alt="" src="https://sendfoxprod.b-cdn.net/media/itPjpQ8TMSXxH7Rv0LLrMYCbpzL6d7524T0oZBLW16325"></p>
+<p><a href="https://youtu.be/mM_MGWt8DrE">Click to see this epic video</a></p>
+<p><br></p>
+<p>3/ If I read back to you the following sentence a couple years ago, you would be looking at me like I am a crazy person.   </p>
+<blockquote>
+<p><strong>"Meta (Facebook) has created a <a href="https://www.marketwatch.com/story/facebook-parent-meta-creates-powerful-ai-supercomputer-to-support-metaverse-01643061310">supercomputer A.I to support the Metaverse</a>."</strong></p>
+</blockquote>
+<p>Let's go through this again.
+Facebook, oh sorry I meant Meta, has created the fastest supercomputer with A.I (whatever that means) to support the metaverse - whatever the metaverse might be. 
+If they have added "<strong>web3</strong>" and "<strong>DAO</strong>" they would have ticked all the boxes 😀</p>
+<p><br></p>
+<p>4/ It seems that DAOs are making VCs even more irrelevant. </p>
+<p>First, you shouldn't need to raise outside money because you can raise faster from your community. And now, you can start your own "VC" with a few clicks.</p>
+<p>Let me introduce you to <a href="https://syndicate.io/">SyndicateDAO</a> - (disclosure: I am somewhat affiliated with them).</p>
+<p><img alt="" src="https://sendfoxprod.b-cdn.net/media/zdQrIEqc40Ij0bzhaU7N1f55ZYZ6xRSq9zQskWB816325"> </p>
+<p>With <a href="https://twitter.com/SyndicateDAO">SyndicateDAO</a> you can create an investment DAO and invite friends to invest with you. And no, this is not a paid advertisement as there are still tons of issues (see: regulations).
+You can picture it as <a href="https://angel.co/">AngelList</a> but faster, cheaper and more transparent. </p>
+<p>Maybe we do a Syndicate for the companies that I review on my YouTube channel - and make sense to invest in? What do you think? </p>
+<p><br></p>
+<p>5/ To make it big in life, you need to take risks. Build your own company, invest aggressively, shoot for the moon.</p>
+<p>Elon Musk took "the shoot for the moon" part, a bit literally as one of the SpaceX's rockets will <a href="https://www.bbc.com/news/science-environment-60148543">crash into the moon and explode</a>. 
+Well at least it won't come <a href="https://www.youtube.com/watch?v=V3wZRdg-Tmo">crashing down back to Earth</a>.</p>
+<p><br></p>
+<p>See you next week. 🚀</p>
+<p>-- Jon V (as in Victory)</p>
 
             <!-- Course -->
             <div class="mt-8 bg-gray-200">
@@ -266,20 +282,19 @@ If you lose any (or all) you money because you followed any trading advices or d
                 <div class="mt-6 grid gap-16 border-t-2 border-gray-100 pt-10 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
  <div>
                         <p class="text-sm leading-5 text-gray-500">
-                            <time datetime="">Wed 03 March 2021</time>
+                            <time datetime="">Thu 20 January 2022</time>
                         </p>
-                        <a href="i-bought-this-image-for-1500-and-i-sold-it-for-50-in-two-weeks" class="block">
+                        <a href="selling-1000-selfies-to-make-1m" class="block">
                             <h3 class="mt-2 text-xl leading-7 font-semibold text-gray-900">
-                                I bought this image for $1500 (and I sold it for +50% in two weeks)
+                                Selling 1000 selfies to make $1M
                             </h3>
                             <p class="mt-3 text-base leading-6 text-gray-500">
-                                <p>If a year ago someone told me that they bought an image, a simple file that is trivial to download for <strong>$1500</strong>, I would think that they are idiots. But as it happens with all new opportunities, the line between idiots and informed investors is blurred. </p>
-<blockquote>
-<p>In January 2021 I …</p></blockquote>
+                                <p>If you enjoy these newsletters and think a colleague or a friend should read them, please get them to sign up on this page. </p>
+<p>It is 2022 and and I am super excited! So many new stuff coming up and so many new opportunities! Let's jump straight to the top …</p>
                             </p>
                         </a>
                         <div class="mt-3">
-                            <a href="i-bought-this-image-for-1500-and-i-sold-it-for-50-in-two-weeks"
+                            <a href="selling-1000-selfies-to-make-1m"
                                 class="text-base leading-6 font-semibold text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150">
                                 Read full story
                             </a>
@@ -287,21 +302,19 @@ If you lose any (or all) you money because you followed any trading advices or d
                 </div>
  <div>
                         <p class="text-sm leading-5 text-gray-500">
-                            <time datetime="">Tue 06 December 2016</time>
+                            <time datetime="">Thu 13 January 2022</time>
                         </p>
-                        <a href="placing-your-first-forex-trade-with-python" class="block">
+                        <a href="stop-trying-being-right-and-robots-that-read-your-mind" class="block">
                             <h3 class="mt-2 text-xl leading-7 font-semibold text-gray-900">
-                                Placing your first Forex trade with Python
+                                Stop trying being right and robots that read your mind
                             </h3>
                             <p class="mt-3 text-base leading-6 text-gray-500">
-                                <p>Update: I updated the code so it works with Oanda's new API. Get it <a href="https://github.com/jonromero/forex_algotrading">here</a></p>
-<p>Time to talk about brokers, how to place a trade programmatically and most importantly how not to get scammed.</p>
-<p>This is the third part of the series: <a href="how-to-build-your-own-algorithmic-trading-platform.html">How to build your own algotrading platform</a>.</p>
-<p>A …</p>
+                                <p>If you enjoy these newsletters and think a colleague or a friend should read them, please get them to sign up on this page. </p>
+<p>It is 2022 and and I am super excited! So many new stuff coming up and so many new opportunities! Let's jump straight to the top …</p>
                             </p>
                         </a>
                         <div class="mt-3">
-                            <a href="placing-your-first-forex-trade-with-python"
+                            <a href="stop-trying-being-right-and-robots-that-read-your-mind"
                                 class="text-base leading-6 font-semibold text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150">
                                 Read full story
                             </a>
@@ -309,19 +322,19 @@ If you lose any (or all) you money because you followed any trading advices or d
                 </div>
  <div>
                         <p class="text-sm leading-5 text-gray-500">
-                            <time datetime="">Wed 27 July 2016</time>
+                            <time datetime="">Thu 06 January 2022</time>
                         </p>
-                        <a href="trading-ethereum-making-10-every-20-minutes" class="block">
+                        <a href="the-time-i-didnt-sell-nfts-for-a-dead-celebrity" class="block">
                             <h3 class="mt-2 text-xl leading-7 font-semibold text-gray-900">
-                                Trading Ethereum: Making 10% every 20 minutes
+                                The time I didn't sell NFTs for a dead Celebrity
                             </h3>
                             <p class="mt-3 text-base leading-6 text-gray-500">
-                                <p>This is more of a <em>"How to build your own algotrading strategy - the Ethereum edition"</em> and not a "make money fast" blog post.</p>
-<p>It is also a real example with real returns (and real production errors that cost me money) where you can see how to identify opportunities, why algotrading …</p>
+                                <p>If you enjoy these newsletters and think a colleague or a friend should read them, please get them to sign up on this page. </p>
+<p>It is 2022 and and I am super excited! So many new stuff coming up and so many new opportunities! Let's jump straight to the top …</p>
                             </p>
                         </a>
                         <div class="mt-3">
-                            <a href="trading-ethereum-making-10-every-20-minutes"
+                            <a href="the-time-i-didnt-sell-nfts-for-a-dead-celebrity"
                                 class="text-base leading-6 font-semibold text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150">
                                 Read full story
                             </a>
@@ -329,19 +342,20 @@ If you lose any (or all) you money because you followed any trading advices or d
                 </div>
  <div>
                         <p class="text-sm leading-5 text-gray-500">
-                            <time datetime="">Fri 13 May 2016</time>
+                            <time datetime="">Thu 30 December 2021</time>
                         </p>
-                        <a href="machine-beats-human-using-machine-learning-in-forex" class="block">
+                        <a href="be-in-the-future-room" class="block">
                             <h3 class="mt-2 text-xl leading-7 font-semibold text-gray-900">
-                                Machine Beats Human: Using Machine Learning in Forex
+                                Be in the "future" room
                             </h3>
                             <p class="mt-3 text-base leading-6 text-gray-500">
-                                <p><em>This is the another post of the series: <a href="how-to-build-your-own-algorithmic-trading-platform.html">How to build your own algotrading platform</a>.</em></p>
-<p>Machine learning and trading is a very interesting subject. It is also a subject where you can spend tons of time writing code and reading papers and then a kid can beat you while playing …</p>
+                                <p>If you enjoy these newsletters and think a colleague or a friend should read them, please get them to sign up on this page. </p>
+<p>Here are the top five things for this week. Oh and Happy New Year!</p>
+<p>1/ Last week I had <strong>Live Office hours</strong> and we talked about …</p>
                             </p>
                         </a>
                         <div class="mt-3">
-                            <a href="machine-beats-human-using-machine-learning-in-forex"
+                            <a href="be-in-the-future-room"
                                 class="text-base leading-6 font-semibold text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150">
                                 Read full story
                             </a>
