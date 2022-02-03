@@ -1,4 +1,4 @@
-Title: I managed a fund that gave no money but took no equity
+Title: I managed a fund that gave no money, took no equity and had an exit
 Category: Projects 
 Date: 2022-02-02 22:48
 Image: zero.png
