@@ -20,9 +20,15 @@ JS = 'theme/js'
 STATIC_PATHS = ['images', 'raw']
 
 EXTRA_PATH_METADATA = {
-    'raw/metaverse2021.html': {'path': 'metaverse2021.html'},
-    'raw/404.html': {'path': '404.html'},
-    'raw/youtube.html': {'path': 'youtube.html'}
+    'raw/metaverse2021.html': {
+        'path': 'metaverse2021.html'
+    },
+    'raw/404.html': {
+        'path': '404.html'
+    },
+    'raw/youtube.html': {
+        'path': 'youtube.html'
+    }
 }
 
 ARTICLE_EXCLUDES = ['raw']
@@ -37,6 +43,9 @@ AUTHOR_FEED_RSS = None
 RELATED_POSTS_MAX = 4
 
 DEFAULT_PAGINATION = 10
+
+DIRECT_TEMPLATES = ['store', 'mentoring', 'index']
+
 PAGINATED_TEMPLATES = {
     'index': None,
     'tag': None,
