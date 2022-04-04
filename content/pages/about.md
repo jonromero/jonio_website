@@ -15,9 +15,9 @@ And then I had my first revelation.
 
 Knowing your "tool of the trade" really well is the first step in being in control of your life. And to tell you the truth I didn't even know what that meant until many years later when I decided to start my first company.
 
-## Revelation II: Work for noone 
+## Revelation II: Work for no one 
 
-My first company was building websites and eshops in Greece. Tons of work. Tons of fun. I am sure that there was noone else running a company while still studing Computer Science. But it was getting a toll on me. I remember seeing the sunrise while I was still working on building a huge eshop and I thought "holy fuck, why I am doing this?". I had to find a way to have many customers and one product. I had to find a way to scale.
+My first company was building websites and eshops in Greece. Tons of work. Tons of fun. I am sure that there was no one else running a company while still studing Computer Science. But it was getting a toll on me. I remember seeing the sunrise while I was still working on building a huge eshop and I thought "holy fuck, why I am doing this?". I had to find a way to have many customers and one product. I had to find a way to scale.
 
 ## Revelation III: Build to scale
 

@@ -2,117 +2,386 @@
 {% block content %}
 
 <!-- HERO section -->
-<main class="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 xl:mt-28">
-    <div class="text-center">
-        <h2
-            class="text-4xl pb-8 tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
-            1-on-1<span class="text-blue-600"> coaching</span>
-            <br class="xl:hidden">
-            with JonV
-        </h2>
-    </div>
+<div class="relative pt-6 pb-16 sm:pb-24">
+    <main class="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
+        <div class="text-center">
+            <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                <span class="text-5xl text-gray-700"> I
+                    help people
+                    make
+                    <span class='text-yellow-400'>
+                        epic companies
+                    </span>
+                </span>
+            </h1>
+            <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+                <span class="block xl:inline">If you don't know <a class="underline" href="/pages/my-story">
+                        me</a>, welcome on your first day on the Internet.</span>
 
-    <!-- Box -->
-    <div class="relative bg-gray-800">
-        <div class="hidden md:block h-56 bg-indigo-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
-            <img class="w-full h-full object-cover" src="{{IMAGES}}/jon.jpg" alt="">
-        </div>
-        <div class="relative max-w-screen-xl mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-            <div class="md:ml-auto md:w-1/2 md:pl-10 text-gray-300">
-                <h2 class="mt-2 text-white text-3xl leading-9 font-extrabold tracking-tight sm:text-4xl sm:leading-10">
-                    Epic stories about how:
-                </h2>
-                <p class="mt-3 text-lg leading-7 ">
-                <ol class="text-left list-decimal list-outside my-5 pl-2">
-                    <li>I built and sold the most <b>epic</b> companies without going insane 🤯</li>
-                    <li>I helped a <a class="text-indigo-400"
-                            href="how-i-spent-my-summer-helping-to-save-a-whole-country">whole country </a> fight
-                        COVID-19 🦠 with
-                        Machine Learning
-                    </li>
-                    <li>I created a wealth management company from scratch and kicked Wall Street's ass
-                    </li>
-                    <li>I ran the first arbitrage
-                        algorithms on blockchain, made and lost everything (and then
-                        made them back) <a class="text-indigo-400"
-                            href="trading-ethereum-making-10-every-20-minutes.html">[...]</a>
-                    </li>
-                    <li>Invested in a unicorn🦄 by being annoying</li>
-                </ol>
-                <div class="text-right">
-                    <a class="underline" href="/archives">and many many more</a>
-                </div>
-                </p>
-                <div class="mt-8">
-                    <div class="rounded-md shadow">
-                        <form method="post" class="sm:flex" action="https://sendfox.com/form/1we8gr/3ejnj0" id="3ejnj0"
-                            data-async="true">
-                            <input type="email"
-                                class="appearance-none block w-full px-3 py-3 border border-gray-300 text-base leading-6 rounded-md placeholder-gray-500 shadow-sm focus:outline-none focus:text-gray-800 focus:shadow-outline focus:border-blue-300 transition duration-150 ease-in-out sm:flex-1"
-                                placeholder="Email" name="email" required />
-                            <!-- no botz please -->
-                            <button
-                                class="mt-3 w-full px-6 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 shadow-sm  focus:outline-none focus:shadow-outline active:bg-gray-900 transition duration-150 ease-in-out sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto"
-                                type="submit">Get them all here
-                            </button>
-                        </form>
-                        <script src="https://sendfox.com/js/form.js"></script>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Box end -->
+            </p>
 
-</main>
+        </div>
+    </main>
+</div>
 <!-- END HERO section -->
 
-
-<!-- Store items -->
-<div class="relative bg-gray-50 pt-2 pb-8 px-4 sm:px-6 lg:pt-2 lg:pb-8 lg:px-8">
-    <div class="absolute inset-0">
-        <div class="bg-white h-1/3 sm:h-2/3"></div>
+<!-- plans hourly -->
+<div class="bg-gray-100">
+    <div class="pt-12 sm:pt-16 lg:pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl lg:text-5xl">1 hour advisory for Startups
+                </h2>
+                <p class="mt-4 text-xl text-gray-600">
+                    Let's find your market-fit, get you some customers and answer any questions about technology, crypto
+                    and web3 </p>
+            </div>
+        </div>
     </div>
-    <div class="relative max-w-7xl mx-auto">
-        <div class="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
-            {% for article in articles if 'store' in article.tags if article.tags is defined else None %}
-            <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
-                <div class="flex-shrink-0">
-                    <a target="_blank" href="https://omgdrops.com/{{article.link}}">
-                        <img class="h-full w-full object-cover" src="images/{{ article.image }}" alt="">
-                    </a>
-                </div>
-                <div class="flex-1 bg-white p-6 flex flex-col justify-between">
-                    <div class="flex-1">
-                        <a target="_blank" href="https://omgdrops.com/{{article.link}}">
-                            <h3 class="mt-2 mb-2 block text-xl leading-7 font-semibold text-gray-900">
-                                {{ article.title }}
-                            </h3>
+    <div class="mt-8 bg-white pb-16 sm:mt-12 sm:pb-20 lg:pb-28">
+        <div class="relative">
+            <div class="absolute inset-0 h-1/2 bg-gray-100"></div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-lg mx-auto rounded-lg shadow-lg overflow-hidden lg:max-w-none lg:flex">
+                    <div class="flex-1 bg-white px-6 py-8 lg:p-12">
+                        <h3 class="text-2xl font-extrabold text-gray-900 sm:text-3xl">Video call</h3>
+                        <p class="mt-6 text-base text-gray-500">We hop on a video call and we talk about anything your
+                            Startup needs.
+                            Is it funding? Is it finding your product market fit? Do you have questions about how to
+                            hire a team to build smart contracts for you?
+                            Are you building a fintech company and you are wondering what about regulations? Or you just
+                            want to find more ways to acquire customers?
+                        </p>
+                        <div class="mt-8">
+                            <div class="flex items-center">
+                                <h4
+                                    class="flex-shrink-0 pr-4 bg-white text-sm tracking-wider font-semibold uppercase text-indigo-600">
+                                    What's included</h4>
+                                <div class="flex-1 border-t-2 border-gray-200"></div>
+                            </div>
+                            <ul role="list"
+                                class="mt-8 space-y-5 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-5">
+                                <li class="flex items-start lg:col-span-1">
+                                    <div class="flex-shrink-0">
+                                        <!-- Heroicon name: solid/check-circle -->
+                                        <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <p class="ml-3 text-sm text-gray-700">1-hour video call with me</p>
+                                </li>
 
-                            <h3 class="mb-2 text-sm leading-2 text-gray-500">
-                                {{article.summary}}
-                            </h3>
+                                <li class="flex items-start lg:col-span-1">
+                                    <div class="flex-shrink-0">
+                                        <!-- Heroicon name: solid/check-circle -->
+                                        <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <p class="ml-3 text-sm text-gray-700">Intros to my network (subject to a good fit)
+                                    </p>
+                                </li>
 
-                            <h3
-                                class="w-full px-3 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 shadow-sm  focus:outline-none focus:shadow-outline active:bg-gray-900 transition duration-150 ease-in-out sm:mt-0 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto">
-                                Click to see more
-                            </h3>
+                                <li class="flex items-start lg:col-span-1">
+                                    <div class="flex-shrink-0">
+                                        <!-- Heroicon name: solid/check-circle -->
+                                        <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <p class="ml-3 text-sm text-gray-700">No-bullshit feedback</p>
+                                </li>
 
-                    </div>
-                    <div class="mt-6 flex items-center">
-                        <div class="ml-3">
-                            <p class="text-sm leading-5 font-medium text-gray-900">
-                            </p>
+                                <li class="flex items-start lg:col-span-1">
+                                    <div class="flex-shrink-0">
+                                        <!-- Heroicon name: solid/check-circle -->
+                                        <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <p class="ml-3 text-sm text-gray-700">In-person meeting (if I am in
+                                        your area)</p>
+                                </li>
+                            </ul>
                         </div>
                     </div>
+                    <div
+                        class="py-8 px-6 text-center bg-gray-50 lg:flex-shrink-0 lg:flex lg:flex-col lg:justify-center lg:p-12">
+                        <p class="text-lg leading-6 font-medium text-gray-900">Save months in developing products no one
+                            wants</p>
+                        <div class="mt-4 flex items-center justify-center text-5xl font-extrabold text-gray-900">
+                            <span> $499 </span>
+                            <span class="ml-3 text-sm font-medium text-gray-500"> / hour </span>
+                        </div>
+                        <div class="mt-6">
+                            <div class="rounded-md shadow">
+                                <a target="_blank" href="https://buy.stripe.com/bIYg0Vdpu2Ac6083cd"
+                                    class="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-900">
+                                    Get it </a>
+                            </div>
+                        </div>
+                        <p class="mt-2 text-sm">
+                            <a href="#" class="text-xs font-medium text-gray-500 underline"> Read about the terms here
+                            </a>
+                        </p>
+                        <!-- 
+                        <div class="mt-4 text-sm">
+                            <a href="#" class="font-medium underline text-gray-900">
+                                See an example
+                            </a>
+                        </div>
+                        -->
+                    </div>
                 </div>
-                </a>
             </div>
-            {% endfor %}
         </div>
     </div>
 </div>
-<!-- END store items -->
+<!-- plans hourly end -->
+
+<!-- plans hourly -->
+<div class="bg-gray-100">
+    <div class="pt-12 sm:pt-16 lg:pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl lg:text-5xl">Executive advisory for Funds
+                    and
+                    Series A+ companies
+                </h2>
+                <p class="mt-4 text-xl text-gray-600">
+                    Grow your fund or find how your company should utilize technologies like web3 and
+                    blockchain </p>
+            </div>
+        </div>
+    </div>
+    <div class="mt-8 bg-white pb-16 sm:mt-12 sm:pb-20 lg:pb-28">
+        <div class="relative">
+            <div class="absolute inset-0 h-1/2 bg-gray-100"></div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-lg mx-auto rounded-lg shadow-lg overflow-hidden lg:max-w-none lg:flex">
+                    <div class="flex-1 bg-white px-6 py-8 lg:p-12">
+                        <h3 class="text-2xl font-extrabold text-gray-900 sm:text-3xl">Video calls and <b>unlimited
+                                emails</b> </h3>
+                        <p class="mt-6 text-base text-gray-500">Creating a strategy without knowing all the tools and
+                            the whole market is impossible.
+                            That's where I come in. We sit down and we make sure you build a plan that takes you to the
+                            next level.
+                        </p>
+                        <div class="mt-8">
+                            <div class="flex items-center">
+                                <h4
+                                    class="flex-shrink-0 pr-4 bg-white text-sm tracking-wider font-semibold uppercase text-indigo-600">
+                                    What's included</h4>
+                                <div class="flex-1 border-t-2 border-gray-200"></div>
+                            </div>
+                            <ul role="list"
+                                class="mt-8 space-y-5 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-5">
+                                <li class="flex items-start lg:col-span-1">
+                                    <div class="flex-shrink-0">
+                                        <!-- Heroicon name: solid/check-circle -->
+                                        <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <p class="ml-3 text-sm text-gray-700"><b>Six</b> 1-hour video calls with me</p>
+                                </li>
+
+                                <li class="flex items-start lg:col-span-1">
+                                    <div class="flex-shrink-0">
+                                        <!-- Heroicon name: solid/check-circle -->
+                                        <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <p class="ml-3 text-sm text-gray-700">Unlimited emails
+                                    </p>
+                                </li>
+
+                                <li class="flex items-start lg:col-span-1">
+                                    <div class="flex-shrink-0">
+                                        <!-- Heroicon name: solid/check-circle -->
+                                        <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <p class="ml-3 text-sm text-gray-700">Add me to your advisory board * </p>
+                                </li>
+
+                                <li class="flex items-start lg:col-span-1">
+                                    <div class="flex-shrink-0">
+                                        <!-- Heroicon name: solid/check-circle -->
+                                        <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd"
+                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <p class="ml-3 text-sm text-gray-700">In-person meetings (if I am in your area)</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div
+                        class="py-8 px-6 text-center bg-gray-50 lg:flex-shrink-0 lg:flex lg:flex-col lg:justify-center lg:p-12">
+                        <p class="text-lg leading-6 font-medium text-gray-900">Add a top executive in your team</p>
+                        <div class="mt-4 flex items-center justify-center text-5xl font-extrabold text-gray-900">
+                            <span> $10k </span>
+                            <span class="ml-3 text-xl font-medium text-gray-500"> / mo </span>
+                        </div>
+                        <p class="text-xs">
+                            <span class="font-medium text-gray-800 "> 3-months minimum commitment </span>
+                        </p>
+                        <div class="mt-6">
+                            <div class="rounded-md shadow">
+                                <a target="_blank" href="https://buy.stripe.com/6oE7upety3Eg3S0eUW"
+                                    class="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-900">
+                                    Get it - 7 days free trial </a>
+                            </div>
+                        </div>
+                        <p class="mt-2 text-sm">
+                            <a href="#" class="text-xs font-medium text-gray-500 underline"> Read about the terms here
+                            </a>
+                        </p>
+                        <!-- 
+                        <div class="mt-4 text-sm">
+                            <a href="#" class="font-medium underline text-gray-900">
+                                See an example
+                            </a>
+                        </div>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- plans hourly end -->
+
+<!-- monthly -->
+<div class="bg-gray-100">
+    <div class="max-w-7xl mx-auto py-8 px-4 sm:py-8 sm:px-6 lg:px-8">
+        <div class="pb-8 xl:flex xl:items-center xl:justify-between">
+            <div>
+                <h1 class="text-4xl font-extrabold sm:text-5xl sm:tracking-tight">
+                    <span class="text-gray-900">Community Advisory </span>
+                </h1>
+                <p class="mt-5 text-xl text-gray-500">Use <a class="font-medium text-gray-500 underline" target="_blank"
+                        href="https://victory.jon.io/">$✌️</a> to book a 30 minutes video
+                    call </p>
+            </div>
+            <div class="mt-6">
+                <div class="rounded-md shadow">
+                    <a target="_blank" href="#"
+                        class="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-900">
+                        Get it 2000 $✌️ </a>
+                </div>
+            </div>
+
+        </div>
+        <div class="pt-8 xl:grid xl:grid-cols-3 xl:gap-x-8">
+            <div>
+                <p class="mt-2 text-3xl font-extrabold text-gray-900">Exclusive for the <a
+                        class="font-medium text-gray-500 underline" target="_blank" href="https://jon.io/">Jon.IO</a>
+                    community
+                </p>
+                <p class="mt-4 text-lg text-gray-500">Use your <a class="font-medium text-gray-500 underline"
+                        target="_blank" href="https://victory.jon.io/">$Victory</a> coins to book a video call with me
+                </p>
+            </div>
+            <div class="mt-4 sm:mt-8 md:mt-10 md:grid md:grid-cols-2 md:gap-x-8 xl:mt-0 xl:col-span-2">
+                <ul role="list" class="divide-y divide-gray-200">
+                    <li class="py-4 flex md:py-0 md:pb-4">
+                        <!-- Heroicon name: outline/check -->
+                        <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="ml-3 text-base text-gray-500">30 minutes video call</span>
+                    </li>
+
+                    <li class="py-4 flex">
+                        <!-- Heroicon name: outline/check -->
+                        <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="ml-3 text-base text-gray-500">Pitch deck feedback
+
+                        </span>
+                    </li>
+
+                    <li class="py-4 flex">
+                        <!-- Heroicon name: outline/check -->
+                        <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="ml-3 text-base text-gray-500">Customer acquisition strategies</span>
+                    </li>
+
+                </ul>
+                <ul role="list" class="border-t border-gray-200 divide-y divide-gray-200 md:border-t-0">
+                    <li class="py-4 flex md:border-t-0 md:py-0 md:pb-4">
+                        <!-- Heroicon name: outline/check -->
+                        <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="ml-3 text-base text-gray-500">Fund raising ideas</span>
+                    </li>
+
+                    <li class="py-4 flex">
+                        <!-- Heroicon name: outline/check -->
+                        <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="ml-3 text-base text-gray-500">Product feedback </span>
+                    </li>
+                    <li class="py-4 flex">
+                        <!-- Heroicon name: outline/check -->
+                        <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span class="ml-3 text-base text-gray-500">Anything you want to talk about</span>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="pt-8 text-xs font-medium text-gray-500 justify-end flex">
+            You might also be interested in the _
+            <a target="_blank" href="https://jon.io/startup-office-hours" class=" underline">Startup Office Hours</a>
+        </div>
+    </div>
+</div>
+
+<!-- monthly end -->
+
 
 <!-- FAQ -->
 <div class="bg-gray-50">
@@ -128,13 +397,18 @@
                         <button type="button" class="text-left w-full flex justify-between items-start text-gray-400"
                             aria-controls="faq-0" aria-expanded="false">
                             <span class="font-medium text-gray-900">
-                                What are DigiPhysical NFTs?
+                                When did you start paid advisory?
                             </span>
                         </button>
                     </dt>
                     <dd class="mt-2 pr-12" id="faq-0">
                         <p class="text-base text-gray-500">
-                            The.Future.
+                            I've been doing paid advisory for a long time now (mostly for larger organizations). It is
+                            fun but
+                            it makes it difficult to help smaller companies, funds and Entrepreneurs. This is a way for
+                            people that really need
+                            my help to reach out and connect with me.
+                            I will always have a community tier that is using $Victory coins.
                         </p>
                     </dd>
                 </div>
@@ -145,13 +419,13 @@
                         <button type="button" class="text-left w-full flex justify-between items-start text-gray-400"
                             aria-controls="faq-0" aria-expanded="false">
                             <span class="font-medium text-gray-900">
-                                What currencies are accepted? Can I buy in $?
+                                What currencies are accepted?
                             </span>
                         </button>
                     </dt>
                     <dd class="mt-2 pr-12" id="faq-0">
                         <p class="text-base text-gray-500">
-                            Nope. Only Ether is accepted.
+                            Dollars ($) and $Victory coins.
                         </p>
                     </dd>
                 </div>
@@ -162,17 +436,21 @@
                         <button type="button" class="text-left w-full flex justify-between items-start text-gray-400"
                             aria-controls="faq-0" aria-expanded="false">
                             <span class="font-medium text-gray-900">
-                                How buying a digiphysical NFT works?
+                                Can I add you to my company's board?
                             </span>
                         </button>
                     </dt>
                     <dd class="mt-2 pr-12" id="faq-0">
                         <p class="text-base text-gray-500">
-                            Click on the item you love and you will be redirected to OMGDrops.com to buy your unique
-                            digiPhysical NFT. The NFT comes with
-                            unlockable content - your physical item!. After you have bought your NFT, you can "unlock
-                            it" and you will be asked for your email address.
-                            Someone from our team will reach out to that email address for next steps.
+                            If you bought the "Executive Advisory" package, there is a high possibility that I can be
+                            part of your advisory board. The only limitations are if there are any regulations or
+                            ethical issues.
+                            You can send me an email and we'll figure it out.
+                            <br /> <br />
+                            If everything is ok, I can be part of your advisory board for as long as I am providing
+                            advisory
+                            services to your company.
+
                         </p>
                     </dd>
                 </div>
@@ -183,13 +461,14 @@
                         <button type="button" class="text-left w-full flex justify-between items-start text-gray-400"
                             aria-controls="faq-0" aria-expanded="false">
                             <span class="font-medium text-gray-900">
-                                How long does it take to receive my item?
+                                Is my payment information secure?
                             </span>
                         </button>
                     </dt>
                     <dd class="mt-2 pr-12" id="faq-0">
                         <p class="text-base text-gray-500">
-                            It depends on your location. Expect it in 1 to 3 weeks.
+                            I am using Stripe to process payments so I'll never see your credit card information. Short
+                            answer, yes.
                         </p>
                     </dd>
                 </div>
@@ -200,13 +479,14 @@
                         <button type="button" class="text-left w-full flex justify-between items-start text-gray-400"
                             aria-controls="faq-0" aria-expanded="false">
                             <span class="font-medium text-gray-900">
-                                I have questions, my order hasn't arrived etc. Where can I email you?
+                                I bought an hour with you. What is next?
                             </span>
                         </button>
                     </dt>
                     <dd class="mt-2 pr-12" id="faq-0">
                         <p class="text-base text-gray-500">
-                            Send us an email at store at jon.io.
+                            Thanks! I'll reach out to you via email in the next 48 hours and we'll find a time to have
+                            our call.
                         </p>
                     </dd>
                 </div>
@@ -223,7 +503,7 @@
                     </dt>
                     <dd class="mt-2 pr-12" id="faq-0">
                         <p class="text-base text-gray-500">
-                            Sadly, due to the nature of the blockchain, there are no refund available
+                            If you are not satisfied from our call, you'll get your money back.
                         </p>
                     </dd>
                 </div>
@@ -234,51 +514,20 @@
                         <button type="button" class="text-left w-full flex justify-between items-start text-gray-400"
                             aria-controls="faq-0" aria-expanded="false">
                             <span class="font-medium text-gray-900">
-                                How valuable is my NFT?
+                                Can I reschedule our call?
                             </span>
                         </button>
                     </dt>
                     <dd class="mt-2 pr-12" id="faq-0">
                         <p class="text-base text-gray-500">
-                            It depends on the market. From $1 to $1000 is the range we have seen our NFTs getting sold
-                            in the secondary market
+                            If you let me know 24 hours in advance, yes. After that I won't be able to reschedule our
+                            call and you'll
+                            have to buy another slot.
                         </p>
                     </dd>
                 </div>
 
-                <div class="pt-6">
-                    <dt class="text-lg">
-                        <!-- Expand/collapse question button -->
-                        <button type="button" class="text-left w-full flex justify-between items-start text-gray-400"
-                            aria-controls="faq-0" aria-expanded="false">
-                            <span class="font-medium text-gray-900">
-                                If I sell my NFT, do I need to send also the physical item?
-                            </span>
-                        </button>
-                    </dt>
-                    <dd class="mt-2 pr-12" id="faq-0">
-                        <p class="text-base text-gray-500">
-                            No.
-                        </p>
-                    </dd>
-                </div>
 
-                <div class="pt-6">
-                    <dt class="text-lg">
-                        <!-- Expand/collapse question button -->
-                        <button type="button" class="text-left w-full flex justify-between items-start text-gray-400"
-                            aria-controls="faq-0" aria-expanded="false">
-                            <span class="font-medium text-gray-900">
-                                How can I pick a size for a t-shirt?
-                            </span>
-                        </button>
-                    </dt>
-                    <dd class="mt-2 pr-12" id="faq-0">
-                        <p class="text-base text-gray-500">
-                            After you unlock your NFT, our team will reach out to ask you for your size.
-                        </p>
-                    </dd>
-                </div>
 
                 <!-- More questions... -->
             </dl>
