@@ -44,7 +44,7 @@ RELATED_POSTS_MAX = 4
 
 DEFAULT_PAGINATION = 10
 
-DIRECT_TEMPLATES = ['advisory', 'index']
+DIRECT_TEMPLATES = ['advisory', 'index', 'archives']
 
 PAGINATED_TEMPLATES = {
     'index': None,
