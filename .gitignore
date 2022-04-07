@@ -8,4 +8,6 @@ output/
 
 venv/
 
+.vscode/
+
 
