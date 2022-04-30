@@ -7,7 +7,7 @@ status: hidden
 
 In order to get all these spicy and epic email, you need to confirm your subscription. One click and awesome emails await you!
 
-If you are a Gmail user, check for any emails from me [by clicking here](https://mail.google.com/mail/u/0/#search/me%40jon.io).
+If you are a Gmail user, check for any emails from me [by clicking here](https://mail.google.com/mail/u/0/#search/Jon Vlachogiannis).
 
 Talk you soon, Jon V
 
