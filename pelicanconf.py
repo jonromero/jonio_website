@@ -23,6 +23,9 @@ EXTRA_PATH_METADATA = {
     'raw/metaverse2021.html': {
         'path': 'metaverse2021.html'
     },
+    'raw/metaverse2022.html': {
+        'path': 'metaverse2022.html'
+    },
     'raw/404.html': {
         'path': '404.html'
     },
