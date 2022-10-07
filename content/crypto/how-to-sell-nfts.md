@@ -1,5 +1,5 @@
 Title: Five reasons why you cannot sell your NFTs 
-Category: Crypto 
+Category: crypto 
 Date: 2021-10-20 22:48
 Image: nft-post-sale.jpg
 Tags: popular

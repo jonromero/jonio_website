@@ -1,5 +1,5 @@
 Title: Jack of many trades, Master of Anything 
-Category: Productivity
+Category: productivity
 Date: 2020-03-09 10:48
 Image: master.png
 

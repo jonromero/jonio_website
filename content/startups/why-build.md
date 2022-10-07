@@ -1,5 +1,5 @@
 Title: Why I've built a custom blog with Pelican and Tailwind
-Category: Startups 
+Category: startups 
 Date: 2020-10-04 10:48
 Image: jonv.png
 

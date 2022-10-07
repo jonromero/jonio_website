@@ -1,5 +1,5 @@
 Title: The Joy Journal 
-Category: Productivity
+Category: productivity
 Date: 2020-02-08 10:48
 Image: hrvdata.jpeg
 Related: trading-ethereum-making-10-every-20-minutes

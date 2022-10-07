@@ -1,5 +1,5 @@
 Title: Marie Kondo your Startup 
-Category: Startups
+Category: startups
 Date: 2020-05-17 10:48
 Image: kondo.png
 

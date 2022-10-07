@@ -1,5 +1,5 @@
 Title: The #RoamCult: Why creating a cult for your Startups is what you should be doing right now
-Category: Startups 
+Category: startups 
 Date: 2020-07-11 10:48
 Image: church.jpeg
 

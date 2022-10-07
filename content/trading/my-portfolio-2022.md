@@ -1,5 +1,5 @@
 Title: My Portfolio [2022]: NFTs, Crypto, Stocks, Startups and more
-Category: Crypto 
+Category: crypto 
 Date: 2022-01-12 22:48
 Image: nft-post-sale.jpg
 Status: draft

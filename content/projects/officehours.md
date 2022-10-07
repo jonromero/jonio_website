@@ -1,5 +1,5 @@
 Title: Startup Office hours
-Category: Projects 
+Category: projects 
 Date: 2021-09-21 13:48
 Image: youtube/ai-startup.jpeg
 

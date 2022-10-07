@@ -1,5 +1,5 @@
 Title: Your blind spots will bring you down
-Category: Startups 
+Category: startups 
 Date: 2020-12-03 10:48
 Image: plane.png
 

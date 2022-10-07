@@ -1,5 +1,5 @@
 Title: My birthday cake as an NFT
-Category: Projects 
+Category: projects 
 Date: 2021-04-09 10:48
 Image: jonscake.gif
 

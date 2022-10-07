@@ -1,5 +1,5 @@
 Title: Win in every negotiation
-Category: Startups
+Category: startups
 Date: 2020-05-25 10:48
 Image: palace.jpeg
 

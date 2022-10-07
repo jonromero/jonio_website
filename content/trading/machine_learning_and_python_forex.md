@@ -1,6 +1,6 @@
 Title: Machine Beats Human: Using Machine Learning in Forex 
 Tags: popular
-Category: Trading
+Category: trading
 Image: lethe.png
 Date: 2016-05-13 22:30
 

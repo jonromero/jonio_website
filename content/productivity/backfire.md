@@ -1,5 +1,5 @@
 Title: The backfire effect: How to convince irrational people
-Category: Productivity
+Category: productivity
 Date: 2020-10-15 10:48
 Image: backfire.jpg
 

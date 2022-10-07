@@ -1,5 +1,5 @@
 Title: Living Forever - My second conference
-Category: Projects 
+Category: projects 
 Date: 2021-07-27 22:48
 Image: event.jpg
 Status: draft

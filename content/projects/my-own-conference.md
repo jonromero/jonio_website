@@ -1,5 +1,5 @@
 Title: I organized my own conference like Gary Vee in 30 days
-Category: Projects 
+Category: projects 
 Date: 2021-07-27 22:48
 Image: metaverse2021/metaverse_selfie.png
 

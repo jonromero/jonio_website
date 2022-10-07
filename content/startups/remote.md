@@ -1,5 +1,5 @@
 Title: Why I love working remotely (and why your company cannot and never will) 
-Category: Startups
+Category: startups
 Date: 2018-10-18 10:48
 Image: italy.jpeg
 

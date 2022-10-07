@@ -1,5 +1,5 @@
 Title: The beauty in being the underdog
-Category: Productivity
+Category: productivity
 Date: 2020-03-29 10:48
 Image: tandn.jpeg
 Related: trading-ethereum-making-10-every-20-minutes

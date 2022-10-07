@@ -1,5 +1,5 @@
 Title: You are breathing wrong
-Category: Biohacking 
+Category: biohacking 
 Date: 2021-06-04 22:48
 Image: desert.jpg
 
