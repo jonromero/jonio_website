@@ -1,5 +1,5 @@
 Title: Organizing a crypto conference in Europe in less than a month
-Category: Projects 
+Category: projects 
 Date: 2021-06-01 22:48
 Image: event.jpg
 

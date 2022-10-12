@@ -1,5 +1,5 @@
 Title: Addictive design - using unpredictable rewards
-Category: Startups 
+Category: startups 
 Date: 2020-10-04 10:48
 Image: venicepier.jpg
 

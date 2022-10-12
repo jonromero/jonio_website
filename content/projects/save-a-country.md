@@ -1,5 +1,5 @@
 Title: How I spent my summer, helping to save a whole country
-Category: Projects 
+Category: projects 
 Date: 2020-11-10 10:48
 Image: greece-ml.jpeg
 

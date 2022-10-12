@@ -1,5 +1,5 @@
 Title: Why I wrote a book about my hands  
-Category: Projects
+Category: projects
 Date: 2019-12-30 10:48
 Image: myhands.jpg
 

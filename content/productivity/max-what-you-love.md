@@ -1,5 +1,5 @@
 Title: Maximize what you love, minimize what you hate
-Category: Productivity
+Category: productivity
 Date: 2021-02-06 10:48
 Image: mood.png
 

@@ -1,5 +1,5 @@
 Title: This Product doesn't exist: Building products super fast
-Category: Startups 
+Category: startups 
 Date: 2020-10-31 10:48
 Image: artcover.png
 

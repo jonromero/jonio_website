@@ -1,5 +1,5 @@
 Title: Scheduling meetings like Arnold Schwarzenegger
-Category: Productivity 
+Category: productivity 
 Date: 2018-06-12 10:48
 Image: arnold.jpeg
 

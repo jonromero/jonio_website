@@ -1,5 +1,5 @@
 Title: The Best way to measure real KPIs? Don't add a link to your product
-Category: Startups 
+Category: startups 
 Date: 2020-12-23 10:48
 Image: f1.png
 

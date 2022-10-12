@@ -1,5 +1,5 @@
 Title: Create 1000 NFT tickets for free in less than 1 minute
-Category: Crypto 
+Category: crypto 
 Date: 2021-07-27 11:48
 Image: metaimg.png
 Tags: popular

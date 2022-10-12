@@ -1,5 +1,5 @@
 Title: Tips for a better life
-Category: Productivity
+Category: productivity
 Date: 2021-01-22 10:48
 Image: mood.png
 Status: draft
