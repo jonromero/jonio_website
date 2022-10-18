@@ -23,6 +23,9 @@ EXTRA_PATH_METADATA = {
     'raw/metaverse2021.html': {
         'path': 'metaverse2021.html'
     },
+    'raw/metaverse2022.html': {
+        'path': 'metaverse2022.html'
+    },
     'raw/404.html': {
         'path': '404.html'
     },
@@ -44,7 +47,7 @@ RELATED_POSTS_MAX = 4
 
 DEFAULT_PAGINATION = 10
 
-DIRECT_TEMPLATES = ['advisory', 'index', 'archives']
+DIRECT_TEMPLATES = ['advisory', 'index', 'archives', 'premium']
 
 PAGINATED_TEMPLATES = {
     'index': None,
