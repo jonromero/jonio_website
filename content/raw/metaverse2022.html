@@ -30,11 +30,23 @@
 
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.6.0/dist/alpine.min.js"></script>
     <script src="/theme/js/main.js"></script>
+
+    <style>
+        @font-face {
+            font-family: 'titlefont';
+            src: url('images/metaverse2022/Anton-Regular.ttf');
+        }
+
+        @font-face {
+            font-family: 'regularfont';
+            src: url('images/metaverse2022/Inter-Regular.ttf');
+        }
+    </style>
 </head>
 
 
 
-<body>
+<body style="font-family: 'regularfont';">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7LNW3C" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
@@ -87,22 +99,18 @@
                             </span>
                         </a>
                     </div>
-                    <!--
+
                     <nav class="hidden md:flex space-x-10">
-                        
-                        <a class="inline-flex items-center justify-center py-2  border-transparent text-sm font-medium  font-medium text-gray-400 shadow hover:text-gray-200 "
-                            href="https://www.notion.so/jonio/Schedule-78dd5f7f9b27472782389374689008aa">Schedule</a>
-                        <a class="inline-flex rounded p-4 bg-gray-300 items-center justify-center py-2  border-transparent text-sm font-medium  font-medium text-gray-600 shadow hover:text-gray-800"
-                            href="https://www.notion.so/jonio/Workshop-Hackathon-ab785c2a68c147beb087f78e5b783c6d"> 👋
-                            Hackathon
-                            10000 euros in awards!</a>
 
-
-                        <a class="inline-flex items-center justify-center py-2  border-transparent text-xs font-medium  font-medium text-gray-400 shadow hover:text-gray-200 "
-                            href="i-organized-my-own-conference-like-gary-vee-in-30-days">Last year</a>
-
+                        <a target="_blank"
+                            class="inline-flex items-center justify-center py-2  border-transparent text-sm font-medium  font-medium text-gray-400 shadow hover:text-gray-200 "
+                            href="#">Schedule (soon)</a>
+                        <a target="_blank"
+                            class="inline-flex rounded p-4 items-center justify-center py-2  border-transparent text-sm font-medium  font-medium text-gray-400 shadow hover:text-gray-200"
+                            href="#">
+                            Hackathon (soon)
+                        </a>
                     </nav>
-                    -->
 
                 </div>
             </div>
@@ -117,31 +125,26 @@
                     <div x-data='text_rotation()' x-init='rotate_words()' class="text-center">
                         <h1
                             class="text-4xl tracking-tight font-extrabold flex justify-center items-center text-gray-100 sm:text-5xl md:text-6xl">
-                            <img class="w-4/6" src="images/metaverse2022/logoM.svg" alt="V as in MetaVerse">
+                            <img class="sm:w-4/6 w-full" src="images/metaverse2022/logoM.svg" alt="V as in MetaVerse">
                         </h1>
-                        <p
-                            class="mt-3 max-w-md mx-auto text-base text-gray-100 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                            A weekend of <span x-text='animated_text' class='px-2 text-black'
-                                style="background-color: #d6f49d"></span>
-                            and blowing minds 🤯
-                        </p>
-                        <p class="max-w-md mx-auto text-base text-gray-100 text-xs md:max-w-3xl">
-                            17-18th December 2022 - Athens/Greece (location pending)
+                        <p class="max-w-md mx-auto text-base text-gray-100 text-xl md:max-w-3xl">
+                            17-18th December 2022 | Athens/Greece
                         </p>
                         <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
                             <form method="post" action="https://sendfox.com/form/1we8gr/3z7nxx"
                                 class="sm:flex sendfox-form" id="3z7nxx" data-async="true" data-recaptcha="true">
                                 <input type="email"
-                                    class="appearance-none block w-full px-3 py-3 border border-gray-300 text-base leading-6 rounded-md placeholder-gray-500 shadow-sm focus:outline-none focus:text-gray-800 focus:shadow-outline focus:border-blue-300 transition duration-150 ease-in-out sm:flex-1"
+                                    class="appearance-none block w-full px-3 py-3 border border-gray-300 text-base leading-6 placeholder-gray-500 shadow-sm focus:outline-none focus:text-gray-800 focus:shadow-outline focus:border-blue-300 transition duration-150 ease-in-out sm:flex-1"
                                     id="sendfox_form_email" placeholder="Email" name="email" required />
                                 <!-- no botz please -->
                                 <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
                                         name="a_password" tabindex="-1" value="" autocomplete="off" /></div>
                                 <button
-                                    class="bg-purple-600 mt-3 w-full text-white  px-6 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-black hover:bg-purple-500 shadow-sm  focus:outline-none focus:shadow-outline active:bg-gray-900 transition duration-150 ease-in-out sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto"
-                                    type="submit">Updates and free NFT tickets🎟️</button>
+                                    class="bg-purple-600 mt-3 w-full text-white  px-6 py-3 border border-transparent text-base leading-6 font-medium  text-black hover:bg-purple-500 shadow-sm  focus:outline-none focus:shadow-outline active:bg-gray-900 transition duration-150 ease-in-out sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto"
+                                    type="submit">Updates and free tickets 🎟️</button>
                             </form>
                             <script src="https://sendfox.com/js/form.js"></script>
+
                         </div>
                         <!-- 
                         <div class="pt-4 ">
@@ -152,20 +155,6 @@
                         </div>
                         -->
 
-                        <div class="pt-4 ">
-                            <span class="text-gray-100 text-xs"> <a target="_blank"
-                                    class="underline text-yellow-400 hover:text-yellow-200 visited:text-purple-600"
-                                    href="https://jon.io/organizing-a-crypto-conference-in-europe-in-less-than-a-month">How
-                                    "V as in MetaVerse" started</a>, <a target="_blank"
-                                    class="underline text-yellow-400 hover:text-yellow-200 visited:text-purple-600"
-                                    href="https://www.youtube.com/watch?v=_1EqWsr3MT4&feature=emb_title">what happened
-                                    last year</a>,
-                                <a target="_blank"
-                                    class="underline text-yellow-400 hover:text-yellow-200 visited:text-purple-600"
-                                    href="https://jon.io/i-organized-my-own-conference-like-gary-vee-in-30-days">
-                                    why it is epic</a>
-                            </span>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -173,63 +162,727 @@
     </div>
 
     <!-- Sponsors tier 1 -->
-
     <!--
-    <div style="background-color: white;">
+    <div class="bg-yellow-400">
         <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-            <h2 class="pb-8 text-center text-black text-5xl font-semibold uppercase font-extrabold tracking-wide">See
-                what
-                happened last
-                year <div class="text-xs">(Hint: It is going to be <span class="text-sm">10x</span> more epic
-                    this year)</div>
+            <h2 class="text-center text-gray-400 text-sm font-semibold uppercase tracking-wide">Gold Sponsors</h2>
+            <div class="mt-8 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-6">
+
+                <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+                    <a class=" shadow-2xl" target="_blank" href="https://startupper.gr/">
+                        <img class="pt-12" src="images/sponsors/startupper.png" alt="Startupper">
+                    </a>
+                </div>
+
+                <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+                    <a class=" shadow-2xl" target="_blank" href="https://www.vios.gr/">
+                        <img class="h-32" src="images/sponsors/vios.jpg" alt="Vios">
+                    </a>
+                </div>
+                <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+                    <a class=" shadow-2xl" target="_blank" href="https://cloudevo.ai/">
+                        <img class="pt-12" src="images/sponsors/cloudevo.png" alt="Cloudevo">
+                    </a>
+                </div>
+                <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+                    <a class=" shadow-2xl" target="_blank" href="https://www.orfium.com/">
+                        <img class="w-32" src="images/sponsors/orfium.jpg" alt="Orfium">
+                    </a>
+                </div>
+                <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+                    <a class=" shadow-2xl" target="_blank" href="https://www.coinomi.com/en/">
+                        <img class="pt-8" src="images/sponsors/coinomi.png" alt="Coinomi">
+                    </a>
+                </div>
+                <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+                    <a class=" shadow-2xl" target="_blank" href="https://foutsislaw.gr/">
+                        <img class="pt-8" src="images/sponsors/foutsis.png" alt="Foutsis">
+                    </a>
+                </div>
+                <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+                    <a class=" shadow-2xl" target="_blank" href="https://omgdrops.com">
+                        <img class="pt-4" src="images/sponsors/omg.png" alt="OMGDrops">
+                    </a>
+                </div>
+
+                <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+                    <a class=" shadow-2xl" target="_blank" href="http://www.northandtouth.com/">
+                        <img class="pt-8" src="images/sponsors/NT.png" alt="Silicon Beach with Jon V">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+-->
+    <!-- Sponsors tier 1 end -->
+
+    <!-- Days -->
+    <div class="bg-cover bg-center bg-fixed bg-no-repeat h-64"
+        style="background-color: white; background-image: url('images/metaverse2022/metaplan.png');">
+
+    </div>
+    <div>
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+            <h2 style="font-family: 'titlefont';"
+                class="pb-2 text-center text-black text-5xl font-semibold uppercase font-extrabold tracking-wide">
+                Firechats with the best <span class="text-red-500">creators </span> and <span class="text-yellow-500">
+                    builders</span> on the 🪐
             </h2>
-            <div class="flex items-center justify-center">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/_1EqWsr3MT4"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+
+            <div class="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8">
+                <div class="relative">
+                    <h3 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Our speakers got an
+                        Oscar🏆. Twice.
+                    </h3>
+                    <p class="mt-3 text-lg text-gray-500">
+
+                    </p>
+
+                    <dl class="mt-10 space-y-10">
+                        <div class="relative">
+                            <dt>
+                                <div
+                                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-black text-white">
+                                    <!-- Heroicon name: outline/globe-alt -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                                    </svg>
+
+                                </div>
+                                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">A Masterclass in
+                                    Storytelling by <a class="underline" target="_blank"
+                                        href="https://www.imdb.com/name/nm0141437/">Rick Carter</a>
+                                </p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">Two Oscars and tons of movies to learn from
+                                (Jurassic Park🦖, Back To The Future🚗, Star Wars✨, Forrest Gump🏃 and many more)</dd>
+                        </div>
+
+                        <div class="relative">
+                            <dt>
+                                <div
+                                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-black text-white">
+                                    <!-- Heroicon name: outline/scale -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M16.712 4.33a9.027 9.027 0 011.652 1.306c.51.51.944 1.064 1.306 1.652M16.712 4.33l-3.448 4.138m3.448-4.138a9.014 9.014 0 00-9.424 0M19.67 7.288l-4.138 3.448m4.138-3.448a9.014 9.014 0 010 9.424m-4.138-5.976a3.736 3.736 0 00-.88-1.388 3.737 3.737 0 00-1.388-.88m2.268 2.268a3.765 3.765 0 010 2.528m-2.268-4.796a3.765 3.765 0 00-2.528 0m4.796 4.796c-.181.506-.475.982-.88 1.388a3.736 3.736 0 01-1.388.88m2.268-2.268l4.138 3.448m0 0a9.027 9.027 0 01-1.306 1.652c-.51.51-1.064.944-1.652 1.306m0 0l-3.448-4.138m3.448 4.138a9.014 9.014 0 01-9.424 0m5.976-4.138a3.765 3.765 0 01-2.528 0m0 0a3.736 3.736 0 01-1.388-.88 3.737 3.737 0 01-.88-1.388m2.268 2.268L7.288 19.67m0 0a9.024 9.024 0 01-1.652-1.306 9.027 9.027 0 01-1.306-1.652m0 0l4.138-3.448M4.33 16.712a9.014 9.014 0 010-9.424m4.138 5.976a3.765 3.765 0 010-2.528m0 0c.181-.506.475-.982.88-1.388a3.736 3.736 0 011.388-.88m-2.268 2.268L4.33 7.288m6.406 1.18L7.288 4.33m0 0a9.024 9.024 0 00-1.652 1.306A9.025 9.025 0 004.33 7.288" />
+                                    </svg>
+
+                                </div>
+                                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">Help us to buy an NBA Team
+                                </p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">The
+                                <a class="underline" target="_blank"
+                                    href="https://www.krausehouse.club/">KrausehouseDAO</a> will tell us about the
+                                story, how random strangers
+                                raised A TON of money and are buying an NBA team.
+                            </dd>
+                        </div>
+
+                        <div class="relative">
+                            <dt>
+                                <div
+                                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-black text-white">
+                                    <!-- Heroicon name: outline/bolt -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" />
+                                    </svg>
+
+                                </div>
+                                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">Plus 20 more speakers </p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">From selling $1M NFTs, to A.I, to Stable
+                                Diffusion, to
+                                bootstraping Startups, to cryptocurrencies to **anything** that will shape our future.
+                                Stay tuned for the full list.
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <div class="relative -mx-4 mt-10 lg:mt-0" aria-hidden="true">
+                    <svg class="absolute left-1/2 -translate-x-1/2 translate-y-16 transform lg:hidden" width="784"
+                        height="404" fill="none" viewBox="0 0 784 404">
+                        <defs>
+                            <pattern id="ca9667ae-9f92-4be7-abcb-9e3d727f2941" x="0" y="0" width="20" height="20"
+                                patternUnits="userSpaceOnUse">
+                                <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+                            </pattern>
+                        </defs>
+                        <rect width="784" height="404" fill="url(#ca9667ae-9f92-4be7-abcb-9e3d727f2941)" />
+                    </svg>
+                    <img class="relative mx-auto border shadow-2xl p-2" width="490" src="images/metaverse2022/rickc.png"
+                        alt="">
+                </div>
             </div>
 
-        </div>
-        
-        <div class="bg-black">
-            <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-                <h2
-                    class="pb-8 text-center text-black text-5xl text-white font-semibold uppercase font-extrabold tracking-wide">
-                    How it started - how it went
-                </h2>
-                <div class="flex items-center justify-center">
-                    <span>
-                        <a target="_blank"
-                            href="https://jon.io/organizing-a-crypto-conference-in-europe-in-less-than-a-month">
-                            <img class="pr-2 border shadow-lg" src="/images/metaverse2022/organizing.png" alt="">
-                        </a>
-                    </span>
+            <div class="relative mt-12 sm:mt-16 lg:mt-24">
+                <div class="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:items-center lg:gap-8">
+                    <div class="lg:col-start-2">
+                        <h3 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Art show
+                            <!-- and X-Files -->
+                        </h3>
+                        <p class="mt-3 text-lg text-gray-500">
+                            Real items from the movies, plus tons of CRAZY unreleased art
+                            <!-- plus designs from the creator
+                            of X-Files-->.
+                        </p>
 
-                    <span>
-                        <a target="_blank" href="https://jon.io/i-organized-my-own-conference-like-gary-vee-in-30-days">
-                            <img class="border shadow-lg" src="/images/metaverse2022/garyvee.png" alt="">
-                        </a>
-                    </span>
+                        <dl class="mt-10 space-y-10">
+                            <div class="relative">
+                                <dt>
+                                    <div
+                                        class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-black text-white">
+                                        <!-- Heroicon name: outline/chat-bubble-bottom-center-text -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                                        </svg>
+
+
+                                    </div>
+                                    <p class="ml-16 text-lg font-medium leading-6 text-gray-900">Hoverboard?
+                                    </p>
+                                </dt>
+                                <dd class="mt-2 ml-16 text-base text-gray-500">
+                                    Yes. We flew the actual hoverboard and the shoes from "Back To The Future" from Los
+                                    Angeles so you can see them.
+                                    Oh and tons of stuff from Jurassic Park. Oh and tons of unreleased designs. Oh and
+                                    tons of swag.
+                                </dd>
+                            </div>
+
+                            <div class="relative">
+                                <dt>
+                                    <div
+                                        class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-black text-white">
+                                        <!-- Heroicon name: outline/envelope -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+                                        </svg>
+
+                                    </div>
+                                    <p class="ml-16 text-lg font-medium leading-6 text-gray-900">The Truth Is In The
+                                        MetaVerse</p>
+                                </dt>
+                                <dd class="mt-2 ml-16 text-base text-gray-500">
+                                    Art and digiphysical NFTs
+                                    <!-- from the creator of X-Files, Chris Carter-->. Seriously, how
+                                    epic this event is?
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <div class="relative -mx-4 mt-10 lg:col-start-1 lg:mt-0">
+                        <svg class="absolute left-1/2 -translate-x-1/2 translate-y-16 transform lg:hidden" width="784"
+                            height="404" fill="none" viewBox="0 0 784 404" aria-hidden="true">
+                            <defs>
+                                <pattern id="e80155a9-dfde-425a-b5ea-1f6fadd20131" x="0" y="0" width="20" height="20"
+                                    patternUnits="userSpaceOnUse">
+                                    <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+                                </pattern>
+                            </defs>
+                            <rect width="784" height="404" fill="url(#e80155a9-dfde-425a-b5ea-1f6fadd20131)" />
+                        </svg>
+                        <img class="border p-2 shadow-xl relative mx-auto" width="490"
+                            src="images/metaverse2022/rickspace.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Days end -->
+
+    <!-- Hackathon -->
+    <div class="bg-cover bg-center bg-fixed bg-no-repeat h-64"
+        style="background-color: white; background-image: url('images/metaverse2022/metaplan.png');">
+
+    </div>
+    <div>
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+            <h2 style="font-family: 'titlefont';"
+                class="pb-2 text-center text-black text-5xl font-semibold uppercase font-extrabold tracking-wide">
+                Hack to earn: <span class="text-red-500">3500 euro</span> to the best team 💰
+            </h2>
+
+            <div class="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8">
+                <div class="relative">
+                    <h3 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Learn. Build. Win.
+                    </h3>
+                    <p class="mt-3 text-lg text-gray-500">
+                        Two days to build with your team (up to 5 people) and get the prize. No second place.
+                    </p>
+
+                    <dl class="mt-10 space-y-10">
+                        <div class="relative">
+                            <dt>
+                                <div
+                                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-red-500 text-white">
+                                    <!-- Heroicon name: outline/globe-alt -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+
+                                </div>
+                                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">No team? No problem!
+                                </p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">We'll definitely find you a team to join!
+                            </dd>
+                        </div>
+
+                        <div class="relative">
+                            <dt>
+                                <div
+                                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-red-500 text-white">
+                                    <!-- Heroicon name: outline/scale -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
+                                    </svg>
+
+
+                                </div>
+                                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">You have no idea about
+                                    web3?
+                                </p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">Our
+                                mentors and our community will provide courses on how to build web3 apps and guidance
+                                during the conference.
+                                Come on, we organized a huge conference, you can definitely write a web3 app!
+                            </dd>
+                        </div>
+
+                        <div class="relative">
+                            <dt>
+                                <div
+                                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-red-500 text-white">
+                                    <!-- Heroicon name: outline/bolt -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+
+                                </div>
+                                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">Get hired!</p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">Even if you don't win the prize, there is a
+                                high chance that
+                                you'll end up with a job in web3 (our sponsors are looking to hire you)
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+                <div class="relative -mx-4 mt-10 lg:mt-0" aria-hidden="true">
+                    <svg class="absolute left-1/2 -translate-x-1/2 translate-y-16 transform lg:hidden" width="784"
+                        height="404" fill="none" viewBox="0 0 784 404">
+                        <defs>
+                            <pattern id="ca9667ae-9f92-4be7-abcb-9e3d727f2941" x="0" y="0" width="20" height="20"
+                                patternUnits="userSpaceOnUse">
+                                <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+                            </pattern>
+                        </defs>
+                        <rect width="784" height="404" fill="url(#ca9667ae-9f92-4be7-abcb-9e3d727f2941)" />
+                    </svg>
+                    <img class="relative mx-auto border shadow-2xl p-2" width="490"
+                        src="images/metaverse2022/metaverse5.png" alt="">
                 </div>
 
             </div>
-        </div>
-        
-    </div>
 
-    <div style="background-color: black;">
-        <div class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-            <h2 class="pb-8 text-center text-white text-5xl font-semibold uppercase font-extrabold tracking-wide">
-                Speakers, Location, Sponsors to be announced soon
+        </div>
+
+
+    </div>
+    <!-- Hackathon end -->
+
+    <!-- Agenda -->
+    <div class="bg-cover bg-center bg-fixed bg-no-repeat h-64"
+        style="background-color: white; background-image: url('images/metaverse2022/metaplan.png');">
+
+    </div>
+    <div>
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+            <h2 style="font-family: 'titlefont';"
+                class="pb-2 text-center text-black text-5xl font-semibold uppercase font-extrabold tracking-wide">
+                Schedule (in progress)
             </h2>
+
+            <div class="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8">
+                <div class="relative">
+                    <h3 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">MetaTalks & Exhibition
+                    </h3>
+                    <p class="mt-3 text-lg text-gray-500">
+                        Location A (to be annouched)
+                    </p>
+
+                    <dl class="mt-10 space-y-10">
+                        <div class="relative">
+                            <dt>
+                                <div
+                                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-black text-white">
+                                    <!-- Heroicon name: outline/globe-alt -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.068.157 2.148.279 3.238.364.466.037.893.281 1.153.671L12 21l2.652-3.978c.26-.39.687-.634 1.153-.67 1.09-.086 2.17-.208 3.238-.365 1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+                                    </svg>
+
+
+                                </div>
+                                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">Firechats
+                                </p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">Two days: 17th and 18th of December (12pm to
+                                5pm)
+                            </dd>
+                        </div>
+
+                        <div class="relative">
+                            <dt>
+                                <div
+                                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-black text-white">
+                                    <!-- Heroicon name: outline/scale -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+
+                                </div>
+                                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">Exhibition
+                                </p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">Walk-through with Rick Carter on the 18th of
+                                December (5pm)
+                            </dd>
+                        </div>
+
+                        <div class="relative">
+                            <dt>
+                                <div
+                                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-black text-white">
+                                    <!-- Heroicon name: outline/bolt -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 8.25v-1.5m0 1.5c-1.355 0-2.697.056-4.024.166C6.845 8.51 6 9.473 6 10.608v2.513m6-4.87c1.355 0 2.697.055 4.024.165C17.155 8.51 18 9.473 18 10.608v2.513m-3-4.87v-1.5m-6 1.5v-1.5m12 9.75l-1.5.75a3.354 3.354 0 01-3 0 3.354 3.354 0 00-3 0 3.354 3.354 0 01-3 0 3.354 3.354 0 00-3 0 3.354 3.354 0 01-3 0L3 16.5m15-3.38a48.474 48.474 0 00-6-.37c-2.032 0-4.034.125-6 .37m12 0c.39.049.777.102 1.163.16 1.07.16 1.837 1.094 1.837 2.175v5.17c0 .62-.504 1.124-1.125 1.124H4.125A1.125 1.125 0 013 20.625v-5.17c0-1.08.768-2.014 1.837-2.174A47.78 47.78 0 016 13.12M12.265 3.11a.375.375 0 11-.53 0L12 2.845l.265.265zm-3 0a.375.375 0 11-.53 0L9 2.845l.265.265zm6 0a.375.375 0 11-.53 0L15 2.845l.265.265z" />
+                                    </svg>
+
+
+                                </div>
+                                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">Crypto Party!</p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">18th of December (7pm)
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+                <div class="relative -mx-4 mt-10 lg:mt-0" aria-hidden="true">
+                    <svg class="absolute left-1/2 -translate-x-1/2 translate-y-16 transform lg:hidden" width="784"
+                        height="404" fill="none" viewBox="0 0 784 404">
+                        <defs>
+                            <pattern id="ca9667ae-9f92-4be7-abcb-9e3d727f2941" x="0" y="0" width="20" height="20"
+                                patternUnits="userSpaceOnUse">
+                                <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+                            </pattern>
+                        </defs>
+                        <rect width="784" height="404" fill="url(#ca9667ae-9f92-4be7-abcb-9e3d727f2941)" />
+                    </svg>
+                    <img class="relative mx-auto border shadow-2xl p-2" width="490"
+                        src="images/metaverse2022/metaverse6.png" alt="">
+                </div>
+
+            </div>
+            <div class="relative mt-12 sm:mt-16 lg:mt-24">
+                <div class="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:items-center lg:gap-8">
+                    <div class="lg:col-start-2">
+                        <h3 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Hackathon
+
+                        </h3>
+                        <p class="mt-3 text-lg text-gray-500">
+                            Location B (to be annouched)
+                        </p>
+
+                        <dl class="mt-10 space-y-10">
+                            <div class="relative">
+                                <dt>
+                                    <div
+                                        class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-red-500 text-white">
+                                        <!-- Heroicon name: outline/chat-bubble-bottom-center-text -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M21.75 6.75a4.5 4.5 0 01-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 11-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 016.336-4.486l-3.276 3.276a3.004 3.004 0 002.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M4.867 19.125h.008v.008h-.008v-.008z" />
+                                        </svg>
+
+                                    </div>
+                                    <p class="ml-16 text-lg font-medium leading-6 text-gray-900">Buidling
+                                    </p>
+                                </dt>
+                                <dd class="mt-2 ml-16 text-base text-gray-500">
+                                    17th and 18th of
+                                    December (10am to 7pm)
+                                </dd>
+                            </div>
+
+                            <div class="relative">
+                                <dt>
+                                    <div
+                                        class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-red-500 text-white">
+                                        <!-- Heroicon name: outline/envelope -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0" />
+                                        </svg>
+
+                                    </div>
+                                    <p class="ml-16 text-lg font-medium leading-6 text-gray-900">Results</p>
+                                </dt>
+                                <dd class="mt-2 ml-16 text-base text-gray-500">
+                                    20th of December (10am)
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <div class="relative -mx-4 mt-10 lg:col-start-1 lg:mt-0">
+                        <svg class="absolute left-1/2 -translate-x-1/2 translate-y-16 transform lg:hidden" width="784"
+                            height="404" fill="none" viewBox="0 0 784 404" aria-hidden="true">
+                            <defs>
+                                <pattern id="e80155a9-dfde-425a-b5ea-1f6fadd20131" x="0" y="0" width="20" height="20"
+                                    patternUnits="userSpaceOnUse">
+                                    <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+                                </pattern>
+                            </defs>
+                            <rect width="784" height="404" fill="url(#e80155a9-dfde-425a-b5ea-1f6fadd20131)" />
+                        </svg>
+                        <img class="border p-2 shadow-xl relative mx-auto" width="490"
+                            src="images/metaverse2022/metaverse2.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Agenda end -->
+
+
+    <!-- Tickets -->
+    <div class="bg-cover bg-center bg-fixed bg-no-repeat h-64"
+        style="background-color: white; background-image: url('images/metaverse2022/metaplan.png');">
+
+    </div>
+    <div>
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+            <h2 style="font-family: 'titlefont';"
+                class="pb-2 text-center text-black text-5xl font-semibold uppercase font-extrabold tracking-wide">
+                Tickets (free but limited)
+            </h2>
+
+            <div class="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8">
+                <div class="relative">
+                    <h3 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">How is this conference free?
+                    </h3>
+                    <p class="mt-3 text-lg text-gray-500">
+                        It is free because we have our awesome sponsors and our huge community.
+                    </p>
+
+                    <dl class="mt-10 space-y-10">
+                        <div class="relative">
+                            <dt>
+                                <div
+                                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-black text-white">
+                                    <!-- Heroicon name: outline/globe-alt -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
+                                    </svg>
+
+                                </div>
+                                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">Do I need a ticket for the
+                                    conference?
+                                </p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">Yes, you will need an NFT Ticket to attend
+                                any day of the conference
+                            </dd>
+                        </div>
+
+                        <div class="relative">
+                            <dt>
+                                <div
+                                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-black text-white">
+                                    <!-- Heroicon name: outline/scale -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
+                                    </svg>
+
+                                </div>
+                                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">Where do I get the ticket?
+                                </p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">The MetaTalks are by invite only. The
+                                exhibition and the Hackathon tickets will
+                                be available soon
+                            </dd>
+                        </div>
+
+                        <div class="relative">
+                            <dt>
+                                <div
+                                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-black text-white">
+                                    <!-- Heroicon name: outline/bolt -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
+                                    </svg>
+
+                                </div>
+                                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">Do I need different
+                                    tickets?</p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">Yes, the MetaTalks, the Exhibition and the
+                                Hackathon have different tickets
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+                <div class="relative -mx-4 mt-10 lg:mt-0" aria-hidden="true">
+                    <svg class="absolute left-1/2 -translate-x-1/2 translate-y-16 transform lg:hidden" width="784"
+                        height="404" fill="none" viewBox="0 0 784 404">
+                        <defs>
+                            <pattern id="ca9667ae-9f92-4be7-abcb-9e3d727f2941" x="0" y="0" width="20" height="20"
+                                patternUnits="userSpaceOnUse">
+                                <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+                            </pattern>
+                        </defs>
+                        <rect width="784" height="404" fill="url(#ca9667ae-9f92-4be7-abcb-9e3d727f2941)" />
+                    </svg>
+                    <img class="relative mx-auto border shadow-2xl p-2" width="490" src="images/metaverse2022/tix.png"
+                        alt="">
+                </div>
+            </div>
         </div>
     </div>
+    <!-- Tickets end -->
 
-    -->
+
+    <!-- Last year -->
+    <div class="bg-cover bg-center bg-fixed bg-no-repeat h-64"
+        style="background-color: white; background-image: url('images/metaverse2022/metaplan.png');">
+
+    </div>
+    <div>
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+            <h2 style="font-family: 'titlefont';"
+                class="pb-2 text-center text-black text-5xl font-semibold uppercase font-extrabold tracking-wide">
+                This is what happened last year
+            </h2>
+
+            <div class="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8">
+                <div class="relative">
+                    <dl class="mt-10 space-y-10">
+                        <div class="relative">
+                            <dt>
+                                <div
+                                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500 text-white">
+                                    <!-- Heroicon name: outline/globe-alt -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+                                    </svg>
+
+                                </div>
+                                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">This is how "V as in
+                                    MetaVerse" started
+                                </p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">
+                                <a target="_blank"
+                                    class="underline text-yellow-400 hover:text-yellow-200 visited:text-purple-600"
+                                    href="https://jon.io/organizing-a-crypto-conference-in-europe-in-less-than-a-month">A
+                                    small story</a>
+                            </dd>
+                        </div>
+
+                        <div class="relative">
+                            <dt>
+                                <div
+                                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500 text-white">
+                                    <!-- Heroicon name: outline/scale -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                                    </svg>
+
+                                </div>
+                                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">And these are the
+                                    highlights
+                                </p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500"><a target="_blank"
+                                    class="underline text-yellow-400 hover:text-yellow-200 visited:text-purple-600"
+                                    href="https://jon.io/i-organized-my-own-conference-like-gary-vee-in-30-days">
+                                    Why we decided to do it every year</a>
+                            </dd>
+                        </div>
+
+                    </dl>
+                </div>
+                <div class="relative -mx-4 mt-10 lg:mt-0" aria-hidden="true">
+                    <svg class="absolute left-1/2 -translate-x-1/2 translate-y-16 transform lg:hidden" width="784"
+                        height="404" fill="none" viewBox="0 0 784 404">
+                        <defs>
+                            <pattern id="ca9667ae-9f92-4be7-abcb-9e3d727f2941" x="0" y="0" width="20" height="20"
+                                patternUnits="userSpaceOnUse">
+                                <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+                            </pattern>
+                        </defs>
+                        <rect width="784" height="404" fill="url(#ca9667ae-9f92-4be7-abcb-9e3d727f2941)" />
+                    </svg>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/_1EqWsr3MT4"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- Last year end -->
+
     <!-- Footer -->
-    <footer class="bg-white">
-        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
+    <footer class="bg-black">
+        <div class="max-w-7xl text-white mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
             <div class="flex justify-center space-x-6 md:order-2">
                 <a href="https://instagram.com/jonvictory" class="text-gray-400 hover:text-gray-500">
                     <span class="sr-only">Instagram</span>
