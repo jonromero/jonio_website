@@ -15,8 +15,9 @@ So let's talk for 2023.
 
 There are two issues with setting goals:
 
-1/ You overcomplicate the process
-2/ You put zero thought behind the process
+> 1/ You overcomplicate the process
+
+> 2/ You put zero thought behind the process
 
 The first issue (overcomplicating it) is the worst one as it paralyzes you - leaving with no goals at all. 
 
@@ -24,17 +25,27 @@ That's the reason, I am just "wing it" and surprisingly it works (I surfed more,
 
 So, just trust me on this. Write right now your goals for 2023 and email them to me. In a year, we can review them and see what went right, wrong or just wasn't important.
 
-Here are my goals for 2023, unfiltered, with zero planning behind them. 
+> Here are my goals for 2023, unfiltered, with **zero planning** behind them. 
 
-1/ Launch my "Die Empty" experiment that goes for 12 years. Needs tons of planning and commitment but it is a masterpiece
-2/ Vlog every day for a month. I have TONS of videos that I haven't edited yet and I think vlogging every day for a month will force me to improve
+1/ Launch my **"Die Empty"** experiment that goes for 12 years. Needs tons of planning and commitment but it is a masterpiece
+
+2/ Vlog **every day** for a month. I have TONS of videos that I haven't edited yet and I think vlogging every day for a month will force me to improve
+
 3/ Improve eating & exercise schedule. Always room to improve
+
 4/ Launch a small course (probably story-telling for Entrepreneurs)
+
 5/ V as in MetaVerse 2023 (this summer!)
+
 6/ Build a bigger team and do more stuff that are fun/epic/out of this world
-7/ Produce 10x more, consume 10x less
-8/ Less calls, only do meetings that involve physical activity
-9/ Love more, with more passion
+
+7/ **Produce 10x more, consume 10x less**
+
+8/ Less calls, only do meetings that **involve physical activity**
+
+9/ Love more, with more **passion**
+
+
 
 That's it from me. Do me a favor and send me your goals. I might get some ideas and I hope you got some ideas from my list too. 
 
