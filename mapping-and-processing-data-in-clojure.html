@@ -213,8 +213,8 @@ I have lots of data sitting as CSV on my hard-drive and I want to process them. 
 <p>What would be really interesting is to be able to define (dynamically) a schema like that:</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">defschema</span><span class="w"> </span><span class="s">&quot;EURUSD&quot;</span><span class="w"> </span>
 <span class="w">    </span><span class="p">(</span><span class="nf">tokenizer</span><span class="w"> </span><span class="o">#</span><span class="p">(</span><span class="nf">.split</span><span class="w"> </span><span class="nv">%</span><span class="w"> </span><span class="s">&quot;:&quot;</span><span class="p">))</span><span class="w">  </span>
-<span class="w">    </span><span class="c1">;; the mapping is done here</span><span class="w"></span>
-<span class="w">    </span><span class="p">(</span><span class="nf">columns</span><span class="w"> </span><span class="nv">|time|</span><span class="w"> </span><span class="nv">|open|</span><span class="w"> </span><span class="nv">|high|</span><span class="w"> </span><span class="nv">|low|</span><span class="w"> </span><span class="nv">|close|</span><span class="w"> </span><span class="nv">|volume|</span><span class="p">))</span><span class="w"></span>
+<span class="w">    </span><span class="c1">;; the mapping is done here</span>
+<span class="w">    </span><span class="p">(</span><span class="nf">columns</span><span class="w"> </span><span class="nv">|time|</span><span class="w"> </span><span class="nv">|open|</span><span class="w"> </span><span class="nv">|high|</span><span class="w"> </span><span class="nv">|low|</span><span class="w"> </span><span class="nv">|close|</span><span class="w"> </span><span class="nv">|volume|</span><span class="p">))</span>
 </code></pre></div>
 
 <p>Let me explain.
@@ -222,9 +222,9 @@ First of all, a "tokenize" function. Each dataline is tokenized based on a funct
 <p>As you can imagine, tokenize returns a list of data that are mapped to "columns".</p>
 <p>Now, the interesting stuff. </p>
 <p>You can write scripts like the following:</p>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">|close|</span><span class="w"> </span><span class="mf">1.45</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">(</span><span class="nf">place-order</span><span class="w"> </span><span class="ss">:buy</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">(</span><span class="nf">place-order</span><span class="w"> </span><span class="ss">:sell</span><span class="p">))</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">|close|</span><span class="w"> </span><span class="mf">1.45</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="nf">place-order</span><span class="w"> </span><span class="ss">:buy</span><span class="p">)</span>
+<span class="w">    </span><span class="p">(</span><span class="nf">place-order</span><span class="w"> </span><span class="ss">:sell</span><span class="p">))</span>
 </code></pre></div>
 
 <p>Thoughts? </p>
