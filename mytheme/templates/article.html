@@ -20,6 +20,12 @@
         <div class="prose prose-lg text-gray-500 mx-auto">
             {{article.content}}
 
+            <p class="text-right text-sm">
+                - {{ article.locale_date }}
+            </p>
+
+            {% include 'comment_system.html' %}
+
             <!-- Course -->
             <div class="mt-8 bg-gray-200">
                 <div class="shadow p-4 text-center">
@@ -35,11 +41,6 @@
                 </div>
             </div>
             <!-- COURSE END -->
-
-            <p class="text-right">
-                - {{ article.locale_date }}
-            </p>
-
         </div>
 
 
@@ -92,9 +93,12 @@
     </div>
     <!-- END Related posts-->
 
-    {% include 'adsense.html' %}
 </div>
 </div>
+
+
+
+
 
 <!-- SUBSCRIBE -->
 <div class="bg-gray-800">

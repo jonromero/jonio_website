@@ -7,6 +7,28 @@ function toggleMenus() {
     }
 }
 
+function init_comments() {
+    return {
+        render_comments() {
+            const waline = Waline.init({
+                el: '#waline',
+                path: window.location.pathname.replace(/\/$/, ''),
+                pageSize: 5,
+                login: true,
+                imageUploader: false,
+                reaction: false,
+                /*reaction: [
+                    'https://unpkg.com/@waline/emojis@1.1.0/weibo/weibo_heart_eyes.png',
+                    'https://unpkg.com/@waline/emojis@1.1.0/weibo/weibo_dog_joy.png',
+                    'https://unpkg.com/@waline/emojis@1.1.0/weibo/weibo_dog_consider.png',
+                    'https://unpkg.com/@waline/emojis@1.1.0/weibo/weibo_sob.png',
+                ],*/
+                serverURL: 'https://waline-comments-jonv.vercel.app'
+            });
+        }
+    }
+}
+
 function text_rotation() {
     return {
         animated_text: 'epic',
