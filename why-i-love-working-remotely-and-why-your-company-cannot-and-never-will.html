@@ -16,9 +16,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jon Vlachogiannis | Algorithms pay my bills</title>
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.6.0/dist/alpine.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tailwindcss/ui@latest/dist/tailwind-ui.min.css">
+
+    <link rel="stylesheet" href="./theme/css/tailwind-ui.min.css" />
+    <link rel='stylesheet' href='./theme/css/waline.css' />
+
+    <script src="./theme/js/alpine.min.js"></script>
     <script src="./theme/js/main.js"></script>
+    <script src="./theme/js/waline.js"></script>
+
     <link rel="icon" href="/images/favicon.ico" />
 
     <meta property="og:image" content="/images/italy.jpeg" />
@@ -230,6 +235,17 @@ I know that you are thinking “hey man, we need to pay bills and you cannot buy
 <h2>What you can do</h2>
 <p>Working remotely is not for everyone obviously and not everyone is a super engineer. The truth is in the middle and companies just don’t know how to run remote teams. It takes time and dedication and many times I prefer being with the whole team at an office (we fly all together in one place) than on Google Hangouts. But working from wherever you want, is liberating. And the pizza is not bad at all.</p>
 
+            <p class="text-right text-sm">
+                - Thu 18 October 2018
+            </p>
+
+<!-- Comment system -->
+
+<div x-data="init_comments()" x-init="render_comments();" class="bg-gray-20 pt-4">
+    <h2 class="font-bold text-right">Comments</h2>
+    <div id="waline" class="">
+    </div>
+</div>
             <!-- Course -->
             <div class="mt-8 bg-gray-200">
                 <div class="shadow p-4 text-center">
@@ -256,11 +272,6 @@ I know that you are thinking “hey man, we need to pay bills and you cannot buy
 <script src="https://sendfox.com/js/form.js"></script>                </div>
             </div>
             <!-- COURSE END -->
-
-            <p class="text-right">
-                - Thu 18 October 2018
-            </p>
-
         </div>
 
 
@@ -379,19 +390,12 @@ I know that you are thinking “hey man, we need to pay bills and you cannot buy
     </div>
     <!-- END Related posts-->
 
-<!-- 
-<ins class="adsbygoogle"
-     style="display:inline-block;width:728px;height:90px"
-     data-ad-client="ca-pub-5816350521610729"
-     data-ad-slot="9244262426"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
- -->
+</div>
+</div>
 
- 
-</div>
-</div>
+
+
+
 
 <!-- SUBSCRIBE -->
 <div class="bg-gray-800">
