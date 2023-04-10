@@ -44,29 +44,39 @@
     </div>
     <div class="relative max-w-7xl mx-auto">
         <div class="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
-            {% for article in articles if 'store' in article.tags if article.tags is defined else None %}
-            <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+            {% for article in articles | selectattr('category', 'equalto', 'store') %}
+            <div class="flex flex-col rounded-lg items-center shadow-lg overflow-hidden">
                 <div class="flex-shrink-0">
                     <a target="_blank" href="{{article.link}}">
-                        <img class="h-full w-full object-cover" src="images/{{ article.image }}" alt="">
+                        <img class="h-64 w-64 object-cover" src="images/{{ article.image }}" alt="">
                     </a>
                 </div>
                 <div class="flex-1 bg-white p-6 flex flex-col justify-between">
                     <div class="flex-1">
+
+                        <h3 class="mt-2 mb-2 block text-xl leading-7 font-semibold text-gray-900">
+                            {{ article.title }}
+                        </h3>
+
+                        <h3 class="mb-2 text-sm leading-2 text-gray-500">
+                            {{article.shortdesc}} <a class="underline" href="/{{article.url}}">Read more</a>
+                        </h3>
+
+                        {% if article.enable == "soldout" %}
+                        <h3
+                            class="w-full px-3 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-red-600 shadow-sm  focus:outline-none focus:shadow-outline active:bg-gray-900 transition duration-150 ease-in-out sm:mt-0 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto">
+
+                            Buy for ${{article.price}} - SOLD OUT
+                        </h3>
+                        {% else %}
                         <a target="_blank" href="{{article.link}}">
-                            <h3 class="mt-2 mb-2 block text-xl leading-7 font-semibold text-gray-900">
-                                {{ article.title }}
-                            </h3>
-
-                            <h3 class="mb-2 text-sm leading-2 text-gray-500">
-                                {{article.summary}}
-                            </h3>
-
                             <h3
                                 class="w-full px-3 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 shadow-sm  focus:outline-none focus:shadow-outline active:bg-gray-900 transition duration-150 ease-in-out sm:mt-0 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto">
+
                                 Buy for ${{article.price}}
                             </h3>
-
+                        </a>
+                        {% endif %}
                     </div>
                     <div class="mt-6 flex items-center">
                         <div class="ml-3">
