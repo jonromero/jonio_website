@@ -34,6 +34,9 @@ EXTRA_PATH_METADATA = {
     },
     'raw/youtube.html': {
         'path': 'youtube.html'
+    },
+    'raw/vctears.html': {
+        'path': 'vctears.html'
     }
 }
 

@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-P7LNW3C');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <meta property="og:image" content="https://jon.io/images/metaverse2022/logo.png" />
+    <meta property="og:title" content="V as in MetaVerse" />
+    <link rel="icon" href="https://jon.io/images/favicon.ico" />
+
+    <meta name="twitter:card" content="photo" />
+    <meta name="twitter:site" content="@jonromero" />
+    <meta name="twitter:title" content="VC Tears - Clean hands, tearful investments" />
+    <meta name="twitter:description" content="VC Tears can help you wash away all your fundraising disappointmentd" />
+    <meta name="twitter:image" content="https://jon.io/images/vctears/logo.png" />
+    <meta name="twitter:url" content="https://jon.io/vctears" />
+
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.6.0/dist/alpine.min.js"></script>
+    <script src="/theme/js/main.js"></script>
+
+    <style>
+        @font-face {
+            font-family: 'titlefont';
+            src: url('images/metaverse2022/Anton-Regular.ttf');
+        }
+
+        @font-face {
+            font-family: 'regularfont';
+            src: url('images/metaverse2022/Inter-Regular.ttf');
+        }
+    </style>
+</head>
+
+
+
+<body style="font-family: 'regularfont';">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7LNW3C" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="relative bg-gray-50">
+        <div class="relative bg-gray-800 shadow">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6">
+                <div class="flex justify-between items-center py-2 md:justify-start md:space-x-10">
+                    <div class="flex justify-start lg:w-0 lg:flex-1">
+                        <a href="/">
+                            <span class="block xl:inline text-gray-600 hover:text-purple-500"> <span
+                                    class="text-gray-300">V</span> as in
+                                Meta<span class="text-gray-300">V</span>erse
+                            </span>
+                        </a>
+                    </div>
+
+                    <nav class="hidden md:flex space-x-10">
+
+                        <a target="_blank"
+                            class="inline-flex items-center justify-center py-2  border-transparent text-sm font-medium  font-medium text-gray-400 shadow hover:text-gray-200 "
+                            href="https://www.notion.so/Schedule-d0c30ca318e645b28b18b902736bb5e6">Schedule</a>
+                        <a target="_blank"
+                            class="inline-flex rounded p-4  items-center justify-center py-2  border-transparent text-sm font-medium  font-medium text-gray-400 shadow hover:text-gray-200"
+                            href="/metaverse2022-hackathon">
+                            Hackathon
+                        </a>
+                        <a target="_blank"
+                            class="inline-flex rounded p-4 items-center justify-center py-2  border-transparent text-sm font-medium  font-medium text-gray-400 shadow hover:text-gray-200"
+                            href="https://forms.gle/WQUULruhYJBJuScN9">
+                            Become a Sponsor
+                        </a>
+
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="bg-gray-200">
+        <div class="relative overflow-hidden">
+            <div class="relative pb-16 sm:pb-16">
+                <div class="mt-16 mx-auto max-w-7xl px-4 sm:mt-16 sm:px-6">
+                    <div x-data='text_rotation()' x-init='rotate_words()' class="text-center">
+                        <h1
+                            class="text-4xl tracking-tight font-extrabold flex justify-center items-center text-gray-100 sm:text-5xl md:text-6xl">
+                            <img class="sm:w-4/6 w-full" src="images/vctears/logo.png" alt="V as in MetaVerse">
+                        </h1>
+                        <p class="max-w-md mx-auto text-base text-gray-800 text-xl md:max-w-3xl pt-4">
+                            Venture Capitalist turned you down? <br />
+
+                            VC Tears can help you wash away the disappointment (and any lingering bacteria)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-cover bg-center bg-fixed bg-no-repeat h-64"
+        style="background-color: white; background-image: url('images/vctears/vc1.jpeg');">
+    </div>
+
+
+    <!-- Gold Sponsors -->
+    <div class="flex justify-center bg-gray-800">
+        <div class="pt-4">
+            <h2 class="text-center mt-4 text-yellow-400 text-sm font-semibold uppercase tracking-wide">
+                Gold Sponsors</h2>
+            <div class="mt-4 flex justify-center md:mt-4">
+                <div class="p-8 mt-8 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-6">
+                    <div class="m-8 mt-2">
+                        <a class="shadow-2xl" target="_blank" href="https://www.sony.jp/mocopi/">
+                            <img class="w-32" src="images/metaverse2022/gsponsors/sony.svg" alt="SonyJP">
+                        </a>
+                    </div>
+                    <div class="m-8 mt-2">
+                        <a class="shadow-2xl" target="_blank" href="https://polygon.technology/">
+                            <img class="w-32" src="images/metaverse2022/gsponsors/polygon.svg" alt="Polygon">
+                        </a>
+                    </div>
+                    <div class="m-8 mt-2">
+                        <a class="shadow-2xl" target="_blank" href="https://cointelegraph.com/">
+                            <img class="w-64" src="images/metaverse2022/cointelegraph.svg" alt="Cointelegraph">
+                        </a>
+                    </div>
+                    <div class="m-8 mt-2">
+                        <a class="shadow-2xl" target="_blank" href="https://omgdrops.com/">
+                            <img class="w-32" src="images/metaverse2022/gsponsors/omg.png" alt="OMGDrops">
+                        </a>
+                    </div>
+                    <div class="m-8 mt-2">
+                        <a class="shadow-2xl" target="_blank" href="https://evline.io/">
+                            <img class="w-32" src="images/metaverse2022/gsponsors/evline-.png" alt="Evline">
+                        </a>
+                    </div>
+                    <div class="m-8 mt-2">
+                        <a class="shadow-2xl" target="_blank" href="https://www.genesis-ventures.vc/">
+                            <img class="w-32" src="images/metaverse2022/gsponsors/genesisv.png" alt="Genesis Ventures">
+                        </a>
+                    </div>
+                    <div class="m-8 mt-2">
+                        <a class="shadow-2xl" target="_blank" href="https://cr3w.co">
+                            <img class="w-32 bg-gray-300" src="images/metaverse2022/gsponsors/cr3w.png" alt="Cr3w">
+                        </a>
+                    </div>
+                    <div class="m-8 mt-2">
+                        <a class="shadow-2xl" target="_blank" href="https://cloudevo.ai/">
+                            <img class="w-32" src="images/metaverse2022/gsponsors/cloudevo.svg" alt="Cloudevo">
+                        </a>
+                    </div>
+                    <div class="m-8 mt-2">
+                        <a class="shadow-2xl" target="_blank" href="https://owiwi.co.uk/">
+                            <img class="w-32" src="images/metaverse2022/gsponsors/owiwi.png" alt="Owiwi">
+                        </a>
+                    </div>
+                    <div class="m-8 mt-2">
+                        <a class="shadow-2xl" target="_blank" href="https://orfium.com/">
+                            <img class="w-32 bg-gray-800" src="images/metaverse2022/gsponsors/orfium.svg" alt="Orfium">
+                        </a>
+                    </div>
+                    <div class="m-8 mt-2">
+                        <a class="shadow-2xl" target="_blank" href="https://skymavis.com/">
+                            <img class="w-24" src="images/metaverse2022/gsponsors/skymavis.png" alt="Sky Mavis">
+                        </a>
+                    </div>
+                    <div class="m-8 mt-2">
+                        <a class="shadow-2xl" target="_blank" href="https://theblendergallery.com/">
+                            <img class="w-32 bg-white" src="images/metaverse2022/gsponsors/blender.png"
+                                alt="The Blender Gallery">
+                        </a>
+                    </div>
+                    <div class="m-8 mt-2">
+                        <a class="shadow-2xl" target="_blank" href="https://elitvodka.com/">
+                            <img class="w-16 bg-white" src="images/metaverse2022/gsponsors/elit.png" alt="Elit Vodka">
+                        </a>
+                    </div>
+                    <div class="m-8 mt-2">
+                        <a class="shadow-2xl" target="_blank" href="https://www.theegg.gr/">
+                            <img class="w-16 bg-gray-800" src="images/metaverse2022/gsponsors/genesisv.svg"
+                                alt="The Egg">
+                        </a>
+                    </div>
+                    <div class="m-8 mt-2">
+                        <a class="shadow-2xl" target="_blank" href="#">
+                            <img class="w-64 bg-gray-800" src="images/metaverse2022/gsponsors/bombay.png" alt="Bombay">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Gold Sponsors end -->
+
+
+
+    <!-- Days -->
+
+    <div>
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+            <h2 style="font-family: 'titlefont';"
+                class="pb-2 text-center text-black text-5xl font-semibold uppercase font-extrabold tracking-wide">
+                Hand hash from the <span class="text-red-500">top VCs </span> and <span class="text-yellow-500">
+                    Angel Investors</span> on the 🪐
+            </h2>
+
+            <div class="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8">
+                <div class="relative">
+                    <h3 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Our speakers got an
+                        Oscar🏆. Twice.
+                    </h3>
+                    <p class="mt-3 text-lg text-gray-500">
+
+                    </p>
+
+                    <dl class="mt-10 space-y-10">
+                        <div class="relative">
+                            <dt>
+                                <div
+                                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-black text-white">
+                                    <!-- Heroicon name: outline/scale -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round"
+                                            d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
+                                    </svg>
+                                </div>
+                                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">Wash away the failures,
+                                    embrace the learning </p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">
+                                VCs turned down your Startup but funded another company and ended up losing tons of
+                                money?
+                                Consider this a tribute to VCs who dared to dream.</dd>
+                        </div>
+
+                        <div class="relative">
+                            <dt>
+                                <div
+                                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-black text-white">
+                                    <!-- Heroicon name: outline/scale -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M16.712 4.33a9.027 9.027 0 011.652 1.306c.51.51.944 1.064 1.306 1.652M16.712 4.33l-3.448 4.138m3.448-4.138a9.014 9.014 0 00-9.424 0M19.67 7.288l-4.138 3.448m4.138-3.448a9.014 9.014 0 010 9.424m-4.138-5.976a3.736 3.736 0 00-.88-1.388 3.737 3.737 0 00-1.388-.88m2.268 2.268a3.765 3.765 0 010 2.528m-2.268-4.796a3.765 3.765 0 00-2.528 0m4.796 4.796c-.181.506-.475.982-.88 1.388a3.736 3.736 0 01-1.388.88m2.268-2.268l4.138 3.448m0 0a9.027 9.027 0 01-1.306 1.652c-.51.51-1.064.944-1.652 1.306m0 0l-3.448-4.138m3.448 4.138a9.014 9.014 0 01-9.424 0m5.976-4.138a3.765 3.765 0 01-2.528 0m0 0a3.736 3.736 0 01-1.388-.88 3.737 3.737 0 01-.88-1.388m2.268 2.268L7.288 19.67m0 0a9.024 9.024 0 01-1.652-1.306 9.027 9.027 0 01-1.306-1.652m0 0l4.138-3.448M4.33 16.712a9.014 9.014 0 010-9.424m4.138 5.976a3.765 3.765 0 010-2.528m0 0c.181-.506.475-.982.88-1.388a3.736 3.736 0 011.388-.88m-2.268 2.268L4.33 7.288m6.406 1.18L7.288 4.33m0 0a9.024 9.024 0 00-1.652 1.306A9.025 9.025 0 004.33 7.288" />
+                                    </svg>
+
+                                </div>
+                                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">Clean hands, clean slate,
+                                    and a clean exit strategy
+                                </p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">Failed IPO? Or just ...
+                            </dd>
+                        </div>
+
+                        <div class="relative">
+                            <dt>
+                                <div
+                                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-black text-white">
+                                    <!-- Heroicon name: outline/bolt -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z" />
+                                    </svg>
+
+                                </div>
+                                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">Plus 20 more speakers </p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">From selling $1M NFTs, to A.I, to Stable
+                                Diffusion, to
+                                bootstraping Startups, to cryptocurrencies to **anything** that will shape our future.
+                                Stay tuned for the full list.
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <div class="relative -mx-4 mt-10 lg:mt-0" aria-hidden="true">
+                    <img class="relative mx-auto border shadow-2xl p-2" width="490" src="images/vctears/tears1.png"
+                        alt="">
+                </div>
+            </div>
+
+            <div class="relative mt-12 sm:mt-16 lg:mt-24">
+                <div class="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:items-center lg:gap-8">
+                    <div class="lg:col-start-2">
+                        <h3 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Art show
+                            <!-- and X-Files -->
+                        </h3>
+                        <p class="mt-3 text-lg text-gray-500">
+                            Real items from the movies, plus tons of CRAZY unreleased art
+                            <!-- plus designs from the creator
+                            of X-Files-->.
+                        </p>
+
+                        <dl class="mt-10 space-y-10">
+                            <div class="relative">
+                                <dt>
+                                    <div
+                                        class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-black text-white">
+                                        <!-- Heroicon name: outline/chat-bubble-bottom-center-text -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                                        </svg>
+
+
+                                    </div>
+                                    <p class="ml-16 text-lg font-medium leading-6 text-gray-900">Hoverboard?
+                                    </p>
+                                </dt>
+                                <dd class="mt-2 ml-16 text-base text-gray-500">
+                                    Yes. We flew the actual hoverboard and the shoes from "Back To The Future" from Los
+                                    Angeles so you can see them.
+                                    Oh and tons of stuff from Jurassic Park. Oh and tons of unreleased designs. Oh and
+                                    tons of swag.
+                                </dd>
+                            </div>
+
+                            <div class="relative">
+                                <dt>
+                                    <div
+                                        class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-black text-white">
+                                        <!-- Heroicon name: outline/envelope -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+                                        </svg>
+
+                                    </div>
+                                    <p class="ml-16 text-lg font-medium leading-6 text-gray-900">The Truth Is In The
+                                        MetaVerse</p>
+                                </dt>
+                                <dd class="mt-2 ml-16 text-base text-gray-500">
+                                    Art and digiphysical NFTs
+                                    <!-- from the creator of X-Files, Chris Carter-->. Seriously, how
+                                    epic this event is?
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <div class="relative -mx-4 mt-10 lg:col-start-1 lg:mt-0">
+                        <img class="border p-2 shadow-xl relative mx-auto" width="490" src="images/vctears/tears2.png"
+                            alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Days end -->
+
+    <!-- Media Sponsors -->
+    <div class="flex justify-center bg-gray-800">
+        <div class="pt-4">
+            <h2 class="text-center text-gray-400 text-xs font-semibold uppercase tracking-wide">
+                Media Sponsors</h2>
+            <div class="mt-4 flex justify-center md:mt-4">
+                <div class="m-8 mt-2">
+                    <a class="shadow-2xl" target="_blank" href="https://www.ProtoThema.gr/">
+                        <img class="w-32" src="images/metaverse2022/proto.png" alt="ProtoThema">
+                    </a>
+                </div>
+                <div class="m-8 mt-2">
+                    <a class="shadow-2xl" target="_blank" href="https://cointelegraph.com/">
+                        <img class="" src="images/metaverse2022/cointelegraph.svg" alt="Cointelegraph">
+                    </a>
+                </div>
+                <div class="m-8 mt-5">
+                    <a class="shadow-2xl" target="_blank" href="https://startupper.gr/">
+                        <img class="w-32" src="images/sponsors/startupper.png" alt="Startupper">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Media Sponsors end -->
+
+    <!-- Test -->
+    <div class="bg-cover bg-center bg-fixed bg-no-repeat h-64"
+        style="background-color: white; background-image: url('images/vctears/clean.png');">
+    </div>
+    <section class="overflow-hidden bg-white">
+        <div class="relative mx-auto max-w-7xl px-4 pt-20 pb-12 sm:px-6 lg:px-8 lg:py-20">
+            <div class="relative lg:flex lg:items-center">
+                <div class="hidden lg:block lg:flex-shrink-0">
+                    <img class="h-128 w-128" src="/images/metaverse2022/meta.png" alt="">
+                </div>
+
+                <div class="relative lg:ml-10">
+                    <svg class="absolute top-0 left-0 h-36 w-36 -translate-x-8 -translate-y-24 transform text-indigo-200 opacity-50"
+                        stroke="currentColor" fill="none" viewBox="0 0 144 144" aria-hidden="true">
+                        <path stroke-width="2"
+                            d="M41.485 15C17.753 31.753 1 59.208 1 89.455c0 24.664 14.891 39.09 32.109 39.09 16.287 0 28.386-13.03 28.386-28.387 0-15.356-10.703-26.524-24.663-26.524-2.792 0-6.515.465-7.446.93 2.327-15.821 17.218-34.435 32.11-43.742L41.485 15zm80.04 0c-23.268 16.753-40.02 44.208-40.02 74.455 0 24.664 14.891 39.09 32.109 39.09 15.822 0 28.386-13.03 28.386-28.387 0-15.356-11.168-26.524-25.129-26.524-2.792 0-6.049.465-6.98.93 2.327-15.821 16.753-34.435 31.644-43.742L121.525 15z" />
+                    </svg>
+                    <blockquote class="relative">
+                        <div class="text-2xl font-medium leading-9 text-gray-900">
+                            <p>“After I sold my latest bootstrap company, I decided to reach out to the top VCs to see
+                                how they are holding.
+                                Sadly, they are not doing well.
+                                ”.
+                            </p>
+                        </div>
+                        <footer class="mt-8">
+                            <div class="flex">
+                                <div class="ml-4 lg:ml-0">
+                                    <div class="text-base font-medium text-gray-900">Victor Chase</div>
+                                    <div class="text-base font-medium text-indigo-600"><a
+                                            href="https://www.linkedin.com/in/johnvlachoyiannis/"> King of the
+                                            MetaVerse</a></div>
+                                </div>
+                            </div>
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Test end -->
+
+    <!-- Hackathon -->
+    <div class="bg-cover bg-center bg-fixed bg-no-repeat h-64"
+        style="background-color: white; background-image: url('images/metaverse2022/metaplan.png');">
+
+    </div>
+    <div>
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+            <h2 style="font-family: 'titlefont';"
+                class="pb-2 text-center text-black text-5xl font-semibold uppercase font-extrabold tracking-wide">
+                Hack to earn: <span class="text-red-500">999 euro</span> to the best team 💰
+            </h2>
+
+            <div class="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8">
+                <div class="relative">
+                    <h3 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Learn. <a class="underline"
+                            target="_blank" href="https://academy.binance.com/en/glossary/buidl">Buidl.</a> Win.
+                    </h3>
+                    <p class="mt-3 text-lg text-gray-500">
+                        Two days to build with your team (up to 5 people) and get the prize. No second place.
+                        <a target="_blank" class="underline"
+                            href="https://www.notion.so/jonio/Hackathon-11a18ffdf6c44961a17bb6f05c2aef59">Get your
+                            Hackathon Ticket here</a>
+                    </p>
+
+                    <dl class="mt-10 space-y-10">
+                        <div class="relative">
+                            <dt>
+                                <div
+                                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-red-500 text-white">
+                                    <!-- Heroicon name: outline/scale -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                                    </svg>
+                                </div>
+                                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">No team? No problem!
+                                </p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">We'll definitely find you a team to join!
+                            </dd>
+                        </div>
+
+                        <div class="relative">
+                            <dt>
+                                <div
+                                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-red-500 text-white">
+                                    <!-- Heroicon name: outline/scale -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
+                                    </svg>
+
+
+                                </div>
+                                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">You have no idea about
+                                    web3?
+                                </p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">Our
+                                mentors and our community will provide courses on how to build web3 apps and guidance
+                                during the conference.
+                                Come on, we organized a huge conference, you can definitely write a web3 app!
+                            </dd>
+                        </div>
+
+                        <div class="relative">
+                            <dt>
+                                <div
+                                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-red-500 text-white">
+                                    <!-- Heroicon name: outline/bolt -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+
+                                </div>
+                                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">Get hired!</p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">Even if you don't win the prize, there is a
+                                high chance that
+                                you'll end up with a job in web3 (our sponsors are looking to hire you)
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+                <div class="relative -mx-4 mt-10 lg:mt-0" aria-hidden="true">
+                    <img class="relative mx-auto border shadow-2xl p-2" width="490"
+                        src="images/metaverse2022/metaverse5.png" alt="">
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+    <!-- Hackathon end -->
+
+    <!-- Agenda -->
+    <div class="bg-cover bg-center bg-fixed bg-no-repeat h-64"
+        style="background-color: white; background-image: url('images/metaverse2022/metaplan.png');">
+
+    </div>
+    <div>
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+            <h2 style="font-family: 'titlefont';"
+                class="pb-2 text-center text-black text-5xl font-semibold uppercase font-extrabold tracking-wide">
+                Schedule (<a class="underline" target="_blank"
+                    href="https://www.notion.so/jonio/Schedule-d0c30ca318e645b28b18b902736bb5e6">details</a>)
+            </h2>
+
+            <div class="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8">
+                <div class="relative">
+                    <h3 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">MetaTalks & Exhibition
+                    </h3>
+                    <p class="mt-3 text-lg text-gray-500">
+                        Location A - <a class="underline" target="_blank"
+                            href="https://www.google.com/maps/place/The+Blender+Gallery/@37.8604907,23.7502315,17z/data=!3m1!4b1!4m5!3m4!1s0x14a1bfd0315c460d:0xa1ed467f8a51f044!8m2!3d37.8604907!4d23.7524202?shorturl=1">The
+                            Blender Gallery</a>
+                    </p>
+
+                    <dl class="mt-10 space-y-10">
+                        <div class="relative">
+                            <div
+                                class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-black text-white">
+                                <!-- Heroicon name: outline/scale -->
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                                </svg>
+
+
+                            </div>
+
+                            <dt>
+                                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">Firechats
+                                </p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">Two days: 17th and 18th of December (12pm to
+                                5pm)
+                            </dd>
+                        </div>
+
+                        <div class="relative">
+                            <dt>
+                                <div
+                                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-black text-white">
+                                    <!-- Heroicon name: outline/scale -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+
+                                </div>
+                                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">Exhibition
+                                </p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">Walk-through with Rick Carter on the 18th of
+                                December (5pm)
+                            </dd>
+                        </div>
+
+                        <div class="relative">
+                            <dt>
+                                <div
+                                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-black text-white">
+                                    <!-- Heroicon name: outline/bolt -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 8.25v-1.5m0 1.5c-1.355 0-2.697.056-4.024.166C6.845 8.51 6 9.473 6 10.608v2.513m6-4.87c1.355 0 2.697.055 4.024.165C17.155 8.51 18 9.473 18 10.608v2.513m-3-4.87v-1.5m-6 1.5v-1.5m12 9.75l-1.5.75a3.354 3.354 0 01-3 0 3.354 3.354 0 00-3 0 3.354 3.354 0 01-3 0 3.354 3.354 0 00-3 0 3.354 3.354 0 01-3 0L3 16.5m15-3.38a48.474 48.474 0 00-6-.37c-2.032 0-4.034.125-6 .37m12 0c.39.049.777.102 1.163.16 1.07.16 1.837 1.094 1.837 2.175v5.17c0 .62-.504 1.124-1.125 1.124H4.125A1.125 1.125 0 013 20.625v-5.17c0-1.08.768-2.014 1.837-2.174A47.78 47.78 0 016 13.12M12.265 3.11a.375.375 0 11-.53 0L12 2.845l.265.265zm-3 0a.375.375 0 11-.53 0L9 2.845l.265.265zm6 0a.375.375 0 11-.53 0L15 2.845l.265.265z" />
+                                    </svg>
+
+
+                                </div>
+                                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">Crypto Party!</p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">18th of December (7pm)
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+                <div class="relative -mx-4 mt-10 lg:mt-0" aria-hidden="true">
+                    <img class="relative mx-auto border shadow-2xl p-2" width="490"
+                        src="images/metaverse2022/metaverse6.png" alt="">
+                </div>
+
+            </div>
+            <div class="relative mt-12 sm:mt-16 lg:mt-24">
+                <div class="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:items-center lg:gap-8">
+                    <div class="lg:col-start-2">
+                        <h3 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Hackathon
+
+                        </h3>
+                        <p class="mt-3 text-lg text-gray-500">
+                            Location B - <a class="underline" target="_blank"
+                                href="https://www.google.com/maps/place/Thessalonikis+75,+Moschato+183+45,+Greece/@37.9567789,23.6820186,17z/data=!3m1!4b1!4m5!3m4!1s0x14a1bc646a08fe23:0xb455536788d97640!8m2!3d37.9567789!4d23.6842073">The
+                                Egg</a>
+                        </p>
+
+                        <dl class="mt-10 space-y-10">
+                            <div class="relative">
+                                <dt>
+                                    <div
+                                        class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-red-500 text-white">
+                                        <!-- Heroicon name: outline/chat-bubble-bottom-center-text -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M21.75 6.75a4.5 4.5 0 01-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 11-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 016.336-4.486l-3.276 3.276a3.004 3.004 0 002.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M4.867 19.125h.008v.008h-.008v-.008z" />
+                                        </svg>
+
+                                    </div>
+                                    <p class="ml-16 text-lg font-medium leading-6 text-gray-900">Buidling
+                                    </p>
+                                </dt>
+                                <dd class="mt-2 ml-16 text-base text-gray-500">
+                                    17th and 18th of
+                                    December (10am to 7pm)
+                                </dd>
+                            </div>
+
+                            <div class="relative">
+                                <dt>
+                                    <div
+                                        class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-red-500 text-white">
+                                        <!-- Heroicon name: outline/envelope -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0" />
+                                        </svg>
+
+                                    </div>
+                                    <p class="ml-16 text-lg font-medium leading-6 text-gray-900">Results</p>
+                                </dt>
+                                <dd class="mt-2 ml-16 text-base text-gray-500">
+                                    19th of December (10am)
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <div class="relative -mx-4 mt-10 lg:col-start-1 lg:mt-0">
+                        <img class="border p-2 shadow-xl relative mx-auto" width="490"
+                            src="images/metaverse2022/metaverse2.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Agenda end -->
+
+
+    <!-- Tickets -->
+    <div class="bg-cover bg-center bg-fixed bg-no-repeat h-64"
+        style="background-color: white; background-image: url('images/metaverse2022/metaplan.png');">
+
+    </div>
+    <div>
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+            <h2 style="font-family: 'titlefont';"
+                class="pb-2 text-center text-black text-5xl font-semibold uppercase font-extrabold tracking-wide">
+                Tickets (free but limited)
+            </h2>
+
+            <div class="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8">
+                <div class="relative">
+                    <h3 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">How is this conference free?
+                    </h3>
+                    <p class="mt-3 text-lg text-gray-500">
+                        It is free because we have our awesome sponsors and our huge community.
+                    </p>
+
+                    <dl class="mt-10 space-y-10">
+                        <div class="relative">
+                            <dt>
+                                <div
+                                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-black text-white">
+                                    <!-- Heroicon name: outline/scale -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
+                                    </svg>
+
+                                </div>
+                                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">Do I need a ticket for the
+                                    conference?
+                                </p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">Yes, you will need an NFT Ticket to attend
+                                any day of the conference
+                            </dd>
+                        </div>
+
+                        <div class="relative">
+                            <dt>
+                                <div
+                                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-black text-white">
+                                    <!-- Heroicon name: outline/scale -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
+                                    </svg>
+
+                                </div>
+                                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">Where do I get the ticket?
+                                </p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">The MetaTalks tickets <a class="underline"
+                                    target="_blank"
+                                    href="https://futuretickets.xyz/dashboard/e/v-as-in-metaverse-2022-metatalks_HFzB9o1Kcf">are
+                                    available here</a> or if you
+                                have a <a class="underline" target="_blank" href="https://bit.ly/3XB2KWG">MetaHat</a>.
+                                You can grab a ticket for the Hackathon <a class="underline" target="_blank"
+                                    href="https://futuretickets.xyz/e/v-as-in-metaverse-2022-hackathon-ticket-early-bird_rdVaUsgYrh">here</a>.
+                                The Art Exhibition and the Crypto Party is open for everyone
+                            </dd>
+                        </div>
+
+                        <div class="relative">
+                            <dt>
+                                <div
+                                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-black text-white">
+                                    <!-- Heroicon name: outline/bolt -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
+                                    </svg>
+
+                                </div>
+                                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">Do I need different
+                                    tickets?</p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">Yes, the MetaTalks and the
+                                Hackathon have different tickets
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+                <div class="relative -mx-4 mt-10 lg:mt-0" aria-hidden="true">
+                    <img class="relative mx-auto border shadow-2xl p-2" width="490" src="images/metaverse2022/tix.png"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Tickets end -->
+
+
+    <!-- Last year -->
+    <div class="bg-cover bg-center bg-fixed bg-no-repeat h-64"
+        style="background-color: white; background-image: url('images/metaverse2022/metaplan.png');">
+    </div>
+    <div>
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+            <h2 style="font-family: 'titlefont';"
+                class="pb-2 text-center text-black text-5xl font-semibold uppercase font-extrabold tracking-wide">
+                This is what happened last year
+            </h2>
+
+            <div class="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8">
+                <div class="relative">
+                    <dl class="mt-10 space-y-10">
+                        <div class="relative">
+                            <dt>
+                                <div
+                                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500 text-white">
+                                    <!-- Heroicon name: outline/scale -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+                                    </svg>
+
+                                </div>
+
+
+                                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">This is how "V as in
+                                    MetaVerse" started
+                                </p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500">
+                                <a target="_blank"
+                                    class="underline text-yellow-400 hover:text-yellow-200 visited:text-purple-600"
+                                    href="https://jon.io/organizing-a-crypto-conference-in-europe-in-less-than-a-month">A
+                                    small story</a>
+                            </dd>
+                        </div>
+
+                        <div class="relative">
+                            <dt>
+                                <div
+                                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500 text-white">
+                                    <!-- Heroicon name: outline/scale -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                                    </svg>
+
+                                </div>
+                                <p class="ml-16 text-lg font-medium leading-6 text-gray-900">And these are the
+                                    highlights
+                                </p>
+                            </dt>
+                            <dd class="mt-2 ml-16 text-base text-gray-500"><a target="_blank"
+                                    class="underline text-yellow-400 hover:text-yellow-200 visited:text-purple-600"
+                                    href="https://jon.io/i-organized-my-own-conference-like-gary-vee-in-30-days">
+                                    Why we decided to do it every year</a>
+                            </dd>
+                        </div>
+
+                    </dl>
+                </div>
+                <div class="relative -mx-4 mt-10 lg:mt-0" aria-hidden="true">
+                    <iframe class="w-full h-64" src="https://www.youtube.com/embed/_1EqWsr3MT4"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- Last year end -->
+
+    <!-- Footer -->
+    <footer class="bg-black">
+        <div class="max-w-7xl text-white mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
+            <div class="flex justify-center space-x-6 md:order-2">
+                <a href="https://instagram.com/jonvictory" class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">Instagram</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                            d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </a>
+
+                <a href="https://twitter.com/jonromero" class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">Twitter</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                    </svg>
+                </a>
+            </div>
+            <div class="mt-8 md:mt-0 md:order-1 text-xs">
+                © 2069 Awesome Group.
+            </div>
+        </div>
+    </footer>
+    <!-- Footer end -->
+
+</body>
+
+
+</html>
+
+Greece (VAT makes it more expensive)
+
+1 -> 8.75 | $5.19 | 17.29
+2 -> 17.50 | 7.67 | 30.74 (15.37 per unit)
+3 -> 26.25 | 9.39 | 44.19 (14.73 per unit)
+
+US
+1 -> 8.75 | 9.29 | 18.04
+2 -> 17.50 | 12.94 | 30.44
+3 -> 26.25 | 16.59 | 42.84
+
+Charge
+1: $20.99 (profit ~$3)
+2: $34.99 (profit $4.25) - discount (16%)
+3: $47.99 (profit $3.8 - $4.8) - discount (23.77%)
+
+<div>The gentle formula purifies the skin without stripping its natural moisture barrier, while the warm and floral
+    scent ensures a SPA-like experience. Personalize the label with your design, add it to your product catalog, or
+    order for yourself.
+
+    10.14 fl. oz. (300 ml)
+    98% natural origin of total
+    Gentle formula
+    Sweet, floral scent
+    Fragrance from natural essential oils
+    COSMOS NATURAL certified by ECOCERT
+    Vegan
+    Comes with a pump dispenser
+    Made in Latvia
+    Disclaimer: This product has specific content guidelines and is shipped only to the European Union, the United
+    Kingdom, and the United States and their territories. Please note that this product can’t be sold on the Etsy, eBay,
+    and Amazon platforms.
+
+    Any products purchased through our website should be used as directed on the website or product packaging. Please
+    read the product description carefully before purchasing.
+
+    How to use: Apply to damp skin, lather, and rinse off thoroughly (external use only). Avoid contact with eyes. We
+    recommend testing the product on a small area before using it for the first time. Should you develop any symptoms or
+    allergic reactions, discontinue its use immediately and consult your healthcare professional.
+
+    Ingredients: Aqua/ Water, Sodium Coco-Sulfate, Sodium Cocoamphoacetate, Cocamidopropyl Betaine, Citric Acid,
+    Betaine, Coco-Glucoside, Parfum/ Fragrance, Sodium Chloride, Benzyl Alcohol, Vaccinium, Myrtillus (Blueberry) Fruit
+    Extract*, Sodium Benzoate, Potassium Sorbate, Limonene**, Linalool**, Citral**, Citronellol**.
+    *Ingredients from Organic Farming
+    **From natural essential oils
+    98% natural origin of total
+    COSMOS NATURAL certified by ECOCERT Greenlife according to COSMOS Standard available at https://COSMOS.ecocert.com
+    The full product ingredient list is also displayed on the customizable sticker.</div>
