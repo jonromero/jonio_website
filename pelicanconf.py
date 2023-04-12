@@ -34,6 +34,9 @@ EXTRA_PATH_METADATA = {
     },
     'raw/youtube.html': {
         'path': 'youtube.html'
+    },
+    'raw/vctears.html': {
+        'path': 'vctears.html'
     }
 }
 
@@ -50,7 +53,7 @@ RELATED_POSTS_MAX = 4
 
 DEFAULT_PAGINATION = 10
 
-DIRECT_TEMPLATES = ['advisory', 'index', 'archives', 'premium']
+DIRECT_TEMPLATES = ['advisory', 'index', 'archives', 'premium', 'store']
 
 PAGINATED_TEMPLATES = {
     'index': None,
