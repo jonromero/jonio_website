@@ -3,7 +3,7 @@
 
 <div class="relative py-16 bg-white overflow-hidden">
     <div class="relative px-4 sm:px-6 lg:px-8">
-        {% for article in articles_page.object_list %}
+        {% for article in articles_page.object_list | rejectattr('category', 'equalto', 'store') %}
 
         <div class="text-lg max-w-prose mx-auto mb-6">
             <a class="leading-6 font-semibold text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150"
