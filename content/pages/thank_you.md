@@ -11,6 +11,8 @@ If you are a Gmail user, check for any emails from me [by clicking here](https:/
 
 Talk you soon, Jon V
 
+			
+
 
 
 
