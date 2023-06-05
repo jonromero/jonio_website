@@ -7,6 +7,20 @@ function toggleMenus() {
     }
 }
 
+function form_check() {
+    return {
+        showModal: false, inputText: '', formSubmitted: false,
+        submitForm() {
+            if (this.inputText === "this is ok") {
+                this.formSubmitted = true;
+                this.showModal = false;
+            } else {
+                alert("Please enter 'this is ok' before submitting the form.");
+            }
+        }
+    }
+}
+
 function init_comments() {
     return {
         render_comments() {
