@@ -14,12 +14,17 @@ function form_check() {
             if (this.inputText === "this is ok") {
                 this.formSubmitted = true;
                 this.showModal = false;
+                const form = document.querySelector('form');
+
+                // Submit the form
+                form.submit();
             } else {
                 alert("Please enter 'this is ok' before submitting the form.");
             }
         }
     }
 }
+
 
 function init_comments() {
     return {
