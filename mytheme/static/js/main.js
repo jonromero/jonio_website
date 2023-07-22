@@ -7,6 +7,26 @@ function toggleMenus() {
     }
 }
 
+function form_check() {
+    return {
+
+        showModal: false, inputText: '', formSubmitted: false,
+        submitForm() {
+            if (this.inputText === "4") {
+                this.formSubmitted = true;
+                this.showModal = false;
+                const form = document.querySelector('form');
+
+                // Submit the form
+                form.submit();
+            } else {
+                alert("Try again");
+            }
+        }
+    }
+}
+
+
 function init_comments() {
     return {
         render_comments() {
