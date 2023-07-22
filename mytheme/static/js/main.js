@@ -9,9 +9,10 @@ function toggleMenus() {
 
 function form_check() {
     return {
+
         showModal: false, inputText: '', formSubmitted: false,
         submitForm() {
-            if (this.inputText === "this is ok") {
+            if (this.inputText === "4") {
                 this.formSubmitted = true;
                 this.showModal = false;
                 const form = document.querySelector('form');
@@ -19,7 +20,7 @@ function form_check() {
                 // Submit the form
                 form.submit();
             } else {
-                alert("Please enter 'this is ok' before submitting the form.");
+                alert("Try again");
             }
         }
     }
