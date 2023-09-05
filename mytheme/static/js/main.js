@@ -12,7 +12,6 @@ function form_check() {
 
         showModal: false, inputText: '', formSubmitted: false,
         submitForm() {
-            /*
             if (this.inputText === "4") {
                 this.formSubmitted = true;
                 this.showModal = false;
@@ -23,8 +22,6 @@ function form_check() {
             } else {
                 alert("Try again");
             }
-            */
-            alert("Sorry, no signups are permitted right now");
         }
     }
 }
