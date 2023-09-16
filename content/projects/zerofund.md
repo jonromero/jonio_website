@@ -2,6 +2,7 @@ Title: I managed a fund that gave no money, took no equity and had an exit
 Category: projects 
 Date: 2022-02-02 22:48
 Image: zero.png
+Tags: popular
 
 It was 2013 and I was in San Francisco reading the news about a European program that was going to "fund" new VCs. This would have been the beginning of the Startup community in Greece. 
 

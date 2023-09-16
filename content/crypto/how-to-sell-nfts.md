@@ -2,7 +2,6 @@ Title: Five reasons why you cannot sell your NFTs
 Category: crypto 
 Date: 2021-10-20 22:48
 Image: nft-post-sale.jpg
-Tags: popular
 
 Five months ago, I decided to sell my first NFT, [a piece of cake for my birthday](my-birthday-cake-as-an-nft), on [my NFT platform](https://omgdrops.com/). Since then, I sold more than 100 NFTs, sometimes for celebrities, other times for smaller creators or for [my own conference](https://jon.io/i-organized-my-own-conference-like-gary-vee-in-30-days) (which sold out three times).
 
