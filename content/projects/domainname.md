@@ -1,6 +1,6 @@
 Title: Five steps to get an amazing domain name for your Startup 
 Category: projects 
-Date: 2023-19-09 13:48
+Date: 2023-09-19 13:48
 Image: domainname.png
 Tags: popular
 
