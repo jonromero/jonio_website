@@ -2,7 +2,6 @@ Title: How NFTs will change events (and why Mark Cuban is a genius)?
 Category: crypto 
 Date: 2021-06-06 11:48
 Image: ticket-red.jpg
-Tags: popular
 
 Your friend Cathrine **loves** The Dallas Mavericks and she got you some tickets! Hooray! But deep down you are really a Lakers fan 
 and you don't really want to go but the ticket was kind of expensive. 
