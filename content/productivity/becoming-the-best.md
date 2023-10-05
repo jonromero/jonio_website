@@ -1,13 +1,7 @@
-Title: Becoming the best - don't ask for permission
+Title: Becoming the best 
 Tags: productivity
 Date: 2023-10-05 22:48
-
-
-
-![](/images/helmet.jpg)
-
-Yes. That's me. Wearing a yellow motorcycle helmet, dancing at a club in San Francisco, owned by the guy that started Netscape (the first Internet browser) - and this was our first business meeting.
-
+Image: helmet.jpg
 
 ## How To Become The Best You 
 The obvious answer, which has become a banality (note: banality has nothing to do with bananas), is:
@@ -15,7 +9,6 @@ The obvious answer, which has become a banality (note: banality has nothing to d
 > Do difficult things and you'll grow
 
 Now that we got this out of our system, let me tell you about my framework.
-
 
 ## Jon's Framework
 Nietzsche said:
@@ -60,4 +53,8 @@ There is a two day short film competition where you have to create a short (1-4 
 I always wanted to delve into A.I film making soooooo if you are interested, just reply to this email and let's see how we can do this.
 
 For the record, if this sounds crazy to you, you have to do it. Crazy people don't make excuses.
+
+![](/images/helmet.jpg)
+
+Yes. That's me. Wearing a yellow motorcycle helmet, dancing at a club in San Francisco, owned by the guy that started Netscape (the first Internet browser) - and this was our first business meeting.
 
