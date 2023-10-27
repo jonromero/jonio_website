@@ -10,8 +10,6 @@ I signed up for a [48 hour competition](https://gen48.runwayml.com/ ), sponsored
 
 ## Good stuff
 
-[![ai movie](/images/aishort.png)](https://youtu.be/_wcxJLcyeow)
-
 I created a "movie" in 5 hours and I spent **$50** while being amateur in movie making. 
 
 For someone like me, to have a similar result without A.I, they would need to spend at least $3k and 48 hours. At least.
@@ -35,5 +33,7 @@ A.I is terrible when it comes to human faces that have to show emotions. Just te
 Creating scripts with A.I is laughable. Plot holes, unimaginative stories, confusing endings. 
 
 Having said that, I plan to create a big movie just to try more technologies (like lip syncing) as I believe the space is going to be huge. 
+
+[![ai movie](/images/aishort.png)](https://youtu.be/_wcxJLcyeow)
 
 You can see the [short movie here](https://youtu.be/_wcxJLcyeow).
