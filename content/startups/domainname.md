@@ -2,7 +2,6 @@ Title: Five steps to get an amazing domain name for your Startup
 Category: projects 
 Date: 2023-09-19 13:48
 Image: domainame.png
-Tags: popular
 
 You know what takes the most time when building a Startup? Finding the freaking name **and** an available domain.
 
