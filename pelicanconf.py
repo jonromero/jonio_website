@@ -40,6 +40,9 @@ EXTRA_PATH_METADATA = {
     },
     'raw/vctears.html': {
         'path': 'vctears.html'
+    },
+    'raw/links.html': {
+        'path': 'links.html'
     }
 }
 
