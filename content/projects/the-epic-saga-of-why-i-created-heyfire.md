@@ -69,31 +69,35 @@ For the next 6 months I read scientific papers, theories, I run simulations, I b
 
 I started applying these rules to all my other investments like real estate and Startup investing and I came up with the IMOE principles. And Oh.My.God. How epically they work. 
 
-## The〈√〉IMOE principles.
+## The〈√〉IMOE framework.
 
 1. Innovate Relentlessly: Always look for new ways to achieve and exceed your ambitions.
 2. Measure Rigorously: Quantify progress and setbacks alike to understand and steer your journey.
 3. Optimize Continuously: Constantly seek to improve yourself in all aspects of life.
 4. Embrace Discomfort: Challenge yourself regularly to grow beyond your comfort zones.
 
-I apply the "IMOE" principles in everything I do - from optimizing my health to training for a marathon to my personal finances.
+I apply the "IMOE" framework in everything I do - from optimizing my health to training for a marathon to my personal finances.
 
 Note: IMOE stands also for "In my on experience" The symbol〈√〉- is the radical symbol. IMOE was this 〈Δ〉so the V is like an inverse D.
 
 ## 20x my networth and failing
 
+![AgentRisk](/images/agentrisk.png)
+
 With this knowledge, I built a Wealth Management platform that did somethings pretty well and some other things extremely bad.
 
-In terms of investment, the portfolios and the management where OUT OF THIS WORLD. Even during a period like COVID, our portfolios made 16% (our return of investment per year, was on average 18% - across all our customers).
-I had 95% of my wealth managed by my system - I was one of our biggest customers and I saw with my own eyes my net-worth going up when the IMOE principles are applied. 
+In terms of investment, the portfolios and the management where OUT OF THIS WORLD. Even during a period like COVID, our portfolios made 30% (our return of investment per year, was on average 17% - across all our customers).
+I had 95% of my wealth managed by my system - I was one of our biggest customers and I saw with my own eyes my net-worth going up when the IMOE framework is applied. 
 
 I remember that taking into account Time IRR, I destroyed most US VCs and all of European VCs in terms of returns. Sorry, I actually wanted to say obliterated. 
 
 But all good stories come to an end and on the business side eventhough running a Wealth Management company is a very profitable business, it is not an exponential return game and that meant that I had to shut down the company.
 
-## HeyFire
+## Selling another company
 
-Obviously, I am still using the knowledge I gained 
+After my Wealth Management company failed, I started another one by mistake and sold it in about a year. Yes, the IMOE works.
+
+With this new infusion of cash, I needed better tracking. Better management. 
 
 I tried many (all?) portfolio/wealth trackers and all of them had three issues. 
 
@@ -101,49 +105,25 @@ I tried many (all?) portfolio/wealth trackers and all of them had three issues.
 2. Needing my bank information to connect
 3. The companies were funded by VCs
 
-Let's go through all of this issues, one by one.
+So, I decided to build the most important Financial Independence platform out there. 
 
-## Where is the action?
+## HeyFire
 
 Building and managing portfolios is not rocket science. It's literally simple mathematics. You can optimize your portfolio with
-some very simple algorithms and make some **pretty pretty pretty** good money. You just need to be consistent. 
+some very simple algorithms and make some **pretty pretty pretty** good money. You just need to be consistent and **not stupid**.
 
-With HeyFire, you'll get recommendations for tax loss harvesting, rebalancing and other optimizations you can apply to your portfolio.
+With HeyFire, I am focusing in giving you the tools to build the best portfolio for you, share it with people you trust for feedback or use battle-tested portfolios as a base for yours. 
 
+You'll get recommendations for tax loss harvesting, rebalancing and other optimizations you can apply to your portfolio.
 
+You'll get the best support available out there. 
 
-I know because I was managing portfolios for HNWI for more than 5 years with my own Wealth Management company (yes, I had to )
+A community that prioritizes growth and knowledge sharing.
 
-The best way to learn a new technology is to make something with it. 
+And a platform that wants to help people live free instead of trying to make VCs richer.
 
-I signed up for a [48 hour competition](https://gen48.runwayml.com/ ), sponsored by RunwayML, Coca Cola and YouTube and I created a short movie in 5 hours. These are the things I learnt.
+Deep podcast and deep dives into how people manage their wealth and trying to decouple our self worth from our net-worth.
 
-## Good stuff
+This is a gargantuan effort and it will take time. But IMOE it is worths it.
 
-I created a "movie" in 5 hours and I spent **$50** while being amateur in movie making. 
-
-For someone like me, to have a similar result without A.I, they would need to spend at least $3k and 48 hours. At least.
-
-If someone spent more time and knew what they were doing, just by using A.I they could had made a short movie that the non-A.I equivalent would have been at least $50k and 1 week of work. 
-
-What I am trying to say is that the benefits are exponential once you start using A.I.
-
-Now, for the **bad news**. 
-
-## Bad stuff
-
-It is EXTREMELY difficult to create scenes with the same character. If you watch my movie, you'll see that the main character keeps changing. 
-
-It also very difficult to create exactly the shots that you want. I kept changing my script because I couldn't get the right shots.
-
-Check out some videos [I posted on twitter](https://twitter.com/jonromero/status/1716224203148648709). Hilarious stuff.
-
-A.I is terrible when it comes to human faces that have to show emotions. Just terrible.
-
-Creating scripts with A.I is laughable. Plot holes, unimaginative stories, confusing endings. 
-
-Having said that, I plan to create a big movie just to try more technologies (like lip syncing) as I believe the space is going to be huge. 
-
-[![ai movie](/images/aishort.png)](https://youtu.be/_wcxJLcyeow)
-
-You can see the [short movie here](https://youtu.be/_wcxJLcyeow).
+Thank you for reading this far.
