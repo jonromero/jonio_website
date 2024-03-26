@@ -3,6 +3,7 @@ Category: projects
 Date: 2021-03-25 10:48
 Image: aishort.png
 Tags: draft
+Status: draft
 
 ## Until It Is Done 
 
