@@ -59,14 +59,14 @@ To be fair, Andrew tried to be diplomatic but never answered any of these super 
 As with all my big life decisions, I told him to give me a couple of days to do my research and I'll get back to him.
 And oh boy. Research I did. 
 
-For the next 6 months I read scientific papers, theories, I run simulations, I build small apps and talk with a lot of advisors and I extracted "three plus one" simple rules:
+For the next 6 months I read scientific papers, theories, I run simulations, I build small apps and talk with a lot of wealthy Entrepreneurs and I extracted "three plus one" simple rules:
 
 1. Build a simple diversified portfolio but NOT too diversified
 2. Keep track and look for similar assets with the lowest fees
 3. Rebalance, tax harvest and reinvest
 4. Make money when the market goes down
 
-I started applying these rules to all my other investments like real estate and Startup investing and I came up with the IMOE principles. And Oh.My.God. How epically they work. 
+I started applying these rules to all my other investments like real estate and Startup investing and I came up with the "In My Own Experience" principles. And Oh.My.God. How epically they work. 
 
 ## 20x my networth and failing
 
