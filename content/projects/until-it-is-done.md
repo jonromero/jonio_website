@@ -7,6 +7,11 @@ Status: draft
 
 ## Until It Is Done 
 
+> "It's kind of fun to do the impossible." – Walt Disney
+
+All of our lives, we are conditioned to be normal. Basic. Rounded. I always admired that "strange" people that more than often did remarkable stuff. 
+
+
 Done: 4
 Left: 17
 
