@@ -5,8 +5,31 @@ Image: epic.png
 
 > "It's kind of fun to do the impossible." – Walt Disney
 
-All of our lives, we are conditioned to be normal. Basic. Rounded. I always admired that "strange" people that more than often did remarkable stuff. 
+My whole life is made of dreams. 
 
+My biggest one was to move to Silicon Valley. I knew it the moment I found myself in San Francisco with my Startup, walking on Main Street and seeing the tall buildings. Of course, there was zero chances of me making it as I was one of the million people wanting to be there. I had no money, no VISA and my Startup was running out of money.
+
+But somehow (hard work? luck?) I made it. My Startup got acquired and I moved to San Francisco, with a big bank account and a bigger salary (7 digits).
+
+And a new dream came up. I want to learn how to fly a plane.
+
+I was driving with my motorcycle more than 1 hour in traffic to get to the airport to get lessons. For a whole year.
+
+And then a new dream bubbled up. I want to do another company. And after that another dream and another. Crazier and more random than the previous one.
+
+That's how the birth of my ever-expanding bucket list—where crossing off one item adds three more. 
+
+## Free
+
+The good thing about financial independence is that you can do whatever you want. However, what nobody really talks about is that sometimes you're left unsure about what to do next. You have too many options. It's similar to deciding where to go for dinner and someone says, 'We can go wherever you want.' Just pick a place bro!
+
+This was my experience after achieving financial independence. I ventured into startups, sold them, and realized I didn't want to deal with VCs and raising money anymore. I simply wanted to pursue things I truly enjoyed. Yet, that wasn't as simple as it sounded due to the abundance of options. So, I decided to create a bucket list—a compilation of all the things I wanted to do. Surprisingly, the more I did, the more I wanted to do.
+
+My bucket list is a work in progress, with a timeline of 13 years. Why 13 years? It's arbitrary, but it serves as a deadline to ensure I make progress.
+
+After I am 55 years old, I anticipate shifting focus to less physically demanding pursuits, like going into space, climbing mountain Everest or writing a book. This timeline not only guides my actions but also helps me prioritize based on both time and physical capabilities.
+
+So, here is my **never-ending Giga Startup**. I will try to [document as much as I can](https://jon.io/youtube) and maybe I can inspire you to do things that you **never thought you could**. Because if I could do it, TRUST me, anyone can.  
 
 ## Done: 14
 
@@ -24,6 +47,7 @@ All of our lives, we are conditioned to be normal. Basic. Rounded. I always admi
 - ✅ Go to Siberia - [Photo](https://www.instagram.com/p/BMamYgKhzC9/)
 - ✅ Invest in a Distillery - [Link](https://app.dealroom.co/companies/dented_brick_distillery)
 - ✅ Shoot an A.I short movie - [Link](https://jon.io/i-made-an-ai-short-movie-and-it-is-crazy) 
+- ✅ Move to Silicon Valley and work for a HUGE company (update: acquired by Splunk!)
 
 
 ## Left: 17
