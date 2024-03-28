@@ -7,21 +7,26 @@ Image: epic.png
 
 My whole life is made of dreams. 
 
+
 My biggest one was to move to Silicon Valley. I knew it the moment I found myself in San Francisco with my Startup, walking on Main Street and seeing the tall buildings. Of course, there was zero chances of me making it as I was one of the million people wanting to be there. I had no money, no VISA and my Startup was running out of money.
+
+<img alt="San Francisco" src="images/sf.jpg" width='500px' >
 
 But somehow (hard work? luck?) I made it. My Startup got acquired and I moved to San Francisco, with a big bank account and a bigger salary (7 digits).
 
-And a new dream came up. I want to learn how to fly a plane.
+And a new dream came up. **I want to learn how to fly a plane**.
 
 I was driving with my motorcycle more than 1 hour in traffic to get to the airport to get lessons. For a whole year.
 
 And then a new dream bubbled up. I want to do another company. And after that another dream and another. Crazier and more random than the previous one.
 
+<img alt="Cleaning Cessna in San Carlos" src="images/planecessna.jpg" width='500px' >
+
 That's how the birth of my ever-expanding bucket list—where crossing off one item adds three more. 
 
 ## Free
 
-The good thing about financial independence is that you can do whatever you want. However, what nobody really talks about is that sometimes you're left unsure about what to do next. You have too many options. It's similar to deciding where to go for dinner and someone says, 'We can go wherever you want.' Just pick a place bro!
+The good thing about financial independence is that you can do **whatever** you want. However, what nobody really talks about is that sometimes you're left unsure about what to do next. You have too many options. It's similar to deciding where to go for dinner and someone says, 'We can go wherever you want.' Just pick a place bro!
 
 This was my experience after achieving financial independence. I ventured into startups, sold them, and realized I didn't want to deal with VCs and raising money anymore. I simply wanted to pursue things I truly enjoyed. Yet, that wasn't as simple as it sounded due to the abundance of options. So, I decided to create a bucket list—a compilation of all the things I wanted to do. Surprisingly, the more I did, the more I wanted to do.
 
