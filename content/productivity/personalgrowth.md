@@ -1,6 +1,6 @@
 Title: My personal growth framework
 Category: productivity
-Date: 2021-02-07 10:48
+Date: 2024-02-07 10:48
 Image: aishort.png
 Tags: popular
 Status: draft
