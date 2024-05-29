@@ -15,7 +15,7 @@ Grind -> do what investors want -> do stuff that doesn't matter for the customer
 A couple of years ago, I decided I am done with it. And you should be too.
 
 ![](/images/worktolo.jpg)
- 
+
 ## Lifeups instead of Startups
 
 Lifeups Instead of Startups
@@ -44,7 +44,7 @@ A company that doesn't have an expiration date because "we had to spend more for
 
 I got inspired by [Michael](https://x.com/mikekarnj) and his tweet, while walking back from the beach. On a Tuesday afternoon.
 
-![](/images/michael.png))
+![](/images/michael.png)
 
 What prevents you from being free?
 
