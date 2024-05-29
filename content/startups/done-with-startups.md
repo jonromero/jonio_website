@@ -20,7 +20,6 @@ A couple of years ago, I decided I am done with it. And you should be too.
 
 ## Lifeups instead of Startups
 
-Lifeups Instead of Startups
 Lifeups are companies that upgrade your (and everyone's involved) life.
 
 I tried "Lifeup" – the art of making products **just for you and your customers, while you enjoy life** – in my previous company and I loved the process.
