@@ -7,7 +7,9 @@ Tags: popular
 ## I am done with Startups (with a twist)
 
 I built startups that had tons of customers and amazing products.
+
 I built startups that made an insane amount of money while being just a few HTML pages.
+
 I built and sold startups, and the process is always the same:
 
 Grind -> do what investors want -> do stuff that doesn't matter for the customers -> get money in the bank -> repeat.
