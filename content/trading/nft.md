@@ -1,6 +1,4 @@
 Title: I bought this image for $1500 (and I sold it for +50% in two weeks)
-Tags: popular
-Category: trading
 Image: hash.jpeg
 Date: 2021-03-03 18:18
 
