@@ -34,6 +34,7 @@ Image: epic.png
 - Record an album
 - 🔄 Produce your own movie (first movie done! we are editing!)
 - 🔄 Create a Hollywood Production Studio (second movie in progress!)
+- 🔄 Run the Athens Marathon (this November!)
 - Fly a fighter jet 
 - Do a Spartan Race
 - Get 100k subscribers on YouTube
