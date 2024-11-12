@@ -5,9 +5,10 @@ Image: epic.png
 
 > "It's kind of fun to do the impossible." – Walt Disney
 
-## Done: 15
+## Done: 16
 
 - ✅ Be in Hollywood TV Series - [Video](https://www.youtube.com/watch?v=mO7zc191lw4)
+- ✅ Run the Authentic Athens Marathon
 - ✅ Learn how to fly (and land) an airplane - [Video](https://www.instagram.com/p/BFQYpMBm-xF/) 
 - ✅ Sell a Startup (edit: did it more than once!) - [Link](https://techcrunch.com/2013/09/16/splunk-acquires-bugsense-a-platform-for-analyzing-mobile-data/) 
 - ✅ Run a Marathon (update: I just finished LA Marathon!)
@@ -25,7 +26,7 @@ Image: epic.png
 - ✅ Move to Silicon Valley and work for a HUGE company (update: acquired by Splunk!)
 
 
-## Left: 16
+## Left: 15
 
 - 🔄 Compete in a bodybuilding competition 
 - 🔄 Invest in 100 Startups (update: I am in 76)
@@ -34,7 +35,6 @@ Image: epic.png
 - Record an album
 - 🔄 Produce your own movie (first movie done! we are editing!)
 - 🔄 Create a Hollywood Production Studio (second movie in progress!)
-- 🔄 Run the Athens Marathon (this November!)
 - Fly a fighter jet 
 - Do a Spartan Race
 - Get 100k subscribers on YouTube
