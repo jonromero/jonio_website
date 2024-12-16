@@ -8,9 +8,9 @@ First of all, in case you don't know, [even though I said it before](https://jon
 
 > I hate long distance running. It is stupid, boring and not fun at all.
 
-![](images/done.jpeg)
-
 But who doesn't want to run TWO Marathon (and a Half Marathon) in one year?
+
+![](images/done.jpeg)
 
 The only reason I did that, was because I wanted to run the Authentic/Classic Marathon in Athens/Greece. And it was an amazing experience running the same route (from the city of Marathon to Athens) to the iconic stadium.
 
