@@ -1,4 +1,4 @@
-Title: I hate running so I run TWO Marathons
+,Title: I hate running so I run TWO Marathons
 Category: projects 
 Date: 2024-12-15 10:00
 Image: wholeyear.png
@@ -45,7 +45,7 @@ Running sucks as we have established. My next project is competing in a body bui
 
 5/ [This is my training program](https://docs.google.com/spreadsheets/d/1OIjTL3fHO_lxoR9dRxNFt_QyjwKsLKANRX6CoziH2oU/edit?usp=sharing). Worked for me!
 
-6/ I had a CRAZY injury on my hills, a week before the race. But everything worked out
+6/ I had a CRAZY injury on my heels, a week before the race. But everything worked out
 
 7/ Second year wearing Nike Vaporfly. Don't buy anything else.
 
