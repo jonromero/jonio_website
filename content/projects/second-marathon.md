@@ -9,9 +9,9 @@ First of all, in case you don't know, [even though I said it before](https://jon
 
 But who doesn't want to run TWO Marathon (and a Half Marathon) in one year?
 
-![](images/done.jpeg)
-
 The only reason I did that, was because I wanted to run the Authentic/Classic Marathon in Athens/Greece. And it was an amazing experience running the same route (from the city of Marathon to Athens) to the iconic stadium.
+
+![](images/done.jpeg)
 
 And who doesn't like flying for a week to Greece and back to LA?
 
@@ -25,7 +25,7 @@ First of all, some stats:
 
 ![](images/wholeyear.png)
 
-You need a lot of training to run a marathon (actually two)
+You need a lot of training to run a marathon (actually two marathons).
 
 2/ Instead of running 500 miles in training (the recommended), I run 300 miles (even less than the previous time - 320). But I did something different that I think is vital.
 
