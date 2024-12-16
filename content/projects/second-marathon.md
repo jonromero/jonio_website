@@ -1,6 +1,7 @@
 Title: I hate running so I run TWO Marathons
 Category: projects 
 Date: 2024-12-15 10:00
+Image: runless.png
 
 <br>
 First of all, in case you don't know, [even though I said it before](https://jon.io/i-run-a-marathon-and-it-was-epic): 
