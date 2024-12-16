@@ -1,4 +1,4 @@
-,Title: I hate running so I run TWO Marathons
+Title: I hate running so I run TWO Marathons
 Category: projects 
 Date: 2024-12-15 10:00
 Image: wholeyear.png
