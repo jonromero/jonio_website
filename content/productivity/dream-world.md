@@ -1,8 +1,7 @@
 Title: The place that (maybe) doesn't exist 
 Category: productivity
 Date: 2025-04-14 10:48
-Image: fiends.jpeg
-
+Image: dream.png
 
 > Is all that we see or seem. But a dream within a dream?
 
@@ -25,6 +24,8 @@ After waking up, I remembered that **I've been to that same hill before** - in A
 Imagine this. I remember that I know this hill from another dream and all of a sudden I can remember ton of other dreams that happened to another location - that (again) doesn't exist!
 
 ## The dream place
+
+![](/images/dream.png)
 
 To get to my dream place, you need to pick "the other road". I don't know what that means but in my dreams I don't always decide to go there.
 It has an amazing sea to swim in and nice backroad with a backery and a windmill. 
