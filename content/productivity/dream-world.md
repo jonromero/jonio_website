@@ -3,6 +3,9 @@ Category: productivity
 Date: 2025-04-14 10:48
 Image: fiends.jpeg
 
+
+> Is all that we see or seem. But a dream within a dream?
+
 Last night the craziest thing in my life happened.
 
 Twice.
