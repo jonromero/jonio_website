@@ -38,6 +38,6 @@ And now I ask you. Suddenly I can remember tons of dreams that happened to these
 
 Have you ever had a similar experience? I'd love to hear more about it.
 
-- Jon
+-- Jon V
 
 See you in my dreams
