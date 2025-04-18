@@ -19,9 +19,9 @@ The view was fantastic. I think it was Athens/Greece but I've never been to that
 
 After waking up, I remembered that **I've been to that same hill before** - in ANOTHER dream! And (get ready for this):
 
-> This madd me remember ANOTHER bigger location that was part of my dreams for a very long time.
+> This made me remember ANOTHER location that was part of my dreams for a very long time.
 
-Imagine this. I remember that I know this hill from another dream and all of a sudden I can remember ton of other dreams that happened to another location - that (again) doesn't exist!
+Imagine this. I remember that I know this hill from another dream and all of a sudden I can remember tons of other dreams that happened to another location - that (again) doesn't exist!
 
 ## The dream place
 
