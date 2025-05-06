@@ -13,7 +13,7 @@ My latest project that has been taking most of my "hobby time" for the last six 
 ## Let me introduce you to the **flatworm**
 
 ![](/images/flatworm.png)
-> The flatwork - Image from Laura Sanders
+> The flatworm - Image from Laura Sanders
 
 Flatworm is this little guy that scientists cut in pieces to figure out how it can regenerate itself. The cool thing about flatworms is that **we can train it to remember stuff** (mostly places).
 
@@ -74,7 +74,7 @@ In the next posts (subscribe to follow me on this trip), I built a small A.I and
 
 ## Resources:
 
-1. [Michael Levin's presentation](https://www.youtube.com/watch?v=RjD1aLm4Nu8) - This video has everything that you read here but with videos, images and explanations from Michael Levin, the Principal Investigator of Levin Lab. This is where you should start your journey
+1. [Michael Levin's presentation](https://www.youtube.com/watch?v=RjD1aLm4Thg) - This video has everything that you read here but with videos, images and explanations from Michael Levin, the Principal Investigator of Levin Lab. This is where you should start your journey
 2. [More details regarding the regeneration properties of the flatworms](https://www.nature.com/articles/nature13479)
 3. [A molecular and computational perspective on growth and form of the flatworm](https://www.sciencedirect.com/science/article/pii/S0959438817302382)
 4. [No need to have a head to think: On Having No Head: Cognition throughout Biological Systems](https://www.frontiersin.org/articles/10.3389/fpsyg.2016.00902/full)
