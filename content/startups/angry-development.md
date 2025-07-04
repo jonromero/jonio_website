@@ -1,8 +1,7 @@
 Title: Anger-driven development
 Category: startups 
-Date: 2025-24-01 10:48
+Date: 2025-01-24 10:48
 Image: anger.jpg
-Tags: popular
 
 The way I build apps is very simple and fast:
 
