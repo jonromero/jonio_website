@@ -1,8 +1,14 @@
 Title: Anger-driven development
 Category: startups 
-Date: 2025-24-01 10:48
+Date: 2025-01-24 10:48
 Image: anger.jpg
-Tags: popular
+
+Yes, I am having a fund that helps young scientists and Entrepreneurs come to the US, present their
+papers and ideas.
+
+This is how it works:
+
+1. You are a 
 
 The way I build apps is very simple and fast:
 
