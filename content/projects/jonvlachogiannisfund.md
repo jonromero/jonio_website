@@ -13,7 +13,7 @@ This round is called **The Super Intelligence scholars program**.
 
 Expect rough corners as my motto is:
 
-> Moving fast and stumble instead of not doing anything at all.
+> Moving fast and stumble instead of not doing it at all.
 
 ## What I offer
 
