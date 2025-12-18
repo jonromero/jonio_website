@@ -45,7 +45,7 @@ Expect rough corners as my motto is:
 
 Nothing :) Ok, maybe wear our swag at the conference and a selfie?
 
-Just be a normal person and make your future self proud. [I was helped making it to the Silicon Valley and my life has changed forever and I think my present self if pretty happy](http://localhost:8000/pages/my-story). 
+Just be a normal person and make your future self proud. [I was helped making it to the Silicon Valley and my life has changed forever and I think my present self if pretty happy](https://jon.io/pages/my-story). 
 
 
 ## How to apply
