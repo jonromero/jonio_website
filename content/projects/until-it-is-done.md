@@ -26,10 +26,9 @@ Image: epic.png
 - ✅ Move to Silicon Valley and work for a HUGE company (update: acquired by Splunk!)
 
 
-## Left: 15
+## Left: 14
 
-- 🔄 Compete in a bodybuilding competition 
-- 🔄 Invest in 100 Startups (update: I am in 76)
+- 🔄 Invest in 100 Startups (update: I am in ~~74~~ ~~76~~ 81)
 - 🔄 Create a Financial Independence Platfrom (update: check [HeyFire](https://heyfire.co))
 - 🔄 Learn how to sing
 - Record an album
@@ -45,6 +44,11 @@ Image: epic.png
 - Win $10k in poker
 - Do 10 chest pull ups
 - Attend a Wim Hoff in the wilderness
+
+## Abandoned (for now?)
+- Compete in a bodybuilding competition. (The preparation is brutal. I'll just focus on fitness for now)
+
+
 
 My whole life is made of dreams. 
 
