@@ -4,9 +4,6 @@ Tags: productivity
 Image: do.jpg
 Date: 2026-01-01 11:32
 
-
-## All the things I am not doing anymore
-
 2026 is here and I have so many epic projects in the pipeline. This is the list I have created in
 Obsidian of things that I stopped doing in 2025 and going to expand in 2026.
 
@@ -20,7 +17,7 @@ Obsidian of things that I stopped doing in 2025 and going to expand in 2026.
 8. Optimize - I only try to maximize 
 9. Assume that people know what they are doing - they usually just want to deliver. Be more engaged, control everything until the process is clear
 
-~[do.jpg](do.jpg)
+![do](images/do.jpg)
 
 ## Having calls 
 
