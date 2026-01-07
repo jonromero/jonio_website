@@ -3,7 +3,7 @@ Category: projects
 Date: 2025-12-17 12:18
 Image: nofail.jpeg
 
-Welcome to my fund, a non-for-profit fund that helps people become better Entrepreneurs, scientists, thinkers and change the world.
+Welcome to my **1 Million Dollar fund**, a non-for-profit fund that helps people become better Entrepreneurs, scientists, thinkers and change the world.
 
 It's a test ground for a Super Intelligence Foundation so things might change all the time so bear with me.
 
