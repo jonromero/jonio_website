@@ -6,47 +6,56 @@
 
 <main class="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 xl:mt-28">
     <div class="text-center">
-        <h2
+        <h1
             class="text-4xl pb-8 tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
-            Moonshots with
+            Building systems for
             <br class="xl:hidden">
-            <span class="text-indigo-600">slingshots</span>
-        </h2>
+            <span class="text-indigo-600">Super Intelligence</span>
+        </h1>
 
-        <div class="relative bg-gray-800">
-            <div class="hidden md:block h-56 bg-indigo-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
-                <img class="w-full h-full object-cover" src="{{IMAGES}}/jon.jpg" alt="">
+        <div class="relative bg-gray-900 rounded-2xl overflow-hidden shadow-2xl">
+            <!-- Background Image -->
+            <div class="absolute inset-0">
+                <img class="w-full h-full object-cover object-center" src="{{IMAGES}}/jon.jpg" alt="Jon Vlachogiannis">
+                <!-- Overlay to ensure text readability -->
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/40 to-transparent lg:via-gray-900/20">
+                </div>
             </div>
-            <div class="relative max-w-screen-xl mx-auto px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-                <div class="md:ml-auto md:w-1/2 md:pl-10 text-gray-300">
+
+            <!-- Content -->
+            <div class="relative max-w-screen-xl mx-auto px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+                <div class="md:w-3/5 lg:w-1/2 text-left">
                     <h2
-                        class="mt-2 text-white text-3xl leading-9 font-extrabold tracking-tight sm:text-4xl sm:leading-10">
-                        Epic stories about how:
+                        class="mt-2 text-white text-3xl leading-9 font-extrabold tracking-tight sm:text-4xl sm:leading-10 drop-shadow-lg">
+                        I built BugSense from $100k to acquisition by Splunk.
                     </h2>
-                    <p class="mt-3 text-lg leading-7 ">
-                    <ol class="text-left list-decimal list-outside my-5 pl-2">
-                        <li>I built and sold the most <b>epic</b> companies without going insane 🤯</li>
-                        <li>I helped a <a class="text-indigo-400"
-                                href="how-i-spent-my-summer-helping-to-save-a-whole-country">whole country </a> fight
-                            COVID-19 🦠 with
-                            Machine Learning
-                        </li>
-                        <li>I created a wealth management company from scratch and kicked Wall Street's ass
-                        </li>
-                        <li>I ran the first arbitrage
-                            algorithms on blockchain, made and lost everything (and then
-                            made them back) <a class="text-indigo-400"
-                                href="trading-ethereum-making-10-every-20-minutes.html">[...]</a>
-                        </li>
-                        <li>Invested in a unicorn🦄 by being annoying</li>
-                    </ol>
-                    <div class="text-right">
-                        <a class="underline" href="/archives">and many many more</a>
-                    </div>
+                    <h2
+                        class="mt-4 text-white text-3xl leading-9 font-extrabold tracking-tight sm:text-4xl sm:leading-10 drop-shadow-lg">
+                        I deployed an AI system that saved lives during Greece's wildfires.
+                    </h2>
+                    <h2
+                        class="mt-4 text-white text-3xl leading-9 font-extrabold tracking-tight sm:text-4xl sm:leading-10 drop-shadow-lg">
+                        I invested in Anthropic.
+                    </h2>
+                    <p class="mt-8 text-xl text-gray-100 font-medium leading-7 drop-shadow-md">
+                        Here's what those three things taught me about Super Intelligence.
                     </p>
-                    <div class="mt-8">
+                    <p class="mt-3 text-lg text-gray-200 leading-6 drop-shadow-md">
+                        Practical AI deployment, real-world lessons, and what's next.
+                    </p>
+                    <div class="mt-10 flex flex-col sm:flex-row gap-4">
                         <div class="rounded-md shadow">
-                            {% include 'newsletter_form_yanni_army.html' %}
+                            <a href="https://youtube.com/@jonvictory" target="_blank"
+                                class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 md:py-4 md:text-lg md:px-10 transition duration-150 ease-in-out">
+                                Watch the Full Story
+                            </a>
+                        </div>
+                        <div class="rounded-md shadow">
+                            <a href="{{filename}}/pages/my-story"
+                                class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10 transition duration-150 ease-in-out">
+                                Read My Background
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -57,6 +66,99 @@
 </main>
 <!-- END HERO section -->
 
+<!-- Current Work Section -->
+<div class="relative bg-white pt-16 pb-8 px-4 sm:px-6 lg:pt-24 lg:pb-16 lg:px-8">
+    <div class="relative max-w-7xl mx-auto">
+        <div class="text-center">
+            <h2 class="text-3xl leading-9 tracking-tight font-extrabold text-gray-900 sm:text-4xl sm:leading-10">
+                Current Work: The Super Intelligence Stack
+            </h2>
+            <p class="mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-500 sm:mt-4">
+                Building systems that anticipate and prepare for the SI era
+            </p>
+        </div>
+        <div class="mt-12 grid gap-8 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
+
+            <!-- Card 1: LastMachine -->
+            <div class="flex flex-col rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">
+                            LastMachine
+                        </h3>
+                        <div class="space-y-2 text-gray-600">
+                            <p><span class="font-semibold text-gray-900">What:</span> AI preparation and deployment
+                                framework</p>
+                            <p><span class="font-semibold text-gray-900">Why:</span> Building systems that anticipate SI
+                                implications</p>
+                            <p><span class="font-semibold text-gray-900">Status:</span> <span
+                                    class="text-indigo-600 font-medium">In development</span></p>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <a href="https://youtube.com/@jonvictory" target="_blank"
+                            class="inline-flex items-center text-base font-semibold text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150">
+                            Learn More →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: HeyFire -->
+            <div class="flex flex-col rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">
+                            HeyFire
+                        </h3>
+                        <div class="space-y-2 text-gray-600">
+                            <p><span class="font-semibold text-gray-900">What:</span> Automation & optimization engine
+                            </p>
+                            <p><span class="font-semibold text-gray-900">Why:</span> Case study in real-world AI
+                                deployment</p>
+                            <p><span class="font-semibold text-gray-900">Status:</span> <span
+                                    class="text-green-600 font-medium">Live</span></p>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <a href="/heyfire"
+                            class="inline-flex items-center text-base font-semibold text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150">
+                            Check it out →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Jon V Foundation -->
+            <div class="flex flex-col rounded-lg shadow-lg overflow-hidden border border-gray-200">
+                <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">
+                            Jon V Foundation
+                        </h3>
+                        <div class="space-y-2 text-gray-600">
+                            <p><span class="font-semibold text-gray-900">What:</span> Non-profit funding for
+                                entrepreneurs & scientists</p>
+                            <p><span class="font-semibold text-gray-900">Why:</span> Real-world impact in AI era +
+                                policy alignment</p>
+                            <p><span class="font-semibold text-gray-900">Status:</span> <span
+                                    class="text-green-600 font-medium">Active</span></p>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <a href="https://youtube.com/@jonvictory" target="_blank"
+                            class="inline-flex items-center text-base font-semibold text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150">
+                            See current round →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- END Current Work Section -->
+
 <!-- As seen-->
 <div class="">
     <div class="max-w-7xl mx-auto py-12 mt-2 mb-4 px-4 sm:px-6 lg:px-8 rounded-lg shadow-lg">
@@ -66,31 +168,36 @@
                 Featured on
             </h2>
         </div>
-        <div class="grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
-            <div class="col-span-2 flex justify-center md:col-span-3 lg:col-span-1">
+        <div class="grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-6">
+            <div class="col-span-1 flex justify-center">
                 <a target="_blank"
                     href="https://www.hollywoodreporter.com/business/business-news/behind-hollywoods-nft-cash-grab-theres-no-way-this-is-a-fad-4152295/">
                     <img class="h-12" src="images/asseen/hollywood.png">
                 </a>
             </div>
-            <div class="col-span-2 flex justify-center md:col-span-3 lg:col-span-1">
+            <div class="col-span-1 flex justify-center">
                 <a target="_blank"
                     href="https://knowledge.wharton.upenn.edu/article/how-artificial-intelligence-can-slow-the-spread-of-covid-19/">
                     <img class="h-12" src="images/asseen/wharton.svg"></a>
             </div>
-            <div class="col-span-2 flex justify-center md:col-span-3 lg:col-span-1">
+            <div class="col-span-1 flex justify-center">
                 <a target="_blank" href="https://www.fastcompany.com/3048196/greek-startups-cut-off-from-the-cloud">
                     <img class="h-12" src="images/asseen/fast.png">
                 </a>
             </div>
-            <div class="col-span-2 flex justify-center md:col-span-2 lg:col-span-1">
+            <div class="col-span-1 flex justify-center">
                 <a target="_blank" href="https://www.bbc.com/news/world-europe-33499551">
                     <img class="h-12" src="images/asseen/bbc.png">
                 </a>
             </div>
-            <div class="col-span-2 flex justify-center md:col-span-3 lg:col-span-1">
+            <div class="col-span-1 flex justify-center">
                 <a target="_blank" href="https://money.cnn.com/2015/07/07/technology/greek-crisis-zerofund/index.html">
                     <img class="h-12" src="images/asseen/cnn.png">
+                </a>
+            </div>
+            <div class="col-span-1 flex justify-center">
+                <a target="_blank" href="https://today.usc.edu/">
+                    <img class="h-12" src="images/asseen/usc.png">
                 </a>
             </div>
         </div>
@@ -106,8 +213,11 @@
     <div class="relative max-w-7xl mx-auto">
         <div class="text-center">
             <h2 class="text-3xl leading-9 tracking-tight font-extrabold text-gray-900 sm:text-4xl sm:leading-10">
-                The most popular articles
+                Featured Articles
             </h2>
+            <p class="mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-500 sm:mt-4">
+                Key insights on AI deployment, building companies, and preparing for Super Intelligence
+            </p>
         </div>
         <div class="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
             {% for article in articles if 'popular' in article.tags if article.tags is defined else None %}
@@ -168,7 +278,7 @@
             {% for article in articles | rejectattr('category', 'equalto', 'newsletters') | rejectattr('category',
             'equalto', 'store') %}
 
-            {% if loop.index < 7 %} <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+            {% if loop.index < 4 %} <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
 
                 <div class="flex-shrink-0">
                     <a href="{{article.url}}">
@@ -218,8 +328,11 @@
     <div class="relative max-w-7xl mx-auto">
         <div class="text-center">
             <h2 class="text-3xl leading-9 tracking-tight font-extrabold text-gray-900 sm:text-4xl sm:leading-10">
-                "How to" Videos
+                Latest from YouTube
             </h2>
+            <p class="mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-500 sm:mt-4">
+                Deep dives on AI, Super Intelligence, and building in the new era
+            </p>
         </div>
         <div class="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
 

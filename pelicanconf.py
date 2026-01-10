@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = u'Jon V <h2>BigData. Startups. Trading.</h2>'
+AUTHOR = u'Jon V <h2>Building systems for Super Intelligence</h2>'
 SITENAME = u'Jon.IO'
 SITEURL = u''
 TIMEZONE = u'America/Los_Angeles'
