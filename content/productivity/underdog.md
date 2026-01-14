@@ -25,7 +25,7 @@ I believe that being the underdog forces you in a continuous state of competitio
 And you know what, sometimes everything just works. You get in that flow and things are starting to click.
 
 ## The underdog mentality
-For me, getting to that state is pretty easy. I just start something new that probably will fail majestically (like a book, a podcast or planning to become the Major of Los Angeles) that I have no idea how to do and I try to do it. Succeeding doesn’t matter (in the beginning) because I get to learn SO many cool skills and I get to get over my “everything has to be perfect” plague.
+For me, getting to that state is pretty easy. I just start something new that probably will fail majestically (like a book, a podcast or planning to become the Mayor of Los Angeles) that I have no idea how to do and I try to do it. Succeeding doesn’t matter (in the beginning) because I get to learn SO many cool skills and I get to get over my “everything has to be perfect” plague.
 
 Some people love to watch Netflix or read a book. I just like to fail :)
 
