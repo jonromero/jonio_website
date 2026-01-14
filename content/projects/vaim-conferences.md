@@ -2,7 +2,6 @@ Title: VAIM Conference: Building, Learning, and Pushing Boundaries
 Category: projects
 Date: 2026-01-14 12:11
 Image: metaverse2021/metaverse_selfie.png
-Tags: popular
 
 What started as a crazy idea in 2021 has become an annual tradition that brings together builders, investors, and thinkers from around the world. Here's the story of VAIM (V as in Metaverse/Victory) - my conference that's been running for four years straight.
 
