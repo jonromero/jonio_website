@@ -1,4 +1,4 @@
-Title: TheJon Vlachogiannis Fund 
+Title: The Jon Vlachogiannis Fund 
 Category: projects 
 Date: 2025-12-17 12:18
 Image: nofail.jpeg
