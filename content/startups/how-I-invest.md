@@ -15,7 +15,7 @@ My investment rulebook isn’t set in stone (I’ve thrown cash at nearly 100 st
 
 ## The "Get Jon to Fund You" Playbook
 
-- Your company must be incorporated in the US (California preferred).
+- Your company must be incorporated in the US (California preferred). [READ HERE WHY](https://jon.io/why-i-only-invest-in-us-based-startups)
 - Your target market should be the US.
 - Only looking at pre-seed or seed funding rounds.
 - Preferably dealing in SAFE notes ($25k to $100k, with the potential for me to syndicate up to $1M).
