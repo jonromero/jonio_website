@@ -17,7 +17,7 @@ My investment rulebook isn’t set in stone (I’ve thrown cash at nearly 100 st
 
 - Your company must be incorporated in the US (California preferred). [READ HERE WHY](https://jon.io/why-i-only-invest-in-us-based-startups)
 - Your target market should be the US.
-- Only looking at pre-seed or seed funding rounds.
+- Only looking at pre-seed or seed funding rounds uo to $5M valuation.
 - Preferably dealing in SAFE notes ($25k to $100k, with the potential for me to syndicate up to $1M).
 - Your business should be technology-oriented, with a strong preference for SaaS models.
 - You should have some paying customers (even just one counts!).
