@@ -225,7 +225,7 @@
 <p>Update: Oanda released a new (kickass) execution engine called <strong>v20</strong> and they have released a new (improved) API. This post has been updated in order to use the new API but if (for any reason) you want to check the old code, it is <a href="https://github.com/jonromero/forex_algotrading/blob/86db3f7f567897ad74c1e611cf2d6f337f4a9c24/post3/runner.py">right here</a>. You lucky you!</p>
 <p>Connecting to Oanda needs a conf file - which you can generate using a script that Oanda provides <a href="https://github.com/oanda/v20-python-samples">here</a> <em>or</em> you can just create it yourself. Why would you want that? First of all when it comes to credentials (and my money), I prefer to know everything that is going on. And I don't like having to install PyYAML just to read a conf file. Feel free to use either method. </p>
 <p>Now, prepare to be amazed. The code is straight-forward. We initialize the API:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">v20</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">v20</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="n">v20</span><span class="o">.</span><span class="n">Context</span><span class="p">(</span>
         <span class="s1">&#39;api-fxpractice.oanda.com&#39;</span><span class="p">,</span>
@@ -245,7 +245,7 @@
 </code></pre></div>
 
 <p>Check the current price is as easy!</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
 
 <span class="n">latest_price_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;Z&#39;</span><span class="p">,</span>
 
