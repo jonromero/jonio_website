@@ -49,6 +49,9 @@ EXTRA_PATH_METADATA = {
     },
     'raw/links.html': {
         'path': 'links.html'
+    },
+    'raw/funding-rules/index.html': {
+        'path': 'funding-rules/index.html'
     }
 }
 
