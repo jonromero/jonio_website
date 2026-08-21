@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Does Jon Want to Fund You? | Jon Vlachogiannis</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .dot{transition:background-color .2s ease;}
+</style>
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- HEADER -->
+  <div class="bg-white border-b border-gray-100">
+    <nav class="max-w-screen-xl mx-auto flex items-center justify-between px-4 sm:px-6 py-6">
+      <a href="/" class="font-bold text-gray-900" aria-label="Home">Jon V</a>
+      <a href="https://jon.io/get-jon-to-fund-you"
+         class="text-sm font-medium text-gray-500 hover:text-gray-900 transition duration-150 ease-in-out">
+        &larr; Back to "Get Jon to Fund You"
+      </a>
+    </nav>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="relative py-16 bg-white overflow-hidden">
+    <div class="relative px-4 sm:px-6 lg:px-8">
+      <div class="text-lg max-w-prose mx-auto">
+        <p class="text-base text-center leading-6 text-indigo-600 font-semibold tracking-wide uppercase">
+          quick check
+        </p>
+        <h1 class="mt-2 mb-4 text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
+          Does Jon Want to Fund You?
+        </h1>
+        <p class="text-center text-gray-500 mb-10">
+          Six questions, pulled straight from Jon's actual criteria. No back button &mdash; answer honestly.
+        </p>
+
+        <div id="card" class="bg-white border border-gray-200 rounded-lg shadow-sm p-6 sm:p-10"></div>
+
+        <p class="text-center text-sm text-gray-400 mt-6">
+          Answer each question once and mean it &mdash; there's no undo.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="bg-white border-t border-gray-100">
+    <div class="max-w-screen-xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-2">
+      <nav class="-mx-5 -my-2 flex flex-wrap justify-center">
+        <div class="px-5 py-2"><a href="/pages/my-story" class="text-base leading-6 text-gray-500 hover:text-gray-900">About</a></div>
+        <div class="px-5 py-2"><a href="https://youtube.com/@jonvictory" target="_blank" class="text-base leading-6 text-gray-500 hover:text-gray-900">Latest Videos</a></div>
+        <div class="px-5 py-2"><a href="/archives" class="text-base leading-6 text-gray-500 hover:text-gray-900">Articles</a></div>
+        <div class="px-5 py-2"><a href="/category/newsletters" class="text-base leading-6 text-gray-500 hover:text-gray-900">Newsletter</a></div>
+      </nav>
+      <div class="mt-8 flex justify-center">
+        <a href="https://youtube.com/@jonvictory" target="_blank" class="text-gray-400 hover:text-gray-500">
+          <span class="sr-only">YouTube</span>
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clip-rule="evenodd"/></svg>
+        </a>
+        <a href="https://twitter.com/jonromero" class="ml-6 text-gray-400 hover:text-gray-500">
+          <span class="sr-only">Twitter</span>
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/></svg>
+        </a>
+        <a href="http://github.com/jonromero/" class="ml-6 text-gray-400 hover:text-gray-500">
+          <span class="sr-only">GitHub</span>
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+        </a>
+      </div>
+      <div class="mt-8">
+        <p class="text-center text-base leading-6 text-gray-400">
+          &copy; <a href="https://weareallawesome.com" target="_blank" class="hover:text-gray-600">We Are All Awesome</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+<script>
+(function(){
+
+  // Each question maps 1:1 to a real criterion from
+  // https://jon.io/get-jon-to-fund-you — answering "No" fails it.
+  var questions = [
+    {
+      text: "Is your company incorporated in the US? (California preferred)",
+      failTitle: "US incorporation is a hard requirement",
+      failBody: "Jon only backs US-incorporated startups &mdash; no exceptions. He's written up exactly why:",
+      failLinkHref: "https://jon.io/why-i-only-invest-in-us-based-startups",
+      failLinkText: "Why I only invest in US-based startups &rarr;"
+    },
+    {
+      text: "Is your target market the US?",
+      failTitle: "Your target market needs to be the US",
+      failBody: "Same reasoning as the incorporation question &mdash; if the market you're building for isn't the US, it's not a fit for Jon right now.",
+      failLinkHref: "https://jon.io/why-i-only-invest-in-us-based-startups",
+      failLinkText: "Why I only invest in US-based startups &rarr;"
+    },
+    {
+      text: "Do you already have at least one paying customer?",
+      failTitle: "Jon needs to see real traction",
+      failBody: "Jon invests once there's proof people will pay &mdash; even one paying customer counts, but pre-revenue with just an idea or a prototype isn't a fit for him.",
+      failLinkHref: "https://jon.io/get-jon-to-fund-you",
+      failLinkText: "Read Jon's full criteria &rarr;"
+    },
+    {
+      text: "Are you raising a pre-seed or seed round, at a valuation up to $5M — ideally a SAFE between $25k–$100k?",
+      failTitle: "Wrong stage or check size",
+      failBody: "Jon only writes pre-seed/seed checks in that range. If your round is bigger, later stage, or structured very differently, it's not a fit.",
+      failLinkHref: "https://jon.io/get-jon-to-fund-you",
+      failLinkText: "Read Jon's full criteria &rarr;"
+    },
+    {
+      text: "Is your business technology-oriented (strong preference for SaaS)?",
+      failTitle: "Jon focuses on tech, mostly SaaS",
+      failBody: "This is squarely where Jon invests. If that's not really what you're building, it's not a fit.",
+      failLinkHref: "https://jon.io/get-jon-to-fund-you",
+      failLinkText: "Read Jon's full criteria &rarr;"
+    },
+    {
+      text: "Is your startup unrelated to Crypto, Web3, or NFTs?",
+      failTitle: "No Crypto, Web3, or NFTs",
+      failBody: "Jon isn't investing in that space right now, regardless of how strong the rest of the pitch is.",
+      failLinkHref: "https://jon.io/get-jon-to-fund-you",
+      failLinkText: "Read Jon's full criteria &rarr;"
+    }
+  ];
+
+  var i = 0;
+  var card = document.getElementById('card');
+
+  // Trap the browser back button so there's no way to "undo" an answer.
+  history.pushState({step:0}, '', location.href);
+  window.addEventListener('popstate', function(){
+    history.pushState({step:i}, '', location.href);
+  });
+
+  function progressDots(failedAt){
+    var html = '<div class="flex gap-1.5 mb-8">';
+    for (var n = 0; n < questions.length; n++){
+      var cls = 'dot h-1 flex-1 rounded-full ';
+      if (failedAt !== undefined && n === failedAt) cls += 'bg-red-500';
+      else if (n < i) cls += 'bg-indigo-600';
+      else cls += 'bg-gray-200';
+      html += '<div class="' + cls + '"></div>';
+    }
+    html += '</div>';
+    return html;
+  }
+
+  function renderQuestion(){
+    var q = questions[i];
+    card.innerHTML =
+      progressDots() +
+      '<p class="text-sm text-gray-400 mb-2">Question ' + (i+1) + ' of ' + questions.length + '</p>' +
+      '<div class="text-xl font-semibold text-gray-900 mb-8">' + q.text + '</div>' +
+      '<div class="flex gap-3">' +
+        '<button class="flex-1 px-5 py-3 rounded-md text-base font-medium text-white bg-indigo-600 hover:bg-indigo-500 transition duration-150 ease-in-out" data-answer="yes">Yes</button>' +
+        '<button class="flex-1 px-5 py-3 rounded-md text-base font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 transition duration-150 ease-in-out" data-answer="no">No</button>' +
+      '</div>';
+
+    card.querySelector('[data-answer="yes"]').onclick = function(){ advance(); };
+    card.querySelector('[data-answer="no"]').onclick = function(){ fail(); };
+  }
+
+  function advance(){
+    i++;
+    history.pushState({step:i}, '', location.href);
+    if (i >= questions.length){
+      renderSuccess();
+    } else {
+      renderQuestion();
+    }
+  }
+
+  function fail(){
+    var q = questions[i];
+    card.innerHTML =
+      progressDots(i) +
+      '<div class="text-center">' +
+        '<div class="text-3xl mb-2">&#9995;</div>' +
+        '<h2 class="text-xl font-extrabold text-gray-900 mb-3">' + q.failTitle + '</h2>' +
+        '<p class="text-gray-500 mb-4">' + q.failBody + '</p>' +
+        '<a class="font-semibold text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150" href="' + q.failLinkHref + '" target="_blank" rel="noopener">' + q.failLinkText + '</a>' +
+      '</div>' +
+      '<div class="text-center mt-8">' +
+        '<a class="text-sm text-gray-400 hover:text-gray-600" href="/funding-rules">Start over &rarr;</a>' +
+      '</div>';
+  }
+
+  function renderSuccess(){
+    card.innerHTML =
+      progressDots() +
+      '<div class="text-center">' +
+        '<div class="text-3xl mb-2">&#9989;</div>' +
+        '<h2 class="text-xl font-extrabold text-gray-900 mb-4">You clear the bar on paper.</h2>' +
+        '<div class="rounded-md bg-indigo-50 border border-indigo-100 p-4 text-indigo-900 font-semibold mb-4">' +
+          'If what you said is correct, Jon might be interested! Send him an email and let\'s talk.' +
+        '</div>' +
+        '<div class="rounded-md bg-yellow-50 border border-yellow-200 p-4 text-sm text-yellow-800 text-left">' +
+          'One thing first: Jon gets pitched by roughly 100 founders at a time. If any of those answers weren\'t truthful, there\'s a very high chance he\'ll never actually see your email &mdash; so don\'t waste anyone\'s time.' +
+        '</div>' +
+      '</div>';
+  }
+
+  renderQuestion();
+})();
+</script>
+
+</body>
+</html>
