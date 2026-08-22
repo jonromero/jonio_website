@@ -3,13 +3,6 @@ Category: startups
 Date: 2025-01-24 10:48
 Image: anger.jpg
 
-Yes, I am having a fund that helps young scientists and Entrepreneurs come to the US, present their
-papers and ideas.
-
-This is how it works:
-
-1. You are a 
-
 The way I build apps is very simple and fast:
 
 The trick is to start very very small and try out the basic idea. For example, let's say you are building a TODO list with A.I. This is the description:
