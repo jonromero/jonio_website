@@ -80,31 +80,42 @@
 <script>
 (function(){
 
+  var STORAGE_KEY = 'jonio_funding_rules_v1';
+
+  var COUNTRIES = ["Not incorporated anywhere yet","United States","Afghanistan","Albania","Algeria","Andorra","Angola","Argentina","Armenia","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bhutan","Bolivia","Bosnia and Herzegovina","Botswana","Brazil","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Chad","Chile","China","Colombia","Costa Rica","Croatia","Cuba","Cyprus","Czechia","Denmark","Dominican Republic","Ecuador","Egypt","El Salvador","Estonia","Ethiopia","Fiji","Finland","France","Gabon","Georgia","Germany","Ghana","Greece","Guatemala","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy","Ivory Coast","Jamaica","Japan","Jordan","Kazakhstan","Kenya","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Mauritius","Mexico","Moldova","Monaco","Mongolia","Montenegro","Morocco","Mozambique","Myanmar","Namibia","Nepal","Netherlands","New Zealand","Nicaragua","Niger","Nigeria","North Korea","North Macedonia","Norway","Oman","Pakistan","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Qatar","Romania","Russia","Rwanda","Saudi Arabia","Senegal","Serbia","Singapore","Slovakia","Slovenia","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","Sudan","Sweden","Switzerland","Syria","Taiwan","Tanzania","Thailand","Tunisia","Turkey","Uganda","Ukraine","United Arab Emirates","United Kingdom","Uruguay","Uzbekistan","Venezuela","Vietnam","Yemen","Zambia","Zimbabwe","Other / Not listed"];
+
   // Each question maps 1:1 to a real criterion from
-  // https://jon.io/get-jon-to-fund-you — answering "No" fails it.
+  // https://jon.io/get-jon-to-fund-you.
   var questions = [
     {
-      text: "Is your company incorporated in the US? (California preferred)",
+      type: "country",
+      key: "incorporationCountry",
+      text: "Which country is your company incorporated in?",
       failTitle: "US incorporation is a hard requirement",
       failBody: "Jon only backs US-incorporated startups &mdash; no exceptions. He's written up exactly why:",
       failLinkHref: "https://jon.io/why-i-only-invest-in-us-based-startups",
       failLinkText: "Why I only invest in US-based startups &rarr;"
     },
     {
-      text: "Is your target market the US?",
+      type: "country",
+      key: "marketCountry",
+      text: "Where is your target market?",
       failTitle: "Your target market needs to be the US",
       failBody: "Same reasoning as the incorporation question &mdash; if the market you're building for isn't the US, it's not a fit for Jon right now.",
       failLinkHref: "https://jon.io/why-i-only-invest-in-us-based-startups",
       failLinkText: "Why I only invest in US-based startups &rarr;"
     },
     {
-      text: "Do you already have at least one paying customer?",
+      type: "number",
+      key: "payingCustomers",
+      text: "How many paying customers do you have?",
       failTitle: "Jon needs to see real traction",
       failBody: "Jon invests once there's proof people will pay &mdash; even one paying customer counts, but pre-revenue with just an idea or a prototype isn't a fit for him.",
       failLinkHref: "https://jon.io/get-jon-to-fund-you",
       failLinkText: "Read Jon's full criteria &rarr;"
     },
     {
+      type: "yesno",
       text: "Are you raising a pre-seed or seed round, at a valuation up to $5M — ideally a SAFE between $25k–$100k?",
       failTitle: "Wrong stage or check size",
       failBody: "Jon only writes pre-seed/seed checks in that range. If your round is bigger, later stage, or structured very differently, it's not a fit.",
@@ -112,6 +123,7 @@
       failLinkText: "Read Jon's full criteria &rarr;"
     },
     {
+      type: "yesno",
       text: "Is your business technology-oriented (strong preference for SaaS)?",
       failTitle: "Jon focuses on tech, mostly SaaS",
       failBody: "This is squarely where Jon invests. If that's not really what you're building, it's not a fit.",
@@ -119,6 +131,7 @@
       failLinkText: "Read Jon's full criteria &rarr;"
     },
     {
+      type: "yesno",
       text: "Is your startup unrelated to Crypto, Web3, or NFTs?",
       failTitle: "No Crypto, Web3, or NFTs",
       failBody: "Jon isn't investing in that space right now, regardless of how strong the rest of the pitch is.",
@@ -128,13 +141,18 @@
   ];
 
   var i = 0;
+  var answers = {};
   var card = document.getElementById('card');
 
-  // Trap the browser back button so there's no way to "undo" an answer.
-  history.pushState({step:0}, '', location.href);
-  window.addEventListener('popstate', function(){
-    history.pushState({step:i}, '', location.href);
-  });
+  function loadState(){
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)); }
+    catch(e){ return null; }
+  }
+
+  function saveState(state){
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+    catch(e){}
+  }
 
   function progressDots(failedAt){
     var html = '<div class="flex gap-1.5 mb-8">';
@@ -149,24 +167,65 @@
     return html;
   }
 
+  function countryOptions(){
+    var html = '<option value="" disabled selected>Select a country&hellip;</option>';
+    for (var n = 0; n < COUNTRIES.length; n++){
+      html += '<option value="' + COUNTRIES[n] + '">' + COUNTRIES[n] + '</option>';
+    }
+    return html;
+  }
+
   function renderQuestion(){
     var q = questions[i];
+    var inputHtml, onContinue;
+
+    if (q.type === 'yesno'){
+      card.innerHTML =
+        progressDots() +
+        '<p class="text-sm text-gray-400 mb-2">Question ' + (i+1) + ' of ' + questions.length + '</p>' +
+        '<div class="text-xl font-semibold text-gray-900 mb-8">' + q.text + '</div>' +
+        '<div class="flex gap-3">' +
+          '<button class="flex-1 px-5 py-3 rounded-md text-base font-medium text-white bg-indigo-600 hover:bg-indigo-500 transition duration-150 ease-in-out" data-answer="yes">Yes</button>' +
+          '<button class="flex-1 px-5 py-3 rounded-md text-base font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 transition duration-150 ease-in-out" data-answer="no">No</button>' +
+        '</div>';
+      card.querySelector('[data-answer="yes"]').onclick = function(){ advance(); };
+      card.querySelector('[data-answer="no"]').onclick = function(){ fail(q); };
+      return;
+    }
+
+    if (q.type === 'country'){
+      inputHtml = '<select id="qinput" class="w-full px-4 py-3 mb-4 border border-gray-300 rounded-md text-base text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">' + countryOptions() + '</select>';
+    } else if (q.type === 'number'){
+      inputHtml = '<input id="qinput" type="number" min="0" step="1" placeholder="e.g. 3" class="w-full px-4 py-3 mb-4 border border-gray-300 rounded-md text-base text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"/>';
+    }
+
     card.innerHTML =
       progressDots() +
       '<p class="text-sm text-gray-400 mb-2">Question ' + (i+1) + ' of ' + questions.length + '</p>' +
-      '<div class="text-xl font-semibold text-gray-900 mb-8">' + q.text + '</div>' +
-      '<div class="flex gap-3">' +
-        '<button class="flex-1 px-5 py-3 rounded-md text-base font-medium text-white bg-indigo-600 hover:bg-indigo-500 transition duration-150 ease-in-out" data-answer="yes">Yes</button>' +
-        '<button class="flex-1 px-5 py-3 rounded-md text-base font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 transition duration-150 ease-in-out" data-answer="no">No</button>' +
-      '</div>';
+      '<div class="text-xl font-semibold text-gray-900 mb-6">' + q.text + '</div>' +
+      inputHtml +
+      '<button id="continueBtn" class="w-full px-5 py-3 rounded-md text-base font-medium text-white bg-indigo-600 hover:bg-indigo-500 transition duration-150 ease-in-out">Continue</button>';
 
-    card.querySelector('[data-answer="yes"]').onclick = function(){ advance(); };
-    card.querySelector('[data-answer="no"]').onclick = function(){ fail(); };
+    card.querySelector('#continueBtn').onclick = function(){
+      var el = card.querySelector('#qinput');
+      var value = el.value;
+
+      if (q.type === 'country'){
+        if (!value){ return; }
+        answers[q.key] = value;
+        if (value === 'United States'){ advance(); } else { fail(q); }
+      } else if (q.type === 'number'){
+        var n = parseInt(value, 10);
+        if (isNaN(n) || n < 0){ return; }
+        answers[q.key] = n;
+        if (n >= 1){ advance(); } else { fail(q); }
+      }
+    };
   }
 
   function advance(){
     i++;
-    history.pushState({step:i}, '', location.href);
+    saveState({ done:false, step:i, answers:answers });
     if (i >= questions.length){
       renderSuccess();
     } else {
@@ -174,10 +233,14 @@
     }
   }
 
-  function fail(){
-    var q = questions[i];
+  function fail(q){
+    saveState({ done:true, outcome:'fail', failedAt:i, answers:answers });
+    renderFail(q, i);
+  }
+
+  function renderFail(q, failedAt){
     card.innerHTML =
-      progressDots(i) +
+      progressDots(failedAt) +
       '<div class="text-center">' +
         '<div class="text-3xl mb-2">&#9995;</div>' +
         '<h2 class="text-xl font-extrabold text-gray-900 mb-3">' + q.failTitle + '</h2>' +
@@ -187,13 +250,15 @@
   }
 
   function renderSuccess(){
+    saveState({ done:true, outcome:'pass', answers:answers });
+    var code = (answers.incorporationCountry || 'Unknown').replace(/[^a-zA-Z]/g,'') + '_' + (answers.payingCustomers != null ? answers.payingCustomers : '0');
     card.innerHTML =
       progressDots() +
       '<div class="text-center">' +
         '<div class="text-3xl mb-2">&#9989;</div>' +
         '<h2 class="text-xl font-extrabold text-gray-900 mb-4">You clear the bar on paper.</h2>' +
         '<div class="rounded-md bg-indigo-50 border border-indigo-100 p-4 text-indigo-900 font-semibold mb-4">' +
-          'If what you said is correct, Jon might be interested! Send him an email, and be sure to mention the number 892 so he knows you made it through this, and let\'s talk.' +
+          'If what you said is correct, Jon might be interested! Send him an email, and be sure to mention the number 892, along with this code: <span class="font-mono">' + code + '</span> &mdash; so he knows you made it through this, and let\'s talk.' +
         '</div>' +
         '<div class="rounded-md bg-yellow-50 border border-yellow-200 p-4 text-sm text-yellow-800 text-left">' +
           'One thing first: Jon gets pitched by roughly 100 founders at a time. If any of those answers weren\'t truthful, there\'s a very high chance he\'ll never actually see your email &mdash; so don\'t waste anyone\'s time.' +
@@ -201,7 +266,25 @@
       '</div>';
   }
 
-  renderQuestion();
+  // Resume from stored state so refreshing (or a second visit) can't be
+  // used to redo the test.
+  var state = loadState();
+  if (state && state.done){
+    answers = state.answers || {};
+    if (state.outcome === 'pass'){
+      i = questions.length;
+      renderSuccess();
+    } else {
+      i = state.failedAt || 0;
+      renderFail(questions[i], i);
+    }
+  } else if (state && !state.done){
+    answers = state.answers || {};
+    i = state.step || 0;
+    renderQuestion();
+  } else {
+    renderQuestion();
+  }
 })();
 </script>
 
