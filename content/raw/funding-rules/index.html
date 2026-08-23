@@ -34,7 +34,7 @@
           Does Jon Want to Fund You?
         </h1>
         <p class="text-center text-gray-500 mb-10">
-          Six questions, pulled straight from Jon's actual criteria.
+          A few quick questions, pulled straight from Jon's actual criteria.
         </p>
 
         <div id="card" class="bg-white border border-gray-200 rounded-lg shadow-sm p-6 sm:p-10"></div>
@@ -81,8 +81,9 @@
 (function(){
 
   var STORAGE_KEY = 'jonio_funding_rules_v1';
+  var RESET_TOKEN = 'reset892';
 
-  var COUNTRIES = ["Not incorporated anywhere yet","United States","Afghanistan","Albania","Algeria","Andorra","Angola","Argentina","Armenia","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bhutan","Bolivia","Bosnia and Herzegovina","Botswana","Brazil","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Chad","Chile","China","Colombia","Costa Rica","Croatia","Cuba","Cyprus","Czechia","Denmark","Dominican Republic","Ecuador","Egypt","El Salvador","Estonia","Ethiopia","Fiji","Finland","France","Gabon","Georgia","Germany","Ghana","Greece","Guatemala","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy","Ivory Coast","Jamaica","Japan","Jordan","Kazakhstan","Kenya","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Mauritius","Mexico","Moldova","Monaco","Mongolia","Montenegro","Morocco","Mozambique","Myanmar","Namibia","Nepal","Netherlands","New Zealand","Nicaragua","Niger","Nigeria","North Korea","North Macedonia","Norway","Oman","Pakistan","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Qatar","Romania","Russia","Rwanda","Saudi Arabia","Senegal","Serbia","Singapore","Slovakia","Slovenia","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","Sudan","Sweden","Switzerland","Syria","Taiwan","Tanzania","Thailand","Tunisia","Turkey","Uganda","Ukraine","United Arab Emirates","United Kingdom","Uruguay","Uzbekistan","Venezuela","Vietnam","Yemen","Zambia","Zimbabwe","Other / Not listed"];
+  var REGIONS = ["United States","Europe","Asia","Other"];
 
   // Each question maps 1:1 to a real criterion from
   // https://jon.io/get-jon-to-fund-you.
@@ -111,6 +112,15 @@
       text: "How many paying customers do you have?",
       failTitle: "Jon needs to see real traction",
       failBody: "Jon invests once there's proof people will pay &mdash; even one paying customer counts, but pre-revenue with just an idea or a prototype isn't a fit for him.",
+      failLinkHref: "https://jon.io/get-jon-to-fund-you",
+      failLinkText: "Read Jon's full criteria &rarr;"
+    },
+    {
+      type: "number",
+      key: "mrr",
+      text: "What's your current MRR (Monthly Recurring Revenue), in USD?",
+      failTitle: "Jon needs to see real revenue",
+      failBody: "Paying customers with no actual recurring revenue isn't enough &mdash; Jon needs to see real MRR coming in.",
       failLinkHref: "https://jon.io/get-jon-to-fund-you",
       failLinkText: "Read Jon's full criteria &rarr;"
     },
@@ -167,10 +177,14 @@
     return html;
   }
 
-  function countryOptions(){
-    var html = '<option value="" disabled selected>Select a country&hellip;</option>';
-    for (var n = 0; n < COUNTRIES.length; n++){
-      html += '<option value="' + COUNTRIES[n] + '">' + COUNTRIES[n] + '</option>';
+  function countryOptions(q){
+    var options = REGIONS.slice();
+    if (q.key === 'incorporationCountry'){
+      options.unshift('Not incorporated anywhere yet');
+    }
+    var html = '<option value="" disabled selected>Select one&hellip;</option>';
+    for (var n = 0; n < options.length; n++){
+      html += '<option value="' + options[n] + '">' + options[n] + '</option>';
     }
     return html;
   }
@@ -194,9 +208,10 @@
     }
 
     if (q.type === 'country'){
-      inputHtml = '<select id="qinput" class="w-full px-4 py-3 mb-4 border border-gray-300 rounded-md text-base text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">' + countryOptions() + '</select>';
+      inputHtml = '<select id="qinput" class="w-full px-4 py-3 mb-4 border border-gray-300 rounded-md text-base text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">' + countryOptions(q) + '</select>';
     } else if (q.type === 'number'){
-      inputHtml = '<input id="qinput" type="number" min="0" step="1" placeholder="e.g. 3" class="w-full px-4 py-3 mb-4 border border-gray-300 rounded-md text-base text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"/>';
+      var placeholder = q.key === 'mrr' ? 'e.g. 4000' : 'e.g. 3';
+      inputHtml = '<input id="qinput" type="number" min="0" step="1" placeholder="' + placeholder + '" class="w-full px-4 py-3 mb-4 border border-gray-300 rounded-md text-base text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"/>';
     }
 
     card.innerHTML =
@@ -264,6 +279,13 @@
           'One thing first: Jon gets pitched by roughly 100 founders at a time. If any of those answers weren\'t truthful, there\'s a very high chance he\'ll never actually see your email &mdash; so don\'t waste anyone\'s time.' +
         '</div>' +
       '</div>';
+  }
+
+  // Secret escape hatch: https://jon.io/funding-rules?reset892 wipes the
+  // stored result so the test can be taken again. Not linked from the UI.
+  if (location.search.indexOf(RESET_TOKEN) !== -1){
+    try { localStorage.removeItem(STORAGE_KEY); } catch(e){}
+    history.replaceState({}, '', location.pathname);
   }
 
   // Resume from stored state so refreshing (or a second visit) can't be
