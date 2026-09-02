@@ -47,3 +47,5 @@ In the next post, I'll show you how we teach this small model to know exactly wh
 Next:
 
 Can an A.I do lucid dreaming?
+
+*(For a deep-dive into the technical architecture—specifically how QLoRA fine-tuning is structured, how we target self-attention projections, and how we merge and export model weights—check out my technical write-up on the [Last Machine Research Blog](https://lastmachine.com/ai-sleep-cycle-high-context-local-personalization.html).)*
