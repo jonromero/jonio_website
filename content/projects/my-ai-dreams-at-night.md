@@ -1,7 +1,7 @@
 Title: My A.I dreams at night
 Category: projects
 Date: 2026-09-02 12:00
-Image: ameles-photo.png
+Image: sleeping-screenshot.png
 Tags: popular, ai, ameles, local-ai
 
 Every night, around 10am, my A.I goes to sleep and starts dreaming.
@@ -10,7 +10,7 @@ Why?
 
 Glad you asked. 
 
-![](/images/ameles-photo.png)
+![](/images/sleeping-screenshot.png)
 
 ## Why we dream?
 
