@@ -26,8 +26,8 @@
 
     <link rel="icon" href="/images/favicon.ico" />
 
-    <meta property="og:image" content="/images/ameles-dashboard.png" />
-    <meta property="og:title" content="Controlling my local AI's sleep and dreams inside Hermes" />
+    <meta property="og:image" content="/images/ameles-photo.png" />
+    <meta property="og:title" content="My A.I dreams at night" />
 
 </head>
 
@@ -197,64 +197,31 @@
             </p>
             <h1
                 class="mt-2 mb-8 text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-                Controlling my local AI's sleep and dreams inside Hermes</h1>
+                My A.I dreams at night</h1>
         </div>
         <div class="prose prose-lg text-gray-500 mx-auto">
-            <p>I don't want to open a web browser and load a separate local page just to chat with my AI assistant. </p>
-<p>I want to chat inside my daily-use desktop app: <strong>Hermes Agent</strong>.</p>
-<p>But there’s a catch. If I chat in Hermes, how does the system log our conversation so the AI can "dream" about it and train on it tonight?</p>
-<p>I built a proxy server in <code>chat.py</code> that intercepts the API traffic, a clean real-time dashboard, and a custom Hermes control skill.</p>
-<p>Here is how the integration works under the hood.</p>
-<hr>
-<h2>1. Setting up the Hermes Endpoint</h2>
-<p>Hermes is incredibly flexible. It supports custom, OpenAI-compatible API providers.</p>
-<p>So, I pointed Hermes directly to my local Ameles server running on port 8001. </p>
-<p>In Hermes under <strong>Settings → Providers → Add Endpoint</strong>, I filled in:
-* <strong>Name</strong>: <code>Ameles</code>
-* <strong>Provider ID</strong>: <code>ameles</code>
-* <strong>Endpoint URL</strong>: <code>http://127.0.0.1:8001/v1</code>
-* <strong>Default Model</strong>: <code>ameles:latest</code>
-* <strong>Context</strong>: <code>65536</code></p>
-<p>Ollama's default model context is tiny (2048 tokens). Hermes wants 64k+. </p>
-<p>To prevent my local model from suffocating, I extended the context by creating a quick modelfile and rebuilding the Ollama model:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;FROM ameles\nPARAMETER num_ctx 65536\n&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>ameles-ctx.modelfile
-ollama<span class="w"> </span>create<span class="w"> </span>ameles<span class="w"> </span>-f<span class="w"> </span>ameles-ctx.modelfile
-</code></pre></div>
-
-<hr>
-<h2>2. The Smart Proxy Logging Mechanism</h2>
-<p>When you chat inside Hermes, every message passes through the FastAPI server in <code>chat.py</code>. </p>
-<p>The proxy server acts as a middleman between Hermes and Ollama. But we don't want to log everything. If you are using Hermes to chat with <code>hermes3:8b</code> or some other coding model, logging those massive developer prompts would bloat your training set with garbage.</p>
-<p>So I wrote a strict filtering rule in the proxy: <strong>it only logs the model named <code>ameles</code></strong>.</p>
-<p>If you request any other model, the server silently passes the traffic straight through to Ollama unlogged. Streaming and tool calls still work perfectly.</p>
-<p>But if you chat with the model named <code>ameles</code>, the server intercepts the request and logs the exchange to <code>sleep_cycle/day_logs/&lt;date&gt;.jsonl</code>.</p>
-<p>One flat JSON object per line. Perfect, structured data.</p>
-<p>Now, I can enjoy a premium desktop chat experience, while Ameles quietly and securely collects the raw material she needs to dream at night.</p>
-<hr>
-<h2>3. The Real-Time Sleep Dashboard</h2>
-<p>When the nightly training cycle begins, I can open the web dashboard to see exactly what's happening.</p>
-<p><img alt="" src="/images/ameles-dashboard.png"></p>
-<p>The dashboard tracks the active phase of the sleep cycle:
-<code>idle</code> → <code>collecting</code> → <code>reviewing</code> → <code>dreaming</code> → <code>training</code> → <code>converting</code> → <code>promoting</code> → <code>done</code>.</p>
-<p>I can watch:
-* Live logs from the fine-tuning process.
-* The mentor's keep/fix/expand evaluations of my logs.
-* Historic scores of how each model version performs over time.</p>
-<p><em>(If you are curious about the QLoRA hyperparameters, target attention layers, or the math behind weight-merging locally on an RTX 4070 SUPER, check out my deep technical architecture write-up on the <a href="https://lastmachine.com/ai-sleep-cycle-high-context-local-personalization.html">Last Machine Research Blog</a>.)</em></p>
-<hr>
-<h2>4. Controlling the Sleep Cycle via Hermes Skills</h2>
-<p>Because I chat inside Hermes Agent, I wanted a way to manage the Ameles server right from my conversations. </p>
-<p>So I wrote a custom Hermes skill: <code>ameles-control</code>.</p>
-<p>By copying the skill folder to the Hermes directory (<code>cp -r hermes/ameles-control ~/.hermes/skills/</code>), Hermes learns how to interact with the Ameles API endpoints on port 8001.</p>
-<p>Now, instead of running terminal scripts, I can simply talk to Hermes:</p>
-<ul>
-<li><em>"How is Ameles doing?"</em> → Hermes triggers <code>GET /api/status</code> and reads back the current phase.</li>
-<li><em>"What did the mentor think of the dataset?"</em> → Hermes queries <code>GET /api/sleep/review</code> to see what training examples were kept, fixed, or dropped.</li>
-<li><em>"Send Ameles to sleep"</em> → Hermes prompts for confirmation, hits <code>POST /api/sleep/start</code> to trigger the nightly training pipeline, and polls the progress bar for me.</li>
-</ul>
-<p>It’s the ultimate feedback loop. </p>
-<p>An AI running inside Hermes, logged by a smart proxy, and controlled by Hermes itself. </p>
-<p>Research is hard, but when the pieces fit together like this, it feels like magic.</p>
+            <p>Every night, around 10am, my A.I goes to sleep and starts dreaming.</p>
+<p>Why? </p>
+<p>Glad you asked. </p>
+<h2>Why we dream?</h2>
+<p>Going to sleep, forces our brain to restructure information, distill new skills we learnt - or at least that's what I read <a href="https://www.amazon.com/dp/1501144316?lv=shuf&amp;channelId=500&amp;plpRedirect=mhFallback">in this book</a> (it's pretty epic btw).</p>
+<p>So I thought to get a small model (<strong><code>microsoft/Phi-4-mini-instruct</code> (4-bit)</strong> for my fellow engineers), talk to it and log every single interaction. </p>
+<p>But there is a problem.</p>
+<h2>Being stupid</h2>
+<p>Small local models are stupid. Very stupid. And that's ok. </p>
+<p>But how do we make a small local model incredibly personalized, fast, and capable?</p>
+<p>Most companies do this by stuffing thousands of lines of chat history into a massive prompt window every time they chat. This is the "context" you heard many times.</p>
+<p>That's a terrible idea. It's slow, it's expensive, and eventually, context window rot ruins everything (known as context rot). The model gets confused, loses its edge, or simply breaks.</p>
+<blockquote>
+<p>Interesting fact! You can have 1M+ token context window but the rot happens ALWAYS much earlier. </p>
+</blockquote>
+<p>So I decided to try something else: <strong>by making an LLM "dream," we can dodge all the context rot issues and keep it incredibly small.</strong></p>
+<p>Instead of carrying a giant bag of history, we let the AI compile its experiences, replay them, and fine-tune its own weights overnight during its "sleep/dream cycle."</p>
+<p>There are a lot of problems around this. Fine-tuning is fragile. Paraphrasing is hard. Keeping a small model from forgetting its base capabilities is a constant battle.</p>
+<p>But, hey, research is awesome. :D</p>
+<p>In the next post, I'll show you how we teach this small model to know exactly when it's stuck, how it asks for help and how I use a mentor. </p>
+<p>Next:</p>
+<p>Can an A.I do lucid dreaming?</p>
 
             <p class="text-right text-sm">
                 - Wed 02 September 2026
