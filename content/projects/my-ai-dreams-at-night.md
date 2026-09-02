@@ -10,6 +10,8 @@ Why?
 
 Glad you asked. 
 
+![](/images/ameles-photo.png)
+
 ## Why we dream?
 
 Going to sleep, forces our brain to restructure information, distill new skills we learnt - or at least that's what I read [in this book](https://www.amazon.com/dp/1501144316?lv=shuf&channelId=500&plpRedirect=mhFallback) (it's pretty epic btw).
@@ -33,6 +35,8 @@ That's a terrible idea. It's slow, it's expensive, and eventually, context windo
 So I decided to try something else: **by making an LLM "dream," we can dodge all the context rot issues and keep it incredibly small.**
 
 Instead of carrying a giant bag of history, we let the AI compile its experiences, replay them, and fine-tune its own weights overnight during its "sleep/dream cycle."
+
+![](/images/training-progress-phi4.png)
 
 There are a lot of problems around this. Fine-tuning is fragile. Paraphrasing is hard. Keeping a small model from forgetting its base capabilities is a constant battle.
 
