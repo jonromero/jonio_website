@@ -10,8 +10,6 @@ Why?
 
 Glad you asked. 
 
-![](/images/sleeping-screenshot.png)
-
 ## Why we dream?
 
 Going to sleep, forces our brain to restructure information, distill new skills we learnt - or at least that's what I read [in this book](https://www.amazon.com/dp/1501144316?lv=shuf&channelId=500&plpRedirect=mhFallback) (it's pretty epic btw).
@@ -19,6 +17,8 @@ Going to sleep, forces our brain to restructure information, distill new skills 
 So I thought to get a small model (**`microsoft/Phi-4-mini-instruct` (4-bit)** for my fellow engineers), talk to it and log every single interaction. 
 
 But there is a problem.
+
+![](/images/sleeping-screenshot.png)
 
 ## Being stupid
 
