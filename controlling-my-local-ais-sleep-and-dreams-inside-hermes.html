@@ -26,11 +26,9 @@
 
     <link rel="icon" href="/images/favicon.ico" />
 
-    <meta property="og:image" content="/images/jon.jpg" />
-    <meta property="og:description"
-        content="I built BugSense from $100k to acquisition by Splunk. I deployed an AI system that saved lives during Greece's wildfires. I invested in Anthropic. Building systems for Super Intelligence - practical AI deployment, real-world lessons, and what's next." />
-    <meta property="og:url" content="https://jon.io" />
-    <meta property="og:title" content="Building systems for Super Intelligence" />
+    <meta property="og:image" content="/images/ameles-dashboard.png" />
+    <meta property="og:title" content="Controlling my local AI's sleep and dreams inside Hermes" />
+
 </head>
 
 <body>
@@ -190,165 +188,237 @@
             </div>
 
 
+
 <div class="relative py-16 bg-white overflow-hidden">
     <div class="relative px-4 sm:px-6 lg:px-8">
-
         <div class="text-lg max-w-prose mx-auto mb-6">
-            <a class="leading-6 font-semibold text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150"
-                href="mapping-and-processing-data-in-clojure">Mapping and processing data in Clojure</a>
-            <span class="text-right text-sm">
-                - Thu 20 November 2014 | <span class="font-light text-xs underline"><a
-                        href="/category/databases">databases</a>
-                </span>
-            </span>
+            <p class="text-base text-center leading-6 text-indigo-600 font-semibold tracking-wide uppercase">
+                <a class="text-indigo-600" href="./category/projects">projects</a>
+            </p>
+            <h1
+                class="mt-2 mb-8 text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
+                Controlling my local AI's sleep and dreams inside Hermes</h1>
         </div>
         <div class="prose prose-lg text-gray-500 mx-auto">
+            <p>I don't want to open a web browser and load a separate local page just to chat with my AI assistant. </p>
+<p>I want to chat inside my daily-use desktop app: <strong>Hermes Agent</strong>.</p>
+<p>But there’s a catch. If I chat in Hermes, how does the system log our conversation so the AI can "dream" about it and train on it tonight?</p>
+<p>I built a proxy server in <code>chat.py</code> that intercepts the API traffic, a clean real-time dashboard, and a custom Hermes control skill.</p>
+<p>Here is how the integration works under the hood.</p>
+<hr>
+<h2>1. Setting up the Hermes Endpoint</h2>
+<p>Hermes is incredibly flexible. It supports custom, OpenAI-compatible API providers.</p>
+<p>So, I pointed Hermes directly to my local Ameles server running on port 8001. </p>
+<p>In Hermes under <strong>Settings → Providers → Add Endpoint</strong>, I filled in:
+* <strong>Name</strong>: <code>Ameles</code>
+* <strong>Provider ID</strong>: <code>ameles</code>
+* <strong>Endpoint URL</strong>: <code>http://127.0.0.1:8001/v1</code>
+* <strong>Default Model</strong>: <code>ameles:latest</code>
+* <strong>Context</strong>: <code>65536</code></p>
+<p>Ollama's default model context is tiny (2048 tokens). Hermes wants 64k+. </p>
+<p>To prevent my local model from suffocating, I extended the context by creating a quick modelfile and rebuilding the Ollama model:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;FROM ameles\nPARAMETER num_ctx 65536\n&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>ameles-ctx.modelfile
+ollama<span class="w"> </span>create<span class="w"> </span>ameles<span class="w"> </span>-f<span class="w"> </span>ameles-ctx.modelfile
+</code></pre></div>
 
+<hr>
+<h2>2. The Smart Proxy Logging Mechanism</h2>
+<p>When you chat inside Hermes, every message passes through the FastAPI server in <code>chat.py</code>. </p>
+<p>The proxy server acts as a middleman between Hermes and Ollama. But we don't want to log everything. If you are using Hermes to chat with <code>hermes3:8b</code> or some other coding model, logging those massive developer prompts would bloat your training set with garbage.</p>
+<p>So I wrote a strict filtering rule in the proxy: <strong>it only logs the model named <code>ameles</code></strong>.</p>
+<p>If you request any other model, the server silently passes the traffic straight through to Ollama unlogged. Streaming and tool calls still work perfectly.</p>
+<p>But if you chat with the model named <code>ameles</code>, the server intercepts the request and logs the exchange to <code>sleep_cycle/day_logs/&lt;date&gt;.jsonl</code>.</p>
+<p>One flat JSON object per line. Perfect, structured data.</p>
+<p>Now, I can enjoy a premium desktop chat experience, while Ameles quietly and securely collects the raw material she needs to dream at night.</p>
+<hr>
+<h2>3. The Real-Time Sleep Dashboard</h2>
+<p>When the nightly training cycle begins, I can open the web dashboard to see exactly what's happening.</p>
+<p><img alt="" src="/images/ameles-dashboard.png"></p>
+<p>The dashboard tracks the active phase of the sleep cycle:
+<code>idle</code> → <code>collecting</code> → <code>reviewing</code> → <code>dreaming</code> → <code>training</code> → <code>converting</code> → <code>promoting</code> → <code>done</code>.</p>
+<p>I can watch:
+* Live logs from the fine-tuning process.
+* The mentor's keep/fix/expand evaluations of my logs.
+* Historic scores of how each model version performs over time.</p>
+<p>Under the hood, the training phase uses an incredibly efficient machine learning technique called <strong>QLoRA (Quantized Low-Rank Adaptation)</strong> to fine-tune <strong><code>microsoft/Phi-4-mini-instruct</code> (4-bit)</strong>.</p>
+<p>Think of LoRA like sticking Post-it notes inside a massive, heavy textbook. Instead of rewriting the entire textbook (which is incredibly slow, fragile, and requires a giant supercomputer), we freeze the original 4-bit model and only train a tiny fraction of adapter weights connected to its attention layers ($r=16, \alpha=32$).</p>
+<p>This shrinks the training memory footprint to a mere ~2.5 GB of VRAM. It runs 100% locally on my consumer-grade <strong>NVIDIA GeForce RTX 4070 SUPER</strong> GPU. By morning, the lightweight adapter weights are automatically merged back into the base model and converted to GGUF format for Ollama. Even better: if an adapter already exists from a previous night, the system resumes training directly from it, forming an unbroken, continuous chain of learning.</p>
+<hr>
+<h2>4. Controlling the Sleep Cycle via Hermes Skills</h2>
+<p>Because I chat inside Hermes Agent, I wanted a way to manage the Ameles server right from my conversations. </p>
+<p>So I wrote a custom Hermes skill: <code>ameles-control</code>.</p>
+<p>By copying the skill folder to the Hermes directory (<code>cp -r hermes/ameles-control ~/.hermes/skills/</code>), Hermes learns how to interact with the Ameles API endpoints on port 8001.</p>
+<p>Now, instead of running terminal scripts, I can simply talk to Hermes:</p>
+<ul>
+<li><em>"How is Ameles doing?"</em> → Hermes triggers <code>GET /api/status</code> and reads back the current phase.</li>
+<li><em>"What did the mentor think of the dataset?"</em> → Hermes queries <code>GET /api/sleep/review</code> to see what training examples were kept, fixed, or dropped.</li>
+<li><em>"Send Ameles to sleep"</em> → Hermes prompts for confirmation, hits <code>POST /api/sleep/start</code> to trigger the nightly training pipeline, and polls the progress bar for me.</li>
+</ul>
+<p>It’s the ultimate feedback loop. </p>
+<p>An AI running inside Hermes, logged by a smart proxy, and controlled by Hermes itself. </p>
+<p>Research is hard, but when the pieces fit together like this, it feels like magic.</p>
+
+            <p class="text-right text-sm">
+                - Wed 02 September 2026
+            </p>
+
+
+            <!-- Course -->
+            <div class="mt-8 bg-gray-200">
+                <div class="shadow p-4 text-center">
+                    <span class="text-xl text-gray-800 font-bold">If you liked this article, you are going to love
+                        this</span>
+
+                    <div class="text-md pt-2">
+                        Learn my simple, repeatable process for transforming ideas into Startups using my free email
+                        course <a class="text-indigo-400" href="pages/built-to-fail">"Built To Fail"</a>.
+                        Enter your email in the box below and I'll send you Lesson #1.
+                    </div>
+<form method="post" action="https://sendfox.com/form/1we8gr/m82qdq" class="sendfox-form" id="m82qdq" data-async="true"
+    data-recaptcha="true">
+    <p><input autocomplete="email" required
+            class="w-full px-5 py-3 border border-transparent placeholder-gray-500 focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white focus:border-white"
+            placeholder="Enter your email" type="email" name="email" /></p>
+    <!-- no botz please -->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="a_password"
+            tabindex="-1" value="" autocomplete="off" /></div>
+    <p><button
+            class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500"
+            type="submit">👉 Get the 1st lesson 👈</button></p>
+</form>
+<script src="https://sendfox.com/js/form.js"></script>                </div>
+            </div>
+            <!-- COURSE END -->
         </div>
 
-        <div class="text-lg max-w-prose mx-auto mb-6">
-            <a class="leading-6 font-semibold text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150"
-                href="hybrisdb">HybrisDB</a>
-            <span class="text-right text-sm">
-                - Mon 20 October 2014 | <span class="font-light text-xs underline"><a
-                        href="/category/databases">databases</a>
-                </span>
-            </span>
+
+        <!-- RELATED posts -->
+        <div class="bg-white pt-16 pb-8 px-4 sm:px-6 lg:pt-24 lg:pb-9 lg:px-8">
+            <div class="relative max-w-lg mx-auto lg:max-w-7xl">
+                <div>
+                    <h2
+                        class="text-3xl leading-9 tracking-tight font-extrabold text-gray-900 sm:text-4xl sm:leading-10">
+                        Loved it?
+                    </h2>
+                    <div class="mt-3 sm:mt-4 lg:grid lg:grid-cols-2 lg:gap-5 lg:items-center">
+                        <p class="text-xl leading-7 text-gray-500">
+                            Get weekly tips in your inbox.
+                        </p>
+<div>
+        <form method="post" action="https://sendfox.com/form/1we8gr/1gxrw6" class="sendfox-form sm:flex" id="1gxrw6"
+                data-async="true" data-recaptcha="true">
+                <p><label for="sendfox_form_email"></label><input type="email" id="sendfox_form_email"
+                                class="appearance-none block w-full px-3 py-3 border border-gray-300 text-base leading-6 rounded-md placeholder-gray-500 shadow-sm focus:outline-none focus:text-gray-800 focus:shadow-outline focus:border-blue-300 transition duration-150 ease-in-out sm:flex-1"
+                                placeholder="Email" name="email" required /></p>
+                <!-- no botz please -->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="a_password"
+                                tabindex="-1" value="" autocomplete="off" /></div>
+                <p><button class="mt-3 w-full px-6 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 shadow-sm  focus:outline-none focus:shadow-outline active:bg-gray-900 transition duration-150 ease-in-out sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto"
+                                type="submit">Get the Latest on AI & Super Intelligence</button></p>
+        </form>
+        <script src="https://sendfox.com/js/form.js"></script>
+
+
+</div>                    </div>
+                </div>
+                <div class="mt-6 grid gap-16 border-t-2 border-gray-100 pt-10 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
+ <div>
+                        <p class="text-sm leading-5 text-gray-500">
+                            <time datetime="">Wed 14 January 2026</time>
+                        </p>
+                        <a href="vaim-conference-building-learning-and-pushing-boundaries" class="block">
+                            <h3 class="mt-2 text-xl leading-7 font-semibold text-gray-900">
+                                VAIM Conference: Building, Learning, and Pushing Boundaries
+                            </h3>
+                            <p class="mt-3 text-base leading-6 text-gray-500">
+                                <p>What started as a crazy idea in 2021 has become an annual tradition that brings together builders, investors, and thinkers from around the world. Here's the story of VAIM (V as in Metaverse/Victory) - my conference that's been running for four years straight.</p>
+<h2>VAIM 2021: "V as in Metaverse" - The …</h2>
+                            </p>
+                        </a>
+                        <div class="mt-3">
+                            <a href="vaim-conference-building-learning-and-pushing-boundaries"
+                                class="text-base leading-6 font-semibold text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150">
+                                Read full story
+                            </a>
+                        </div>
+                </div>
+ <div>
+                        <p class="text-sm leading-5 text-gray-500">
+                            <time datetime="">Wed 17 December 2025</time>
+                        </p>
+                        <a href="the-jon-vlachogiannis-fund" class="block">
+                            <h3 class="mt-2 text-xl leading-7 font-semibold text-gray-900">
+                                The Jon Vlachogiannis Fund
+                            </h3>
+                            <p class="mt-3 text-base leading-6 text-gray-500">
+                                <p>Welcome to the <strong>Jon Vlachogiannis Fund</strong>, a nonprofit supporting entrepreneurs, scientists, and bold thinkers who are building ideas that shape the future and change the world.</p>
+<p>This is an experimental platform for a future Superintelligence Fund, and it will evolve as I learn and iterate. Thank you for bearing with …</p>
+                            </p>
+                        </a>
+                        <div class="mt-3">
+                            <a href="the-jon-vlachogiannis-fund"
+                                class="text-base leading-6 font-semibold text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150">
+                                Read full story
+                            </a>
+                        </div>
+                </div>
+ <div>
+                        <p class="text-sm leading-5 text-gray-500">
+                            <time datetime="">Fri 02 May 2025</time>
+                        </p>
+                        <a href="losing-my-head-exploring-new-architectures-for-ai-and-machine-learning-regenerating-organs" class="block">
+                            <h3 class="mt-2 text-xl leading-7 font-semibold text-gray-900">
+                                Losing my head: Exploring new architectures for A.I and Machine Learning & Regenerating organs
+                            </h3>
+                            <p class="mt-3 text-base leading-6 text-gray-500">
+                                <blockquote>
+<p>Disclaimer: These are bleeding edge theories and concepts and just a handful of people in the whole world are working on this stuff. Even though I contacted most of them, expect errors and mistakes.</p>
+<p>Disclaimer 2: <a href="https://becominghuman.ai/losing-my-head-exploring-new-architectures-for-a-i-and-machine-learning-regenerating-organs-5a901401805c">I started researching this in 2019</a> (6 years ago) and now we are ready …</p></blockquote>
+                            </p>
+                        </a>
+                        <div class="mt-3">
+                            <a href="losing-my-head-exploring-new-architectures-for-ai-and-machine-learning-regenerating-organs"
+                                class="text-base leading-6 font-semibold text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150">
+                                Read full story
+                            </a>
+                        </div>
+                </div>
+ <div>
+                        <p class="text-sm leading-5 text-gray-500">
+                            <time datetime="">Sun 15 December 2024</time>
+                        </p>
+                        <a href="i-hate-running-so-i-run-two-marathons" class="block">
+                            <h3 class="mt-2 text-xl leading-7 font-semibold text-gray-900">
+                                I hate running so I run TWO Marathons
+                            </h3>
+                            <p class="mt-3 text-base leading-6 text-gray-500">
+                                <p>First of all, in case you don't know, <a href="https://jon.io/i-run-a-marathon-and-it-was-epic">even though I said it before</a>: </p>
+<blockquote>
+<p>I hate long distance running. It is stupid, boring and not fun at all.</p>
+</blockquote>
+<p>But who doesn't want to run TWO Marathon (and a Half Marathon) in one year?</p>
+<p>The only reason I did that, was …</p>
+                            </p>
+                        </a>
+                        <div class="mt-3">
+                            <a href="i-hate-running-so-i-run-two-marathons"
+                                class="text-base leading-6 font-semibold text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150">
+                                Read full story
+                            </a>
+                        </div>
+                </div>
+            </div>
         </div>
-        <div class="prose prose-lg text-gray-500 mx-auto">
-
-        </div>
-<div class="pagination text-center">
-	<div>
-		<nav class="relative z-0 inline-flex shadow-sm">
-			<a href="./archives16.html"
-				class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-500 hover:text-gray-400 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150"
-				aria-label="Previous">
-				<!-- Heroicon name: chevron-left -->
-				<svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-					<path fill-rule="evenodd"
-						d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-						clip-rule="evenodd" />
-				</svg>
-			</a>
-
-			<a href="./archives.html"
-				class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
-
-				1
-
-			</a>
-			<a href="./archives2.html"
-				class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
-
-				2
-
-			</a>
-			<a href="./archives3.html"
-				class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
-
-				3
-
-			</a>
-			<a href="./archives4.html"
-				class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
-
-				4
-
-			</a>
-			<a href="./archives5.html"
-				class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
-
-				5
-
-			</a>
-			<a href="./archives6.html"
-				class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
-
-				6
-
-			</a>
-			<a href="./archives7.html"
-				class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
-
-				7
-
-			</a>
-			<a href="./archives8.html"
-				class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
-
-				8
-
-			</a>
-			<a href="./archives9.html"
-				class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
-
-				9
-
-			</a>
-			<a href="./archives10.html"
-				class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
-
-				10
-
-			</a>
-			<a href="./archives11.html"
-				class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
-
-				11
-
-			</a>
-			<a href="./archives12.html"
-				class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
-
-				12
-
-			</a>
-			<a href="./archives13.html"
-				class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
-
-				13
-
-			</a>
-			<a href="./archives14.html"
-				class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
-
-				14
-
-			</a>
-			<a href="./archives15.html"
-				class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
-
-				15
-
-			</a>
-			<a href="./archives16.html"
-				class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
-
-				16
-
-			</a>
-			<a href="./archives17.html"
-				class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
-
-				<span class="font-extrabold">17</span>
-
-			</a>
-
-			<div class="-ml-px relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-500 hover:text-gray-400 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150"
-				aria-label="Next">
-				<!-- Heroicon name: chevron-right -->
-				<svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-					<path fill-rule="evenodd"
-						d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-						clip-rule="evenodd" />
-				</svg>
-			</div>
-		</nav>
-	</div>
-</div>
+        <div class="pt-6 text-right"><a
+                class="font-semibold text-indigo-600 hover:text-indigo-500 transition ease-in-out duration-150"
+                href="/archives"> Read more</a></div>
     </div>
+    <!-- END Related posts-->
+
 </div>
+</div>
+
+
 
 
 
