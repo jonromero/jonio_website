@@ -72,11 +72,7 @@ I can watch:
 * The mentor's keep/fix/expand evaluations of my logs.
 * Historic scores of how each model version performs over time.
 
-Under the hood, the training phase uses an incredibly efficient machine learning technique called **QLoRA (Quantized Low-Rank Adaptation)** to fine-tune **`microsoft/Phi-4-mini-instruct` (4-bit)**.
-
-Think of LoRA like sticking Post-it notes inside a massive, heavy textbook. Instead of rewriting the entire textbook (which is incredibly slow, fragile, and requires a giant supercomputer), we freeze the original 4-bit model and only train a tiny fraction of adapter weights connected to its attention layers ($r=16, \alpha=32$).
-
-This shrinks the training memory footprint to a mere ~2.5 GB of VRAM. It runs 100% locally on my consumer-grade **NVIDIA GeForce RTX 4070 SUPER** GPU. By morning, the lightweight adapter weights are automatically merged back into the base model and converted to GGUF format for Ollama. Even better: if an adapter already exists from a previous night, the system resumes training directly from it, forming an unbroken, continuous chain of learning.
+*(If you are curious about the QLoRA hyperparameters, target attention layers, or the math behind weight-merging locally on an RTX 4070 SUPER, check out my deep technical architecture write-up on the [Last Machine Research Blog](https://lastmachine.com/ai-sleep-cycle-high-context-local-personalization.html).)*
 
 ---
 
