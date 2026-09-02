@@ -26,16 +26,23 @@
 
     <link rel="icon" href="/images/favicon.ico" />
 
+    <style>.article-summary img{display:block;margin:0.75rem 0;border-radius:0.375rem;}</style>
+
     {% if self.meta_image().strip() != '' %}
     <meta property="og:image" content="{%- block meta_image -%} {% endblock %}" />
     <meta property="og:title" content="{%- block meta_title -%} {% endblock %}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="{{ self.meta_image() }}" />
+    <meta name="twitter:title" content="{{ self.meta_title() }}" />
 
     {% else %}
-    <meta property="og:image" content="/images/jon.jpg" />
+    <meta property="og:image" content="{{ SITE_ABSOLUTE_URL }}/images/jon.jpg" />
     <meta property="og:description"
         content="I built BugSense from $100k to acquisition by Splunk. I deployed an AI system that saved lives during Greece's wildfires. I invested in Anthropic. Building systems for Super Intelligence - practical AI deployment, real-world lessons, and what's next." />
     <meta property="og:url" content="https://jon.io" />
     <meta property="og:title" content="Building systems for Super Intelligence" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="{{ SITE_ABSOLUTE_URL }}/images/jon.jpg" />
     {% endif %}
 </head>
 

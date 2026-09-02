@@ -7,6 +7,11 @@ SITENAME = u'Jon.IO'
 SITEURL = u''
 TIMEZONE = u'America/Los_Angeles'
 
+# RELATIVE_URLS makes Pelican override the {{ SITEURL }} template
+# variable per-page with a relative dot-path, so it can't be used to
+# build absolute URLs (e.g. og:image/twitter:image) — use this instead.
+SITE_ABSOLUTE_URL = u'https://jon.io'
+
 PATH = 'content/'
 
 DEFAULT_LANG = 'en'
