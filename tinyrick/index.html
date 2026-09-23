@@ -51,11 +51,18 @@
 
     <!-- Image -->
     <div class="flex-1 flex items-center justify-center px-8 pb-10 pt-2 md:p-16">
-      <img
-        src="/images/tinyrick-card.png"
-        alt="Tiny Rick"
-        class="w-[78vw] max-w-[340px] md:w-[460px] md:max-w-full h-auto block rounded-2xl border border-neutral-200 dark:border-neutral-700 shadow-sm"
-      />
+      <video
+        poster="/images/tinyrick-sketch-poster.jpg"
+        autoplay
+        muted
+        playsinline
+        preload="auto"
+        class="w-[78vw] max-w-[340px] md:w-[460px] md:max-w-full h-auto block rounded-2xl border border-neutral-200 dark:border-neutral-700 shadow-sm bg-white"
+      >
+        <source src="/images/tinyrick-sketch.mp4" type="video/mp4">
+        <source src="/images/tinyrick-sketch.webm" type="video/webm">
+        <img src="/images/tinyrick-sketch-poster.jpg" alt="Tiny Rick hand-drawn portrait" class="w-full h-auto block"/>
+      </video>
     </div>
 
   </div>
