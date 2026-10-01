@@ -57,6 +57,9 @@ EXTRA_PATH_METADATA = {
     },
     'raw/funding-rules/index.html': {
         'path': 'funding-rules/index.html'
+    },
+    'raw/tinyrick/index.html': {
+        'path': 'tinyrick/index.html'
     }
 }
 
