@@ -60,6 +60,9 @@ EXTRA_PATH_METADATA = {
     },
     'raw/tinyrick/index.html': {
         'path': 'tinyrick/index.html'
+    },
+    'raw/cutflow/index.html': {
+        'path': 'cutflow/index.html'
     }
 }
 
