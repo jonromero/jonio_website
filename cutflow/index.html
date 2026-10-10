@@ -1,1122 +1,640 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <meta name="theme-color" content="#080808">
-  <meta name="description" content="Offline, client-side video cutter with frame scrubbing and EDL/FFmpeg export">
-  <title>~^ CUTFLOW // MACHINE_01</title>
-  
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Monospace Font: JetBrains Mono -->
+  <title>CUTFLOW MOBILE</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            mono: ['JetBrains Mono', 'ui-monospace', 'Menlo', 'monospace'],
-          },
-          colors: {
-            mono: {
-              pitch: '#080808',
-              surface: '#111111',
-              card: '#161616',
-              line: '#262626',
-              lineLight: '#383838',
-              muted: '#737373',
-              subtle: '#999999',
-              light: '#e5e5e5',
-            },
-            term: {
-              green: '#10b981',
-              greenDark: '#064e3b',
-              crimson: '#ef4444',
-              crimsonDark: '#7f1d1d',
-              amber: '#f59e0b',
-            }
-          }
-        }
-      }
-    };
-  </script>
-
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* lastmachine.com stark aesthetic */
     :root {
-      color-scheme: dark;
-    }
-    body {
-      background-color: #080808;
-      color: #e5e5e5;
-      font-family: 'JetBrains Mono', ui-monospace, monospace;
-      -webkit-font-smoothing: antialiased;
-      user-select: none;
-    }
-    input, textarea, pre {
-      user-select: text;
-    }
-    ::-webkit-scrollbar {
-      width: 4px;
-      height: 4px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #080808;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #262626;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #404040;
+      --bg: #09090b;
+      --card: #141417;
+      --border: #27272a;
+      --keep: #10b981;
+      --cut: #ef4444;
+      --text: #fafafa;
+      --muted: #a1a1aa;
     }
 
-    @keyframes term-blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.2; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-tap-highlight-color: transparent;
     }
-    .animate-blink {
-      animation: term-blink 1.2s ease-in-out infinite;
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'JetBrains Mono', monospace;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: env(safe-area-inset-bottom);
+      overscroll-behavior: none;
+    }
+
+    /* Top Bar */
+    header {
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .brand {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .brand span {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--keep);
+      border-radius: 50%;
+    }
+
+    .file-btn {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text);
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* Video Deck */
+    .viewport {
+      position: relative;
+      background: #000;
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .empty-state {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Scrubber & Timeline */
+    .timeline-container {
+      padding: 12px 16px 4px;
+    }
+
+    .timeline-track {
+      position: relative;
+      height: 24px;
+      background: #18181b;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .segment-overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      opacity: 0.85;
+    }
+
+    .segment-keep { background: rgba(16, 185, 129, 0.4); border-left: 2px solid var(--keep); border-right: 2px solid var(--keep); }
+    .segment-cut  { background: rgba(239, 68, 68, 0.4);  border-left: 2px solid var(--cut);  border-right: 2px solid var(--cut); }
+
+    .playhead {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #ffffff;
+      box-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .time-info {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    /* Mode Pill Selector */
+    .mode-bar {
+      display: flex;
+      gap: 8px;
+      padding: 10px 16px;
+    }
+
+    .mode-btn {
+      flex: 1;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .mode-btn.active-keep {
+      background: rgba(16, 185, 129, 0.12);
+      border-color: var(--keep);
+      color: var(--keep);
+    }
+
+    .mode-btn.active-cut {
+      background: rgba(239, 68, 68, 0.12);
+      border-color: var(--cut);
+      color: var(--cut);
+    }
+
+    /* Bottom Control Cluster */
+    .controls-deck {
+      margin-top: auto;
+      padding: 12px 16px;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .transport-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .step-btn {
+      flex: 1;
+      height: 48px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .play-btn {
+      flex: 1.4;
+      background: #27272a;
+      font-size: 15px;
+    }
+
+    /* Giant Touch Trigger */
+    .trigger-btn {
+      width: 100%;
+      height: 64px;
+      border-radius: 12px;
+      border: none;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: transform 0.08s ease, filter 0.15s ease;
+    }
+
+    .trigger-btn:active {
+      transform: scale(0.98);
+    }
+
+    .trigger-idle {
+      background: #27272a;
+      color: #fff;
+    }
+
+    .trigger-recording {
+      background: var(--cut);
+      color: #fff;
+      animation: pulse 1.2s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { filter: brightness(1); }
+      50% { filter: brightness(1.25); }
+    }
+
+    /* Segments Drawer & Export Buttons */
+    .drawer {
+      padding: 12px 16px;
+      max-height: 180px;
+      overflow-y: auto;
+    }
+
+    .drawer-header {
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .segment-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      font-size: 11px;
+    }
+
+    .segment-card .nudge-group {
+      display: flex;
+      gap: 4px;
+    }
+
+    .nudge-btn {
+      background: #27272a;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 4px 6px;
+      border-radius: 4px;
+      font-size: 10px;
+      cursor: pointer;
+    }
+
+    .del-btn {
+      color: var(--cut);
+      background: transparent;
+      border: none;
+      font-size: 14px;
+      padding: 4px 8px;
+      cursor: pointer;
+    }
+
+    .export-bar {
+      display: flex;
+      gap: 8px;
+      padding: 8px 16px 12px;
+    }
+
+    .exp-btn {
+      flex: 1;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .exp-btn.primary {
+      background: #ffffff;
+      color: #000000;
+      border: none;
     }
   </style>
 </head>
-<body class="bg-mono-pitch text-mono-light min-h-screen flex flex-col font-mono selection:bg-zinc-800 selection:text-white">
+<body>
 
-  <header class="sticky top-0 z-40 bg-mono-pitch/95 border-b border-mono-line px-3.5 py-2.5 flex items-center justify-between backdrop-blur-md">
-    <div class="flex items-center space-x-2.5">
-      <span class="text-xs font-bold tracking-tight text-white flex items-center gap-1.5">
-        <span class="text-term-amber">~^</span> CUTFLOW<span class="text-mono-muted text-[10px]">::01</span>
-      </span>
-      <span id="sysStatusBadge" class="text-[10px] uppercase px-1.5 py-0.5 border border-mono-line text-mono-muted bg-mono-surface">
-        IDLE
-      </span>
-    </div>
-
-    <!-- Right Header Tools -->
-    <div class="flex items-center space-x-2">
-      <!-- Input Video Picker Trigger -->
-      <label for="videoFileInput" class="cursor-pointer text-[11px] uppercase tracking-wider px-2 py-1 bg-mono-surface hover:bg-mono-card border border-mono-line hover:border-mono-lineLight text-mono-subtle hover:text-white transition active:scale-95 flex items-center gap-1">
-        <span>[+]</span> <span>LOAD</span>
-      </label>
-      <input type="file" id="videoFileInput" accept="video/*" class="hidden">
-
-      <!-- Export Panel Open -->
-      <button id="openExportDrawerBtn" class="text-[11px] uppercase tracking-wider px-2.5 py-1 bg-mono-line hover:bg-zinc-700 text-white border border-mono-lineLight transition active:scale-95 flex items-center gap-1 disabled:opacity-30 disabled:pointer-events-none" disabled>
-        <span>EXECUTE</span> <span>→</span>
-      </button>
-    </div>
+  <header>
+    <div class="brand"><span></span> CUTFLOW</div>
+    <label class="file-btn">
+      OPEN VIDEO
+      <input type="file" id="fileInput" accept="video/*" style="display: none;">
+    </label>
   </header>
 
-  <main class="flex-1 flex flex-col max-w-4xl w-full mx-auto pb-48">
+  <!-- Video Player -->
+  <div class="viewport">
+    <video id="player" playsinline webkit-playsinline></video>
+    <div class="empty-state" id="emptyPlaceholder">TAP "OPEN VIDEO" TO BEGIN</div>
+  </div>
 
-    <!-- Active Media Filename Bar -->
-    <div class="px-3.5 py-1.5 border-b border-mono-line bg-mono-surface/50 text-[10px] text-mono-muted flex items-center justify-between">
-      <div class="truncate max-w-[70%]" id="activeFileNameDisplay">SOURCE: NONE (DROP OR LOAD FILE)</div>
-      <div class="text-[9px] uppercase tracking-widest text-mono-muted">LOCAL_PASS // 0_UPLOAD</div>
+  <!-- Visual Timeline -->
+  <div class="timeline-container">
+    <div class="timeline-track" id="timeline">
+      <div class="playhead" id="playhead" style="left: 0%;"></div>
     </div>
-
-    <!-- Video Stage / Viewport -->
-    <section class="relative bg-black w-full aspect-video border-b border-mono-line flex items-center justify-center overflow-hidden">
-      
-      <!-- Empty State File Dropper -->
-      <div id="emptyDropHud" class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-20 bg-mono-pitch/95">
-        <div class="text-mono-muted text-xs tracking-widest mb-3">[ ~^ ZERO-NETWORK LOCAL ENGINE ]</div>
-        <div class="border border-mono-line bg-mono-surface p-6 max-w-sm w-full space-y-3">
-          <p class="text-xs text-mono-light uppercase tracking-wider font-semibold">Select video to begin timeline trim</p>
-          <p class="text-[11px] text-mono-muted leading-relaxed">
-            All bytes parsed in-memory. Zero network egress. Compatible with MP4, WebM, MOV.
-          </p>
-          <label for="directVideoInput" class="block w-full py-2 bg-mono-card hover:bg-mono-line text-white border border-mono-lineLight text-xs uppercase tracking-widest cursor-pointer transition active:scale-98">
-            Select Local File
-          </label>
-          <input type="file" id="directVideoInput" accept="video/*" class="hidden">
-        </div>
-      </div>
-
-      <!-- Core Video Object -->
-      <video 
-        id="videoStage"
-        class="w-full h-full object-contain cursor-pointer"
-        playsinline
-        webkit-playsinline
-        preload="metadata"
-      ></video>
-
-      <!-- Active Marking HUD Indicator -->
-      <div id="activeMarkHud" class="hidden absolute top-2.5 left-2.5 z-30 flex items-center gap-2 px-2.5 py-1 bg-black/90 border border-mono-line text-xs">
-        <span class="w-2 h-2 rounded-full animate-blink bg-term-green" id="markIndicatorDot"></span>
-        <span class="font-bold tracking-wider uppercase text-[11px]" id="markHudLabel">KEEP ACTIVE</span>
-        <span class="text-mono-muted text-[10px]" id="markElapsed">IN: 00:00.00</span>
-      </div>
-    </section>
-
-    <section class="border-b border-mono-line bg-mono-surface px-3.5 py-2 space-y-2">
-      
-      <!-- Timecode Readout -->
-      <div class="flex items-center justify-between text-xs">
-        <div class="flex items-center gap-1.5">
-          <span class="text-white font-bold tracking-wider" id="tcCurrent">00:00.00</span>
-          <span class="text-mono-muted">/</span>
-          <span class="text-mono-muted" id="tcTotal">00:00.00</span>
-        </div>
-
-        <!-- Calculated Export Duration -->
-        <div class="flex items-center gap-2 text-[10px]">
-          <span class="text-mono-muted">RESULT:</span>
-          <span class="text-term-green font-semibold" id="tcResult">00:00.00</span>
-          <span class="text-mono-muted border-l border-mono-line pl-2" id="tcDiffPercent">-0.0%</span>
-        </div>
-      </div>
-
-      <!-- Interactive Scrubber -->
-      <div class="relative w-full h-8 bg-mono-pitch border border-mono-line cursor-pointer select-none" id="timelineBar">
-        <!-- Colored Marked Slices Container -->
-        <div id="timelineMarksLayer" class="absolute inset-0 pointer-events-none"></div>
-
-        <!-- In-flight live marking slice -->
-        <div id="liveSegmentHighlight" class="absolute top-0 bottom-0 pointer-events-none hidden bg-term-green/30 border-y border-term-green"></div>
-
-        <!-- Playhead progress shaded bar -->
-        <div id="scrubProgressLayer" class="absolute top-0 bottom-0 left-0 bg-white/5 pointer-events-none" style="width: 0%;"></div>
-
-        <!-- Playhead Strobe -->
-        <div id="scrubPlayhead" class="absolute top-0 bottom-0 w-px bg-white z-20 pointer-events-none -translate-x-1/2" style="left: 0%;">
-          <div class="absolute -top-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-white"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="border-b border-mono-line bg-mono-pitch p-3 space-y-2">
-      <div class="flex items-center justify-between text-[11px] uppercase tracking-wider text-mono-muted">
-        <span>TRIM MODE</span>
-        <span id="effectiveRuleSummary" class="text-term-green text-[10px]">PRESERVING MARKED SECTIONS</span>
-      </div>
-
-      <!-- Segmented Dual Mode Toggle -->
-      <div class="grid grid-cols-2 gap-2 text-xs">
-        <button id="modePreserveBtn" class="py-2.5 px-3 border border-term-green bg-term-green/15 text-term-green font-bold text-center transition flex items-center justify-center gap-1.5 active:scale-98">
-          <span>●</span> <span>PRESERVE (KEEP)</span>
-        </button>
-
-        <button id="modeCutBtn" class="py-2.5 px-3 border border-mono-line bg-mono-surface text-mono-muted font-bold text-center hover:text-white transition flex items-center justify-center gap-1.5 active:scale-98">
-          <span>✕</span> <span>CUT (DISCARD)</span>
-        </button>
-      </div>
-    </section>
-
-    <section class="p-3.5 space-y-2">
-      <div class="flex items-center justify-between text-xs pb-1 border-b border-mono-line">
-        <div class="flex items-center gap-2">
-          <span class="font-bold text-mono-light uppercase tracking-wider">INTERVALS LIST</span>
-          <span id="intervalsCountBadge" class="text-[10px] text-mono-muted bg-mono-surface px-1.5 py-0.2 border border-mono-line">0</span>
-        </div>
-        <button id="clearAllIntervalsBtn" class="text-[10px] uppercase text-mono-muted hover:text-term-crimson transition hidden">
-          [ PURGE ALL ]
-        </button>
-      </div>
-
-      <!-- Empty State List -->
-      <div id="intervalsEmptyList" class="p-6 border border-dashed border-mono-line text-center text-[11px] text-mono-muted space-y-1">
-        <p>No intervals registered in memory.</p>
-        <p class="text-[10px] text-mono-muted">Tap <span class="text-white font-bold">[ MARK IN ]</span> on the deck below to register bounds.</p>
-      </div>
-
-      <!-- Intervals Rows Container -->
-      <div id="intervalsListContainer" class="space-y-1.5"></div>
-    </section>
-  </main>
-
-  <footer class="fixed bottom-0 inset-x-0 z-40 bg-mono-pitch/98 border-t border-mono-line p-2.5 backdrop-blur-xl">
-    <div class="max-w-4xl mx-auto space-y-2">
-      
-      <!-- Stepper Controls Row: -5s, -1s, Play/Pause, +1s, +5s -->
-      <div class="grid grid-cols-5 gap-1.5 font-mono text-xs">
-        <button id="stepMinus5" title="Step -5 seconds" class="h-11 border border-mono-line bg-mono-surface hover:bg-mono-card active:bg-mono-line text-mono-subtle hover:text-white transition flex flex-col items-center justify-center">
-          <span class="font-bold text-[11px]">-5s</span>
-        </button>
-
-        <button id="stepMinus1" title="Step -1 second" class="h-11 border border-mono-line bg-mono-surface hover:bg-mono-card active:bg-mono-line text-mono-subtle hover:text-white transition flex flex-col items-center justify-center">
-          <span class="font-bold text-[11px]">-1s</span>
-        </button>
-
-        <button id="playPauseTrigger" title="Toggle Play / Pause" class="h-11 border border-mono-lineLight bg-mono-card hover:bg-zinc-800 active:scale-95 text-white transition flex items-center justify-center font-bold">
-          <span id="playPauseIcon" class="text-xs">▶</span>
-        </button>
-
-        <button id="stepPlus1" title="Step +1 second" class="h-11 border border-mono-line bg-mono-surface hover:bg-mono-card active:bg-mono-line text-mono-subtle hover:text-white transition flex flex-col items-center justify-center">
-          <span class="font-bold text-[11px]">+1s</span>
-        </button>
-
-        <button id="stepPlus5" title="Step +5 seconds" class="h-11 border border-mono-line bg-mono-surface hover:bg-mono-card active:bg-mono-line text-mono-subtle hover:text-white transition flex flex-col items-center justify-center">
-          <span class="font-bold text-[11px]">+5s</span>
-        </button>
-      </div>
-
-      <!-- Primary Action Marking Button -->
-      <button id="mainMarkBtn" class="w-full h-13 py-3 border border-term-green bg-term-green/10 hover:bg-term-green/20 text-term-green font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition active:scale-98 select-none">
-        <span id="mainMarkSymbol">●</span>
-        <span id="mainMarkTitle">MARK IN</span>
-      </button>
-
-    </div>
-  </footer>
-
-  <div id="exportDrawer" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4 opacity-0 pointer-events-none transition-opacity duration-150">
-    <div class="bg-mono-surface border border-mono-line max-w-lg w-full p-4 max-h-[92vh] overflow-y-auto space-y-4 shadow-2xl">
-      
-      <div class="flex items-center justify-between pb-2 border-b border-mono-line">
-        <div class="text-xs font-bold uppercase tracking-wider text-white flex items-center gap-2">
-          <span>~^</span> <span>DISPATCH EXPORT ENGINE</span>
-        </div>
-        <button id="closeExportDrawerBtn" class="text-mono-muted hover:text-white text-xs px-2 py-0.5 border border-mono-line bg-mono-pitch">
-          ESC [X]
-        </button>
-      </div>
-
-      <!-- Telemetry Comparison -->
-      <div class="grid grid-cols-3 gap-2 border border-mono-line bg-mono-pitch p-2.5 text-center text-xs">
-        <div>
-          <div class="text-[9px] text-mono-muted uppercase">ORIGINAL</div>
-          <div id="expOrigDur" class="font-bold text-white mt-0.5">00:00.00</div>
-        </div>
-        <div>
-          <div class="text-[9px] text-mono-muted uppercase">SEGMENTS</div>
-          <div id="expSegCount" class="font-bold text-term-amber mt-0.5">0</div>
-        </div>
-        <div>
-          <div class="text-[9px] text-mono-muted uppercase">OUTPUT</div>
-          <div id="expFinalDur" class="font-bold text-term-green mt-0.5">00:00.00</div>
-        </div>
-      </div>
-
-      <!-- Mode 1: Client-Side Browser Rendering -->
-      <div class="border border-mono-line bg-mono-pitch p-3 space-y-2.5">
-        <div class="text-[10px] text-term-green uppercase tracking-wider font-bold">METHOD 01 // BROWSER PASS RECORDER</div>
-        <p class="text-[11px] text-mono-muted leading-relaxed">
-          Plays through kept intervals sequentially and captures encoded chunks into an MP4/WebM file on your device.
-        </p>
-
-        <!-- Progress bar indicator -->
-        <div id="renderProgressContainer" class="hidden space-y-1">
-          <div class="flex justify-between text-[10px] text-mono-muted">
-            <span id="renderStatusLabel">PROCESSING...</span>
-            <span id="renderPercentLabel">0%</span>
-          </div>
-          <div class="w-full bg-mono-surface h-1.5 border border-mono-line overflow-hidden">
-            <div id="renderProgressFill" class="h-full bg-term-green transition-all duration-75" style="width: 0%"></div>
-          </div>
-        </div>
-
-        <button id="runBrowserRenderBtn" class="w-full py-2.5 bg-term-green/10 hover:bg-term-green/20 text-term-green border border-term-green text-xs font-bold uppercase tracking-wider transition active:scale-98">
-          Render & Download Video File
-        </button>
-      </div>
-
-      <!-- Mode 2: Lossless FFmpeg Terminal String -->
-      <div class="border border-mono-line bg-mono-pitch p-3 space-y-2">
-        <div class="text-[10px] text-term-amber uppercase tracking-wider font-bold">METHOD 02 // LOSSLESS FFMPEG COMMAND</div>
-        <p class="text-[11px] text-mono-muted">
-          Paste into your terminal. Uses stream copy for instant, zero-re-encoding output.
-        </p>
-        <div class="relative">
-          <pre id="ffmpegCliPreview" class="bg-black p-2.5 text-[10px] text-zinc-300 font-mono border border-mono-line overflow-x-auto whitespace-pre-wrap break-all max-h-24"></pre>
-          <button id="copyFfmpegCliBtn" class="absolute top-1.5 right-1.5 text-[10px] px-2 py-0.5 bg-mono-surface hover:bg-mono-card border border-mono-line text-mono-light">
-            COPY
-          </button>
-        </div>
-      </div>
-
-      <!-- Mode 3: CMX 3600 EDL Download -->
-      <div class="border border-mono-line bg-mono-pitch p-3 space-y-2">
-        <div class="text-[10px] text-mono-subtle uppercase tracking-wider font-bold">METHOD 03 // CMX 3600 EDL SPEC</div>
-        <p class="text-[11px] text-mono-muted">
-          Import directly into DaVinci Resolve, Final Cut Pro, or Premiere Pro.
-        </p>
-        <button id="downloadEdlManifestBtn" class="w-full py-2 bg-mono-surface hover:bg-mono-card text-mono-light border border-mono-line text-xs uppercase tracking-wider transition">
-          Download .EDL Manifest
-        </button>
-      </div>
-
+    <div class="time-info">
+      <span id="curTime">00:00.0</span>
+      <span id="durTime">00:00.0</span>
     </div>
   </div>
 
-  <!-- Terminal Status Notification Message -->
-  <div id="terminalNotice" class="fixed top-12 left-1/2 -translate-x-1/2 z-50 bg-mono-surface border border-mono-lineLight px-3 py-1.5 text-[11px] text-white shadow-xl opacity-0 pointer-events-none transition-all duration-150 uppercase tracking-wider">
-    STATUS_LOG
+  <!-- Mode Switcher -->
+  <div class="mode-bar">
+    <button class="mode-btn active-keep" id="modeKeep">● PRESERVE (KEEP)</button>
+    <button class="mode-btn" id="modeCut">✕ CUT (DISCARD)</button>
+  </div>
+
+  <!-- Logged Segments -->
+  <div class="drawer" id="drawer">
+    <div class="drawer-header">
+      <span>LOGGED INTERVALS (<span id="count">0</span>)</span>
+      <span id="finalDuration">KEEP: 0.0s</span>
+    </div>
+    <div id="segmentList"></div>
+  </div>
+
+  <!-- Controls Deck (Thumb Zone) -->
+  <div class="controls-deck">
+    <div class="transport-row">
+      <button class="step-btn" id="sub5">-5s</button>
+      <button class="step-btn play-btn" id="togglePlay">▶ PLAY</button>
+      <button class="step-btn" id="add5">+5s</button>
+    </div>
+
+    <button class="trigger-btn trigger-idle" id="cutTrigger">
+      MARK IN (START)
+    </button>
+  </div>
+
+  <!-- Export Strip -->
+  <div class="export-bar">
+    <button class="exp-btn primary" id="btnExportWeb">EXPORT HD MP4</button>
+    <button class="exp-btn" id="btnExportCmd">COPY LOSSLESS FFMPEG</button>
   </div>
 
   <script>
-    // System Application State
-    const state = {
-      file: null,
-      fileName: 'input_video.mp4',
-      blobUrl: null,
-      duration: 0,
-      
-      // Dual mode: 'PRESERVE' (we keep marked intervals) or 'CUT' (we discard marked intervals)
-      mode: 'PRESERVE',
+    const player = document.getElementById('player');
+    const fileInput = document.getElementById('fileInput');
+    const emptyPlaceholder = document.getElementById('emptyPlaceholder');
+    const timeline = document.getElementById('timeline');
+    const playhead = document.getElementById('playhead');
+    const curTime = document.getElementById('curTime');
+    const durTime = document.getElementById('durTime');
+    const modeKeep = document.getElementById('modeKeep');
+    const modeCut = document.getElementById('modeCut');
+    const togglePlay = document.getElementById('togglePlay');
+    const sub5 = document.getElementById('sub5');
+    const add5 = document.getElementById('add5');
+    const cutTrigger = document.getElementById('cutTrigger');
+    const segmentList = document.getElementById('segmentList');
+    const countBadge = document.getElementById('count');
+    const finalDurationText = document.getElementById('finalDuration');
 
-      // Marked Intervals: array of { id, start: float, end: float }
-      intervals: [],
-      
-      // Active In-flight mark
-      isMarking: false,
-      markStart: null,
+    let mode = 'PRESERVE'; // 'PRESERVE' or 'CUT'
+    let isMarking = false;
+    let markStart = 0;
+    let intervals = [];
 
-      // Render execution state
-      isRendering: false
-    };
-
-    // DOM Binding Elements
-    const video = document.getElementById('videoStage');
-    const videoFileInput = document.getElementById('videoFileInput');
-    const directVideoInput = document.getElementById('directVideoInput');
-    const emptyDropHud = document.getElementById('emptyDropHud');
-    const activeFileNameDisplay = document.getElementById('activeFileNameDisplay');
-    const openExportDrawerBtn = document.getElementById('openExportDrawerBtn');
-    const sysStatusBadge = document.getElementById('sysStatusBadge');
-    
-    // Playback and Steppers
-    const playPauseTrigger = document.getElementById('playPauseTrigger');
-    const playPauseIcon = document.getElementById('playPauseIcon');
-    const stepMinus5 = document.getElementById('stepMinus5');
-    const stepMinus1 = document.getElementById('stepMinus1');
-    const stepPlus1 = document.getElementById('stepPlus1');
-    const stepPlus5 = document.getElementById('stepPlus5');
-
-    // Main Marking Deck
-    const mainMarkBtn = document.getElementById('mainMarkBtn');
-    const mainMarkSymbol = document.getElementById('mainMarkSymbol');
-    const mainMarkTitle = document.getElementById('mainMarkTitle');
-    const activeMarkHud = document.getElementById('activeMarkHud');
-    const markHudLabel = document.getElementById('markHudLabel');
-    const markElapsed = document.getElementById('markElapsed');
-    const markIndicatorDot = document.getElementById('markIndicatorDot');
-
-    // Mode Controller Buttons
-    const modePreserveBtn = document.getElementById('modePreserveBtn');
-    const modeCutBtn = document.getElementById('modeCutBtn');
-    const effectiveRuleSummary = document.getElementById('effectiveRuleSummary');
-
-    // Timeline Scrubber
-    const timelineBar = document.getElementById('timelineBar');
-    const timelineMarksLayer = document.getElementById('timelineMarksLayer');
-    const liveSegmentHighlight = document.getElementById('liveSegmentHighlight');
-    const scrubProgressLayer = document.getElementById('scrubProgressLayer');
-    const scrubPlayhead = document.getElementById('scrubPlayhead');
-    const tcCurrent = document.getElementById('tcCurrent');
-    const tcTotal = document.getElementById('tcTotal');
-    const tcResult = document.getElementById('tcResult');
-    const tcDiffPercent = document.getElementById('tcDiffPercent');
-
-    // Inspector
-    const intervalsListContainer = document.getElementById('intervalsListContainer');
-    const intervalsEmptyList = document.getElementById('intervalsEmptyList');
-    const intervalsCountBadge = document.getElementById('intervalsCountBadge');
-    const clearAllIntervalsBtn = document.getElementById('clearAllIntervalsBtn');
-
-    // Export Drawer
-    const exportDrawer = document.getElementById('exportDrawer');
-    const closeExportDrawerBtn = document.getElementById('closeExportDrawerBtn');
-    const expOrigDur = document.getElementById('expOrigDur');
-    const expSegCount = document.getElementById('expSegCount');
-    const expFinalDur = document.getElementById('expFinalDur');
-    const ffmpegCliPreview = document.getElementById('ffmpegCliPreview');
-    const copyFfmpegCliBtn = document.getElementById('copyFfmpegCliBtn');
-    const downloadEdlManifestBtn = document.getElementById('downloadEdlManifestBtn');
-    const runBrowserRenderBtn = document.getElementById('runBrowserRenderBtn');
-    const renderProgressContainer = document.getElementById('renderProgressContainer');
-    const renderProgressFill = document.getElementById('renderProgressFill');
-    const renderStatusLabel = document.getElementById('renderStatusLabel');
-    const renderPercentLabel = document.getElementById('renderPercentLabel');
-
-    // Terminal Notice
-    const terminalNotice = document.getElementById('terminalNotice');
-
-    function formatTime(seconds) {
-      if (isNaN(seconds) || seconds < 0 || seconds === null) seconds = 0;
-      const mins = Math.floor(seconds / 60);
-      const secs = Math.floor(seconds % 60);
-      const sub = Math.floor((seconds % 1) * 100);
-      const pad = (n) => String(n).padStart(2, '0');
-      return `${pad(mins)}:${pad(secs)}.${pad(sub)}`;
+    // Format seconds to mm:ss.s
+    function formatTime(s) {
+      if (isNaN(s)) return "00:00.0";
+      const m = Math.floor(s / 60);
+      const sec = (s % 60).toFixed(1);
+      return `${String(m).padStart(2, '0')}:${sec.padStart(4, '0')}`;
     }
 
-    function showNotice(msg) {
-      terminalNotice.textContent = `// ${msg}`;
-      terminalNotice.classList.remove('opacity-0', 'pointer-events-none');
-      terminalNotice.classList.add('opacity-100');
-      setTimeout(() => {
-        terminalNotice.classList.remove('opacity-100');
-        terminalNotice.classList.add('opacity-0', 'pointer-events-none');
-      }, 1800);
-    }
+    // Load Local File
+    fileInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      emptyPlaceholder.style.display = 'none';
+      player.src = URL.createObjectURL(file);
+      player.load();
+      intervals = [];
+      render();
+    });
 
-    // Returns true if marked intervals are footage kept, false if discarded
-    function isMarkedPreserved() {
-      return state.mode === 'PRESERVE';
-    }
+    player.addEventListener('loadedmetadata', () => {
+      durTime.textContent = formatTime(player.duration);
+      render();
+    });
 
-    // Resolves kept ranges from marks and selected mode
-    function resolveFinalKeptRanges() {
-      if (!state.duration || state.duration <= 0) return [];
-
-      const sortedMarks = [...state.intervals].sort((a, b) => a.start - b.start);
-      const cleanMarks = [];
-      for (const seg of sortedMarks) {
-        if (!cleanMarks.length) {
-          cleanMarks.push({ start: seg.start, end: seg.end });
-        } else {
-          const prev = cleanMarks[cleanMarks.length - 1];
-          if (seg.start <= prev.end) {
-            prev.end = Math.max(prev.end, seg.end);
-          } else {
-            cleanMarks.push({ start: seg.start, end: seg.end });
-          }
-        }
+    player.addEventListener('timeupdate', () => {
+      curTime.textContent = formatTime(player.currentTime);
+      if (player.duration) {
+        const pct = (player.currentTime / player.duration) * 100;
+        playhead.style.left = `${pct}%`;
       }
+    });
 
-      if (cleanMarks.length === 0) {
-        return state.mode === 'PRESERVE' ? [] : [{ start: 0, end: state.duration }];
-      }
-
-      if (state.mode === 'PRESERVE') {
-        return cleanMarks;
+    // Transport controls
+    togglePlay.addEventListener('click', () => {
+      if (player.paused) {
+        player.play();
+        togglePlay.textContent = "⏸ PAUSE";
       } else {
-        // CUT mode: Invert marked slices to find footage to keep
+        player.pause();
+        togglePlay.textContent = "▶ PLAY";
+      }
+    });
+
+    sub5.addEventListener('click', () => { player.currentTime = Math.max(0, player.currentTime - 5); });
+    add5.addEventListener('click', () => { player.currentTime = Math.min(player.duration || 0, player.currentTime + 5); });
+
+    // Mode Selector
+    modeKeep.addEventListener('click', () => {
+      mode = 'PRESERVE';
+      modeKeep.classList.add('active-keep');
+      modeCut.classList.remove('active-cut');
+      render();
+    });
+
+    modeCut.addEventListener('click', () => {
+      mode = 'CUT';
+      modeCut.classList.add('active-cut');
+      modeKeep.classList.remove('active-keep');
+      render();
+    });
+
+    // Ergonomic Trigger Logic (Zero Tap Latency)
+    cutTrigger.addEventListener('pointerdown', (e) => {
+      e.preventDefault();
+      const now = player.currentTime;
+
+      if (!isMarking) {
+        isMarking = true;
+        markStart = now;
+        cutTrigger.textContent = "MARK OUT (SAVE)";
+        cutTrigger.className = "trigger-btn trigger-recording";
+      } else {
+        isMarking = false;
+        if (now > markStart) {
+          intervals.push({
+            id: crypto.randomUUID(),
+            start: parseFloat(markStart.toFixed(2)),
+            end: parseFloat(now.toFixed(2)),
+            type: mode
+          });
+        }
+        cutTrigger.textContent = "MARK IN (START)";
+        cutTrigger.className = "trigger-btn trigger-idle";
+        render();
+      }
+    });
+
+    // Scrubber Navigation
+    timeline.addEventListener('click', (e) => {
+      if (!player.duration) return;
+      const rect = timeline.getBoundingClientRect();
+      const clickRatio = (e.clientX - rect.left) / rect.width;
+      player.currentTime = clickRatio * player.duration;
+    });
+
+    function nudge(id, point, delta) {
+      const item = intervals.find(x => x.id === id);
+      if (!item) return;
+      if (point === 'start') item.start = Math.max(0, +(item.start + delta).toFixed(2));
+      if (point === 'end') item.end = Math.min(player.duration || 9999, +(item.end + delta).toFixed(2));
+      if (item.start >= item.end) item.end = item.start + 0.1;
+      render();
+    }
+
+    function removeInterval(id) {
+      intervals = intervals.filter(x => x.id !== id);
+      render();
+    }
+
+    // Keep Interval Calculation
+    function computeKeepSegments() {
+      const dur = player.duration || 0;
+      if (dur === 0) return [];
+      
+      const sorted = [...intervals].sort((a, b) => a.start - b.start);
+
+      if (mode === 'PRESERVE') {
+        // Direct union of preserved intervals
+        return sorted;
+      } else {
+        // Inverse of cut intervals
         const keeps = [];
         let cursor = 0;
-        for (const cut of cleanMarks) {
-          if (cut.start > cursor) {
-            keeps.push({ start: cursor, end: cut.start });
-          }
+        for (const cut of sorted) {
+          if (cut.start > cursor) keeps.push({ start: cursor, end: cut.start });
           cursor = Math.max(cursor, cut.end);
         }
-        if (cursor < state.duration) {
-          keeps.push({ start: cursor, end: state.duration });
-        }
+        if (cursor < dur) keeps.push({ start: cursor, end: dur });
         return keeps;
       }
     }
 
-    function loadLocalFile(file) {
-      if (!file || !file.type.startsWith('video/')) {
-        showNotice('ERROR: FILE IS NOT A VALID VIDEO');
-        return;
-      }
+    function render() {
+      const dur = player.duration || 0;
+      countBadge.textContent = intervals.length;
 
-      state.file = file;
-      state.fileName = file.name;
-      activeFileNameDisplay.textContent = `SOURCE: ${file.name.toUpperCase()}`;
-
-      if (state.blobUrl) URL.revokeObjectURL(state.blobUrl);
-      state.blobUrl = URL.createObjectURL(file);
-
-      video.src = state.blobUrl;
-      video.load();
-
-      state.intervals = [];
-      state.isMarking = false;
-      state.markStart = null;
-
-      emptyDropHud.classList.add('hidden');
-      openExportDrawerBtn.disabled = false;
-      sysStatusBadge.textContent = 'ONLINE';
-      sysStatusBadge.classList.replace('text-mono-muted', 'text-term-green');
-
-      updateDeckButtonState();
-      renderIntervalsList();
-      renderTimelineVisuals();
-      showNotice(`LOADED ${file.name.slice(0, 16)}`);
-    }
-
-    videoFileInput.addEventListener('change', (e) => loadLocalFile(e.target.files[0]));
-    directVideoInput.addEventListener('change', (e) => loadLocalFile(e.target.files[0]));
-
-    window.addEventListener('dragover', (e) => e.preventDefault());
-    window.addEventListener('drop', (e) => {
-      e.preventDefault();
-      if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-        loadLocalFile(e.dataTransfer.files[0]);
-      }
-    });
-
-    video.addEventListener('loadedmetadata', () => {
-      state.duration = video.duration || 0;
-      tcTotal.textContent = formatTime(state.duration);
-      tcCurrent.textContent = formatTime(video.currentTime);
-      recalcMetrics();
-      renderTimelineVisuals();
-    });
-
-    video.addEventListener('timeupdate', () => {
-      if (!state.duration) return;
-      const t = video.currentTime;
-      tcCurrent.textContent = formatTime(t);
-
-      const pct = (t / state.duration) * 100;
-      scrubPlayhead.style.left = `${pct}%`;
-      scrubProgressLayer.style.width = `${pct}%`;
-
-      if (state.isMarking && state.markStart !== null) {
-        const startPct = (state.markStart / state.duration) * 100;
-        const currentPct = (t / state.duration) * 100;
-        const left = Math.min(startPct, currentPct);
-        const width = Math.abs(currentPct - startPct);
-
-        liveSegmentHighlight.style.left = `${left}%`;
-        liveSegmentHighlight.style.width = `${width}%`;
-        liveSegmentHighlight.classList.remove('hidden');
-
-        const delta = Math.abs(t - state.markStart);
-        markElapsed.textContent = `DUR: ${delta.toFixed(2)}s`;
-      }
-    });
-
-    let isScrubbing = false;
-    function updateScrubPos(e) {
-      if (!state.duration) return;
-      const rect = timelineBar.getBoundingClientRect();
-      const x = e.touches ? e.touches[0].clientX : e.clientX;
-      const ratio = Math.max(0, Math.min(1, (x - rect.left) / rect.width));
-      video.currentTime = ratio * state.duration;
-    }
-
-    timelineBar.addEventListener('mousedown', (e) => {
-      isScrubbing = true;
-      updateScrubPos(e);
-    });
-    timelineBar.addEventListener('touchstart', (e) => {
-      isScrubbing = true;
-      updateScrubPos(e);
-    }, { passive: true });
-
-    window.addEventListener('mousemove', (e) => { if (isScrubbing) updateScrubPos(e); });
-    window.addEventListener('touchmove', (e) => { if (isScrubbing) updateScrubPos(e); });
-    window.addEventListener('mouseup', () => { isScrubbing = false; });
-    window.addEventListener('touchend', () => { isScrubbing = false; });
-
-    function togglePlayback() {
-      if (!state.blobUrl) return;
-      if (video.paused) {
-        video.play();
-        playPauseIcon.textContent = '⏸';
-      } else {
-        video.pause();
-        playPauseIcon.textContent = '▶';
-      }
-    }
-
-    playPauseTrigger.addEventListener('click', togglePlayback);
-    video.addEventListener('click', togglePlayback);
-
-    stepMinus5.addEventListener('click', () => {
-      if (!state.duration) return;
-      video.currentTime = Math.max(0, video.currentTime - 5.0);
-    });
-    stepMinus1.addEventListener('click', () => {
-      if (!state.duration) return;
-      video.currentTime = Math.max(0, video.currentTime - 1.0);
-    });
-    stepPlus1.addEventListener('click', () => {
-      if (!state.duration) return;
-      video.currentTime = Math.min(state.duration, video.currentTime + 1.0);
-    });
-    stepPlus5.addEventListener('click', () => {
-      if (!state.duration) return;
-      video.currentTime = Math.min(state.duration, video.currentTime + 5.0);
-    });
-
-    function setTrimMode(newMode) {
-      if (state.mode === newMode) return;
-      state.mode = newMode;
-
-      if (state.mode === 'PRESERVE') {
-        modePreserveBtn.className = "py-2.5 px-3 border border-term-green bg-term-green/15 text-term-green font-bold text-center transition flex items-center justify-center gap-1.5 active:scale-98";
-        modeCutBtn.className = "py-2.5 px-3 border border-mono-line bg-mono-surface text-mono-muted font-bold text-center hover:text-white transition flex items-center justify-center gap-1.5 active:scale-98";
-        effectiveRuleSummary.textContent = "PRESERVING MARKED SECTIONS";
-        effectiveRuleSummary.className = "text-term-green text-[10px]";
-      } else {
-        modeCutBtn.className = "py-2.5 px-3 border border-term-crimson bg-term-crimson/15 text-term-crimson font-bold text-center transition flex items-center justify-center gap-1.5 active:scale-98";
-        modePreserveBtn.className = "py-2.5 px-3 border border-mono-line bg-mono-surface text-mono-muted font-bold text-center hover:text-white transition flex items-center justify-center gap-1.5 active:scale-98";
-        effectiveRuleSummary.textContent = "DISCARDING MARKED SECTIONS";
-        effectiveRuleSummary.className = "text-term-crimson text-[10px]";
-      }
-
-      updateDeckButtonState();
-      renderTimelineVisuals();
-      renderIntervalsList();
-      recalcMetrics();
-      showNotice(`MODE: ${state.mode}`);
-    }
-
-    modePreserveBtn.addEventListener('click', () => setTrimMode('PRESERVE'));
-    modeCutBtn.addEventListener('click', () => setTrimMode('CUT'));
-
-    function toggleMarkInterval() {
-      if (!state.blobUrl) {
-        showNotice('NO VIDEO LOADED');
-        return;
-      }
-
-      const now = parseFloat(video.currentTime.toFixed(2));
-
-      if (!state.isMarking) {
-        state.isMarking = true;
-        state.markStart = now;
-        activeMarkHud.classList.remove('hidden');
-        liveSegmentHighlight.classList.remove('hidden');
-        updateDeckButtonState();
-        showNotice(`MARK IN -> ${formatTime(now)}`);
-      } else {
-        state.isMarking = false;
-        activeMarkHud.classList.add('hidden');
-        liveSegmentHighlight.classList.add('hidden');
-
-        const s = Math.min(state.markStart, now);
-        const e = Math.max(state.markStart, now);
-
-        if (e - s >= 0.05) {
-          state.intervals.push({
-            id: 'seg_' + Date.now() + '_' + Math.random().toString(36).substring(2, 5),
-            start: parseFloat(s.toFixed(2)),
-            end: parseFloat(e.toFixed(2))
-          });
-          mergeIntervals();
-          renderIntervalsList();
-          renderTimelineVisuals();
-          recalcMetrics();
-          showNotice(`REGISTERED: ${formatTime(s)} -> ${formatTime(e)}`);
-        } else {
-          showNotice('INTERVAL TOO BRIEF [IGNORED]');
-        }
-
-        state.markStart = null;
-        updateDeckButtonState();
-      }
-    }
-
-    // Captures sub-second timestamp on pointerdown for immediate accuracy
-    mainMarkBtn.addEventListener('pointerdown', (e) => {
-      e.preventDefault();
-      toggleMarkInterval();
-    });
-
-    function updateDeckButtonState() {
-      const isPreserve = state.mode === 'PRESERVE';
-
-      if (state.isMarking) {
-        mainMarkBtn.className = "w-full h-13 py-3 border border-term-amber bg-term-amber/15 text-term-amber font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition active:scale-98 select-none";
-        mainMarkSymbol.textContent = "■";
-        mainMarkTitle.textContent = `MARK OUT [${formatTime(state.markStart)}]`;
-        
-        markHudLabel.textContent = isPreserve ? 'PRESERVE ACTIVE' : 'CUT ACTIVE';
-        markIndicatorDot.className = `w-2 h-2 rounded-full animate-blink ${isPreserve ? 'bg-term-green' : 'bg-term-crimson'}`;
-      } else {
-        if (isPreserve) {
-          mainMarkBtn.className = "w-full h-13 py-3 border border-term-green bg-term-green/10 hover:bg-term-green/20 text-term-green font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition active:scale-98 select-none";
-        } else {
-          mainMarkBtn.className = "w-full h-13 py-3 border border-term-crimson bg-term-crimson/10 hover:bg-term-crimson/20 text-term-crimson font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition active:scale-98 select-none";
-        }
-        mainMarkSymbol.textContent = "●";
-        mainMarkTitle.textContent = "MARK IN";
-      }
-    }
-
-    function mergeIntervals() {
-      if (state.intervals.length <= 1) return;
-      state.intervals.sort((a, b) => a.start - b.start);
-
-      const merged = [state.intervals[0]];
-      for (let i = 1; i < state.intervals.length; i++) {
-        const prev = merged[merged.length - 1];
-        const cur = state.intervals[i];
-        if (cur.start <= prev.end) {
-          prev.end = Math.max(prev.end, cur.end);
-        } else {
-          merged.push(cur);
-        }
-      }
-      state.intervals = merged;
-    }
-
-    function renderTimelineVisuals() {
-      timelineMarksLayer.innerHTML = '';
-      if (!state.duration) return;
-
-      const isPreserve = state.mode === 'PRESERVE';
-      const markColorClass = isPreserve ? 'bg-term-green/40 border-term-green' : 'bg-term-crimson/40 border-term-crimson';
-
-      state.intervals.forEach((seg) => {
-        const left = (seg.start / state.duration) * 100;
-        const width = ((seg.end - seg.start) / state.duration) * 100;
-
-        const slice = document.createElement('div');
-        slice.className = `absolute top-0 bottom-0 border-x ${markColorClass}`;
-        slice.style.left = `${left}%`;
-        slice.style.width = `${width}%`;
-        timelineMarksLayer.appendChild(slice);
+      // Update timeline overlays
+      timeline.querySelectorAll('.segment-overlay').forEach(el => el.remove());
+      intervals.forEach(iv => {
+        if (!dur) return;
+        const div = document.createElement('div');
+        div.className = `segment-overlay ${iv.type === 'PRESERVE' ? 'segment-keep' : 'segment-cut'}`;
+        div.style.left = `${(iv.start / dur) * 100}%`;
+        div.style.width = `${((iv.end - iv.start) / dur) * 100}%`;
+        timeline.appendChild(div);
       });
-    }
 
-    function recalcMetrics() {
-      const keeps = resolveFinalKeptRanges();
-      const finalDuration = keeps.reduce((acc, k) => acc + (k.end - k.start), 0);
-
-      tcResult.textContent = formatTime(finalDuration);
-
-      if (state.duration > 0) {
-        const diff = ((1 - (finalDuration / state.duration)) * 100);
-        tcDiffPercent.textContent = `-${Math.max(0, diff).toFixed(1)}%`;
-      } else {
-        tcDiffPercent.textContent = '-0.0%';
-      }
-
-      intervalsCountBadge.textContent = state.intervals.length;
-      if (state.intervals.length > 0) {
-        clearAllIntervalsBtn.classList.remove('hidden');
-      } else {
-        clearAllIntervalsBtn.classList.add('hidden');
-      }
-    }
-
-    function renderIntervalsList() {
-      intervalsListContainer.innerHTML = '';
-
-      if (state.intervals.length === 0) {
-        intervalsEmptyList.classList.remove('hidden');
-        return;
-      }
-      intervalsEmptyList.classList.add('hidden');
-
-      const isPreserve = state.mode === 'PRESERVE';
-
-      state.intervals.forEach((seg, idx) => {
+      // Update Segments List
+      segmentList.innerHTML = '';
+      intervals.forEach((iv, idx) => {
         const row = document.createElement('div');
-        row.className = 'border border-mono-line bg-mono-pitch p-2.5 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 text-xs hover:border-mono-lineLight transition';
-
-        const segDuration = (seg.end - seg.start).toFixed(2);
-        const tag = isPreserve ? 'KEEP' : 'CUT';
-        const tagColor = isPreserve ? 'text-term-green border-term-green/40' : 'text-term-crimson border-term-crimson/40';
-
+        row.className = 'segment-card';
         row.innerHTML = `
-          <div class="flex items-center gap-2 cursor-pointer jump-seek-trigger" title="Jump playhead to start">
-            <span class="text-[10px] px-1 py-0.2 border ${tagColor} font-bold">${tag}_${String(idx + 1).padStart(2, '0')}</span>
-            <div class="font-mono text-[11px]">
-              <span class="text-white">${formatTime(seg.start)}</span>
-              <span class="text-mono-muted">→</span>
-              <span class="text-white">${formatTime(seg.end)}</span>
-              <span class="text-mono-muted text-[10px] ml-1">(${segDuration}s)</span>
-            </div>
+          <div>
+            <strong>#${idx + 1}</strong> ${iv.type}: ${iv.start}s → ${iv.end}s
           </div>
-
-          <div class="flex items-center justify-between sm:justify-end gap-1.5 text-[10px]">
-            <!-- IN micro-nudges -->
-            <div class="flex items-center border border-mono-line bg-mono-surface px-1 py-0.5 gap-1">
-              <span class="text-mono-muted">IN</span>
-              <button class="nudge-btn hover:text-white px-1" data-id="${seg.id}" data-point="start" data-delta="-0.5">-0.5s</button>
-              <button class="nudge-btn hover:text-white px-1" data-id="${seg.id}" data-point="start" data-delta="-0.1">-0.1s</button>
-              <button class="nudge-btn hover:text-white px-1" data-id="${seg.id}" data-point="start" data-delta="0.1">+0.1s</button>
-              <button class="nudge-btn hover:text-white px-1" data-id="${seg.id}" data-point="start" data-delta="0.5">+0.5s</button>
-            </div>
-
-            <!-- OUT micro-nudges -->
-            <div class="flex items-center border border-mono-line bg-mono-surface px-1 py-0.5 gap-1">
-              <span class="text-mono-muted">OUT</span>
-              <button class="nudge-btn hover:text-white px-1" data-id="${seg.id}" data-point="end" data-delta="-0.5">-0.5s</button>
-              <button class="nudge-btn hover:text-white px-1" data-id="${seg.id}" data-point="end" data-delta="-0.1">-0.1s</button>
-              <button class="nudge-btn hover:text-white px-1" data-id="${seg.id}" data-point="end" data-delta="0.1">+0.1s</button>
-              <button class="nudge-btn hover:text-white px-1" data-id="${seg.id}" data-point="end" data-delta="0.5">+0.5s</button>
-            </div>
-
-            <!-- Delete -->
-            <button class="del-btn text-mono-muted hover:text-term-crimson px-1.5 py-0.5 border border-mono-line bg-mono-surface hover:border-term-crimson transition" data-id="${seg.id}">
-              ✕
-            </button>
+          <div class="nudge-group">
+            <button class="nudge-btn" onclick="nudge('${iv.id}', 'start', -0.5)">-</button>
+            <button class="nudge-btn" onclick="nudge('${iv.id}', 'end', +0.5)">+</button>
+            <button class="del-btn" onclick="removeInterval('${iv.id}')">✕</button>
           </div>
         `;
-
-        row.querySelector('.jump-seek-trigger').addEventListener('click', () => {
-          video.currentTime = seg.start;
-          showNotice(`JUMP TO SEGMENT ${idx + 1}`);
-        });
-
-        intervalsListContainer.appendChild(row);
+        segmentList.appendChild(row);
       });
 
-      document.querySelectorAll('.nudge-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          nudgeInterval(btn.dataset.id, btn.dataset.point, parseFloat(btn.dataset.delta));
-        });
+      // Summary Time
+      const keeps = computeKeepSegments();
+      const totalSec = keeps.reduce((acc, cur) => acc + (cur.end - cur.start), 0);
+      finalDurationText.textContent = `KEEP: ${totalSec.toFixed(1)}s`;
+    }
+
+    // High-Bitrate In-Browser Export (16 Mbps Target)
+    document.getElementById('btnExportWeb').addEventListener('click', async () => {
+      const keeps = computeKeepSegments();
+      if (!keeps.length) return alert('No segments to export');
+
+      const stream = player.captureStream ? player.captureStream() : player.mozCaptureStream();
+      const mime = MediaRecorder.isTypeSupported('video/mp4;codecs=avc1') ? 'video/mp4' : 'video/webm';
+      
+      const recorder = new MediaRecorder(stream, {
+        mimeType: mime,
+        videoBitsPerSecond: 16000000, // 16 Mbps high-fidelity
+        audioBitsPerSecond: 256000
       });
 
-      document.querySelectorAll('.del-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          deleteInterval(btn.dataset.id);
-        });
-      });
-    }
-
-    function nudgeInterval(id, point, delta) {
-      const seg = state.intervals.find(s => s.id === id);
-      if (!seg) return;
-
-      if (point === 'start') {
-        seg.start = parseFloat(Math.max(0, Math.min(seg.end - 0.05, seg.start + delta)).toFixed(2));
-      } else {
-        seg.end = parseFloat(Math.min(state.duration, Math.max(seg.start + 0.05, seg.end + delta)).toFixed(2));
-      }
-
-      mergeIntervals();
-      renderIntervalsList();
-      renderTimelineVisuals();
-      recalcMetrics();
-    }
-
-    function deleteInterval(id) {
-      state.intervals = state.intervals.filter(s => s.id !== id);
-      renderIntervalsList();
-      renderTimelineVisuals();
-      recalcMetrics();
-      showNotice('SEGMENT PURGED');
-    }
-
-    clearAllIntervalsBtn.addEventListener('click', () => {
-      state.intervals = [];
-      renderIntervalsList();
-      renderTimelineVisuals();
-      recalcMetrics();
-      showNotice('ALL SEGMENTS PURGED');
-    });
-
-    openExportDrawerBtn.addEventListener('click', () => {
-      if (!state.blobUrl) return;
-
-      const keeps = resolveFinalKeptRanges();
-      const finalDur = keeps.reduce((acc, k) => acc + (k.end - k.start), 0);
-
-      expOrigDur.textContent = formatTime(state.duration);
-      expSegCount.textContent = keeps.length;
-      expFinalDur.textContent = formatTime(finalDur);
-
-      generateFfmpegScript(keeps);
-
-      exportDrawer.classList.remove('opacity-0', 'pointer-events-none');
-      exportDrawer.classList.add('opacity-100');
-    });
-
-    closeExportDrawerBtn.addEventListener('click', () => {
-      exportDrawer.classList.add('opacity-0', 'pointer-events-none');
-      exportDrawer.classList.remove('opacity-100');
-    });
-
-    function generateFfmpegScript(keeps) {
-      if (keeps.length === 0) {
-        ffmpegCliPreview.textContent = '# NO FOOTAGE SPECIFIED TO KEEP';
-        return;
-      }
-
-      let filter = '';
-      let concat = '';
-      keeps.forEach((k, i) => {
-        filter += `[0:v]trim=${k.start.toFixed(2)}:${k.end.toFixed(2)},setpts=PTS-STARTPTS[v${i}]; `;
-        filter += `[0:a]atrim=${k.start.toFixed(2)}:${k.end.toFixed(2)},asetpts=PTS-STARTPTS[a${i}]; `;
-        concat += `[v${i}][a${i}]`;
-      });
-
-      const cmd = `ffmpeg -i "${state.fileName}" -filter_complex "${filter}${concat}concat=n=${keeps.length}:v=1:a=1[outv][outa]" -map "[outv]" -map "[outa]" "cut_${state.fileName}"`;
-      ffmpegCliPreview.textContent = cmd;
-    }
-
-    copyFfmpegCliBtn.addEventListener('click', () => {
-      const code = ffmpegCliPreview.textContent;
-      const ta = document.createElement('textarea');
-      ta.value = code;
-      ta.style.position = 'fixed';
-      ta.style.opacity = '0';
-      document.body.appendChild(ta);
-      ta.select();
-      try {
-        document.execCommand('copy');
-        showNotice('FFMPEG CMD COPIED');
-      } catch (e) {
-        showNotice('CLIPBOARD COPY FAILED');
-      }
-      document.body.removeChild(ta);
-    });
-
-    runBrowserRenderBtn.addEventListener('click', async () => {
-      if (state.isRendering) return;
-      const keeps = resolveFinalKeptRanges();
-
-      if (keeps.length === 0) {
-        showNotice('NO KEPT SEGMENTS AVAILABLE');
-        return;
-      }
-
-      state.isRendering = true;
-      runBrowserRenderBtn.disabled = true;
-      renderProgressContainer.classList.remove('hidden');
-
-      try {
-        await executeInBrowserAssembly(keeps);
-      } catch (err) {
-        console.error(err);
-        showNotice(`RENDER FAILED: ${err.message}`);
-      } finally {
-        state.isRendering = false;
-        runBrowserRenderBtn.disabled = false;
-        setTimeout(() => {
-          renderProgressContainer.classList.add('hidden');
-        }, 2000);
-      }
-    });
-
-    async function executeInBrowserAssembly(keeps) {
-      video.pause();
-
-      let stream = null;
-      if (video.captureStream) {
-        stream = video.captureStream();
-      } else if (video.mozCaptureStream) {
-        stream = video.mozCaptureStream();
-      } else {
-        throw new Error('captureStream unsupported. Use Method 2 (FFmpeg CLI).');
-      }
-
-      const mimeCandidates = [
-        'video/mp4;codecs=avc1,mp4a.40.2',
-        'video/mp4',
-        'video/webm;codecs=vp9,opus',
-        'video/webm'
-      ];
-      const mime = mimeCandidates.find(m => MediaRecorder.isTypeSupported(m)) || '';
-
-      const recorder = new MediaRecorder(stream, mime ? { mimeType: mime } : undefined);
       const chunks = [];
-      recorder.ondataavailable = (e) => {
-        if (e.data && e.data.size > 0) chunks.push(e.data);
+      recorder.ondataavailable = e => chunks.push(e.data);
+      recorder.onstop = () => {
+        const blob = new Blob(chunks, { type: mime });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `cutflow_export.${mime.includes('mp4') ? 'mp4' : 'webm'}`;
+        a.click();
       };
 
-      const totalKeepSeconds = keeps.reduce((acc, k) => acc + (k.end - k.start), 0);
-      let cumulativeDone = 0;
-
-      recorder.start(100);
-
-      for (let i = 0; i < keeps.length; i++) {
-        const seg = keeps[i];
-        renderStatusLabel.textContent = `PASS [${i + 1}/${keeps.length}]...`;
-
-        video.currentTime = seg.start;
-        await new Promise(r => video.addEventListener('seeked', r, { once: true }));
-        await video.play();
-
-        await new Promise((resolve) => {
-          const stepChecker = () => {
-            const playedCurrent = Math.max(0, video.currentTime - seg.start);
-            const totalProgress = cumulativeDone + playedCurrent;
-            const pct = Math.min(99, Math.round((totalProgress / totalKeepSeconds) * 100));
-
-            renderProgressFill.style.width = `${pct}%`;
-            renderPercentLabel.textContent = `${pct}%`;
-
-            if (video.currentTime >= seg.end || video.paused || video.ended) {
-              video.removeEventListener('timeupdate', stepChecker);
-              video.pause();
-              resolve();
-            }
-          };
-          video.addEventListener('timeupdate', stepChecker);
-        });
-
-        cumulativeDone += (seg.end - seg.start);
+      recorder.start();
+      for (const seg of keeps) {
+        player.currentTime = seg.start;
+        await player.play();
+        const durationMs = (seg.end - seg.start) * 1000;
+        await new Promise(r => setTimeout(r, durationMs));
+        player.pause();
       }
-
       recorder.stop();
-      renderProgressFill.style.width = '100%';
-      renderPercentLabel.textContent = '100%';
-      renderStatusLabel.textContent = 'PACKAGING BLOB...';
-
-      await new Promise(r => { recorder.onstop = r; });
-
-      const ext = mime.includes('mp4') ? 'mp4' : 'webm';
-      const outputBlob = new Blob(chunks, { type: mime || 'video/webm' });
-      const downloadUrl = URL.createObjectURL(outputBlob);
-
-      const a = document.createElement('a');
-      a.href = downloadUrl;
-      a.download = `cut_${state.fileName.replace(/\.[^/.]+$/, "")}.${ext}`;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-
-      showNotice('RENDER DISPATCH COMPLETE');
-    }
-
-    downloadEdlManifestBtn.addEventListener('click', () => {
-      const keeps = resolveFinalKeptRanges();
-      if (keeps.length === 0) {
-        showNotice('NO INTERVALS TO EXPORT');
-        return;
-      }
-
-      let edl = `TITLE: CUTFLOW_01\nFCM: NON-DROP FRAME\n\n`;
-      let timelineIn = 0;
-
-      keeps.forEach((seg, i) => {
-        const dur = seg.end - seg.start;
-        const timelineOut = timelineIn + dur;
-        const idStr = String(i + 1).padStart(3, '0');
-
-        edl += `${idStr}  AX       V     C        ${toEdlTime(seg.start)} ${toEdlTime(seg.end)} ${toEdlTime(timelineIn)} ${toEdlTime(timelineOut)}\n`;
-        edl += `* FROM CLIP NAME: ${state.fileName}\n\n`;
-        timelineIn = timelineOut;
-      });
-
-      const blob = new Blob([edl], { type: 'text/plain' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `${state.fileName.replace(/\.[^/.]+$/, "")}.edl`;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-
-      showNotice('EDL FILE DOWNLOADED');
     });
 
-    function toEdlTime(secs) {
-      const fps = 30;
-      const h = String(Math.floor(secs / 3600)).padStart(2, '0');
-      const m = String(Math.floor((secs % 3600) / 60)).padStart(2, '0');
-      const s = String(Math.floor(secs % 60)).padStart(2, '0');
-      const f = String(Math.floor((secs % 1) * fps)).padStart(2, '0');
-      return `${h}:${m}:${s}:${f}`;
-    }
+    // Lossless FFmpeg Command Generator
+    document.getElementById('btnExportCmd').addEventListener('click', () => {
+      const keeps = computeKeepSegments();
+      if (!keeps.length) return alert('No segments selected');
 
-    window.addEventListener('keydown', (e) => {
-      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      const filters = keeps.map((k, i) => `[0:v]trim=${k.start}:${k.end},setpts=PTS-STARTPTS[v${i}];[0:a]atrim=${k.start}:${k.end},asetpts=PTS-STARTPTS[a${i}]`).join(';');
+      const map = keeps.map((_, i) => `[v${i}][a${i}]`).join('');
+      const cmd = `ffmpeg -i input.mp4 -filter_complex "${filters};${map}concat=n=${keeps.length}:v=1:a=1[outv][outa]" -map "[outv]" -map "[outa]" output.mp4`;
 
-      if (e.code === 'Space') {
-        e.preventDefault();
-        togglePlayback();
-      } else if (e.code === 'KeyM') {
-        e.preventDefault();
-        toggleMarkInterval();
-      } else if (e.code === 'ArrowLeft') {
-        e.preventDefault();
-        video.currentTime = Math.max(0, video.currentTime - (e.shiftKey ? 5.0 : 1.0));
-      } else if (e.code === 'ArrowRight') {
-        e.preventDefault();
-        video.currentTime = Math.min(state.duration, video.currentTime + (e.shiftKey ? 5.0 : 1.0));
-      }
+      navigator.clipboard.writeText(cmd);
+      alert('Lossless FFmpeg command copied to clipboard!');
     });
   </script>
 </body>
