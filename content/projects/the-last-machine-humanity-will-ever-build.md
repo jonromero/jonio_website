@@ -1,4 +1,4 @@
-Title: The Last Machine Humanity Will Ever Build
+Title: Here is what Super Intelligence really is (and we are almost there)
 Category: projects
 Date: 2026-10-13 09:30
 Image: intelligence-explosion-chart.png
