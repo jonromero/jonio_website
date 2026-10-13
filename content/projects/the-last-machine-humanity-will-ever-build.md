@@ -1,4 +1,4 @@
-Title: This is Super Intelligence (so you don't sound stupid)
+Title: This is what Super Intelligence means (so you don't sound stupid)
 Category: projects
 Date: 2026-10-13 09:30
 Image: intelligence-explosion-chart.png
