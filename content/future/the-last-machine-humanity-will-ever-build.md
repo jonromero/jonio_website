@@ -1,5 +1,5 @@
 Title: This is what Super Intelligence really is (so you don't sound stupid)
-Category: projects
+Category: future
 Date: 2026-10-13 09:30
 Image: intelligence-explosion-chart.png
 Tags: ai, superintelligence
