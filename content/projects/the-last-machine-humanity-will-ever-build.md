@@ -1,4 +1,4 @@
-Title: Here is what Super Intelligence really is (and we are almost there)
+Title: This is Super Intelligence (so you don't sound stupid)
 Category: projects
 Date: 2026-10-13 09:30
 Image: intelligence-explosion-chart.png
