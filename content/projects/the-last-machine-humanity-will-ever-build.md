@@ -16,6 +16,8 @@ But what about when this **something** can turn **us** into Gods?
 
 ![](/images/intelligence-explosion-chart.png)
 
+-- https://situational-awareness.ai/from-agi-to-superintelligence/
+
 Imagine we have a machine that can tells us ANYTHING we need to know. About anything. What would you ask that machine? 
 
 Let me give you some ideas:
@@ -65,6 +67,6 @@ Would we work all right to explore the stars or S.I will be our humanity's last 
 
 All we know, is Super Intelligence will be the last machine humanity will ever build and it is inevitable. 
 
-Next post: Life in a post S.I world. What skills should my kids learn?
+If you want to learn more about Super Intelligence, checkout [The Last Machine](https://lastmachine.com)
 
--- https://situational-awareness.ai/from-agi-to-superintelligence/
+Next post: Life in a post S.I world. What skills should my kids learn?
