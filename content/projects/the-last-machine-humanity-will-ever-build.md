@@ -16,7 +16,7 @@ But what about when this **something** can turn **us** into Gods?
 
 ![](/images/intelligence-explosion-chart.png)
 
--- https://situational-awareness.ai/from-agi-to-superintelligence/
+-- [from AGI to S.I](https://situational-awareness.ai/from-agi-to-superintelligence/)
 
 Imagine we have a machine that can tells us ANYTHING we need to know. About anything. What would you ask that machine? 
 
