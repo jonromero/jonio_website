@@ -13,7 +13,7 @@ But cheap code is easy. GOOD cheap code is the hard part. This is the log of how
 
 ## The setup
 
-One Mac mini (32GB). Qwen 3.6 35B-A3B running in LM Studio. A Python script I call [LocalOrca](https://lastmachine.com/localorca/) that runs all night.
+One Mac mini (32GB). Qwen 3.6 35B-A3B running in LM Studio. A Python script I call [LocalOrca](https://lastmachine.com/localorca/) that runs all night. The code is on [GitHub](https://github.com/jonromero/localorca).
 
 ![The LocalOrca dashboard while Qwen builds](/images/localorca-build.gif)
 
@@ -114,6 +114,62 @@ So the flow flips. Claude spends its tokens ONCE, up front, instead of on rescue
 
 The bet: Qwen starts every project on a running, tested app it can copy, instead of an empty folder. Not proven yet. ReadAlong or the next app will tell. (Old flow still there: `--qwen-only`.)
 
+## The small ideas that made the biggest difference
+
+Every rule in Orca exists because something went wrong in a real build. Each one has a test now. These are my favourites.
+
+### A small model needs a small world
+
+1/ **Every task starts with a map.** A list of every file and function earlier tasks built. It's made with plain regex, NEVER by a model, so it can't be wrong or stale. Before the map, Qwen once read 7 files, spent 14k of its 22k context, and wrote ZERO lines.
+
+2/ **Read loops get broken.** Re-reading the same part of a file is flagged. After 10 calls without a write, Qwen is told: write the code NOW.
+
+3/ **Big files get split while the build runs.** A source file over 200 lines gets ONE fix task: split it into small modules, keep the old file as a thin re-export so nothing breaks. Once per file, ever. Biggest first.
+
+4/ **Thinking is OFF for the first two attempts.** Qwen's template thinks at the highest effort by default. Great for a chat. Terrible for an agent loop: it's slow, and long thinking can eat the whole reply before the tool call even happens. From attempt 3, medium.
+
+5/ **Pick the stack that talks back.** The house rules push TypeScript checking for JS (`tsc --noEmit` in the test command) and type hints plus mypy for Python. The more the compiler complains, the less the small model has to guess. Boring common libraries only.
+
+### Things that died quietly
+
+1/ **"Done" with zero lines written.** Passing tests prove nothing when the old tests were already green. 7 features were marked done before I noticed. Now an attempt that changes no file fails with NO CHANGES. Test caches don't count as work.
+
+2/ **The history marker in a test file.** Orca shortens old messages to save context, like `<1354 chars>`. Qwen copied that marker straight into a test file. Now it's refused.
+
+3/ **Close but not quite, forever.** Claude used to be called only after the SAME failure 3 times. But a small model can fail differently every time and never get there. Now it's 3 failures, any kind.
+
+4/ **The vanishing files.** A blocked task saves its diff so nothing is lost. Except the diff didn't include NEW files. A 276-line test file and a whole actions.js vanished. Now the saved diff has everything, and `git apply` brings the attempt back.
+
+5/ **Zombies.** Timed-out `node --test` runs stayed alive for DAYS. Now every command runs in its own process group, and a timeout kills the whole group.
+
+6/ **A red start.** Red baseline tests on IslandSurvivor made every task after them fail. Now the hand-off refuses to start Qwen unless the tests AND the real app are green, before a single Claude token goes into planning.
+
+### Steering a build with plain files
+
+The whole build is steered by text files in an `orca/` folder. Qwen and Claude re-read them all the time, so an edit counts from the next task. No restart.
+
+1/ **TASKS.md is WHAT.** The build always takes the first open task. Delete a line, move it up, add one.
+
+2/ **SPEC.md is what the product IS.** Drop a feature? Say so here too, under "Out of scope". Otherwise the next course check sees it missing and adds the tasks back.
+
+3/ **LESSONS.md is HOW.** Rules included in every prompt. When it gets long, the LOCAL model shortens it, and Orca checks the result.
+
+4/ **Edit while it runs.** Open a file in your editor mid-build and Orca asks: keep it and tell Qwen, keep it and PROTECT it (Qwen can't touch it until the task ends), or undo.
+
+5/ **Feedback right on the page.** The live preview restarts your app only after a task passes, never mid-task, so you never see half-written code. A small badge on the page takes your note and turns it into the very next task.
+
+### Numbers you can trust
+
+1/ **No model writes the report.** The build report is computed from the files a build leaves behind: transcripts, task logs, git. So the numbers are exact, not vibes.
+
+2/ **Exact Claude tokens.** Every Claude call logs its real counts, taken from Claude Code's own per-model totals (which also count the small side model Claude Code uses quietly). A killed call still counts. The design stage keeps its own log in git, so you can compare builds.
+
+3/ **The real subscription %.** Orca reads the same plan usage Claude Code's `/usage` screen shows, so the dashboard tells you how much of your 5-hour window is gone. Not a guess.
+
+4/ **Qwen sleeps while Claude designs.** The design stage never uses Qwen, so Orca unloads it from LM Studio and gives the RAM to Claude's builds and the headless browser.
+
+5/ **Speculative decoding? Skip it.** A tiny draft model makes dense models faster. On a MoE like 35B-A3B (only 3B active) there's almost nothing to gain.
+
 ## If you want to try this
 
 1/ **A mid-size local model codes FINE.** 89% first-try passes. Stop asking if it's smart enough. Ask if your tasks are small enough.
@@ -126,10 +182,13 @@ The bet: Qwen starts every project on a running, tested app it can copy, instead
 
 5/ **Measure everything.** Every rule above came from a log file, not a hunch. Half my favourite safeguards turned out to be waste.
 
+Grab it: [github.com/jonromero/localorca](https://github.com/jonromero/localorca). Clone it, run `python3 orca.py new ~/proj/myapp "your idea"`, and watch.
+
 ## Update log
 
 | Date | What changed | Why |
 | --- | --- | --- |
+| Oct 21, 2026 | LocalOrca is on [GitHub](https://github.com/jonromero/localorca); added the small ideas that made the biggest difference | Splash, orca has landed |
 | Oct 19, 2026 | Design stage: Claude researches and builds the prototype, I review it, then hand-off to Qwen | Qwen kept failing at the start, where the whole app gets wired together |
 | Oct 17, 2026 | ReadAlong started, the first app planned under the new rules | Test the rules on a fresh build |
 | Oct 17, 2026 | Walking skeleton plus a real-app smoke test after every task | 554 green tests, blank page |
