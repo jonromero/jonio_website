@@ -209,7 +209,7 @@
 <p>That is the split I wanted: 97% of the tokens on a model that costs nothing, 3% on the smart one.</p>
 <p>But cheap code is easy. GOOD cheap code is the hard part. This is the log of how I got there (and how I didn't, for a while). I keep updating it as the builds run.</p>
 <h2>The setup</h2>
-<p>One Mac mini (32GB). Qwen 3.6 35B-A3B running in LM Studio. A Python script I call <a href="https://lastmachine.com/localorca/">LocalOrca</a> that runs all night.</p>
+<p>One Mac mini (32GB). Qwen 3.6 35B-A3B running in LM Studio. A Python script I call <a href="https://lastmachine.com/localorca/">LocalOrca</a> that runs all night. The code is on <a href="https://github.com/jonromero/localorca">GitHub</a>.</p>
 <p><img alt="The LocalOrca dashboard while Qwen builds" src="/images/localorca-build.gif"></p>
 <p>The loop is dead simple:</p>
 <p>1/ Claude interviews me about the app and writes a short spec plus 30 to 60 tiny tasks.<br>
@@ -334,12 +334,41 @@
 <p>3/ <strong>I shape it.</strong> The preview opens. I leave notes from the dashboard or the Feedback button on the page. Claude applies them now (a new revision), or they wait and become Qwen's first tasks.</p>
 <p>4/ <strong>Hand-off.</strong> Only when tests AND the real app are green. Claude reads the actual code and breaks the rest into small tasks that name real files. Then Qwen takes over, as before.</p>
 <p>The bet: Qwen starts every project on a running, tested app it can copy, instead of an empty folder. Not proven yet. ReadAlong or the next app will tell. (Old flow still there: <code>--qwen-only</code>.)</p>
+<h2>The small ideas that made the biggest difference</h2>
+<p>Every rule in Orca exists because something went wrong in a real build. Each one has a test now. These are my favourites.</p>
+<h3>A small model needs a small world</h3>
+<p>1/ <strong>Every task starts with a map.</strong> A list of every file and function earlier tasks built. It's made with plain regex, NEVER by a model, so it can't be wrong or stale. Before the map, Qwen once read 7 files, spent 14k of its 22k context, and wrote ZERO lines.</p>
+<p>2/ <strong>Read loops get broken.</strong> Re-reading the same part of a file is flagged. After 10 calls without a write, Qwen is told: write the code NOW.</p>
+<p>3/ <strong>Big files get split while the build runs.</strong> A source file over 200 lines gets ONE fix task: split it into small modules, keep the old file as a thin re-export so nothing breaks. Once per file, ever. Biggest first.</p>
+<p>4/ <strong>Thinking is OFF for the first two attempts.</strong> Qwen's template thinks at the highest effort by default. Great for a chat. Terrible for an agent loop: it's slow, and long thinking can eat the whole reply before the tool call even happens. From attempt 3, medium.</p>
+<p>5/ <strong>Pick the stack that talks back.</strong> The house rules push TypeScript checking for JS (<code>tsc --noEmit</code> in the test command) and type hints plus mypy for Python. The more the compiler complains, the less the small model has to guess. Boring common libraries only.</p>
+<h3>Things that died quietly</h3>
+<p>1/ <strong>"Done" with zero lines written.</strong> Passing tests prove nothing when the old tests were already green. 7 features were marked done before I noticed. Now an attempt that changes no file fails with NO CHANGES. Test caches don't count as work.</p>
+<p>2/ <strong>The history marker in a test file.</strong> Orca shortens old messages to save context, like <code>&lt;1354 chars&gt;</code>. Qwen copied that marker straight into a test file. Now it's refused.</p>
+<p>3/ <strong>Close but not quite, forever.</strong> Claude used to be called only after the SAME failure 3 times. But a small model can fail differently every time and never get there. Now it's 3 failures, any kind.</p>
+<p>4/ <strong>The vanishing files.</strong> A blocked task saves its diff so nothing is lost. Except the diff didn't include NEW files. A 276-line test file and a whole actions.js vanished. Now the saved diff has everything, and <code>git apply</code> brings the attempt back.</p>
+<p>5/ <strong>Zombies.</strong> Timed-out <code>node --test</code> runs stayed alive for DAYS. Now every command runs in its own process group, and a timeout kills the whole group.</p>
+<p>6/ <strong>A red start.</strong> Red baseline tests on IslandSurvivor made every task after them fail. Now the hand-off refuses to start Qwen unless the tests AND the real app are green, before a single Claude token goes into planning.</p>
+<h3>Steering a build with plain files</h3>
+<p>The whole build is steered by text files in an <code>orca/</code> folder. Qwen and Claude re-read them all the time, so an edit counts from the next task. No restart.</p>
+<p>1/ <strong>TASKS.md is WHAT.</strong> The build always takes the first open task. Delete a line, move it up, add one.</p>
+<p>2/ <strong>SPEC.md is what the product IS.</strong> Drop a feature? Say so here too, under "Out of scope". Otherwise the next course check sees it missing and adds the tasks back.</p>
+<p>3/ <strong>LESSONS.md is HOW.</strong> Rules included in every prompt. When it gets long, the LOCAL model shortens it, and Orca checks the result.</p>
+<p>4/ <strong>Edit while it runs.</strong> Open a file in your editor mid-build and Orca asks: keep it and tell Qwen, keep it and PROTECT it (Qwen can't touch it until the task ends), or undo.</p>
+<p>5/ <strong>Feedback right on the page.</strong> The live preview restarts your app only after a task passes, never mid-task, so you never see half-written code. A small badge on the page takes your note and turns it into the very next task.</p>
+<h3>Numbers you can trust</h3>
+<p>1/ <strong>No model writes the report.</strong> The build report is computed from the files a build leaves behind: transcripts, task logs, git. So the numbers are exact, not vibes.</p>
+<p>2/ <strong>Exact Claude tokens.</strong> Every Claude call logs its real counts, taken from Claude Code's own per-model totals (which also count the small side model Claude Code uses quietly). A killed call still counts. The design stage keeps its own log in git, so you can compare builds.</p>
+<p>3/ <strong>The real subscription %.</strong> Orca reads the same plan usage Claude Code's <code>/usage</code> screen shows, so the dashboard tells you how much of your 5-hour window is gone. Not a guess.</p>
+<p>4/ <strong>Qwen sleeps while Claude designs.</strong> The design stage never uses Qwen, so Orca unloads it from LM Studio and gives the RAM to Claude's builds and the headless browser.</p>
+<p>5/ <strong>Speculative decoding? Skip it.</strong> A tiny draft model makes dense models faster. On a MoE like 35B-A3B (only 3B active) there's almost nothing to gain.</p>
 <h2>If you want to try this</h2>
 <p>1/ <strong>A mid-size local model codes FINE.</strong> 89% first-try passes. Stop asking if it's smart enough. Ask if your tasks are small enough.</p>
 <p>2/ <strong>Tests are the only judge, so the tests decide everything.</strong> A test that fakes your own code proves nothing. Fake the outside world only.</p>
 <p>3/ <strong>Run the real app from day one.</strong> Green unit tests and a dead product is the default outcome, not the exception.</p>
 <p>4/ <strong>Spend the expensive model on JUDGMENT, not volume.</strong> Planning, rescuing stuck tasks, looking at the running product. Never line-by-line review.</p>
 <p>5/ <strong>Measure everything.</strong> Every rule above came from a log file, not a hunch. Half my favourite safeguards turned out to be waste.</p>
+<p>Grab it: <a href="https://github.com/jonromero/localorca">github.com/jonromero/localorca</a>. Clone it, run <code>python3 orca.py new ~/proj/myapp "your idea"</code>, and watch.</p>
 <h2>Update log</h2>
 <table>
 <thead>
@@ -350,6 +379,11 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>Oct 21, 2026</td>
+<td>LocalOrca is on <a href="https://github.com/jonromero/localorca">GitHub</a>; added the small ideas that made the biggest difference</td>
+<td>Splash, orca has landed</td>
+</tr>
 <tr>
 <td>Oct 19, 2026</td>
 <td>Design stage: Claude researches and builds the prototype, I review it, then hand-off to Qwen</td>
